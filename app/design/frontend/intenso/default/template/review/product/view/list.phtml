@@ -1,0 +1,46 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php $items = $this->getReviewsCollection()->getItems(); ?>
+<div class="reviews">
+    <?php if (count($items)):?>
+        <?php echo $this->getChildHtml('toolbar') ?>
+        <ul class="review-list" aria-expanded="true" aria-hidden="false">
+        <?php foreach ($items as $item):?>
+            <li itemprop="review" itemtype="http://schema.org/Review" itemscope="itemscope">
+                <?php 
+                $votes = $item->getRatingVotes();
+                $percent = 0;
+                $count = count($votes);
+                if ($count) {
+                    foreach ($votes as $vote) {
+                        $percent += $vote->getPercent();
+                    }
+                    $percent = $percent / $count;
+                }
+                ?>
+                <div class="rating-box" itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope="itemscope">
+                    <div class="rating" style="width:<?php echo $percent ?>%">
+                        <meta content="<?php echo $percent ?>" itemprop="ratingValue">
+                        <meta content="100" itemprop="bestRating">
+                    </div>
+                </div>
+                <h6><a href="<?php echo $this->getReviewUrl($item->getId())?>"><?php echo $this->htmlEscape($item->getTitle())?></a></h6>
+                <p class="review-text review-<?php echo $item->getId()?>" itemprop="description">
+                    <?php echo nl2br($this->htmlEscape($item->getDetail())); ?>
+                </p>
+                <p class="author"><?php echo $this->__('By')?> <span itemprop="author"><?php echo $this->htmlEscape($item->getNickname()); ?></span> <?php echo $this->__('on')?> <time datetime="<?php echo $item->getCreatedAt(); ?>" itemprop="datePublished"><?php echo $this->formatDate($item->getCreatedAt()); ?></time></p>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+        <?php echo $this->getChildHtml('toolbar') ?>
+    <?php endif;?>
+    <?php echo $this->getChildHtml('review_form') ?>
+</div>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_MegaMenu
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<layout>
+	<default>
+		<reference name="header">
+			<!-- topmenu -->
+			<block type="core/text_list" name="top.menu" as="topMenu" translate="label">
+                <label>Navigation Bar</label>
+                <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
+                	<action method="setCacheLifetime"><s>null</s></action>
+                    <block type="itactica_megamenu/menu_renderer" name="catalog.topnav.renderer" template="itactica_megamenu/menu/renderer.phtml"/>
+                    <!-- search field for offcanvas menu -->
+					<block type="core/template" name="top.search" as="offcanvasSearch" template="catalogsearch/form.mini.offcanvas.phtml"/>
+					<!-- top links -->
+					<block type="page/template_links" name="top.links" as="topLinks"/>
+					<!-- count of products added to cart -->
+					<block type="checkout/cart" name="cart_summary" template="page/template/summary.phtml" />
+					<!-- minicart -->
+					<block type="checkout/cart_minicart" name="minicart_head" template="checkout/cart/minicart.phtml" before="-">
+		                <block type="checkout/cart_sidebar" name="minicart_content" template="checkout/cart/minicart/items.phtml">
+		                    <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>checkout/cart/minicart/default.phtml</template></action>
+		                    <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/minicart/default.phtml</template></action>
+		                    <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/minicart/default.phtml</template></action>
+		                    <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/minicart/default.phtml</template></action>
+		                    <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>checkout/cart/minicart/default.phtml</template></action>
+                            <block type="cms/block" name="cart_sidebar.cart_promotion" as="cart_promotion">
+                                <action method="setBlockId"><block_id>mini_cart_promotion</block_id></action>
+                            </block>
+		                </block>
+		            </block>
+                </block>
+            </block>
+        </reference>
+	</default>
+</layout>

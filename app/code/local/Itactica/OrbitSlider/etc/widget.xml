@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_OrbitSlider
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<widgets>
+    <orbitslider_slider_view type="itactica_orbitslider/slider_widget_view" translate="name description" module="itactica_orbitslider">
+        <name>Intenso - Image Slider</name>
+        <description>Image Slider widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <slider_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Slider</label>
+                <type>label</type>
+                <helper_block>
+                    <type>itactica_orbitslider/adminhtml_slider_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Slider</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </slider_id>
+        </parameters>
+    </orbitslider_slider_view>
+</widgets>

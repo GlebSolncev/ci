@@ -1,0 +1,40 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title">
+    <h1><?php echo $this->__('My Tags') ?></h1>
+</div>
+<?php if($this->getTags()): ?>
+	<div class="box-head">
+		<h2><?php echo $this->__('Click on a tag to view your corresponding products.') ?></h2>
+	</div>
+	<div class="box">
+		<div class="box-title">
+    		<h3><?php echo $this->__('Tags') ?></h3>
+    	</div>
+    	<div class="box-content">
+		    <ul class="tags-list">
+		        <?php foreach ($this->getTags() as $_tag): ?>
+		            <li><a href="<?php echo $this->getUrl('tag/customer/view', array('tagId' => $_tag->getTagId())) ?>" style="font-size:<?php echo $_tag->getRatio()*70+75 ?>%;"><?php echo $this->escapeHtml($_tag->getName()) ?></a></li>
+		        <?php endforeach; ?>
+		    </ul>
+		</div>
+	</div>
+<?php else: ?>
+	<div class="box">
+		<div class="box-title">
+    		<h3><?php echo $this->__('You have not tagged any products yet.') ?></h3>
+    	</div>
+    </div>
+<?php endif; ?>
+<div class="buttons-set">
+    <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+</div>

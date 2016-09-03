@@ -1,0 +1,58 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<script type="text/javascript">
+//<![CDATA[
+    var quoteBaseGrandTotal = <?php echo (float)$this->getQuoteBaseGrandTotal(); ?>;
+    var checkQuoteBaseGrandTotal = quoteBaseGrandTotal;
+    var payment = new Payment('co-payment-form', '<?php echo $this->getUrl('checkout/onepage/savePayment') ?>');
+    var lastPrice;
+//]]>
+</script>
+<div class="row flush">
+    <div class="small-12 payment-methods columns">
+        <div class="form-box wide">
+            <form action="" id="co-payment-form">
+                <?php echo $this->getChildHtml('methods') ?>
+            </form>
+            <div class="tool-tip" id="payment-tool-tip" style="display:none;">
+                <div class="btn-close"><a href="#" id="payment-tool-tip-close" title="<?php echo $this->__('Close') ?>"><?php echo $this->__('Close') ?></a></div>
+                <div class="tool-tip-content"><img src="<?php echo $this->getSkinUrl('images/cvv.gif') ?>" alt="<?php echo $this->__('Card Verification Number Visual Reference') ?>" title="<?php echo $this->__('Card Verification Number Visual Reference') ?>" /></div>
+            </div>
+            <div class="buttons-set" id="payment-buttons-container">
+                <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+                <span class="please-wait" id="payment-please-wait" style="display:none;">
+                    <span class="spinner"></span>
+                    <span><?php echo $this->__('Loading next step...') ?></span>
+                </span>
+                <button type="button" class="button" onclick="payment.save()"><span><span><?php echo $this->__('Continue') ?></span></span></button>
+                <a class="arrow-left" href="#" onclick="checkout.back(); return false;"><?php echo $this->__('Back') ?></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function toggleToolTip(event){
+        if($('payment-tool-tip')){
+            $('payment-tool-tip').setStyle({
+                top: (Event.pointerY(event)-560)+'px'//,
+                //left: (Event.pointerX(event)+100)+'px'
+            })
+            $('payment-tool-tip').toggle();
+        }
+        Event.stop(event);
+    }
+    if($('payment-tool-tip-close')){
+        Event.observe($('payment-tool-tip-close'), 'click', toggleToolTip);
+    }
+</script>
+<script>
+    payment.currentMethod = "<?php echo $this->getChild('methods')->getSelectedMethodCode() ?>";
+</script>

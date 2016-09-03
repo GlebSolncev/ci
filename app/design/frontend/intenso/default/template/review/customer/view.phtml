@@ -1,0 +1,99 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_LayeredNavigation
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php if($this->getProductData()->getId()): ?>
+<?php 
+if (Mage::helper('core')->isModuleOutputEnabled('Itactica_ExtendedReviews')) {
+    $helper = Mage::helper('itactica_extendedreviews');
+    $blockHelper = $this->getLayout()->getBlockSingleton('Itactica_ExtendedReviews_Block_Helper');
+    $stat = $blockHelper->getProductStat($this->getProductData()->getId());
+    $sum = 0;
+    $count = 0;
+    $stars = array();
+    foreach ($stat as $row) {
+        $sum+=$row['count'] * $row['value'];
+        $count+=$row['count'];
+        $stars[$row['value']] = $row['count'];
+    }
+
+    $summaryData = Mage::getModel('review/review_summary')
+       ->setStoreId(Mage::app()->getStore()->getId())
+       ->load($this->getProductData()->getId());
+}
+?>
+<div class="page-title">
+    <h1><?php echo $this->__('Review Details') ?></h1>
+</div>
+<div class="product-review row">
+    <div class="small-12 medium-4 large-3 product-img-box columns">
+        <a href="<?php echo $this->getProductData()->getProductUrl() ?>" title="<?php echo $this->escapeHtml($this->getProductData()->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($this->getProductData(), 'small_image')->resize(200, 200); ?>" width="200" height="200" alt="<?php echo $this->escapeHtml($this->getProductData()->getName()) ?>" /></a>
+        <?php if( $this->getRating() && $this->getRating()->getSize()): ?>
+            <?php if(Mage::helper('core')->isModuleOutputEnabled('Itactica_ExtendedReviews')): ?>
+                <?php $maxValue = max($stars); ?>
+                <div class="ratings-detail clearfix">
+                    <div class="rating-avg"><span><?php echo round($sum/$count,2); ?></span></div>
+                    <div class="ratings">
+                        <?php if ($summaryData->getRatingSummary()): ?>
+                        <div class="rating-box">
+                            <div style="width:<?php echo $summaryData->getRatingSummary() ?>%" class="rating"></div>
+                        </div>
+                        <?php endif;?>
+                        <span class="rating-links icon-user">
+                            <?php if ($summaryData->getReviewsCount() > 1): ?>
+                                <span><?php echo Mage::helper('itactica_extendedreviews')->__('%d reviews', $summaryData->getReviewsCount()) ?></span>
+                            <?php else: ?>
+                                <span><?php echo Mage::helper('itactica_extendedreviews')->__('%d review', $summaryData->getReviewsCount()) ?></span>
+                            <?php endif; ?>
+                        </span>
+                    </div>
+                </div>
+            <?php else: ?>
+            <p class="label"><?php echo $this->__('Average Customer Rating:') ?></p>
+            <?php echo $this->getReviewsSummaryHtml($this->getProductData()) ?>
+            <?php endif; ?>
+        <?php endif; ?>
+    </div>
+    <div class="small-12 medium-8 large-9 product-details columns">
+        <h2 class="product-name"><?php echo $this->escapeHtml($this->getProductData()->getName()) ?></h2>
+        <?php if( $this->getRating() && $this->getRating()->getSize()): ?>
+        <h3><?php echo ($this->isReviewOwner()) ? $this->__('Your Rating:') : $this->__('Rating:'); ?></h3>
+        <table class="ratings-table">
+        <?php foreach ($this->getRating() as $_rating): ?>
+        <?php if($_rating->getPercent()): ?>
+            <tr>
+                <th><?php echo $this->escapeHtml($_rating->getRatingCode()) ?></th>
+                <td>
+                    <div class="rating-box">
+                        <div class="rating" style="width:<?php echo ceil($_rating->getPercent()) ?>%;"></div>
+                    </div>
+                </td>
+            </tr>
+        <?php endif; ?>
+        <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+        <dl>
+            <dt>
+                <?php if ($this->isReviewOwner()): ?>
+                    <?php echo $this->__('Your Review (submitted on %s):', $this->dateFormat($this->getReviewData()->getCreatedAt())) ?>
+                <?php else :?>
+                    <?php echo $this->__('Review (submitted on %s):', $this->dateFormat($this->getReviewData()->getCreatedAt())) ?>
+                <?php endif;?>
+            </dt>
+            <dd>
+                <?php echo nl2br($this->escapeHtml($this->getReviewData()->getDetail())) ?>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="buttons-set">
+    <p class="back-link"><a href="<?php echo $this->getBackUrl() ?>"><small>&laquo; </small><?php echo $this->__('Back to My Reviews') ?></a></p>
+</div>
+<?php endif; ?>

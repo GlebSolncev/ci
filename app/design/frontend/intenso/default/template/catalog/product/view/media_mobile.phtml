@@ -1,0 +1,36 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+?>
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+?>
+<div class="mobile-gallery">
+    <?php if (count($this->getGalleryImages()) > 0): ?>
+    <ul class="orbit-container" id="gallery-image-mobile" data-orbit data-options="animation:slide;animation_speed:600;timer:false;slide_number:false;variable_height:true;swipe:true;navigation_arrows:false;outside_bullets:true;">
+    <?php foreach ($this->getGalleryImages() as $_image): ?>
+        <?php if ($this->isGalleryImageVisible($_image)): ?>
+        <li class="item">
+            <a class="lightbox-mobile product-image" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize(1200); ?>">
+                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize(640); ?>" alt="" width="640" height="640">
+                <noscript><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile()); ?>" alt="" width="640" height="640"></noscript>
+            </a>
+        </li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
+</div>

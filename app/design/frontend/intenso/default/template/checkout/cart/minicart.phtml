@@ -1,0 +1,26 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+/**
+ * Shoping cart sidebar
+ *
+ * @see Mage_Checkout_Block_Cart_Sidebar
+ */
+
+?>
+
+<?php
+    $_cartQty = $this->getSummaryCount();
+    if(empty($_cartQty)) {
+        $_cartQty = 0;
+    }
+?>
+<div class="dropdown-title"><?php echo $this->__('Your Cart (%s)', $_cartQty); ?><a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="icon-edit" title="<?php echo $this->__('Edit your Cart'); ?>"><span class="hide"><?php echo $this->__('Edit Cart'); ?></span></a></div>
+
+<?php echo $this->getChildHtml('minicart_content');?>

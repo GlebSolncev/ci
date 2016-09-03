@@ -1,0 +1,837 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+<!--
+Default layout for all pages
+-->
+
+	<default>
+        <reference name="root">
+            <!-- remove default global messages -->
+            <remove name="global_messages" />
+        </reference>
+        <reference name="after_body_start">
+            <!-- turn global messages into a reveal modal -->
+            <block type="core/template" name="reveal_global_messages" template="core/messages.phtml" before="-" />
+        </reference>
+		<reference name="head">
+			<!-- CSS -->
+			<action method="addItem"><type>skin_css</type><name>css/foundation.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/chosen.css</name><params/></action>
+			<action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/icomoon.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/></action>
+            <action method="addCss"><stylesheet helper="itactica_intenso/data/getConfigCssFile" /></action>
+            <action method="addItem" ifconfig="intenso/custom_css/load_custom_css"><type>skin_css</type><name>css/custom.css</name><params/></action>
+            <action method="addItem"><type>skin_css</type><name>css/styles-ie9.css</name><params/><if>IE 9</if></action>
+
+			<!-- Modernizr on header section -->
+			<action method="addItem"><type>skin_js</type><name>js/lib/modernizr.js</name><params/></action>
+
+            <!-- Substitute native slider.js from scriptaculous to add touch support -->
+            <action method="removeItem"><type>js</type><name>scriptaculous/slider.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/slider.js</name><params/></action>
+
+            <!-- jQuery on header section -->
+            <action method="addItem"><type>skin_js</type><name>js/lib/jquery.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/noconflict.js</name><params/></action>
+
+			<!-- remove unused stuff -->
+            <action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name></action>
+			<action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
+			<action method="removeItem"><type>skin_js</type><name>js/ie6.js</name></action>
+            <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
+            <action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name></action>
+		</reference>
+
+		<reference name="header">
+			<!-- currency selector on header -->
+			<block type="directory/currency" name="currency_selector" template="page/html/currency.phtml"/>
+			<!-- links to secondary menu -->
+			<block type="itactica_intenso/adminhtml_system_config_form_field_array_secmenulinks" name="sec_menu_links" template="page/html/links.phtml"/>
+			<!-- remove top links -->
+			<action method="unsetChild">
+                <alias>topLinks</alias>
+            </action>
+
+            <!-- remove unused stuff -->
+			<remove name="cart_sidebar.extra_actions"/>
+		</reference>
+
+		<!-- remove default currency selector -->
+		<remove name="currency" />
+
+		<reference name="top.links">
+			<!-- account link -->
+			<action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
+        	<action method="addLink" translate="label title" module="customer"><label>Your Account</label><url helper="customer/getAccountUrl"/><title>Your Account</title><prepare/><urlParams/><position>10</position></action>
+
+        	<!-- remove cart link -->		
+			<remove name="checkout_cart_link"/>
+
+			<!-- order history link -->
+			<action method="addLink" translate="label title" module="customer"><label>Your Orders</label><url helper="itactica_intenso/getOrderHistoryUrl"/><title>Your Orders</title><prepare/><urlParams/><position>15</position></action>
+
+			<!-- wish list link -->
+			<block type="wishlist/links" name="wishlist_link" />
+            <action method="addLinkBlock"><blockName>wishlist_link</blockName></action>
+
+    	</reference>
+
+		<reference name="left">	
+			<!-- remove newsletter from left -->		
+			<remove name="left.newsletter"/>
+		</reference>
+
+        <reference name="right">
+            <!-- remove right callout -->
+            <remove name="right.permanent.callout"/>
+            <!-- remove sidebar cart -->
+            <remove name="cart_sidebar"/>
+            <!-- remove poll -->
+            <remove name="right.poll"/>
+            <!-- remove paypal logo -->
+            <remove name="paypal.partner.right.logo"/>
+            <!-- remove recently compared sidebar -->
+            <remove name="right.reports.product.compared" />
+            <!-- remove wishlist sidebar -->
+            <remove name="wishlist_sidebar"/>
+            <!-- remove reorder sidebar -->
+            <remove name="sale.reorder.sidebar"/>
+        </reference>
+
+		<reference name="footer">	
+            <block type="itactica_logoslider/view" template="itactica_logoslider/view.phtml" >
+                <action method="setData"><name>identifier</name><value>shop_by_brand</value></action>
+            </block>	
+			<!-- display newsletter on footer -->
+			<block type="newsletter/subscribe" name="newsletter" as="newsletter" template="newsletter/subscribe.phtml"/>
+
+			<!-- footer top left (newsletter area) -->
+			<block type="cms/block" name="cms_footer_top_left">
+                <action method="setBlockId"><block_id>footer_top_left</block_id></action>
+            </block>
+
+            <!-- footer top right (social icons) -->
+			<block type="cms/block" name="cms_footer_top_right">
+                <action method="setBlockId"><block_id>footer_top_right</block_id></action>
+            </block>
+
+			<!-- first column -->
+			<block type="cms/block" name="cms_footer_first_column">
+                <action method="setBlockId"><block_id>footer_main_first_column</block_id></action>
+            </block>
+
+            <!-- second column -->
+			<block type="cms/block" name="cms_footer_second_column">
+                <action method="setBlockId"><block_id>footer_main_second_column</block_id></action>
+            </block>
+
+            <!-- third column -->
+			<block type="cms/block" name="cms_footer_third_column">
+                <action method="setBlockId"><block_id>footer_main_third_column</block_id></action>
+            </block>
+
+            <!-- fourth column -->
+			<block type="cms/block" name="cms_footer_fourth_column">
+                <action method="setBlockId"><block_id>footer_main_fourth_column</block_id></action>
+            </block>
+
+            <!-- footer bottom right (payment logos) -->
+			<block type="cms/block" name="cms_footer_bottom_right">
+                <action method="setBlockId"><block_id>footer_bottom_right</block_id></action>
+            </block>
+
+            <!-- mobile / small screens -->
+			<block type="cms/block" name="cms_footer_for_mobile">
+                <action method="setBlockId"><block_id>footer_for_mobile</block_id></action>
+            </block>
+
+            <!-- mobile / language switch & currency selector -->
+            <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages-mobile.phtml"/>
+            <block type="directory/currency" name="currency_selector" as="currency_selector" template="page/html/currency-mobile.phtml"/>
+		</reference>
+
+		<reference name="before_body_end">
+            <!-- exit intent popup -->
+            <block type="itactica_intenso/html_exitintent" name="exitintent" template="page/html/exitintent.phtml"/>
+            
+			<!-- JavaScript files just before the body closing tag -->
+			<block type="core/template" name="before_body_end_scripts" template="page/html/scripts.phtml" />
+		</reference>
+	</default>
+
+    <customer_logged_in>
+        <!-- remove log out link -->
+        <reference name="top.links">
+            <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl" /></action>
+        </reference>
+    </customer_logged_in>
+
+	<customer_logged_out>
+		<!-- remove sign in link -->
+    	<reference name="top.links">
+        	<action method="removeLinkByUrl"><url helper="customer/getLoginUrl" /></action>
+    	</reference>
+	</customer_logged_out>
+
+<!--
+Layout for cms page
+-->
+    <cms_page>
+        <reference name="cms.wrapper">
+            <action method="setElementClass"><value>cms-wrapper</value></action>
+        </reference>
+    </cms_page>
+
+<!--
+Layout for home page
+-->
+    <cms_index_index>
+        <reference name="right">
+            <!-- unset compare from right -->        
+            <action method="unsetChild">
+                <alias>catalog.compare.sidebar</alias>
+            </action>
+        </reference>
+        <update handle="MAP_popup"/>
+        <reference name="content">
+            <!-- insert compare in content -->
+            <action method="insert"><blockName>catalog.compare.sidebar</blockName></action>
+        </reference>
+    </cms_index_index>
+
+<!--
+Layout for catalog page
+-->
+    <catalog_category_default>
+        <remove name="breadcrumbs"/>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/product-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-list.js</name></action>
+        </reference>
+    	<reference name="left">
+    		<!-- unset catalog nav from left -->		
+			<action method="unsetChild">
+                <alias>catalog.leftnav</alias>
+            </action>
+    	</reference>
+        <reference name="right">
+            <!-- unset compare from right -->        
+            <action method="unsetChild">
+                <alias>catalog.compare.sidebar</alias>
+            </action>
+        </reference>
+        <reference name="content">
+            <!-- insert compare in content -->
+            <action method="insert"><blockName>catalog.compare.sidebar</blockName></action>
+        </reference>
+    	<reference name="product_list">
+    		<!-- insert catalog nav in content after toolbar -->
+            <action method="insert"><blockName>catalog.leftnav</blockName></action>
+            <!-- insert extra blocks on which to hang some features for products in the list  -->
+            <block type="core/text_list" name="product_list.name.after" as="name.after">
+                <block type="core/template" name="product_list.swatches" template="configurableswatches/catalog/product/list/swatches.phtml" />
+            </block>
+            <block type="core/text_list" name="product_list.after" as="after">
+                <block type="configurableswatches/catalog_media_js_list" name="configurableswatches.media.js.list" />
+            </block>
+        </reference>
+        <reference name="catalog.leftnav">
+        	<!-- layered nav sorter and limiter -->
+            <block type="catalog/product_list_toolbar" name="product_list_sorter" template="catalog/product/list/sorter.phtml"/>
+        </reference>
+    </catalog_category_default>
+
+<!--
+Layout for catalog page (with layered filters)
+-->
+
+    <catalog_category_layered>
+        <remove name="breadcrumbs"/>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/product-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-list.js</name></action>
+        </reference>
+    	<reference name="left">
+    		<!-- unset layered nav from left -->		
+			<action method="unsetChild">
+                <alias>catalog.leftnav</alias>
+            </action>
+    	</reference>
+        <reference name="right">
+            <!-- unset compare from right -->        
+            <action method="unsetChild">
+                <alias>catalog.compare.sidebar</alias>
+            </action>
+        </reference>
+        <reference name="content">
+            <!-- insert compare in content -->
+            <action method="insert"><blockName>catalog.compare.sidebar</blockName></action>
+        </reference>
+    	<reference name="product_list">
+    		<!-- insert layered nav in content after toolbar -->
+            <action method="insert"><blockName>catalog.leftnav</blockName></action>
+            <!-- insert extra blocks on which to hang some features for products in the list  -->
+            <block type="core/text_list" name="product_list.name.after" as="name.after">
+                <block type="core/template" name="product_list.swatches" template="configurableswatches/catalog/product/list/swatches.phtml" />
+            </block>
+            <block type="core/text_list" name="product_list.after" as="after">
+                <block type="configurableswatches/catalog_media_js_list" name="configurableswatches.media.js.list" />
+            </block>
+        </reference>
+        <reference name="catalog.leftnav">
+        	<!-- layered nav sorter and limiter -->
+            <block type="catalog/product_list_toolbar" name="product_list_sorter" template="catalog/product/list/sorter.phtml"/>
+        </reference>
+    </catalog_category_layered>
+
+    <catalog_category_view>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+	</catalog_category_view>
+
+<!--
+Layout for search results
+-->
+
+    <catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <remove name="breadcrumbs"/>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/product-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-list.js</name></action>
+        </reference>
+        <reference name="left">
+            <!-- unset layered nav from left -->     
+            <action method="unsetChild">
+                <alias>catalogsearch.leftnav</alias>
+            </action>
+        </reference>
+        <reference name="right">
+            <!-- unset compare from right -->        
+            <action method="unsetChild">
+                <alias>catalog.compare.sidebar</alias>
+            </action>
+        </reference>
+        <reference name="content">
+            <!-- insert compare in content -->
+            <action method="insert"><blockName>catalog.compare.sidebar</blockName></action>
+        </reference>
+        <reference name="search.result">
+            <!-- search field -->
+            <block type="core/template" name="no_route_search" as="no_route_search" template="catalogsearch/form.mini.offcanvas.phtml"/>
+        </reference>
+        <reference name="search_result_list">
+            <!-- insert layered nav in content after toolbar -->
+            <action method="insert"><blockName>catalogsearch.leftnav</blockName></action>
+            <!-- insert extra blocks on which to hang some features for products in the list  -->
+            <block type="core/text_list" name="product_list.name.after" as="name.after">
+                <block type="core/template" name="product_list.swatches" template="configurableswatches/catalog/product/list/swatches.phtml" />
+            </block>
+            <block type="core/text_list" name="product_list.after" as="after">
+                <block type="configurableswatches/catalog_media_js_list" name="configurableswatches.media.js.list" />
+            </block>
+        </reference>
+        <reference name="catalogsearch.leftnav">
+            <!-- layered nav sorter and limiter -->
+            <block type="catalog/product_list_toolbar" name="product_list_sorter" template="catalog/product/list/sorter.phtml"/>
+        </reference>
+    </catalogsearch_result_index>
+
+    <catalogsearch_advanced_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </catalogsearch_advanced_index>
+
+    <catalogsearch_advanced_result>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/product-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-list.js</name></action>
+        </reference>
+        <reference name="right">
+            <!-- unset compare from right -->        
+            <action method="unsetChild">
+                <alias>catalog.compare.sidebar</alias>
+            </action>
+        </reference>
+        <reference name="content">
+            <!-- insert compare in content -->
+            <action method="insert"><blockName>catalog.compare.sidebar</blockName></action>
+        </reference>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <remove name="breadcrumbs"/>
+        </reference>
+        <reference name="catalogsearch_advanced_result">
+            <!-- search field -->
+            <block type="core/template" name="no_route_search" as="no_route_search" template="catalogsearch/form.mini.offcanvas.phtml"/>
+        </reference>
+        <reference name="search_result_list">
+            <!-- insert advanced search form nav in content after toolbar -->
+            <block type="itactica_intenso/catalogsearch_advanced_nav" name="catalogsearch.leftnav" template="catalogsearch/advanced/nav.phtml" />
+            <!-- insert extra blocks on which to hang some features for products in the list  -->
+            <block type="core/text_list" name="product_list.name.after" as="name.after">
+                <block type="core/template" name="product_list.swatches" template="configurableswatches/catalog/product/list/swatches.phtml" />
+            </block>
+            <block type="core/text_list" name="product_list.after" as="after">
+                <block type="configurableswatches/catalog_media_js_list" name="configurableswatches.media.js.list" />
+            </block>
+        </reference>
+        <reference name="catalogsearch.leftnav">
+            <!-- layered nav sorter and limiter -->
+            <block type="catalog/product_list_toolbar" name="product_list_sorter" template="catalog/product/list/sorter.phtml"/>
+        </reference>
+    </catalogsearch_advanced_result>
+
+<!--
+Layout for product page
+-->
+
+	<catalog_product_view>
+		<reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="right">
+        	<!-- unset related products from right -->		
+			<action method="unsetChild">
+                <alias>catalog.leftnav</alias>
+            </action>
+            <!-- unset compare from right -->        
+            <action method="unsetChild">
+                <alias>catalog.compare.sidebar</alias>
+            </action>
+        </reference>
+        <reference name="product.info.media">
+            <block type="core/text_list" name="product.info.media.after" as="after" />
+        </reference>
+        <reference name="product.info">
+        	<block type="catalog/product_view_media" name="product.info.media.mobile" as="media_mobile" template="catalog/product/view/media_mobile.phtml"/>
+			<block type="core/template_facade" name="product.buy.box" as="product_buy_box">
+				<action method="setDataByKey"><key>alias_in_layout</key><value>product_buy_box</value></action>
+				<action method="setDataByKeyFromRegistry"><key>options_container</key><key_in_registry>product</key_in_registry></action>
+				<action method="append"><block>product.info.options.wrapper.bottom</block></action>
+			</block>
+            <block type="catalog/product_view" name="product.nav" as="product_nav" template="catalog/product/list/nav.phtml"/>
+			<!-- product view custom block #1 -->
+			<block type="cms/block" name="product_view_block_1">
+                <action method="setBlockId"><block_id>product_view_block_1</block_id></action>
+            </block>
+            <block type="catalog/product_list_related" name="catalog.product.related" as="related_products" template="catalog/product/list/related.phtml"/>
+            <block type="catalog/product_view" name="product.custom.info" as="custom_info" template="catalog/product/view/custom_info.phtml">
+                <!-- product view custom block #3 -->
+                <block type="cms/block" name="product_view_block_3">
+                    <action method="setBlockId"><block_id>product_view_block_3</block_id></action>
+                </block>
+            </block>
+            <block type="catalog/product_view_type_configurable" name="product.info.availability" as="product_type_availability" template="catalog/product/view/type/availability/default.phtml" />
+        </reference>
+        <reference name="product.description">
+        	<!-- product view custom block #2 -->
+			<block type="cms/block" name="product_view_block_2">
+                <action method="setBlockId"><block_id>product_view_block_2</block_id></action>
+            </block>
+        </reference>
+        <reference name="product.info.container1">
+    		<!-- unset product.info.options.wrapper.bottom from container1 -->		
+			<action method="unsetChild">
+                <alias>product.info.options.wrapper.bottom</alias>
+            </action>
+    	</reference>
+        <reference name="product.info.container2">
+            <!-- unset product.info.options.wrapper.bottom from container2 -->      
+            <action method="unsetChild">
+                <alias>product.info.options.wrapper.bottom</alias>
+            </action>
+        </reference>
+    	<reference name="product.info.options.wrapper.bottom">
+    		<!-- unset price block -->		
+			<action method="unsetChild">
+                <alias>prices</alias>
+            </action>
+    	</reference>
+    	<reference name="product.info.upsell">
+            <action method="setItemLimit"><type>upsell</type><limit>15</limit></action>
+        </reference>
+        <reference name="content">
+            <!-- insert compare in content -->
+            <action method="insert"><blockName>catalog.compare.sidebar</blockName></action>
+        </reference>
+	</catalog_product_view>
+
+<!--
+Enable Configurable Swatches on Magento 1.9.1.0 and up
+-->
+
+    <PRODUCT_TYPE_configurable>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/product-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-product.js</name></action>
+        </reference>
+        <reference name="product.info.media">
+            <action method="setGalleryFilterHelper"><helper>configurableswatches/productimg</helper></action>
+            <action method="setGalleryFilterMethod"><method>filterImageInGallery</method></action>
+        </reference>
+        <reference name="product.info.media.mobile">
+            <action method="setGalleryFilterHelper"><helper>configurableswatches/productimg</helper></action>
+            <action method="setGalleryFilterMethod"><method>filterImageInGallery</method></action>
+        </reference>
+        <reference name="product.info.media.after">
+            <block type="configurableswatches/catalog_media_js_product" name="configurableswatches.media.js.product" />
+        </reference>
+        <reference name="product.info.options.configurable">
+            <block type="core/text_list" name="product.info.options.configurable.renderers" as="attr_renderers">
+                <block type="configurableswatches/catalog_product_view_type_configurable_swatches" template="configurableswatches/catalog/product/view/type/options/configurable/swatches.phtml" />
+            </block>
+            <block type="core/text_list" name="product.info.options.configurable.after" as="after">
+                <block type="core/template" template="configurableswatches/catalog/product/view/type/configurable/swatch-js.phtml" />
+            </block>
+        </reference>
+    </PRODUCT_TYPE_configurable>
+
+<!--
+Layout for review page
+-->
+
+    <review_product_list>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/lib/pretty.review.stars.js</name><params/></action>
+        </reference>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </review_product_list>
+
+<!--
+Product send to friend
+-->
+
+    <sendfriend_product_send>
+        <remove name="right.reports.product.viewed"/>
+        <action method="unsetChild"><alias>right.reports.product.compared</alias></action>
+        <reference name="right">
+            <block type="cms/block" name="product_view_block_2">
+                <action method="setBlockId"><block_id>product_view_block_2</block_id></action>
+            </block>
+        </reference>
+    </sendfriend_product_send>
+
+<!--
+Layout for customer login page
+-->
+
+    <customer_account_login>
+        <!-- Mage_Customer -->
+        <remove name="right"/>
+        <remove name="left"/>
+        <remove name="footer"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+        </reference> 
+    </customer_account_login>
+
+<!--
+Layout for forgot password page
+-->
+
+    <customer_account_forgotpassword>
+        <remove name="right"/>
+        <remove name="left"/>
+        <remove name="footer"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="customer"><title>Password forgotten</title></action>
+        </reference>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+        </reference>
+    </customer_account_forgotpassword>
+
+<!--
+Layout for reset password page
+-->
+    
+    <customer_account_resetpassword>
+        <remove name="right"/>
+        <remove name="left"/>
+        <remove name="footer"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setHeaderTitle" translate="title" module="customer"><title>Reset a Password</title></action>
+        </reference>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+        </reference>
+    </customer_account_resetpassword>
+
+<!--
+New customer registration
+-->
+
+    <customer_account_create>
+        <remove name="right"/>
+        <remove name="left"/>
+        <remove name="footer"/>
+
+        <!-- uncomment this to enable address fields in Magento customer registration form -->
+        <!--
+        <reference name="customer_form_register"> 
+            <action method="setShowAddressFields">
+                <param>true</param>
+            </action> 
+        </reference>
+        -->
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+        </reference>
+    </customer_account_create>
+
+<!--
+Layout for customer log out page
+-->
+
+    <customer_account_logoutsuccess>
+        <remove name="right"/>
+        <remove name="left"/>
+        <remove name="footer"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+        </reference>
+    </customer_account_logoutsuccess>
+
+<!--
+Layout for shopping cart page
+-->
+
+    <checkout_cart_index>
+        <reference name="checkout.cart">
+            <!-- shopping cart custom block #1 -->
+            <block type="cms/block" name="shopping_cart_block_1">
+                <action method="setBlockId"><block_id>shopping_cart_block_1</block_id></action>
+            </block>
+        </reference>
+        <reference name="checkout.cart.methods">
+            <!-- change position of paypal button to bottom -->
+            <action method="unsetChild"><name>checkout.cart.methods.paypal_express.bottom</name></action>
+            <action method="insert">
+                <blockName>checkout.cart.methods.paypal_express.bottom</blockName>
+                <siblingName>checkout.cart.methods.onepage</siblingName>
+                <after>0</after>
+            </action>
+        </reference>
+    </checkout_cart_index>
+
+<!--
+Layout for 404 no-route error page
+-->
+    <no_route_custom translate="label">
+        <label>404 error page</label>
+        <remove name="footer"/>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="no_route_view" template="cms/default/noroute/view.phtml"/>
+        </reference>
+        <reference name="no_route_view">
+            <!-- search field -->
+            <block type="core/template" name="no_route_search" as="no_route_search" template="catalogsearch/form.mini.offcanvas.phtml"/>
+        </reference>
+    </no_route_custom>
+
+<!--
+One page checkout main layout
+-->
+
+    <checkout_onepage_index>
+        <remove name="right"/>
+        <remove name="footer"/>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+            <block type="page/html_wrapper" name="checkout.progress.wrapper" as="clean_header_extra" translate="label">
+                <label>Checkout Progress Wrapper</label>
+                <action method="setElementId"><value>checkout-progress-wrapper</value></action>
+                <block type="checkout/onepage_progress" name="checkout.progress" before="-" template="checkout/onepage/progress.phtml">
+                    <block type="checkout/onepage_progress" name="billing.progress" template="checkout/onepage/progress/billing.phtml"></block>
+                    <block type="checkout/onepage_progress" name="shipping.progress" template="checkout/onepage/progress/shipping.phtml"></block>
+                    <block type="checkout/onepage_progress" name="shippingmethod.progress" template="checkout/onepage/progress/shipping_method.phtml"></block>
+                    <block type="checkout/onepage_progress" name="payment.progress" template="checkout/onepage/progress/payment.phtml"></block>
+                </block>
+            </block>
+        </reference>
+    </checkout_onepage_index>
+
+    <paypal_express_review>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+        </reference>
+        <remove name="footer"/>
+    </paypal_express_review>
+
+<!--
+Multishipping checkout layout
+-->
+
+    <checkout_multishipping>
+        <remove name="footer"/>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+            <block type="checkout/multishipping_state" name="checkout_state" as="clean_header_extra" template="checkout/multishipping/state.phtml"/>
+        </reference>
+    </checkout_multishipping>
+
+    <checkout_onepage_success>
+        <remove name="footer"/>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+        </reference>
+    </checkout_onepage_success>
+
+    <checkout_onepage_failure>
+        <remove name="footer"/>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="header">
+            <action method="setTemplate"><template>page/html/clean_header.phtml</template></action>
+        </reference>
+    </checkout_onepage_failure>
+
+    <sales_billing_agreement_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </sales_billing_agreement_index>
+
+    <sales_billing_agreement_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </sales_billing_agreement_view>
+
+    <sales_recurring_profile_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </sales_recurring_profile_index>
+
+    <sales_recurring_profile_view__tabs>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </sales_recurring_profile_view__tabs>
+
+<!--
+Contact page
+-->
+    <contacts_index_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="contactForm">
+            <!-- contact page static block -->
+            <block type="cms/block" name="contact.page.static.block" as="contact_page_static_block">
+                <action method="setBlockId"><block_id>contact_page</block_id></action>
+            </block>
+        </reference>
+    </contacts_index_index>
+
+<!--
+RSS page
+-->
+    <rss_index_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="rss.list">
+            <!-- RSS page static block -->
+            <block type="cms/block" name="contact.page.static.block" as="rss_page_static_block">
+                <action method="setBlockId"><block_id>rss_feed</block_id></action>
+            </block>
+        </reference>
+    </rss_index_index>
+    <rss_index_nofeed>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </rss_index_nofeed>
+
+<!--
+All tags page
+-->
+
+    <tag_list_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </tag_list_index>
+
+    <tag_product_list>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/product-media.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/configurableswatches/swatches-list.js</name></action>
+        </reference>
+        <reference name="right">
+            <!-- unset compare from right -->        
+            <action method="unsetChild">
+                <alias>catalog.compare.sidebar</alias>
+            </action>
+        </reference>
+        <reference name="content">
+            <!-- insert compare in content -->
+            <action method="insert"><blockName>catalog.compare.sidebar</blockName></action>
+        </reference>
+        <reference name="search_result_list">
+            <!-- insert catalog nav in content after toolbar -->
+            <block type="catalog/layer_view" name="catalog.leftnav" template="catalog/layer/view.phtml"/>
+            <!-- insert extra blocks on which to hang some features for products in the list  -->
+            <block type="core/text_list" name="product_list.name.after" as="name.after">
+                <block type="core/template" name="product_list.swatches" template="configurableswatches/catalog/product/list/swatches.phtml" />
+            </block>
+            <block type="core/text_list" name="product_list.after" as="after">
+                <block type="configurableswatches/catalog_media_js_list" name="configurableswatches.media.js.list" />
+            </block>
+        </reference>
+        <reference name="catalog.leftnav">
+            <!-- layered nav sorter and limiter -->
+            <block type="catalog/product_list_toolbar" name="product_list_sorter" template="catalog/product/list/sorter.phtml"/>
+        </reference>
+    </tag_product_list>
+
+    <wishlist_shared_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="unsetChild"><name>left</name></action>
+        </reference>
+    </wishlist_shared_index>
+</layout>

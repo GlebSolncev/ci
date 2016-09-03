@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * You may not sell, sub-license, rent or lease
+ * any portion of the Software or Documentation to anyone.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   ET
+ * @package    ET_RussianLanguagePack
+ * @copyright  Copyright (c) 2012 ET Web Solutions (http://etwebsolutions.com)
+ * @contacts   support@etwebsolutions.com
+ * @license    http://shop.etwebsolutions.com/etws-license-free-v1/   ETWS Free License (EFL1)
+ */
+ -->
+<config>
+    <modules>
+        <ET_RussianLanguagePack>
+            <name>ET Russian Language Pack</name>
+            <version>1.5.1</version>
+            <descr>
+                <ru_RU><![CDATA[Русский перевод для Magento CE.]]>
+                </ru_RU>
+                <en_US><![CDATA[Russian Translation for Magento CE.]]>
+                </en_US>
+            </descr>
+            <permanentlink>
+                <ru_RU>http://shop.etwebsolutions.com/rus/et-russain-language-pack.html</ru_RU>
+                <en_US>http://shop.etwebsolutions.com/eng/et-russain-language-pack.html</en_US>
+            </permanentlink>
+            <license>
+                <ru_RU><![CDATA[ETWS Свободная лицензия (EFL1)]]></ru_RU>
+                <en_US><![CDATA[ETWS Free License (EFL1)]]></en_US>
+            </license>
+            <licenselink>
+                <ru_RU>http://shop.etwebsolutions.com/rus/etws-license-free-v1</ru_RU>
+                <en_US>http://shop.etwebsolutions.com/eng/etws-license-free-v1</en_US>
+            </licenselink>
+            <redminelink>http://support.etwebsolutions.com/projects/et-russain-language-pack/roadmap</redminelink>
+            <ourserviceslink>
+                <ru_RU>http://shop.etwebsolutions.com/rus/our-services</ru_RU>
+                <en_US>http://shop.etwebsolutions.com/eng/our-services</en_US>
+            </ourserviceslink>
+        </ET_RussianLanguagePack>
+    </modules>
+
+    <global>
+        <helpers>
+            <etrussianlanguagepack>
+                <class>ET_RussianLanguagePack_Helper</class>
+            </etrussianlanguagepack>
+        </helpers>
+
+        <blocks>
+            <etrussianlanguagepack>
+                <class>ET_RussianLanguagePack_Block</class>
+            </etrussianlanguagepack>
+        </blocks>
+        <models>
+            <etrussianlanguagepack>
+                <class>ET_RussianLanguagePack_Model</class>
+            </etrussianlanguagepack>
+        </models>
+    </global>
+
+    <frontend>
+        <translate>
+            <modules>
+                <ET_RussianLanguagePack>
+                    <files>
+                        <default>ET_RussianLanguagePack.csv</default>
+                    </files>
+                </ET_RussianLanguagePack>
+            </modules>
+        </translate>
+    </frontend>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <etrussianlanguagepack translate="title" module="etrussianlanguagepack">
+                                            <title>ET Russian Language Pack Section</title>
+                                            <sort_order>400</sort_order>
+                                        </etrussianlanguagepack>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+            <modules>
+                <ET_RussianLanguagePack>
+                    <files>
+                        <default>ET_RussianLanguagePack.csv</default>
+                    </files>
+                </ET_RussianLanguagePack>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <!-- Patches -->
+    <!-- TODO: add this dynamically and add settings for enabling -->
+    <adminhtml>
+        <translate>
+            <modules>
+                <Mage_Api2>
+                    <files>
+                        <default>Mage_Api2.csv</default>
+                    </files>
+                </Mage_Api2>
+                <Mage_Captcha>
+                    <files>
+                        <default>Mage_Captcha.csv</default>
+                    </files>
+                </Mage_Captcha>
+                <Mage_Connect>
+                    <files>
+                        <default>Mage_Connect.csv</default>
+                    </files>
+                </Mage_Connect>
+                <Mage_Dataflow>
+                    <files>
+                        <default>Mage_Dataflow.csv</default>
+                    </files>
+                </Mage_Dataflow>
+                <Mage_ImportExport>
+                    <files>
+                        <default>Mage_ImportExport.csv</default>
+                    </files>
+                </Mage_ImportExport>
+                <Mage_Weee>
+                    <files>
+                        <default>Mage_Weee.csv</default>
+                    </files>
+                </Mage_Weee>
+            </modules>
+        </translate>
+        <events>
+            <controller_action_layout_generate_blocks_after>
+                <observers>
+                    <etrussianlanguagepack_blocks>
+                        <type>singleton</type>
+                        <class>etrussianlanguagepack/observer</class>
+                        <method>addExtraBlocks</method>
+                    </etrussianlanguagepack_blocks>
+                </observers>
+            </controller_action_layout_generate_blocks_after>
+        </events>
+    </adminhtml>
+    <frontend>
+        <translate>
+            <modules>
+                <Mage_Captcha>
+                    <files>
+                        <default>Mage_Captcha.csv</default>
+                    </files>
+                </Mage_Captcha>
+                <Mage_Dataflow>
+                    <files>
+                        <default>Mage_Dataflow.csv</default>
+                    </files>
+                </Mage_Dataflow>
+                <Mage_Weee>
+                    <files>
+                        <default>Mage_Weee.csv</default>
+                    </files>
+                </Mage_Weee>
+            </modules>
+        </translate>
+    </frontend>
+    <!-- End of Patches -->
+    <default>
+        <etrussianlanguagepack>
+            <general>
+                <translate_editor>1</translate_editor>
+            </general>
+        </etrussianlanguagepack>
+    </default>
+</config>

@@ -1,0 +1,31 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body class="page-empty <?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>">
+<body class="page-empty <?php echo $this->getBodyClass()?$this->getBodyClass(). Mage::helper('itactica_intenso')->getStoreClass() . ' ' . Mage::helper('itactica_intenso')->formFieldsType():'' ?>">
+    <div>
+        <?php echo $this->getChildHtml('after_body_start') ?>
+        <?php echo $this->getChildHtml('global_messages') ?>
+        <?php echo $this->getChildHtml('content') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+        <?php echo $this->getAbsoluteFooter() ?>
+    </div>
+</body>
+</html>

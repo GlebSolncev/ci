@@ -1,0 +1,22 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_LayeredNavigation
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+
+<?php  $_order = $this->getOrder() ?>
+<?php if($this->helper('rss/order')->isStatusNotificationAllow()): ?>
+    <a href="<?php echo $this->helper('rss/order')->getStatusHistoryRssUrl($_order) ?>" class="icon-feed" title="<?php echo $this->__('Subscribe to Order Status') ?>"><span class="hide"><?php echo $this->__('Subscribe to Order Status') ?></span></a>
+    <span class="separator">|</span>
+<?php endif; ?>
+<?php if ($this->helper('sales/reorder')->canReorder($_order)) : ?>
+    <a href="<?php echo $this->getReorderUrl($_order) ?>" class="icon-loop" title="<?php echo $this->__('Reorder') ?>"><span class="hide"><?php echo $this->__('Reorder') ?></span></a>
+    <span class="separator">|</span>
+<?php endif ?>
+<a href="<?php echo $this->getPrintUrl($_order) ?>" class="icon-print" onclick="this.target='_blank';" title="<?php echo $this->__('Print Order') ?>"><span class="hide"><?php echo $this->__('Print Order') ?></span></a>
+<?php echo $this->getChildHtml(); ?>

@@ -1,0 +1,48 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+?>
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+    $_galleryImages = $this->getGalleryImages();
+    $width = 500;
+    list($maxHeight,$resizeAsSquare,$baseImageSize) = $this->helper('itactica_intenso/data')->getGalleryImagesHeight($_galleryImages, $_product, $width);
+?>
+<div class="small-12 medium-4 product-img-box hide-for-small-only columns" aria-live="polite" aria-busy="false">
+    <figure>
+        <a class="lightbox product-image" id="gallery-image" href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($baseImageSize); ?>">
+            <?php
+                $_img = '<img itemprop="image" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize($width,$maxHeight).'" alt="'.$this->escapeHtml($this->getImageLabel()).'" width="' . $width . '" height="' . $maxHeight . '" >';
+                echo $_helper->productAttribute($_product, $_img, 'image');
+            ?>
+        </a>
+    </figure>
+    <?php if (count($_galleryImages) > 1): ?>
+    <ul class="more-views">
+    <?php $i=1; foreach ($_galleryImages as $_image): ?>
+        <?php if ($this->isGalleryImageVisible($_image)): ?>
+        <li<?php if ($i==1): ?> class="selected"<?php endif; ?>>
+            <a class="lightbox" role="button" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($resizeAsSquare[$i]); ?>" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>" data-url-medium="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($width,$maxHeight); ?>">
+                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(68); ?>" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" width="68" height="68">
+                <span class="a11y"><?php echo $this->__('Display Gallery Item %d', $i) ?></span>
+            </a>
+        </li>
+        <?php endif; ?>
+    <?php $i++; endforeach; ?>
+    </ul>
+    <?php endif; ?>
+</div>
+<?php echo $this->getChildHtml('after'); ?>

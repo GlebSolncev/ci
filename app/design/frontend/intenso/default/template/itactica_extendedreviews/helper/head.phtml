@@ -1,0 +1,67 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_ExtendedReviews
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<?php 
+$helper = Mage::helper('itactica_extendedreviews');
+$stat = $this->getProductStat($this->getProduct()->getId());
+$sum = 0;
+$count = 0;
+$stars = array();
+foreach ($stat as $row) {
+    $sum+=$row['count'] * $row['value'];
+    $count+=$row['count'];
+    $stars[$row['value']] = $row['count'];
+}
+?>
+<?php if ($this->getReviewsCount()): ?>
+    <?php $maxValue = max($stars); ?>
+    <div class="rating-avg"><span><?php echo round($sum/$count,2); ?></span></div>
+    <div class="ratings">
+        <?php if ($this->getRatingSummary()):?>
+        <div class="rating-box">
+            <div style="width:<?php echo $this->getRatingSummary() ?>%" class="rating"></div>
+        </div>
+        <?php endif;?>
+        <span class="rating-links icon-user">
+            <?php if ($this->getReviewsCount() > 1): ?>
+                <span><?php echo $this->getReviewsCount(); ?><?php echo $helper->__('reviews') ?></span>
+            <?php else: ?>
+                <span><?php echo $this->getReviewsCount(); ?><?php echo $helper->__('review') ?></span>
+            <?php endif; ?>
+        </span>
+    </div>
+    <table id="histogram">
+        <tbody>
+        <?php for ($i=5; $i >= 1; $i--): ?>
+            <?php if (!isset($stars[$i])): $stars[$i] = 0; endif; ?>
+            <?php $meter = ($stars[$i] > 0) ? $stars[$i]/$maxValue*100 : 0; ?>
+            <?php $percentage = ($stars[$i] > 0) ? $stars[$i]/$count*100 : 0; ?>
+            <?php $percentage = round($percentage, 2); ?>
+            <tr>
+                <td class="stars">
+                    <a class="small" href="<?php echo $this->getReviewsUrl() ?>?filter=<?php echo $helper->starFilterName($i); ?>" title="<?php echo $percentage; ?>% <?php echo $helper->__('of reviews have %d stars', $i);?>"><?php echo $helper->__('%d star',$i); ?></a>    
+                </td>
+                <td class="meter-bar">
+                    <a href="<?php echo $this->getReviewsUrl() ?>?filter=<?php echo $helper->starFilterName($i); ?>" title="<?php echo $percentage; ?>% <?php echo $helper->__('of reviews have %d stars', $i);?>">
+                        <div class="progress large-12"><span style="width: <?php echo $meter; ?>%" class="meter meter-<?php echo $i; ?>"></span></div>
+                    </a>
+                </td>
+                <td class="amount">
+                    <span class="small"><?php echo $stars[$i]; ?></span>
+                </td>
+            </tr>
+        <?php endfor; ?>
+        </tbody>
+    </table>
+    <a href="<?php echo $this->getReviewsUrl() ?>#post-review" class="small underline hide-for-small-only"><?php echo $this->__('Add your review') ?></a>
+<?php else: ?>
+    <p class="no-rating"><a href="<?php echo $this->getReviewsUrl() ?>#post-review"><?php echo $this->__('Be the first to review this product') ?></a></p>
+<?php endif; ?>

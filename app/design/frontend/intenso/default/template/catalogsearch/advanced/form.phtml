@@ -1,0 +1,115 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Catalog advanced search form
+ *
+ * @see Mage_CatalogSearch_Block_Advanced_Form
+ */
+?>
+<?php $maxQueryLength= $this->helper('catalogsearch')->getMaxQueryLength();?>
+<div class="advanced search row">
+    <div class="small-12 columns">
+        <div class="page-title">
+            <h1><?php echo $this->__('Catalog Advanced Search') ?></h1>
+        </div>
+        <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+        <form action="<?php echo $this->getSearchPostUrl() ?>" method="get" id="form-validate">
+            <div class="fieldset advanced-search">
+                <h2 class="legend"><?php echo $this->__('Search Settings') ?></h2>
+                <ul class="form-list" id="advanced-search-list">
+                    <?php foreach ($this->getSearchableAttributes() as $_attribute): ?>
+                    <?php $_code = $_attribute->getAttributeCode() ?>
+
+                        <?php switch($this->getAttributeInputType($_attribute)):
+                            case 'number': ?>
+                            <li class="input-range">
+                                <label for="<?php echo $_code ?>"><?php echo $this->getAttributeLabel($_attribute) ?> <?php echo $this->__('from') ?></label>
+                                <div class="input-box">
+                                    <input type="text" name="<?php echo $_code ?>[from]" value="<?php echo $this->escapeHtml($this->getAttributeValue($_attribute, 'from')) ?>" id="<?php echo $_code ?>" title="<?php echo $this->escapeHtml($this->getAttributeLabel($_attribute)) ?>" class="input-text validate-number" maxlength="<?php echo $maxQueryLength;?>" />
+                                </div>
+                                <span class="separator">-</span>
+                            </li>
+                            <li class="input-range">
+                                <label for="<?php echo $_code ?>"><?php echo $this->getAttributeLabel($_attribute) ?> <?php echo $this->__('to') ?></label>
+                                <div class="input-box">
+                                    <input type="text" name="<?php echo $_code ?>[to]" value="<?php echo $this->escapeHtml($this->getAttributeValue($_attribute, 'to')) ?>" id="<?php echo $_code ?>_to" title="<?php echo $this->escapeHtml($this->getAttributeLabel($_attribute)) ?>" class="input-text validate-number" maxlength="<?php echo $maxQueryLength;?>" />
+                                </div>
+                            </li>
+                            <?php break;
+                            case 'price': ?>
+                            <li class="input-range">
+                                <label for="<?php echo $_code ?>"><?php echo $this->getAttributeLabel($_attribute) ?> <?php echo $this->__('from') ?></label>
+                                <div class="input-box">
+                                    <input name="<?php echo $_code ?>[from]" value="<?php echo $this->escapeHtml($this->getAttributeValue($_attribute, 'from')) ?>" id="<?php echo $_code ?>" title="<?php echo $this->escapeHtml($this->getAttributeLabel($_attribute)) ?>"  class="input-text validate-number" type="text" maxlength="<?php echo $maxQueryLength;?>" />
+                                </div>
+                            </li>
+                            <li class="input-range">
+                                <label for="<?php echo $_code ?>"><?php echo $this->getAttributeLabel($_attribute) ?> <?php echo $this->__('to') ?></label>
+                                <div class="input-box">
+                                    <input name="<?php echo $_code ?>[to]" value="<?php echo $this->escapeHtml($this->getAttributeValue($_attribute, 'to')) ?>" id="<?php echo $_code ?>_to" title="<?php echo $this->escapeHtml($this->getAttributeLabel($_attribute)) ?>"  class="input-text validate-number" type="text" maxlength="<?php echo $maxQueryLength;?>" />
+                                </div>
+                                <small>(<?php echo $this->getCurrency($_attribute); ?>)</small>
+                            </li>
+                            <?php break;
+                            case 'select': ?>
+                            <li class="regular-field">
+                                <label for="<?php echo $_code ?>"><?php echo $this->getAttributeLabel($_attribute) ?></label>
+                                <div>
+                                    <?php echo $this->getAttributeSelectElement($_attribute) ?>
+                                </div>
+                            </li>
+                            <?php break;
+                            case 'yesno': ?>
+                            <li class="regular-field">
+                                <label for="<?php echo $_code ?>"><?php echo $this->getAttributeLabel($_attribute) ?></label>
+                                <?php echo $this->getAttributeYesNoElement($_attribute) ?>
+                            </li>
+                            <?php break;
+                            case 'date': ?>
+                            <li class="input-range">
+                                <label for="<?php echo $_code ?>"><?php echo $this->getAttributeLabel($_attribute) ?> <?php echo $this->__('from') ?></label>
+                                <div class="input-box">
+                                    <?php echo $this->getDateInput($_attribute, 'from') ?>
+                                </div>
+                                <span class="separator">-</span>
+                            </li>
+                            <li class="input-range">
+                                <label for="<?php echo $_code ?>"><?php echo $this->getAttributeLabel($_attribute) ?> <?php echo $this->__('to') ?></label>
+                                <div class="input-box">
+                                    <?php echo $this->getDateInput($_attribute, 'to') ?>
+                                </div>
+                            </li>
+                            <?php break;
+                            default: ?>
+                            <li>
+                                <label for="<?php echo $_code ?>"><?php echo $this->getAttributeLabel($_attribute) ?></label>
+                                <div class="input-box">
+                                    <input type="text" name="<?php echo $_code ?>" id="<?php echo $_code ?>" value="<?php echo $this->escapeHtml($this->getAttributeValue($_attribute)) ?>" title="<?php echo $this->escapeHtml($this->getAttributeLabel($_attribute)) ?>"  class="input-text <?php echo $this->getAttributeValidationClass($_attribute) ?>" maxlength="<?php echo $maxQueryLength;?>" />
+                                </div>
+                            </li>
+                        <?php endswitch; ?>
+
+                    <?php endforeach; ?>
+                </ul>
+                <script type="text/javascript">decorateList('advanced-search-list')</script>
+            </div>
+            <div class="buttons-set">
+                <button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><span><?php echo $this->__('Search') ?></span></span></button>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+//]]>
+</script>

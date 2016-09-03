@@ -1,0 +1,43 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+$_product = $this->getProduct();
+$_description = $_product->getDescription();
+$_attributes = new Mage_Catalog_Block_Product_View_Attributes();
+$_attributes->setProduct($_product->getId());
+$_additional = $_attributes->getAdditionalData();
+$_customInfo = Mage::getModel('cms/block')->getCollection()->addStoreFilter(Mage::app()->getStore()->getId(), true)->addFieldToFilter('identifier', 'product_view_block_3')->getFirstItem();
+?>
+<div class="magellan-nav" data-options="destination_threshold:65;throttle_delay:0;" data-magellan-expedition="fixed">
+    <dl class="sub-nav">
+        <?php if ($_description): ?>
+            <dt>&nbsp;</dt>
+            <dd data-magellan-arrival="product-description"><a href="#product-description"><?php echo $this->__('Product Description'); ?></a></dd>
+        <?php endif; ?>
+        <?php if ($_additional): ?>
+            <dt>&nbsp;</dt>
+            <dd data-magellan-arrival="additional-info"><a href="#additional-info"><?php echo $this->__('Additional Info'); ?></a></dd>
+        <?php endif; ?>
+        <?php if ($_customInfo->getIsActive()): ?>
+            <dt>&nbsp;</dt>
+            <dd data-magellan-arrival="custom-info"><a href="#custom-info"><?php echo $this->__('Custom Info'); ?></a></dd>
+        <?php endif; ?>
+        <?php if (Mage::helper('core')->isModuleOutputEnabled('Mage_Review') &&
+            Mage::helper('core')->isModuleOutputEnabled('Itactica_ExtendedReviews')): ?>
+            <dt>&nbsp;</dt>
+            <dd data-magellan-arrival="ratings-reviews"><a href="#ratings-reviews"><?php echo $this->__('Ratings & Reviews'); ?></a></dd>
+        <?php endif; ?>
+        <?php if (Mage::helper('core')->isModuleOutputEnabled('Mage_Tag')): ?>
+            <dt>&nbsp;</dt>
+            <dd data-magellan-arrival="tags"><a href="#tags"><?php echo $this->__('Tags'); ?></a></dd>
+        <?php endif; ?>
+    </dl>
+</div>

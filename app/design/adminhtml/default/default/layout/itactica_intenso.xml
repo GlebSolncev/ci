@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_OrbitSlider
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+--> 
+<layout>
+    <adminhtml_system_config_edit>
+        <reference name="head">
+            <action method="addCss"><name>spectrum.css</name></action>
+        </reference>
+    </adminhtml_system_config_edit>
+</layout>

@@ -1,0 +1,46 @@
+<root>
+	<democontent>
+		<item>
+			<title><![CDATA[New & Trending]]></title>
+			<identifier>home_trending</identifier>
+			<animation_speed>300</animation_speed>
+			<products_source>1</products_source>
+			<category_url></category_url>
+			<product_filter>5</product_filter>
+			<show_category_tabs>0</show_category_tabs>
+			<limit>15</limit>
+			<show_out_of_stock>0</show_out_of_stock>
+			<show_price_tag>1</show_price_tag>
+			<show_rating>1</show_rating>
+			<show_color_options>1</show_color_options>
+			<show_add_to_cart_button>1</show_add_to_cart_button>
+			<show_wishlist_button>1</show_wishlist_button>
+			<show_compare_button>1</show_compare_button>
+			<minimum_width>220</minimum_width>
+			<swipe>1</swipe>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Not what you were looking for? Check out our Most Popular items</title>
+			<identifier>popular_items_makeup</identifier>
+			<animation_speed>300</animation_speed>
+			<products_source>1</products_source>
+			<product_filter>5</product_filter>
+			<show_category_tabs>0</show_category_tabs>
+			<limit>10</limit>
+			<show_out_of_stock>0</show_out_of_stock>
+			<show_price_tag>1</show_price_tag>
+			<show_rating>1</show_rating>
+			<show_color_options>1</show_color_options>
+			<show_add_to_cart_button>1</show_add_to_cart_button>
+			<show_wishlist_button>1</show_wishlist_button>
+			<show_compare_button>1</show_compare_button>
+			<minimum_width>220</minimum_width>
+			<swipe>1</swipe>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

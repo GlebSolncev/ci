@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Intenso
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<jstranslator>
+    <intenso-string-translation-1 translate="message" module="itactica_logoslider">
+        <message>Show more details</message>
+    </intenso-string-translation-1>
+    <intenso-string-translation-2 translate="message" module="itactica_logoslider">
+        <message>Show less details</message>
+    </intenso-string-translation-2>
+</jstranslator>

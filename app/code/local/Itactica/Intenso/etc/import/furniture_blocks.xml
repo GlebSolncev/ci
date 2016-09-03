@@ -1,0 +1,278 @@
+<root>
+	<democontent>
+		<item>
+			<title>Category Empty Collection</title>
+			<identifier>category_empty_collection</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<h1 class="center">There are no products matching the selection.</h1>
+<p class="center">This is a custom CMS block displayed when a category is empty.<br/>You can replace it with any custom content at CMS->Static Blocks->Category Empty Collection</p>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Cookie restriction notice</title>
+			<identifier>cookie_restriction_notice_block</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<p>This website requires cookies to provide all of its features. For more information on what data is contained in the cookies, please see our <a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy page</a>. To accept cookies from this site, please click the Allow button.</p>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer Links</title>
+			<identifier>footer_links</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<ul>
+      <li><a href="{{store direct_url="catalogsearch/advanced"}}">Advanced Search</a></li>
+      <li><a href="{{store direct_url="catalog/seo_sitemap/category"}}">Site Map</a></li>
+      <li><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy</a></li>
+      <li><a href="#">Sale Terms</a></li>
+      <li><a href="{{store direct_url="rss"}}">RSS</a></li>
+</ul>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer Links Company</title>
+			<identifier>footer_links_company</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<div class="links">
+    <div class="block-title">
+        <strong><span>Company</span></strong>
+    </div>
+    <ul>
+        <li><a href="{{store url=""}}about-magento-demo-store/">About Us</a></li>
+        <li><a href="{{store url=""}}contacts/">Contact Us</a></li>
+        <li><a href="{{store url=""}}customer-service/">Customer Service</a></li>
+        <li><a href="{{store url=""}}privacy-policy-cookie-restriction-mode/">Privacy Policy</a></li>
+    </ul>
+</div>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer Top Left</title>
+			<identifier>footer_top_left</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[You can replace default Newsletter Subscribe Form with this block: "footer_top_left"
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer Top Right</title>
+			<identifier>footer_top_right</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<a href="#" title="Connect with Us on Google+" class="icon-googleplus">Connect with Us on Google+</a>
+<a href="#" title="Connect with Us on Pinterest" class="icon-pinterest">Connect with Us on Pinterest</a>
+<a href="#" title="Connect with Us on YouTube" class="icon-youtube">Connect with Us on YouTube</a>
+<a href="#" title="Connect with Us on Instagram" class="icon-instagram">Connect with Us on Instagram</a>
+<a href="#" title="Connect with Us on LinkedIn" class="icon-linkedin">Connect with Us on LinkedIn</a>
+<a href="#" title="Connect with Us on Twitter" class="icon-twitter">Connect with Us on Twitter</a>
+<a href="#" title="Connect with Us on Facebook" class="icon-facebook">Connect with Us on Facebook</a>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer Main - First Column</title>
+			<identifier>footer_main_first_column</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<ul>
+      <li class="title">Company</li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Press Releases</a></li>
+      <li><a href="#">Investors</a></li>
+</ul>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer Main - Second Column</title>
+			<identifier>footer_main_second_column</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<ul>
+      <li class="title">Customer Service</li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="{{store direct_url="sales/guest/form/"}}">Orders &amp; Returns</a></li>
+      <li><a href="#">Shipping Rates &amp; Policies</a></li>
+      <li><a href="#">International Shipping</a></li>
+      <li><a href="{{store direct_url="contacts"}}">Contact Us</a></li>
+</ul>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer Main - Third Column</title>
+			<identifier>footer_main_third_column</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<ul>
+      <li class="title">Your Account</li>
+      <li><a href="{{store direct_url="sales/order/history"}}">Your Orders</a></li>
+      <li><a href="{{store direct_url="wishlist"}}">Your Wishlist</a></li>
+      <li><a href="#">Payment Methods</a></li>
+      <li><a href="#">Newsletter</a></li>
+</ul>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer Main - Fourth Column</title>
+			<identifier>footer_main_fourth_column</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<ul>
+      <li class="title">Contact Us</li>
+      <li class="icon-mapmarker">Украина, Одесская обл., г.Одесса, ул.Малая Арнаутская 60</li>
+      <li class="icon-phone">+38094 945 4180</li>
+      <li class="icon-email-2"><a href="mailto:centreinterior@gmail.com">centreinterior@gmail.com</a></li>
+</ul>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer for Mobile</title>
+			<identifier>footer_for_mobile</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<li><a href="{{store url='checkout/cart'}}">Cart (<span class="highlighted">{{widget type="itactica_intenso/widget_view"}}</span>)</a></li>
+<li><a href="{{store url='customer/account'}}">Your Account</a></li>
+<li><a href="{{store url='wishlist'}}">Your Wish List</a></li>
+<li><a href="#">Company</a></li>
+<li><a href="#">Customer Service</a></li>
+<li><a href="{{store url='privacy-policy-cookie-restriction-mode'}}">Privacy &amp; Terms</a></li>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Footer Bottom Right</title>
+			<identifier>footer_bottom_right</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<ul class="payment-logos">
+      <li><img src="{{media url="theme/logo-paypal.svg"}}" alt="PayPal" title="PayPal" /></li>
+      <li><img src="{{media url="theme/logo-visa.svg"}}" alt="Visa" title="Visa" /></li>
+      <li><img src="{{media url="theme/logo-discover.svg"}}" alt="Discover" title="Discover" /></li>
+      <li><img src="{{media url="theme/logo-amex.svg"}}" alt="American Express" title="American Express" /></li>
+      <li><img src="{{media url="theme/logo-mastercard.svg"}}" alt="Mastercard" title="Mastercard" /></li>
+      <li><img src="{{media url="theme/logo-maestro.svg"}}" alt="Maestro" title="Maestro" /></li>
+</ul>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Mini Cart Promotion</title>
+			<identifier>mini_cart_promotion</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<h6>$60 Capped Delivery</h6>
+<p class="small">Fill your cart & pay no more than $60 delivery</p>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Main Menu Custom Dropdown Block</title>
+			<identifier>main_menu_custom_dropdown</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<ul class="links-list">
+      <li>
+            <a href="#">Custom Item 1</a>
+      </li>
+       <li>
+            <a href="#">Custom Item 2</a>
+      </li>
+      <li>
+            <a href="#">Custom Item 3</a>
+      </li>
+</ul>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Product View - Block 1</title>
+			<identifier>product_view_block_1</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[]]>
+			</content>
+		</item>
+		<item>
+			<title>Product View - Block 2</title>
+			<identifier>product_view_block_2</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<a href="#"><img src="{{media url="theme/product-view-static-block-2.jpg"}}" width="300" height="250" alt="Put your Static Block here."></a>
+<div class="advertisement">Advertisement</div>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Product View - Custom Info</title>
+			<identifier>product_view_block_3</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<p>This is a custom CMS block. You can use it to display information about shipping, returns, refunds, latest promotions etc. Put any content you want here, like text, HTML or images. There are many useful blocks like this one across the theme. All CMS blocks are editable from the admin panel.</p>
+<p><span class="label">Shipping: </span>Please allow about 5-10 business days for delivery. For delivery to Alaska or Hawaii, please allow 10-15 days for delivery. For delivery to PO Boxes in Alaska, Hawaii, US Territories and APO/FPO addresses, allow three weeks for delivery.</p>
+<p><span class="label">Backorders: </span>All backordered items will be shipped via Standard Delivery service at no additional charge.</p>
+<p><span class="label">Returns Policy: </span>You may return new, unworn or unused products within thirty (30) days of delivery for a full refund of the cost of the goods, or an exchange if preferred.</p>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Shopping Cart - Block 1</title>
+			<identifier>shopping_cart_block_1</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<img src="{{media url="theme/banner-shopping-cart-2.jpg"}}" width="1200" height="140" alt="This is a Static Block. You can put any content here.">
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Contact Page</title>
+			<identifier>contact_page</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<h4>Custom Static Block</h4>
+<br />
+<span><strong>Corporate Address</strong><br /><br />
+Украина, Одесская обл., г.Одесса, ул.Малая Арнаутская 60</span>
+<br />
+<br />
+<br />
+<span><strong>Frequently Requested Info</strong></span>
+<br />
+<br />
+<ul class="no-bullets">
+     <li><a href="#">Orders & Returns</a></li>
+     <li><a href="#">Shipping Rates & Policies</a></li>
+     <li><a href="#">FAQ</a></li>
+     <li><a href="#">International Shipping</a></li>
+</ul>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>RSS Feed</title>
+			<identifier>rss_feed</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<h4>Custom Static Block</h4>
+<p><strong>Put any content here</strong></p>
+<p>Insert your own content here: plain text, HTML, images or whatever you like. Intenso has many similar content placeholders across the store. You can edit this block from the backend: CMS -> Static Blocks -> RSS Feed.</p>
+			]]>
+			</content>
+		</item>
+		<item>
+			<title>Exit Intent Pop-up</title>
+			<identifier>exit_intent_popup</identifier>
+			<is_active>1</is_active>
+			<content><![CDATA[<br><br>
+<h2 style="color: #58564b">Before you Leave!</h2>
+<h4 style="color: #777777">Sign Up for exclusive updates, new arrivals and insider-only discounts</h4>
+<br><br>
+{{block type="newsletter/subscribe" name="newsletter" template="newsletter/popup-subscribe.phtml"}}
+<br><br>
+<div class="social">
+    <a href="#" title="Connect with Us on Facebook" class="icon-facebook">Connect with Us on Facebook</a>
+    <a href="#" title="Connect with Us on Twitter" class="icon-twitter">Connect with Us on Twitter</a>
+    <a href="#" title="Connect with Us on LinkedIn" class="icon-linkedin">Connect with Us on LinkedIn</a>
+    <a href="#" title="Connect with Us on Instagram" class="icon-instagram">Connect with Us on Instagram</a>
+    <a href="#" title="Connect with Us on YouTube" class="icon-youtube">Connect with Us on YouTube</a>
+    <a href="#" title="Connect with Us on Pinterest" class="icon-pinterest">Connect with Us on Pinterest</a>
+    <a href="#" title="Connect with Us on Google+" class="icon-googleplus">Connect with Us on Google+</a>
+</div>
+<br><br><br>
+			]]>
+			</content>
+		</item>
+	</democontent>
+</root>
+

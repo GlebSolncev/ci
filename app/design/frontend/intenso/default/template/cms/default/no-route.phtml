@@ -1,0 +1,43 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Template for no-route page
+ */
+?>
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="off-canvas-wrap">
+    <div class="inner-wrap">
+        <?php echo $this->getChildHtml('global_notices') ?>
+        <?php echo $this->getChildHtml('header') ?>
+        <?php echo $this->getChildHtml('breadcrumbs') ?>
+        <?php echo $this->getChildHtml('global_messages') ?>
+        <div class="no-route row">
+    		<div class="small-12 columns">
+        	<?php echo $this->getChildHtml('content') ?>
+        	</div>
+    	</div>
+        <?php echo $this->getChildHtml('footer_before') ?>
+        <?php echo $this->getAbsoluteFooter() ?>
+        <a class="exit-off-canvas"></a>
+    </div><!-- /inner-wrap -->
+</div><!-- /off-canvas-wrap -->
+<?php echo $this->getChildHtml('before_body_end') ?>
+<div class="loading-bar"></div>
+</body>
+</html>
+

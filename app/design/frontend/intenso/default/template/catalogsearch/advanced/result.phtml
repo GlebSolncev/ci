@@ -1,0 +1,60 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<div class="page-title">
+    <h1><?php echo $this->__('Catalog Advanced Search') ?></h1>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php if($this->getResultCount()): ?>
+    <div class="row advanced-search-amount">
+        <div class="small-12 large-6 columns">
+            <span><?php echo $this->helper('catalogsearch')->__('%d results(s) for', $this->getResultCount()); ?> </span>
+            <?php $searchCriterias=$this->getSearchCriterias(); ?>
+            <?php foreach (array('left', 'right') as $side): ?>
+                <?php if(@$searchCriterias[$side]): ?>
+                    <ul>
+                        <?php foreach($searchCriterias[$side] as $criteria): ?>
+                            <li><strong><?php echo $this->escapeHtml($this->helper('catalog')->__($criteria['name'])); ?>:</strong> <?php echo $this->escapeHtml($criteria['value']); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+        <p class="small-12 large-6 columns">
+            <?php echo $this->helper('catalogsearch')->__("Don't see what you're looking for?"); ?>
+            <a href="<?php echo $this->getFormUrl(); ?>"><?php echo $this->helper('catalogsearch')->__('Modify your search'); ?></a>
+        </p>
+    </div>
+    <?php echo $this->getProductListHtml() ?>
+<?php else: ?>
+    <div class="row">
+        <div class="small-12 no-results columns">
+            <h1 class="center"><?php echo ($this->getNoResultText()) ? $this->getNoResultText() : $this->__('Your search returns no results.') ?></h1>
+            <span><?php echo $this->helper('catalogsearch')->__('No items were found using the following search criteria.');?> </span>
+            <?php $searchCriterias=$this->getSearchCriterias(); ?>
+            <?php foreach (array('left', 'right') as $side): ?>
+                <?php if(@$searchCriterias[$side]): ?>
+                    <ul>
+                        <?php foreach($searchCriterias[$side] as $criteria): ?>
+                            <li><strong><?php echo $this->escapeHtml($this->helper('catalog')->__($criteria['name'])); ?>:</strong> <?php echo $this->escapeHtml($criteria['value']); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <a class="arrow-left" href="<?php echo $this->getFormUrl(); ?>"><?php echo $this->helper('catalogsearch')->__('Modify your search'); ?></a>
+        </div>
+    </div>
+    <?php if (Mage::helper('core')->isModuleOutputEnabled('Itactica_FeaturedProducts')): ?>
+        <?php if (Mage::getStoreConfig('intenso/catalog/no_results_featured')): ?>
+            <?php echo $this->getLayout()->createBlock('itactica_featuredproducts/view')->setIdentifier(Mage::getStoreConfig('intenso/catalog/no_results_featured'))->setTemplate('itactica_featuredproducts/view.phtml')->toHtml(); ?>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endif; ?>
+<?php $this->getSearchCriterias(); ?>

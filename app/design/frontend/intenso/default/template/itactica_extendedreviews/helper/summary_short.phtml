@@ -1,0 +1,24 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_ExtendedReviews
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<?php if ($this->getReviewsCount()): ?>
+    <div class="ratings summary-popover">
+        <?php if ($this->getRatingSummary()):?>
+            <div class="rating-box" data-review-product="<?php echo $this->getProduct()->getId()?>" data-review-url="<?php echo $this->getProductReviewsAction($this->getProduct()->getId())?>">
+                <span class="summary-popover-icon"></span>
+                <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
+            </div>
+        <?php endif;?>
+        <div class="summary-popover-content"></div>
+    </div>
+<?php elseif ($this->getDisplayIfEmpty()): ?>
+    <p class="no-rating"><a href="<?php echo $this->getReviewsUrl() ?>#post-review"><?php echo $this->__('Be the first to review this product') ?></a></p>
+<?php endif; ?>

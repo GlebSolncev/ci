@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Billboard
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+--> 
+<layout>
+    <adminhtml_billboard_unit_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_billboard/unit</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_billboard/adminhtml_unit" name="unit" />
+        </reference>
+    </adminhtml_billboard_unit_index>
+    <adminhtml_billboard_unit_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_billboard/adminhtml_unit_grid" name="unit_grid"/>
+        </block>
+    </adminhtml_billboard_unit_grid>
+    <!-- Billboard add/edit action -->
+    <adminhtml_billboard_unit_edit>
+        <reference name="head">
+            <action method="addCss"><name>spectrum.css</name></action>
+        </reference>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_billboard/unit</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_billboard/adminhtml_unit_edit" name="unit_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="itactica_billboard/adminhtml_unit_edit_tabs" name="unit_tabs"></block>
+        </reference>
+    </adminhtml_billboard_unit_edit>
+</layout>

@@ -1,0 +1,151 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+    $_intensoHelper = $this->helper('itactica_intenso');
+?>
+<?php if(!$_productCollection->count()): ?>
+    <?php $emptyCollectionBlock = $this->getLayout()->createBlock('cms/block')->setBlockId('category_empty_collection')->toHtml(); ?>
+    <div class="catalog-list-empty row">
+        <div class="small-12 columns">
+            <?php if ($emptyCollectionBlock): ?>
+                <?php echo $emptyCollectionBlock; ?>
+            <?php else: ?>
+                <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php if (Mage::helper('core')->isModuleOutputEnabled('Itactica_FeaturedProducts')): ?>
+        <?php if (Mage::getStoreConfig('intenso/catalog/empty_category_featured')): ?>
+            <?php echo $this->getLayout()->createBlock('itactica_featuredproducts/view')->setIdentifier(Mage::getStoreConfig('intenso/catalog/empty_category_featured'))->setTemplate('itactica_featuredproducts/view.phtml')->toHtml() ?>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php else: ?>
+<section class="products-grid clearfix">
+    <?php echo $this->getToolbarHtml(); ?>
+    <?php echo $this->getChildHtml('catalog.leftnav'); ?>
+    <?php echo $this->getChildHtml('catalogsearch.leftnav'); ?>
+
+    <?php $_collectionSize = $_productCollection->count(); ?>
+    <?php $_columnCount = $this->getColumnCount(); ?>
+    <ul class="category-products<?php if ($_intensoHelper->isKeepAspectRatio()): ?> keep-aspect-ratio<?php endif; ?> clearfix <?php if($this->getMode()!='grid'): ?>list<?php endif; ?>">
+    <?php foreach ($_productCollection as $_product): ?>
+        <li class="item isotope-item">
+            <div class="item-content">
+                <div class="item-images<?php if ($_intensoHelper->isFlushed()): ?> flush<?php endif; ?>">
+                    <?php $width = 430; ?>
+                    <?php $_height = Mage::getStoreConfig('intenso/catalog/catalog_product_height', Mage::app()->getStore()); ?>
+                    <?php $height = $_intensoHelper->getImageHeight($_product, $width, $_height); ?>
+                    <a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" <?php echo Mage::helper('itactica_intenso')->getPictureStyle() ; ?>>
+                        <?php if (Mage::getStoreConfig('intenso/catalog/lazy_loading') && $_intensoHelper->isKeepAspectRatio() == false): ?>
+                            <img id ="product-collection-image-<?php echo $_product->getId(); ?>" class="item-image" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" src="<?php echo $this->getSkinUrl('images/clear.png'); ?>" data-echo="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($width,$height); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>">
+                        <?php else: ?>
+                            <img id ="product-collection-image-<?php echo $_product->getId(); ?>" class="item-image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($width,$height); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>">
+                        <?php endif; ?>
+                    </a>
+                    <?php if (Mage::helper('itactica_quickview')->isEnabled()): ?>
+                    <a href="<?php echo $this->getUrl('itactica_quickview/product/view/id/' . $_product->getId()) ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="quickview-button button"><?php echo $this->__('Quick View') ?></a>
+                    <?php endif; ?>
+                </div>
+                <div class="item-info">
+                    <h6 class="item-title">
+                        <a href="<?php echo $_product->getProductUrl() ?>" class="truncate" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><span><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span></a>
+                    </h6>
+                    <div class="item-description">
+                        <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                    </div>
+                    <?php if($_product->getRatingSummary() && Mage::getStoreConfig('intenso/catalog/catalog_show_products_rating', Mage::app()->getStore())): ?>
+                        <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                    <?php endif; ?>
+                    <?php if(Mage::getStoreConfig('intenso/catalog/catalog_show_price_tag', Mage::app()->getStore())): ?>
+                    <?php echo $this->getPriceHtml($_product, true) ?>
+                    <?php endif; ?>
+                    <?php
+                        // Provides extra blocks on which to hang some features for products in the list
+                        // Features providing UI elements targeting this block will display directly below the product price
+                        if ($this->getChild('name.after')) {
+                            $_nameAfterChildren = $this->getChild('name.after')->getSortedChildren();
+                            foreach ($_nameAfterChildren as $_nameAfterChildName) {
+                                $_nameAfterChild = $this->getChild('name.after')->getChild($_nameAfterChildName);
+                                $_nameAfterChild->setProduct($_product);
+                                echo $_nameAfterChild->toHtml();
+                            }
+                        }
+                    ?>
+                </div>
+                <?php if(Mage::getStoreConfig('intenso/catalog/catalog_show_add_to_cart', Mage::app()->getStore()) || Mage::getStoreConfig('intenso/catalog/catalog_show_add_to_compare', Mage::app()->getStore()) || Mage::getStoreConfig('intenso/catalog/catalog_show_add_to_wishlist', Mage::app()->getStore())): ?>
+                <div class="actions clearfix">
+                    <?php if(!$_product->canConfigure() && $_product->isSaleable() && Mage::getStoreConfig('intenso/catalog/catalog_show_add_to_cart', Mage::app()->getStore())): ?>
+                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                    <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
+                        <button type="button" title="<?php echo $this->__('View Details') ?>" class="button btn-cart preview" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')"><span><span><?php echo $this->__('View Details') ?></span></span></button>
+                    <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                    <?php endif; ?>
+                    <ul class="add-to-links">
+                        <?php if ($this->helper('wishlist')->isAllow() && Mage::getStoreConfig('intenso/catalog/catalog_show_add_to_wishlist', Mage::app()->getStore())) : ?>
+                            <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist" title="<?php echo $this->__('Add to Wishlist') ?>"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                        <?php endif; ?>
+                        <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                            <?php if(Mage::getStoreConfig('intenso/catalog/catalog_show_add_to_compare', Mage::app()->getStore())): ?>
+                            <li><a id="compare-id-<?php echo $_product->getId(); ?>" href="<?php echo $_compareUrl ?>" class="link-compare" title="<?php echo $this->__('Add to Compare') ?>"><?php echo $this->__('Add to Compare') ?></a></li>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
+            </div>
+        </li>
+    <?php endforeach ?>
+    </ul>
+        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+</section>
+<div class="toolbar-bottom">
+    <?php echo $this->getToolbarBlock()->setTemplate('catalog/product/list/pager.phtml')->toHtml(); ?>
+</div>
+<?php endif; ?>
+
+<?php 
+$_compare_collection = Mage::helper('catalog/product_compare')->getItemCollection();
+$compareProductsId = '';
+?>
+<?php if ($_compare_collection->getSize()): ?>
+    <?php foreach($_compare_collection as $product): ?>
+           <?php $compareProductsId .= $product->getId() . ','; ?>
+    <?php endforeach; ?>
+    <?php $compareProductsId = rtrim($compareProductsId, ','); ?>
+<script type="text/javascript">
+    var compareProducts = Array(0,<?php echo $compareProductsId; ?>);
+    for (i = 0; i < compareProducts.length; i++) {
+        if ($('compare-id-'+compareProducts[i]) != undefined) $('compare-id-'+compareProducts[i]).addClassName('compared');
+    }
+</script>
+<?php endif; ?>
+<?php
+// Provides a block where additional page components may be attached, primarily good for in-page JavaScript
+if ($this->getChild('after')) {
+    $_afterChildren = $this->getChild('after')->getSortedChildren();
+    foreach ($_afterChildren as $_afterChildName) {
+        $_afterChild = $this->getChild('after')->getChild($_afterChildName);
+        //set product collection on after blocks
+        $_afterChild->setProductCollection($_productCollection);
+        echo $_afterChild->toHtml();
+    }
+}
+?>

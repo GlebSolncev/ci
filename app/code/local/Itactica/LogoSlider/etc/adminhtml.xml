@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_LogoSlider
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <itactica_logoslider translate="title" module="itactica_logoslider">
+                                        <title>Intenso - Logo Slider</title>
+                                    </itactica_logoslider>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <theme>
+                        <children>
+                            <itactica_logoslider translate="title" module="itactica_logoslider">
+                                <title>Logo Slider</title>
+                                <children>
+                                    <logo translate="title" module="itactica_logoslider">
+                                        <title>Images</title>
+                                        <sort_order>0</sort_order>
+                                    </logo>
+                                    <slider translate="title" module="itactica_logoslider">
+                                        <title>Sliders</title>
+                                        <sort_order>10</sort_order>
+                                    </slider>
+                                </children>
+                            </itactica_logoslider>
+                        </children>
+                    </theme>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <theme translate="title" module="itactica_logoslider">
+            <title>Theme</title>
+            <sort_order>75</sort_order>
+            <children>
+                <itactica_logoslider translate="title" module="itactica_logoslider">
+                    <title>Logo Slider</title>
+                    <sort_order>30</sort_order>
+                    <children>
+                        <logo translate="title" module="itactica_logoslider">
+                            <title>Images</title>
+                            <action>adminhtml/logoslider_logo</action>
+                            <sort_order>0</sort_order>
+                        </logo>
+                        <slider translate="title" module="itactica_logoslider">
+                            <title>Sliders</title>
+                            <action>adminhtml/logoslider_slider</action>
+                            <sort_order>10</sort_order>
+                        </slider>
+                    </children>
+                </itactica_logoslider>
+            </children>
+        </theme>
+    </menu>
+</config>

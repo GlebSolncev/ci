@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Eshift_Ruregions>
+            <version>1.0.0</version>
+        </Eshift_Ruregions>
+    </modules>
+    <global>
+        <helpers>
+            <ruregions>
+                <class>Eshift_Ruregions_Helper</class>
+            </ruregions>
+        </helpers>
+        <resources>
+            <ruregions_setup>
+                <setup>
+                    <module>Eshift_Ruregions</module>
+                </setup>
+            </ruregions_setup>
+        </resources>
+    </global>
+</config> 

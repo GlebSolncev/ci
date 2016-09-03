@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_FeaturedCategories
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <itactica_featuredcategories translate="title" module="itactica_featuredcategories">
+                                        <title>Intenso - Featured Categories</title>
+                                    </itactica_featuredcategories>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <theme>
+                        <children>
+                            <itactica_featuredcategories translate="title" module="itactica_featuredcategories">
+                                <title>Featured Categories</title>
+                                <children>
+                                    <slider translate="title" module="itactica_featuredcategories">
+                                        <title>Slider</title>
+                                        <sort_order>5</sort_order>
+                                    </slider>
+                                </children>
+                            </itactica_featuredcategories>
+                        </children>
+                    </theme>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <theme>
+            <children>
+                <itactica_featuredcategories translate="title" module="itactica_featuredcategories">
+                    <title>Featured Categories</title>
+                    <action>adminhtml/featuredcategories_slider</action>
+                    <sort_order>5</sort_order>
+                </itactica_featuredcategories>
+            </children>
+        </theme>
+    </menu>
+</config>

@@ -1,0 +1,25 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Customer "Remember Me" template
+ *
+ * @var $this Mage_Persistent_Block_Form_Remember
+ */
+?>
+<li id="remember-me-box" class="control">
+    <?php $rememberMeId = 'remember_me' . Mage::helper('core')->getRandomString(10); ?>
+    <div class="input-box">
+        <input type="checkbox" name="persistent_remember_me" class="checkbox" id="<?php echo $rememberMeId; ?>"<?php if ($this->isRememberMeChecked()): ?> checked="checked"<?php endif; ?> title="<?php echo $this->__('Remember Me') ?>" />
+    </div>
+    <label for="<?php echo $rememberMeId; ?>"><?php echo $this->__('Remember Me') ?></label>
+    <a class="link-tip" href="#" data-reveal-id="remember-me-popup"><?php echo $this->__('What\'s this?') ?></a>
+</li>

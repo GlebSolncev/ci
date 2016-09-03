@@ -1,0 +1,109 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Multishipping checkout shipping template
+ *
+ * @see Mage_Checkout_Block_Multishipping_Shipping
+ * @var $this Mage_Checkout_Block_Multishipping_Shipping
+ */
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="row flush">
+    <div class="small-12 checkout-multishipping columns">
+        <div class="page-title">
+            <h2 class="center"><?php echo $this->__('Select Shipping Method') ?></h2>
+        </div>
+        <div class="form-box wide">
+            <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="shipping_method_form">
+                <?php foreach ($this->getAddresses() as $_index => $_address): ?>
+                <h2 class="legend"><?php echo $this->__('Address %s of %s', ($_index+1), $this->getAddressCount()) ?></h2>
+                <div class="row">
+                    <div class="small-12 medium-6 columns">
+                        <h3><?php echo $this->__('Shipping To') ?> <span class="separator">|</span> <a class="icon-edit" href="<?php echo $this->getAddressEditUrl($_address) ?>" title="<?php echo $this->__('Change') ?>"><span class="hide"><?php echo $this->__('Change') ?></a></span></h3>
+                        <address><?php echo $_address->format('html') ?></address>
+                    </div>
+                    <div class="small-12 medium-6 columns">
+                        <h3><?php echo $this->__('Shipping Method') ?></h3>
+                        <div class="box-content">
+                            <?php if (!($_shippingRateGroups = $this->getShippingRates($_address))): ?>
+                                <p><?php echo $this->__('Sorry, no quotes are available for this order at this time.') ?></p>
+                            <?php else: ?>
+                            <dl class="sp-methods">
+                                <?php $_sole = count($_shippingRateGroups) == 1; foreach ($_shippingRateGroups as $code => $_rates): ?>
+                                    <dt><?php echo $this->escapeHtml($this->getCarrierName($code)) ?></dt>
+                                    <dd>
+                                        <ul>
+                                        <?php $_sole = $_sole && count($_rates) == 1; foreach ($_rates as $_rate): ?>
+                                            <li<?php if ($_rate->getErrorMessage()) echo ' class="error-msg"' ?>>
+                                               <?php if ($_rate->getErrorMessage()): ?>
+                                                    <?php echo $this->escapeHtml($_rate->getCarrierTitle()) ?>: <?php echo $this->escapeHtml($_rate->getErrorMessage()) ?>
+                                               <?php else: ?>
+                                                    <?php if ($_sole) : ?>
+                                                    <span class="no-display"><input type="radio" name="shipping_method[<?php echo $_address->getId() ?>]" value="<?php echo $this->escapeHtml($_rate->getCode()) ?>" id="s_method_<?php echo $_address->getId() ?>_<?php echo $_rate->getCode() ?>" checked="checked"/></span>
+                                                    <?php else: ?>
+                                                    <input type="radio" name="shipping_method[<?php echo $_address->getId() ?>]" value="<?php echo $_rate->getCode() ?>" id="s_method_<?php echo $_address->getId() ?>_<?php echo $_rate->getCode() ?>"<?php if($_rate->getCode()===$this->getAddressShippingMethod($_address)) echo ' checked="checked"' ?> class="radio" />
+                                                    <?php endif; ?>
+                                                    <label for="s_method_<?php echo $_address->getId() ?>_<?php echo $_rate->getCode() ?>"><?php echo $this->escapeHtml($_rate->getMethodTitle()) ?>
+                                                    <?php $_excl = $this->getShippingPrice($_address, $_rate->getPrice(), $this->helper('tax')->displayShippingPriceIncludingTax()); ?>
+                                                    <?php $_incl = $this->getShippingPrice($_address, $_rate->getPrice(), true); ?>
+                                                    <?php echo $_excl; ?>
+                                                    <?php if ($this->helper('tax')->displayShippingBothPrices() && $_incl != $_excl): ?>
+                                                        (<?php echo $this->__('Incl. Tax'); ?> <?php echo $_incl; ?>)
+                                                    <?php endif; ?>
+                                                    </label>
+                                               <?php endif ?>
+                                            </li>
+                                        <?php endforeach; ?>
+                                        </ul>
+                                    </dd>
+                                <?php endforeach; ?>
+                            </dl>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="small-12 table-wrapper columns">
+                        <?php echo $this->helper('giftmessage/message')->getInline('multishipping_adress_checkbox', $_address); ?>
+                        <h3><?php echo $this->__('Items') ?> <span class="separator">|</span> <a class="icon-edit" href="<?php echo $this->getItemsEditUrl($_address) ?>" title="<?php echo $this->__('Edit Items') ?>"><span class="hide"><?php echo $this->__('Edit Items') ?></span></a></h3>
+                        <table class="data-table" id="shipping-table-<?php echo $_address->getId() ?>">
+                            <col />
+                            <col width="1" />
+                            <thead>
+                                <tr>
+                                    <th><?php echo $this->__('Product Name') ?></th>
+                                    <th class="a-center"><?php echo $this->__('Qty') ?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($this->getAddressItems($_address) as $_item): ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $this->getItemHtml($_item->getQuoteItem()) ?>
+                                    </td>
+                                    <td class="a-center"><?php echo $_item->getQty() ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                        <script type="text/javascript">decorateTable('shipping-table-<?php echo $_address->getId() ?>')</script>
+                        <?php echo $this->helper('giftmessage/message')->getInline('multishipping_adress', $_address); ?>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+                <?php echo $this->getChildHtml('checkout_billing_items') ?>
+                <div class="buttons-set">
+                    <button data-action="checkout-continue-billing" type="submit" title="<?php echo $this->__('Continue to Billing Information') ?>" class="button"><span><span><?php echo $this->__('Continue to Billing Information') ?></span></span></button>
+                    <a class="arrow-left" href="<?php echo $this->getBackUrl() ?>"><?php echo $this->__('Back to Select Addresses') ?></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

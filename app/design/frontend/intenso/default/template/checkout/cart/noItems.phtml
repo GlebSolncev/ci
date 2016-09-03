@@ -1,0 +1,30 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<div class="row cart">
+	<div class="small-12 medium-8 large-9 columns">
+		<?php if (Mage::getModel('cms/block')->load('shopping_cart_block_1')->getIsActive()): ?>
+            <div class="shopping-cart-block-1">
+            <?php echo $this->getChildHtml('shopping_cart_block_1') ?>
+            </div>
+        <?php endif; ?>
+		<div class="page-title">
+		    <h1><?php echo $this->__('Shopping Cart is Empty') ?></h1>
+		</div>
+		<div class="cart-empty">
+		    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+		    <?php echo $this->getChildHtml('checkout_cart_empty_widget'); ?>
+		    <p><?php echo $this->__('You have no items in your shopping cart.') ?></p>
+		    <p><?php echo $this->__('Click <a href="%s">here</a> to continue shopping.', $this->getContinueShoppingUrl()) ?></p>
+		    <?php echo $this->getChildHtml('shopping.cart.table.after'); ?>
+		</div>
+	</div>
+	<div class="small-12 medium-4 large-3 columns"></div>
+</div>

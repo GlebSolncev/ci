@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_LogoSlider
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<jstranslator>
+    <logoslider-string-translation-1 translate="message" module="itactica_logoslider">
+        <message>Show all Brands</message>
+    </logoslider-string-translation-1>
+    <logoslider-string-translation-2 translate="message" module="itactica_logoslider">
+        <message>Hide all Brands</message>
+    </logoslider-string-translation-2>
+</jstranslator>

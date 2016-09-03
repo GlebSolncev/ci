@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_LayeredNavigation
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<layout version="1.0.0">
+    <catalog_category_default>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/native.history.js</name>
+            </action>
+        </reference>
+        <reference name="product_list_toolbar">
+            <block type="itactica_layerednavigation/catalog_product_list_pager" name="product_list_toolbar_pager"/>
+        </reference>
+        <reference name="product_list">
+            <action method="setTemplate">
+                <template>itactica_layerednavigation/catalog/product/list.phtml</template>
+            </action>
+        </reference>
+        <reference name="catalog.leftnav">
+            <action method="setTemplate">
+                <template>itactica_layerednavigation/catalog/navigation/left.phtml</template>
+            </action>
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/native.history.js</name>
+            </action>
+        </reference>
+        <reference name="product_list_toolbar">
+            <block type="itactica_layerednavigation/catalog_product_list_pager" name="product_list_toolbar_pager"/>
+        </reference>
+        <reference name="product_list">
+            <action method="setTemplate">
+                <template>itactica_layerednavigation/catalog/product/list.phtml</template>
+            </action>
+        </reference>
+        <reference name="catalog.leftnav">
+            <action method="setTemplate">
+                <template>itactica_layerednavigation/catalog/layer/view.phtml</template>
+            </action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="core/template" name="layered.nav.js" as="layered.nav.js" template="itactica_layerednavigation/catalog/product/js.phtml"/>
+        </reference>
+    </catalog_category_layered>
+    
+    <catalog_category_layered_ajax_layer>
+        <remove name="right"/>
+        <remove name="header"/>
+        <remove name="head"/>
+        <remove name="footer"/>
+    </catalog_category_layered_ajax_layer>
+    
+    <catalogsearch_result_index>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/lib/native.history.js</name>
+            </action>
+        </reference>
+        <reference name="search_result_list">
+            <action method="setTemplate">
+                <template>itactica_layerednavigation/catalog/product/list.phtml</template>
+            </action>
+        </reference>
+        <reference name="catalogsearch.leftnav">
+            <action method="setTemplate">
+                <template>itactica_layerednavigation/catalog/layer/view.phtml</template>
+            </action>
+        </reference>
+        <reference name="product_list_toolbar">
+            <block type="itactica_layerednavigation/catalog_product_list_pager" name="product_list_toolbar_pager"/>
+        </reference>
+    </catalogsearch_result_index>
+</layout>

@@ -1,0 +1,32 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<nav class="account-nav-container top-bar left-off-canvas-menu main-nav" role="navigation" data-topbar>
+    <section class="layered-nav top-bar-section">
+        <div class="block block-account">
+            <div class="block-content">
+                <ul class="links-list">
+                    <li class="show-for-small-only group-title"><?php echo $this->__('My Account'); ?></li>
+                    <?php $_links = $this->getLinks(); ?>
+                    <?php $_index = 1; ?>
+                    <?php $_count = count($_links); ?>
+                    <?php foreach ($_links as $_link): ?>
+                        <?php $_last = ($_index++ >= $_count); ?>
+                        <?php if ($this->isActive($_link)): ?>
+                            <li class="current<?php echo ($_last ? ' last' : '') ?>"><a href="#"><?php echo $_link->getLabel() ?></a></li>
+                        <?php else: ?>
+                            <li<?php echo ($_last ? ' class="last"' : '') ?>><a href="<?php echo $_link->getUrl() ?>"><?php echo $_link->getLabel() ?></a></li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </section>
+</nav>

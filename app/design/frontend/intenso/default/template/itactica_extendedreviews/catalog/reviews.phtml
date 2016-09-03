@@ -1,0 +1,96 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_ExtendedReviews
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php 
+$collection = $this->getCollectionByHelpful()->limit(3);
+$_items = $collection->getItems();
+$helper = Mage::helper('itactica_extendedreviews');
+$product = $this->getProduct();
+$stat = $this->getProductStat($this->getProduct()->getId());
+$sum = 0;
+$count = 0;
+$stars = array();
+foreach ($stat as $row) {
+    $sum+=$row['count'] * $row['value'];
+    $count+=$row['count'];
+    $stars[$row['value']] = $row['count'];
+}
+$maxValue = max($stars);
+?>
+<?php if(count($_items)):?>
+<div class="review-popover arrow-box clearfix">
+    <span class="review-close"></span>
+    <div class="row">
+        <div class="small-5 columns">
+            <div class="rating-avg"><?php echo round($sum/$count,2); ?></div>
+            <div class="ratings">
+                <div class="rating-box">
+                    <div style="width:<?php echo round($sum/$count,2)*20 ?>%" class="rating"></div>
+                </div>
+                <span class="rating-links icon-user">
+                    <?php if ($count > 1): ?>
+                        <span><?php echo $helper->__('%d reviews', $count) ?></span>
+                    <?php else: ?>
+                        <span><?php echo $helper->__('%d review', $count) ?></span>
+                    <?php endif; ?>
+                </span>
+            </div>
+
+            <table id="histogram">
+                <tbody>
+                <?php for ($i=5; $i >= 1; $i--): ?>
+                    <?php if (!isset($stars[$i])): $stars[$i] = 0; endif; ?>
+                    <?php $meter = ($stars[$i] > 0) ? $stars[$i]/$maxValue*100 : 0; ?>
+                    <?php $percentage = ($stars[$i] > 0) ? $stars[$i]/$count*100 : 0; ?>
+                    <?php $percentage = round($percentage, 2); ?>
+                    <tr>
+                        <td class="stars">
+                            <a class="small" href="<?php echo $this->getReviewsUrl() ?>?filter=<?php echo $helper->starFilterName($i); ?>" title="<?php echo $percentage; ?>% <?php echo $helper->__('of reviews have %d stars', $i);?>"><?php echo $helper->__('%d star',$i); ?></a>    
+                        </td>
+                        <td class="meter-bar">
+                            <a href="<?php echo $this->getReviewsUrl() ?>?filter=<?php echo $helper->starFilterName($i); ?>" title="<?php echo $percentage; ?>% <?php echo $helper->__('of reviews have %d stars', $i);?>">
+                                <div class="progress large-12"><span style="width: <?php echo $meter; ?>%" class="meter meter-<?php echo $i; ?>"></span></div>
+                            </a>
+                        </td>
+                        <td class="amount">
+                            <span class="small"><?php echo $stars[$i]; ?></span>
+                        </td>
+                    </tr>
+                <?php endfor; ?>
+                </tbody>
+            </table>
+            <a class="see-all-reviews" href="<?php echo $this->getReviewsUrl()?>"><?php echo $helper->__('See all reviews')?></a>
+        </div>
+        <div class="small-7 columns">
+            <?php foreach($_items as $_review):?>
+            <?php
+                preg_match('/(.*?([?.!]|[.]{3}))(.*)/', $_review->getDetail(), $comment);
+                if (isset($comment[1])) {
+                    $firstParagraph = $comment[1];
+                } else {
+                    $firstParagraph = $_review->getDetail();
+                }
+                if (strlen($firstParagraph) > 100) $firstParagraph = substr($firstParagraph, 0, 99) . '&hellip;';
+
+            ?>
+            <div class="review">
+                <div class="review-detail">
+                    <blockquote>
+                        <?php echo nl2br($this->htmlEscape($firstParagraph))?>
+                    </blockquote> 
+                </div>
+                <span class="review-author"><?php echo $this->htmlEscape($_review->getNickname()); ?></span>
+                <span class="review-date"><?php echo $this->formatDate($_review->getCreatedAt()); ?></span>
+            </div>
+            <?php endforeach;?>
+        </div>
+    </div>
+</div>
+<?php endif;?>

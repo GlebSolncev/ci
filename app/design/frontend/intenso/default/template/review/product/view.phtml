@@ -1,0 +1,50 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+/**
+ * Product's reviews view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<?php
+    $_baseUrl = Mage::getBaseUrl();
+    $_currentUrl = Mage::helper('core/url')->getCurrentUrl();
+    $_relativeUrl = str_replace($_baseUrl, '/', $_currentUrl);
+?>
+<?php 
+    $_description = $_product->getDescription();
+    $_attributes = new Mage_Catalog_Block_Product_View_Attributes();
+    $_attributes->setProduct($_product->getId());
+    $_additional = $_attributes->getAdditionalData();
+    $_reviews = false;
+?>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<section class="row product-view" role="main" itemtype="http://schema.org/Product" itemscope="itemscope">
+    <meta content="<?php echo $_relativeUrl; ?>" itemprop="url">
+    <div class="review-list-header row">
+        <div class="small-12 large-7 columns">
+            <img class="product-review-image hide-for-small-only" src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(200); ?>" alt="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>">
+            <h5><?php echo $this->__('Ratings & Reviews for') ?></h5>
+            <h3 itemprop="name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h3>
+        </div>
+        <div class="review-list-actions medium-12 large-5 hide-for-small-only columns">
+            <?php echo $this->getChildHtml('other');?>
+            <a href="<?php echo $this->getReviewsUrl() ?>#post-review" class="button small"><?php echo $this->__('Add your review') ?></a>
+        </div>
+    </div>
+    <div class="ratings-detail clearfix">
+        <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+    </div>
+    <?php echo $this->getChildHtml('product_additional_data') ?>
+</section>

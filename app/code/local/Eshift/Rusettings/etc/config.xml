@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Eshift_Rusettings>
+            <version>1.0.2</version>
+        </Eshift_Rusettings>
+    </modules>
+    <global>
+        <helpers>
+            <Rusettings>
+                <class>Eshift_Rusettings_Helper</class>
+            </Rusettings>
+        </helpers>
+        <resources>
+            <rusettings_setup>
+                <setup>
+                    <module>Eshift_Rusettings</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+            </rusettings_setup>
+        </resources>
+    </global>
+</config> 

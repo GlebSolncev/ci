@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_FeaturedProducts
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+--> 
+<layout>
+    <adminhtml_featuredproducts_slider_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_featuredproducts/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_featuredproducts/adminhtml_slider" name="slider" />
+
+        </reference>
+    </adminhtml_featuredproducts_slider_index>
+    <adminhtml_featuredproducts_slider_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredproducts/adminhtml_slider_grid" name="slider_grid"/>
+        </block>
+    </adminhtml_featuredproducts_slider_grid>
+    <!-- Slider add/edit action -->
+    <adminhtml_featuredproducts_slider_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_featuredproducts/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_featuredproducts/adminhtml_slider_edit" name="slider_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="itactica_featuredproducts/adminhtml_slider_edit_tabs" name="slider_tabs"></block>
+        </reference>
+    </adminhtml_featuredproducts_slider_edit>
+
+    <adminhtml_featuredproducts_slider_catalog_product_sliders>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredproducts/adminhtml_catalog_product_edit_tab_slider" name="product.edit.tab.slider"/>
+            <block type="adminhtml/widget_grid_serializer" name="slider_grid_serializer">
+                <reference name="slider_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>product.edit.tab.slider</grid_block_name>
+                        <data_callback>getSelectedSliders</data_callback>
+                        <hidden_input_name>sliders</hidden_input_name>
+                        <reload_param_name>product_sliders</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_featuredproducts_slider_catalog_product_sliders>
+    <adminhtml_featuredproducts_slider_catalog_product_slidersgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredproducts/adminhtml_catalog_product_edit_tab_slider" name="product.edit.tab.slider"/>
+        </block>
+    </adminhtml_featuredproducts_slider_catalog_product_slidersgrid>
+    <adminhtml_featuredproducts_slider_products>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredproducts/adminhtml_slider_edit_tab_product" name="slider.edit.tab.product"/>
+            <block type="adminhtml/widget_grid_serializer" name="product_grid_serializer">
+                <reference name="product_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>slider.edit.tab.product</grid_block_name>
+                            <data_callback>getSelectedProducts</data_callback>
+                            <hidden_input_name>products</hidden_input_name>
+                            <reload_param_name>slider_products</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_featuredproducts_slider_products>
+    <adminhtml_featuredproducts_slider_productsgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredproducts/adminhtml_slider_edit_tab_product" name="slider.edit.tab.product"/>
+        </block>
+    </adminhtml_featuredproducts_slider_productsgrid>
+</layout>

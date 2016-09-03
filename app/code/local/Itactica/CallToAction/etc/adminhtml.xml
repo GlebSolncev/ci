@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_CallToAction
+ * @copyright   Copyright (c) 2014-2015 Itactica (https://www.getintenso.com)
+ * @license     https://getintenso.com/license
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <itactica_calltoaction translate="title" module="itactica_calltoaction">
+                                        <title>Intenso - CallToAction</title>
+                                    </itactica_calltoaction>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <theme>
+                        <children>
+                            <itactica_calltoaction translate="title" module="itactica_calltoaction">
+                                <title>CallToAction</title>
+                                <children>
+                                    <calltoaction translate="title" module="itactica_calltoaction">
+                                        <title>CallToAction</title>
+                                        <sort_order>50</sort_order>
+                                    </calltoaction>
+                                </children>
+                            </itactica_calltoaction>
+                        </children>
+                    </theme>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <theme>
+            <children>
+                <itactica_calltoaction translate="title" module="itactica_calltoaction">
+                    <title>CallToAction</title>
+                    <action>adminhtml/calltoaction_cta</action>
+                    <sort_order>50</sort_order>
+                </itactica_calltoaction>
+            </children>
+        </theme>
+    </menu>
+</config>

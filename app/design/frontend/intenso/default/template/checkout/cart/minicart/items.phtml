@@ -1,0 +1,68 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+/**
+ * Shoping cart sidebar
+ *
+ * @var Mage_Checkout_Block_Cart_Minicart $this
+ */
+?>
+
+<?php
+$_cartQty = $this->getSummaryCount();
+if(empty($_cartQty)) {
+    $_cartQty = 0;
+}
+?>
+
+<?php $_items = $this->getRecentItems() ?>
+    <?php $countItems = count($_items); ?>
+    <?php if($countItems): ?>
+        <div class="mini-products-wrapper">
+            <div class="mini-products-container">
+                <ul id="cart-sidebar" class="mini-products-list">
+                    <?php $i=0; foreach($_items as $_item): ?>
+                        <?php if ($i != 0 && $i % 3 == 0): ?>
+                            </ul>
+                            <ul id="cart-sidebar" class="mini-products-list">
+                        <?php endif; ?>
+                        <?php echo $this->getItemHtml($_item) ?>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+
+    <?php else: ?>
+        <p class="small cart-empty"><?php echo $this->__('Your shopping cart is currently empty.') ?></p>
+    <?php endif ?>
+
+    <div class="bg-box">
+        <p class="subtotal">
+            <?php echo $this->__('Subtotal:') ?>&nbsp;
+            <?php if ($this->canApplyMsrp()): ?>
+                <span class="price" title="<?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?>">
+                    [?]
+                </span>
+            <?php else: ?>
+                <span class="price">
+                    <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
+                        <?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?>
+                    <?php else: ?>
+                        <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?>
+                    <?php endif; ?>
+                </span>
+            <?php endif; ?>
+        </p>
+        <a href="<?php echo $this->getCheckoutUrl() ?>" class="button sign-in"><?php echo $this->__('Checkout') ?></a>
+    </div>
+    <div class="sb-cart-dropdown">
+        <?php echo $this->getChildHtml('cart_promotion') ?>
+    </div>
+

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_LayeredNavigation
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <modules>
+        <Itactica_LayeredNavigation>
+            <version>1.0.0</version>
+        </Itactica_LayeredNavigation>
+    </modules>
+    <global>
+        <models>
+            <catalog>
+                <rewrite>
+                    <layer>Itactica_LayeredNavigation_Model_Catalog_Layer</layer>
+                    <layer_filter_item>Itactica_LayeredNavigation_Model_Catalog_Layer_Filter_Item</layer_filter_item>
+                    <layer_filter_category>Itactica_LayeredNavigation_Model_Catalog_Layer_Filter_Category</layer_filter_category>
+                    <layer_filter_attribute>Itactica_LayeredNavigation_Model_Catalog_Layer_Filter_Attribute</layer_filter_attribute>
+                    <layer_filter_price>Itactica_LayeredNavigation_Model_Catalog_Layer_Filter_Price</layer_filter_price>
+                </rewrite>
+            </catalog>
+            <catalogsearch>
+                <rewrite>
+                    <layer>Itactica_LayeredNavigation_Model_CatalogSearch_Layer</layer>
+                    <layer_filter_attribute>Itactica_LayeredNavigation_Model_CatalogSearch_Layer_Filter_Attribute</layer_filter_attribute>
+                </rewrite>
+            </catalogsearch>
+            <catalog_resource>
+                <rewrite>
+                    <layer_filter_attribute>Itactica_LayeredNavigation_Model_Catalog_Resource_Layer_Filter_Attribute</layer_filter_attribute>
+                    <layer_filter_price>Itactica_LayeredNavigation_Model_Catalog_Resource_Layer_Filter_Price</layer_filter_price>
+                </rewrite>
+            </catalog_resource>
+            <itactica_layerednavigation>
+                <class>Itactica_LayeredNavigation_Model</class>
+                <resourceModel>itactica_layerednavigation_resource</resourceModel>
+            </itactica_layerednavigation>
+            <itactica_layerednavigation_resource>
+                <class>Itactica_LayeredNavigation_Model_Resource</class>
+                <entities>
+                    <attribute_url_key>
+                        <table>itactica_layerednavigation_attribute_url_key</table>
+                    </attribute_url_key>
+                </entities>
+            </itactica_layerednavigation_resource>
+        </models>
+        <resources>
+            <itactica_layerednavigation_setup>
+                <setup>
+                    <module>Itactica_LayeredNavigation</module>
+                </setup>
+            </itactica_layerednavigation_setup>
+        </resources>
+        <blocks>
+            <catalog>
+                <rewrite>
+                    <layer_state>Itactica_LayeredNavigation_Block_Catalog_Layer_State</layer_state>
+                    <product_list_toolbar>Itactica_LayeredNavigation_Block_Catalog_Product_List_Toolbar</product_list_toolbar>
+                    <layer_filter_category>Itactica_LayeredNavigation_Block_Catalog_Layer_Filter_Category</layer_filter_category>
+                    <layer_filter_attribute>Itactica_LayeredNavigation_Block_Catalog_Layer_Filter_Attribute</layer_filter_attribute>
+                    <layer_filter_price>Itactica_LayeredNavigation_Block_Catalog_Layer_Filter_Price</layer_filter_price>
+                </rewrite>
+            </catalog>
+            <catalogsearch>
+                <rewrite>
+                    <layer_filter_attribute>Itactica_LayeredNavigation_Block_CatalogSearch_Layer_Filter_Attribute</layer_filter_attribute>
+                </rewrite>
+            </catalogsearch>
+            <itactica_layerednavigation>
+                <class>Itactica_LayeredNavigation_Block</class>
+            </itactica_layerednavigation>
+        </blocks>
+        <helpers>
+            <itactica_layerednavigation>
+                <class>Itactica_LayeredNavigation_Helper</class>
+            </itactica_layerednavigation>
+            <configurableswatches>
+                <rewrite>
+                    <productlist>Itactica_LayeredNavigation_Helper_Productlist</productlist>
+                </rewrite>
+            </configurableswatches>
+        </helpers>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <itactica_layerednavigation>
+                        <class>Itactica_LayeredNavigation_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </itactica_layerednavigation>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+        <index>
+            <indexer>
+                <itactica_attribute>
+                    <model>itactica_layerednavigation/indexer_attribute</model>
+                </itactica_attribute>
+            </indexer>
+        </index>
+    </global>
+    <frontend>
+        <routers>
+            <catalog>
+                <args>
+                    <modules>
+                        <Itactica_LayeredNavigation before="Mage_Catalog">Itactica_LayeredNavigation</Itactica_LayeredNavigation>
+                    </modules>
+                </args>
+            </catalog>
+            <catalogsearch>
+                <args>
+                    <modules>
+                        <Itactica_LayeredNavigation before="Mage_CatalogSearch">Itactica_LayeredNavigation</Itactica_LayeredNavigation>
+                    </modules>
+                </args>
+            </catalogsearch>
+        </routers>
+        <layout>
+            <updates>
+                <itactica_layerednavigation module="Itactica_LayeredNavigation">
+                    <file>itactica_layerednavigation.xml</file>
+                </itactica_layerednavigation>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Itactica_LayeredNavigation>
+                    <files>
+                        <default>Itactica_LayeredNavigation.csv</default>
+                    </files>
+                </Itactica_LayeredNavigation>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <itactica_layerednavigation>
+            <catalog>
+                <enabled>1</enabled>
+                <ajax_enabled>1</ajax_enabled>
+                <price_slider>1</price_slider>
+                <price_slider_submit_type>2</price_slider_submit_type>
+                <price_slider_delay>1</price_slider_delay>
+                <multiple_choice_filters>1</multiple_choice_filters>
+                <list_items_qty>5</list_items_qty>
+                <layered_nav_expanded>0</layered_nav_expanded>
+                <routing_suffix>filter</routing_suffix>
+            </catalog>
+        </itactica_layerednavigation>
+    </default>
+</config>

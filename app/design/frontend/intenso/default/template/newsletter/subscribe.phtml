@@ -1,0 +1,25 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<a href="#" class="icon-email newsletter-subscribe"><?php echo $this->__('Subscribe to our Newsletter') ?></a>
+<form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail" class="newsletter-subscribe-form no-margin">
+    <div class="field">
+    	<?php if(Mage::helper('itactica_intenso')->formFieldsType() == 'mdformfields'): ?>
+        <label for="newsletter"><?php echo $this->__('Enter your email') ?></label>
+    	<?php endif; ?>
+        <div class="input-box fade-label">
+            <input type="text" class="input-text required-entry validate-email" title="<?php echo $this->__('Subscribe to our Newsletter') ?>" id="newsletter" name="email"<?php if(Mage::helper('itactica_intenso')->formFieldsType() != 'mdformfields'): ?> placeholder="<?php echo $this->__('Enter your email') ?>"<?php endif;?>>
+        </div>
+    </div>
+    <button class="button" title="Subscribe" type="submit"><?php echo $this->__('Subscribe') ?></button>
+</form>
+<script>
+    var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+</script>

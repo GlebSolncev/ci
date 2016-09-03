@@ -1,0 +1,50 @@
+<root>
+	<democontent>
+		<item>
+			<title>Shop by Category</title>
+			<identifier>shop_by_category</identifier>
+			<add_to_category_url>
+				<item>men</item>
+				<item>women</item>
+			</add_to_category_url>
+			<animation_speed>300</animation_speed>
+			<minimum_width>220</minimum_width>
+			<swipe>1</swipe>
+			<position>0</position>
+			<status>1</status>
+			<categories>
+				<item>men-tops</item>
+				<item>men-bottoms</item>
+				<item>men-footwear</item>
+				<item>men-accesories</item>
+				<item>men-cold-weather</item>
+				<item>men-underwear-and-socks</item>
+				<item>men-swimsuits</item>
+				<item>men-bodycare-and-cologne</item>
+			</categories>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Shop by Trend</title>
+			<identifier>shop_by_trend</identifier>
+			<add_to_category_url>
+				<item>men</item>
+				<item>women</item>
+			</add_to_category_url>
+			<animation_speed>300</animation_speed>
+			<minimum_width>220</minimum_width>
+			<swipe>1</swipe>
+			<position>1</position>
+			<status>1</status>
+			<categories>
+				<item>men-sport-inspired-layers</item>
+				<item>men-casual-looks</item>
+				<item>men-sportwear</item>
+				<item>men-workwear</item>
+				<item>men-suit-shop</item>
+			</categories>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

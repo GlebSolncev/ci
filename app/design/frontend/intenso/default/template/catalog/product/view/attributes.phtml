@@ -1,0 +1,39 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+/**
+ * Product additional attributes template
+ *
+ * @see Mage_Catalog_Block_Product_View_Attributes
+ */
+?>
+<?php
+    $_helper = $this->helper('catalog/output');
+    $_product = $this->getProduct()
+?>
+<?php if($_additional = $this->getAdditionalData()): ?>
+    <p data-magellan-destination="additional-info"><a id="additional-info"></a></p>
+    <h3><?php echo $this->__('Additional Information') ?></h3>
+    <div class="small-12 columns">
+        <table class="data-table" id="product-attribute-specs-table">
+            <col />
+            <col />
+            <tbody>
+            <?php foreach ($_additional as $_data): ?>
+                <tr>
+                    <th class="label"><?php echo $this->escapeHtml($this->__($_data['label'])) ?></th>
+                    <td class="data"><?php echo $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">decorateTable('product-attribute-specs-table')</script>
+<?php endif;?>

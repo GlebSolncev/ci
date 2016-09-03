@@ -1,0 +1,27 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php $smallLogo = ($this->getLogoSrcSmall()) ? $this->getLogoSrcSmall() : $this->getLogoSrc(); ?>
+<header class="main-header clean-header">
+    <div class="row top-header">
+        <div class="small-12 clean-header-wrapper columns">
+            <a href="<?php echo $this->getUrl('') ?>">
+            	<img class="main-logo" src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" title="<?php echo $this->getLogoAlt() ?>" />
+                <img class="main-logo-small" src="<?php echo $smallLogo ?>" alt="<?php echo $this->getLogoAlt() ?>" title="<?php echo $this->getLogoAlt() ?>" />
+            </a>
+	        <div class="extra hide-for-small-only">
+	        	<?php echo $this->getChildHtml('clean_header_extra') ?>
+	        </div>
+	    </div>
+    </div>
+</header>

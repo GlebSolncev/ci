@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_QuickView
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+	<modules>
+		<Itactica_QuickView>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Itactica_QuickView>
+	</modules>
+</config>

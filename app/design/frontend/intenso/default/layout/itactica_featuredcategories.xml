@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_FeaturedCategories
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<layout>
+	<catalog_category_default>
+		<reference name="category.products">
+            <block type="itactica_featuredcategories/view" name="featuredcategories_view" template="itactica_featuredcategories/view.phtml"/>
+        </reference>
+	</catalog_category_default>
+	<catalog_category_layered>
+		<reference name="category.products">
+            <block type="itactica_featuredcategories/view" name="featuredcategories_view" template="itactica_featuredcategories/view.phtml"/>
+        </reference>
+	</catalog_category_layered>
+</layout>

@@ -1,0 +1,69 @@
+<root>
+	<democontent>
+		<item>
+			<title>Amazing</title>
+			<filename>/demo/amazing-logo.png</filename>
+			<search_by_key>1</search_by_key>
+			<search_key>amazing</search_key>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Intenso</title>
+			<filename>/demo/intenso-logo.png</filename>
+			<search_by_key>1</search_by_key>
+			<search_key>intenso</search_key>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Lorem Ipsum</title>
+			<filename>/demo/loremipsum-logo.png</filename>
+			<search_by_key>1</search_by_key>
+			<search_key>loremipsum</search_key>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Rocket</title>
+			<filename>/demo/rocket-logo.png</filename>
+			<search_by_key>1</search_by_key>
+			<search_key>rocket</search_key>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Brand</title>
+			<filename>/demo/brand-logo.png</filename>
+			<search_by_key>1</search_by_key>
+			<search_key>brand</search_key>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Sample Logo</title>
+			<filename>/demo/sample-logo.png</filename>
+			<search_by_key>1</search_by_key>
+			<search_key>sample logo</search_key>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Social Media</title>
+			<filename>/demo/socialmedia-logo.png</filename>
+			<search_by_key>1</search_by_key>
+			<search_key>social media</search_key>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Abstract</title>
+			<filename>/demo/abstract-logo.png</filename>
+			<search_by_key>1</search_by_key>
+			<search_key>abstract</search_key>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

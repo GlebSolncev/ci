@@ -1,0 +1,91 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+if (Mage::helper('core')->isModuleOutputEnabled('Itactica_ExtendedReviews')) {
+    $product = Mage::registry('current_product');
+    $storeId = Mage::app()->getStore()->getId();
+    Mage::getModel('review/review')->getEntitySummary($product, $storeId);
+
+    $helper = Mage::helper('itactica_extendedreviews');
+    $stat = Mage::getResourceModel('itactica_extendedreviews/review')->getStat($product->getId());
+    $sum = 0;
+    $count = 0;
+    $stars = array();
+    foreach ($stat as $row) {
+        $sum+=$row['count'] * $row['value'];
+        $count+=$row['count'];
+        $stars[$row['value']] = $row['count'];
+    }
+    $maxValue = max($stars);
+}
+?>
+<?php if(!empty($collection) && $collection->getSize() && !empty($stat)): ?>
+    <?php if(Mage::helper('core')->isModuleOutputEnabled('Itactica_ExtendedReviews')): ?>
+        <div class="rating-avg"><span><?php echo round($sum/$count,2); ?></span></div>
+        <div class="ratings">
+            <?php if ($product->getRatingSummary()->getRatingSummary()):?>
+            <div class="rating-box">
+                <div style="width:<?php echo $product->getRatingSummary()->getRatingSummary(); ?>%" class="rating"></div>
+            </div>
+            <?php endif;?>
+            <span class="rating-links icon-user">
+                <?php if ($product->getRatingSummary()->getReviewsCount() > 1): ?>
+                    <span><?php echo $product->getRatingSummary()->getReviewsCount(); ?><?php echo $helper->__('reviews') ?></span>
+                <?php else: ?>
+                    <span><?php echo $product->getRatingSummary()->getReviewsCount(); ?><?php echo $helper->__('review') ?></span>
+                <?php endif; ?>
+            </span>
+        </div>
+        <table id="histogram">
+            <tbody>
+            <?php for ($i=5; $i >= 1; $i--): ?>
+                <?php if (!isset($stars[$i])): $stars[$i] = 0; endif; ?>
+                <?php $meter = ($stars[$i] > 0) ? $stars[$i]/$maxValue*100 : 0; ?>
+                <?php $percentage = ($stars[$i] > 0) ? $stars[$i]/$count*100 : 0; ?>
+                <?php $percentage = round($percentage, 2); ?>
+                <tr>
+                    <td class="stars">
+                        <a class="small" href="<?php echo $this->getReviewsUrl() ?>?filter=<?php echo $helper->starFilterName($i); ?>" title="<?php echo $percentage; ?>% <?php echo $helper->__('of reviews have %d stars', $i);?>"><?php echo $helper->__('%d star',$i); ?></a>    
+                    </td>
+                    <td class="meter-bar">
+                        <a href="<?php echo $this->getReviewsUrl() ?>?filter=<?php echo $helper->starFilterName($i); ?>" title="<?php echo $percentage; ?>% <?php echo $helper->__('of reviews have %d stars', $i);?>">
+                            <div class="progress large-12"><span style="width: <?php echo $meter; ?>%" class="meter meter-<?php echo $i; ?>"></span></div>
+                        </a>
+                    </td>
+                    <td class="amount">
+                        <span class="small"><?php echo $stars[$i]; ?></span>
+                    </td>
+                </tr>
+            <?php endfor; ?>
+            </tbody>
+        </table>
+        <a href="<?php echo $this->getReviewsUrl() ?>#post-review" class="small underline hide-for-small-only"><?php echo $this->__('Add your review') ?></a>
+    <?php else: ?>
+        <table class="ratings-table">
+            <col width="1" />
+            <col />
+            <tbody>
+                <?php foreach ($collection as $_rating): ?>
+                    <?php if($_rating->getSummary()): ?>
+                        <tr>
+                            <th><?php echo $this->__($this->escapeHtml($_rating->getRatingCode())) ?></th>
+                            <td>
+                                <div class="rating-box">
+                                    <div class="rating" style="width:<?php echo ceil($_rating->getSummary()) ?>%;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
+<?php endif; ?>

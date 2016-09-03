@@ -1,0 +1,26 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php if($this->getMessagesBlock()->getMessageCollection()->count()): ?>
+    <div id="reveal-messages" class="reveal-modal" data-reveal>
+        <div class="close-reveal-modal"></div>
+        <?php echo $this->getMessagesBlock()->getGroupedHtml(); ?>
+        <?php if (Mage::app()->getFrontController()->getAction()->getFullActionName() == 'checkout_cart_index'): ?>
+        <div class="modal-action">
+        	<a href="<?php echo Mage::getSingleton('checkout/session')->getContinueShoppingUrl(); ?>" class="button"><?php echo $this->__('Continue Shopping'); ?></a>
+        	<a href="<?php echo Mage::helper('checkout/url')->getCheckoutUrl(); ?>" class="button"><?php echo $this->__('Proceed to Checkout'); ?></a>
+        	<a href="#" class="button secondary" onclick="jQuery('#reveal-messages').foundation('reveal', 'close');"><?php echo $this->__('View Cart'); ?></a>
+        </div>
+    	<?php else: ?>
+    	<div class="modal-action"><a class="button" onclick="jQuery('#reveal-messages').foundation('reveal', 'close');"><?php echo $this->__('Accept'); ?></a></div>
+    	<?php endif; ?>
+    </div>
+<?php $this->getMessagesBlock()->getMessageCollection()->clear(); ?>
+<?php endif; ?>

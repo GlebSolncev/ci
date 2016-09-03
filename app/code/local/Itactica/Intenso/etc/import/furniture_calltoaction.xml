@@ -1,0 +1,33 @@
+<root>
+	<democontent>
+		<item>
+			<title>Furniture - CTA</title>
+			<identifier>furniture_cta</identifier>
+			<full_width>1</full_width>
+			<columns>2</columns>
+			<background_color>#b3b0a1</background_color>
+			<background_image></background_image>
+			<margin_top>0</margin_top>
+			<margin_bottom>0</margin_bottom>
+			<text>Already Loving Intenso? Buy it Now!</text>
+			<text_color>#ffffff</text_color>
+			<font_size>42</font_size>
+			<font_style>normal</font_style>
+			<font_weight>300</font_weight>
+			<text_lineheight>42</text_lineheight>
+			<button_type>button</button_type>
+			<button_text>Get Intenso Theme</button_text>
+			<link>https://www.getintenso.com/pricing</link>
+			<link_target>0</link_target>
+			<button_text_color>#ffffff</button_text_color>
+			<button_text_color_hover>#ffffff</button_text_color_hover>
+			<button_background_color>#698483</button_background_color>
+			<button_background_color_hover>#475b5a</button_background_color_hover>
+			<button_border_color></button_border_color>
+			<button_border_color_hover></button_border_color_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

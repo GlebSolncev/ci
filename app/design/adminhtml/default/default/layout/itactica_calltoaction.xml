@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_CallToAction
+ * @copyright   Copyright (c) 2014-2015 Itactica (https://www.getintenso.com)
+ * @license     https://getintenso.com/license
+ */
+--> 
+<layout>
+    <adminhtml_calltoaction_cta_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_calltoaction/cta</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_calltoaction/adminhtml_cta" name="cta" />
+        </reference>
+    </adminhtml_calltoaction_cta_index>
+    <adminhtml_calltoaction_cta_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_calltoaction/adminhtml_cta_grid" name="cta_grid"/>
+        </block>
+    </adminhtml_calltoaction_cta_grid>
+    <!-- CTA add/edit action -->
+    <adminhtml_calltoaction_cta_edit>
+        <reference name="head">
+            <action method="addCss"><name>spectrum.css</name></action>
+        </reference>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_calltoaction/cta</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_calltoaction/adminhtml_cta_edit" name="cta_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="itactica_calltoaction/adminhtml_cta_edit_tabs" name="cta_tabs"></block>
+        </reference>
+    </adminhtml_calltoaction_cta_edit>
+</layout>

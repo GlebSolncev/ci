@@ -1,0 +1,153 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+
+<?php echo $this->getButtonHtml() ?>
+<?php 
+// retrieve Current Configuration Scope
+$website = Mage::app()->getRequest()->getParam('website');
+$storeCode = Mage::app()->getRequest()->getParam('store');
+if ($storeCode) {
+    $storeId = Mage::app()->getStore($storeCode)->getId();
+} else {
+    if ($website) {
+        $websiteId = Mage::getModel('core/website')->load($website)->getId();
+        $storeId = Mage::app()->getWebsite($websiteId)->getDefaultStore()->getId();
+    } else {
+        $websites = Mage::app()->getWebsites();
+        $website = reset($websites);
+        if ($website) {
+            $storeId = $website->getDefaultStore()->getStoreId();
+        } else {
+            $storeId = 1;
+        }
+    }
+}
+?>
+<div id="demo-loading-indicator" style="display: none; margin: 20px 0 5px">
+    <strong>Loading demo...</strong> <br>Please wait, it could take up to 15 minutes to complete.<br>(Do not close the browser's window or reload the Admin page before the process finish)
+</div>
+<div id="products" style="display: none; color: green; font-weight: bold">Importing: Products and Categories</div>
+<div id="cmspages" style="display: none; color: green; font-weight: bold">Importing: CMS Pages</div>
+<div id="staticblocks" style="display: none; color: green; font-weight: bold">Importing: Static Blocks</div>
+<div id="imagesliders" style="display: none; color: green; font-weight: bold">Importing: Image Sliders</div>
+<div id="logosliders" style="display: none; color: green; font-weight: bold">Importing: Logo Sliders</div>
+<div id="textboxes" style="display: none; color: green; font-weight: bold">Importing: Text Boxes</div>
+<div id="billboard" style="display: none; color: green; font-weight: bold">Importing: Billboards</div>
+<div id="cta" style="display: none; color: green; font-weight: bold">Importing: CallToActions</div>
+<div id="config-options" style="display: none; color: green; font-weight: bold">Importing: Configuration Options</div>
+<script>
+var demo_store,
+    import_type;
+function importDemo() {
+    if (confirm("<?php echo $this->__('Any existing data from previous demos like categories, CMS pages and Static Blocks will be overwritten.\n\nProducts, categories, CMS pages or Static Blocks (other than Magento\'s default) created by you will NOT be overwritten.\n\nPlease confirm to proceed.') ?>")) {
+        $("demo-loading-indicator").show();
+        demo_store = $('intenso_import_select_demo').options[$('intenso_import_select_demo').options.selectedIndex].value;
+        import_type = $('intenso_import_import_type').options[$('intenso_import_import_type').options.selectedIndex].value;          
+        products();
+    }
+}
+function products() {
+    if (import_type == 'all' || import_type == 'products') {
+        $('products').show();
+        var url = '<?php echo $this->getUrl('itactica_intenso/adminhtml_intenso_import/demoproducts'); ?>';
+        ajaxCall(url, demo_store, import_type, 0, cmspages);
+    } else {
+        cmspages();
+    }
+}
+function cmspages() {
+    if (import_type == 'all' || import_type == 'cmspages') {
+        $('cmspages').show();
+        var url = '<?php echo $this->getUrl('itactica_intenso/adminhtml_intenso_import/demopages'); ?>';
+        ajaxCall(url, demo_store, import_type, 0, staticblocks);
+    } else {
+        staticblocks();
+    }
+}
+function staticblocks() {
+    if (import_type == 'all' || import_type == 'staticblocks') {
+        $('staticblocks').show();
+        var url = '<?php echo $this->getUrl('itactica_intenso/adminhtml_intenso_import/demoblocks'); ?>';
+        ajaxCall(url, demo_store, import_type, 0, imagesliders);
+    } else {
+        imagesliders();
+    }
+}
+function imagesliders() {
+    if (import_type == 'all' || import_type == 'imagesliders') {
+        $('imagesliders').show();
+        var url = '<?php echo $this->getUrl('itactica_intenso/adminhtml_intenso_import/demosliders'); ?>';
+        ajaxCall(url, demo_store, import_type, 0, logosliders);
+    } else {
+        logosliders();
+    }
+}
+function logosliders() {
+    if (import_type == 'all' || import_type == 'logosliders') {
+        $('logosliders').show();
+        var url = '<?php echo $this->getUrl('itactica_intenso/adminhtml_intenso_import/demologoslider'); ?>';
+        ajaxCall(url, demo_store, import_type, 0, textboxes);
+    } else {
+        textboxes();
+    }
+}
+function textboxes() {
+    if (import_type == 'all' || import_type == 'textboxes') {
+        $('textboxes').show();
+        var url = '<?php echo $this->getUrl('itactica_intenso/adminhtml_intenso_import/demotextboxes'); ?>';
+        ajaxCall(url, demo_store, import_type, 0, billboard);
+    } else {
+        billboard();
+    }
+}
+function billboard() {
+    if (import_type == 'all' || import_type == 'billboard') {
+        $('billboard').show();
+        var url = '<?php echo $this->getUrl('itactica_intenso/adminhtml_intenso_import/demobillboard'); ?>';
+        ajaxCall(url, demo_store, import_type, 0, cta);
+    } else {
+        cta();
+    }
+}
+function cta() {
+    if (import_type == 'all' || import_type == 'cta') {
+        $('cta').show();
+        var url = '<?php echo $this->getUrl('itactica_intenso/adminhtml_intenso_import/democalltoaction'); ?>';
+        ajaxCall(url, demo_store, import_type, 0, configOptions);
+    } else {
+        configOptions();
+    }
+}
+function configOptions() {
+    if (import_type == 'all' || import_type == 'configuration') {
+        $('config-options').show();
+        var url = '<?php echo $this->getUrl('itactica_intenso/adminhtml_intenso_import/configuration'); ?>';
+        var scope = $('store_switcher').options[$('store_switcher').options.selectedIndex].value;
+        ajaxCall(url, demo_store, import_type, scope, importFinished);
+    } else {
+        importFinished();
+    }
+}
+function importFinished() {
+    location.reload();
+}
+function ajaxCall(url, demo_store, import_type, scope, callback) {
+    new Ajax.Request(url, {
+        method: 'Post',
+        parameters: {demo: demo_store, import_type: import_type, scope: scope, store_id: <?php echo $storeId; ?>},
+        onComplete: function(transport){
+            if (callback) {
+                callback();
+            }
+        }
+    });
+}
+</script>

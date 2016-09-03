@@ -1,0 +1,243 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php if ($this->helper('itactica_layerednavigation')->isAjaxEnabled()): ?>
+<script type="text/javascript">
+    //<![CDATA[
+    var url = '';
+    function pushState(data, link, replace) {
+        var History = window.History;
+        if ( !History.enabled ) {
+            return false;
+        }
+
+        <?php // check sessionStorage size to avoid exceeding storage quota ?>
+        <?php // to do: Look for a better and more secure approach ?>
+        if (window.sessionStorage && sessionStorage.getItem('History.store') && sessionStorage.getItem('History.store').length > 4000000) {
+            sessionStorage.clear();
+        }
+
+        if (replace) {
+            History.replaceState(data, document.title, link);
+        } else {
+            History.pushState(data, document.title, link);
+        }
+    }
+    
+    function handleEvent(el, event) {
+        var url, fullUrl;
+        if (typeof el === 'string') {
+            url = el;
+        } else if (el.tagName.toLowerCase() === 'a') {
+            url = $(el).readAttribute('href');
+        } else if (el.tagName.toLowerCase() === 'select') {
+            url = $(el).getValue();
+        }
+
+        <?php // Add this to query string for full page caching systems ?>
+        if (url.indexOf('?') != -1) {
+            fullUrl = url + '&isLayerAjax=1';
+        } else {
+            fullUrl = url + '?isLayerAjax=1';
+        }
+        
+        $$('body')[0].addClassName('app-loading');
+        $('catalog-listing').addClassName('loading');
+        $('ajax-errors').hide();
+        
+        pushState(null, url, false);
+
+        new Ajax.Request(fullUrl, {
+            method: 'get',
+            onSuccess: function(transport) {
+                if (transport.responseJSON) {                  
+                    $('catalog-listing').update(transport.responseJSON.listing);
+                    $('layered-navigation').update(transport.responseJSON.layer);
+                    $('category-name').update(transport.responseJSON.categoryName);
+                    $('filter-reset').update(transport.responseJSON.clearLink);
+                    $('amount').update(transport.responseJSON.amount);
+                    $('pager').update(transport.responseJSON.pager);
+                    $('orders').update(transport.responseJSON.orders);
+                    $('limits').update(transport.responseJSON.limits);
+                    pushState({
+                        listing: transport.responseJSON.listing,
+                        layer: transport.responseJSON.layer,
+                        categoryName: transport.responseJSON.categoryName,
+                        clearLink: transport.responseJSON.clearLink,
+                        amount: transport.responseJSON.amount,
+                        pager: transport.responseJSON.pager,
+                        orders: transport.responseJSON.orders,
+                        limits: transport.responseJSON.limits
+                    }, url, true);
+                    ajaxListener();
+                    shorten_list(<?php echo (int) Mage::getStoreConfig('itactica_layerednavigation/catalog/list_items_qty'); ?>);
+                    echo.init({ // init lazy loading of images
+                        offset: 100,
+                        throttle: 250,
+                        unload: false
+                    });
+                    var body = $j("html, body");
+                    body.animate({scrollTop:0}, '3000', 'swing', function() { 
+                        // callback
+                    });
+                } else {
+                    $('ajax-errors').show();
+                    $('catalog-listing').removeClassName('loading');
+                }
+
+                $$('body')[0].removeClassName('app-loading');
+                $('catalog-listing').removeClassName('loading');
+
+                <?php // trigger jQuery event needed to relayout grid on intenso.js ?>
+                $j('#catalog-listing').trigger('isotope:update');
+                <?php // dispatch prototype.js event for others script to hook up with ?>
+                $('catalog-listing').fire("catalog:update");
+                <?php // trigger jQuery event needed to bind config swatches ?>
+                $j(document).ready(function() {
+                    setTimeout(function(){
+                        $j(document).trigger('product-media-loaded');
+                    },500);
+                });
+            }
+        });
+        
+        if (event) {
+            event.preventDefault();
+        }
+    }
+    function ajaxListener() {
+        var els;
+        els = $$('div.pager a').concat(
+            $$('.layered-nav-select select'),
+            $$('#narrow-by-list a'),
+            $$('#pager a'),
+            $$('#filter-reset a')
+        );
+
+        els.each(function(el) {
+            if (el.tagName.toLowerCase() === 'a') {
+                $(el).observe('click', function(event) {
+                    handleEvent(this, event);
+                });
+            } else if (el.tagName.toLowerCase() === 'select') {
+                $(el).setAttribute('onchange', '');
+                $(el).observe('change', function(event) {
+                    if(url == this.getValue()) return;
+                    url = this.getValue();
+                    handleEvent(this, event);
+                });
+            }
+        });
+    }
+
+    function hide_list_item(children, list_items_qty) {
+        if(children.length > list_items_qty){
+            for(var i = list_items_qty; i < children.length; i++) {
+                $(children[i]).hide();
+            }
+        }
+    }
+        
+    function shorten_list(list_items_qty) {
+        list_items_qty = typeof list_items_qty !== 'undefined' ? list_items_qty : 5;
+        var show_more = "<?php echo $this->__('Show all') ?>";
+        var show_less = "<?php echo $this->__('Show less') ?>";
+        var link = '<span class="arrow-down show-more">'+show_more+'</span>';
+        $$('.layered-nav dt').each(function(node,index) {
+            var el = node.next('dd').firstDescendant('ol');
+            var children = $(el).select('li');
+            if(children.length > list_items_qty){
+                hide_list_item(children, list_items_qty);
+                node.insert(link);
+            }
+        });
+        $$('.show-more').each(function(el) { 
+            el.observe('click', function(event) {
+                event.stop();
+                el.toggleClassName('show-all');
+                var ol = el.up().next('dd').firstDescendant('ol');
+                var children = $(ol).select('li');
+                if(el.hasClassName('show-all')) {
+                    children.each(function(node) {
+                        Effect.Appear(node, {duration: 0.3});
+                    });
+                    el.update(show_less);
+                    el.removeClassName('arrow-down').addClassName('arrow-up');
+                } else {
+                    hide_list_item(children, list_items_qty);
+                    el.update(show_more);
+                    el.removeClassName('arrow-up').addClassName('arrow-down');
+                }
+            });
+        });
+    }
+    document.observe("dom:loaded", function() {
+        ajaxListener();
+        shorten_list(<?php echo (int) Mage::getStoreConfig('itactica_layerednavigation/catalog/list_items_qty'); ?>);
+
+        (function(History) {
+            if ( !History.enabled ) {
+                return false;
+            }
+
+            if($('catalog-listing') != undefined) {
+                pushState({
+                    listing: $('catalog-listing').innerHTML,
+                    layer: $('layered-navigation').innerHTML,
+                    categoryName: $('category-name').innerHTML,
+                    clearLink: $('filter-reset').innerHTML,
+                    amount: $('amount').innerHTML,
+                    pager: $('pager').innerHTML,
+                    orders: $('orders').innerHTML,
+                    limits: $('limits').innerHTML
+                }, document.location.href, true);
+            }
+
+            // Bind to StateChange Event
+            History.Adapter.bind(window, 'popstate', function(event) {
+                if (event.type == 'popstate') {
+                    var State = History.getState();
+                    $('catalog-listing').update(State.data.listing);
+                    $('layered-navigation').update(State.data.layer);
+                    $('category-name').update(State.data.categoryName);
+                    $('filter-reset').update(State.data.clearLink);
+                    $('amount').update(State.data.amount);
+                    $('pager').update(State.data.pager);
+                    $('orders').update(State.data.orders);
+                    $('limits').update(State.data.limits);
+                    ajaxListener();
+                    shorten_list(<?php echo (int) Mage::getStoreConfig('itactica_layerednavigation/catalog/list_items_qty'); ?>);
+                    <?php // trigger jQuery event needed to relayout grid on intenso.js ?>
+                    $j('#catalog-listing').trigger('isotope:update');
+                    <?php // dispatch event to update chosen.js select boxes ?>
+                    $$('.layered-nav-select select').each(function(el){
+                        $j(el).trigger('chosen:updated');
+                    });
+                    <?php // dispatch prototype.js event for others script to hook up with ?>
+                    $('catalog-listing').fire("catalog:update");
+                    <?php // trigger jQuery event needed to bind config swatches ?>
+                    $j(document).ready(function() {
+                        setTimeout(function(){
+                            $j(document).trigger('product-media-loaded');
+                            // init lazy loading of images
+                            echo.init({ // init lazy loading of images
+                                offset: 100,
+                                throttle: 250,
+                                unload: false
+                            });
+                        },500);
+                    });
+                }                
+            });
+        })(window.History);
+    });
+    //]]>
+</script>
+<?php endif; ?>

@@ -1,0 +1,23 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php if ($this->getCheckout()->getStepData('billing', 'complete')): ?>
+<dt class="complete">
+    <?php echo $this->__('Billing Address') ?><span class="changelink"><a
+        href="#billing" class="icon-edit" onclick="checkout.changeSection('opc-billing'); <?php if(Mage::helper('itactica_intenso')->formFieldsType() == 'mdformfields'): ?>jQuery('body').trigger('new:ajaxform'); updateBillingRegion();<?php endif; ?> return false;" title="<?php echo $this->__('Change') ?>"><span class="hide"><?php echo $this->__('Change') ?></span></a></span>
+</dt>
+<dd class="complete">
+    <address><?php echo $this->getBilling()->format('html') ?></address>
+</dd>
+<?php else: ?>
+<dt>
+    <?php echo $this->__('Billing Address') ?>
+</dt>
+<?php endif; ?>

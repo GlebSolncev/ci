@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Billboard
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<widgets>
+    <billboard_unit_view type="itactica_billboard/unit_widget_view" translate="name description" module="itactica_billboard">
+        <name>Intenso - Billboard</name>
+        <description>Billboard Widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <unit_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Billboard</label>
+                <type>label</type>
+                <helper_block>
+                    <type>itactica_billboard/adminhtml_unit_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Billboard</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </unit_id>
+        </parameters>
+    </billboard_unit_view>
+</widgets>

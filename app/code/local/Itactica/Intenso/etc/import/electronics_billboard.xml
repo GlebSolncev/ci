@@ -1,0 +1,72 @@
+<root>
+	<democontent>
+		<item>
+			<title>Electronics Home</title>
+			<identifier>electronics_home</identifier>
+			<columns>2</columns>
+			<billboard_type>1</billboard_type>
+			<image_options_small>1</image_options_small>
+			<image_options_medium>2</image_options_medium>
+			<images_to_show>
+				<item>1</item>
+				<item>2</item>
+			</images_to_show>
+			<background_color>#ffffff</background_color>
+			<padding_top>0</padding_top>
+			<padding_bottom>0</padding_bottom>
+			<image_large_first>/billboard-home-electronics-large-1.jpg</image_large_first>
+			<image_large_second>/billboard-home-electronics-large-2.jpg</image_large_second>
+			<image_large_third></image_large_third>
+			<image_large_fourth></image_large_fourth>
+			<image_medium_first>/billboard-home-electronics-medium-1.jpg</image_medium_first>
+			<image_medium_second>/billboard-home-electronics-medium-2.jpg</image_medium_second>
+			<image_medium_third></image_medium_third>
+			<image_medium_fourth></image_medium_fourth>
+			<alt_first><![CDATA[Digital Cameras - Capture + Share]]></alt_first>
+			<alt_second><![CDATA[Kids Tablets - Fun Learning]]></alt_second>
+			<alt_third></alt_third>
+			<alt_fourth></alt_fourth>
+			<link_first>cameras.html</link_first>
+			<link_second>cellphones-and-tablets/tablets/kids-tablets.html</link_second>
+			<link_third></link_third>
+			<link_fourth></link_fourth>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Electronics Home 2</title>
+			<identifier>electronics_home_2</identifier>
+			<columns>3</columns>
+			<billboard_type>1</billboard_type>
+			<image_options_small>1</image_options_small>
+			<image_options_medium>2</image_options_medium>
+			<images_to_show>
+				<item>1</item>
+				<item>2</item>
+				<item>3</item>
+			</images_to_show>
+			<background_color>#ffffff</background_color>
+			<padding_top>0</padding_top>
+			<padding_bottom>0</padding_bottom>
+			<image_large_first>/billboard-home-electronics-3.jpg</image_large_first>
+			<image_large_second>/billboard-home-electronics-4.jpg</image_large_second>
+			<image_large_third>/billboard-home-electronics-5.jpg</image_large_third>
+			<image_large_fourth></image_large_fourth>
+			<image_medium_first>/billboard-home-electronics-3.jpg</image_medium_first>
+			<image_medium_second>/billboard-home-electronics-4.jpg</image_medium_second>
+			<image_medium_third>/billboard-home-electronics-5.jpg</image_medium_third>
+			<image_medium_fourth></image_medium_fourth>
+			<alt_first>Smartphones</alt_first>
+			<alt_second>New Smart Watch - A smarter way to look at time</alt_second>
+			<alt_third>New Laptops</alt_third>
+			<alt_fourth></alt_fourth>
+			<link_first>cellphones-and-tablets.html</link_first>
+			<link_second>cellphones-and-tablets/smartwatch.html</link_second>
+			<link_third>laptops.html</link_third>
+			<link_fourth></link_fourth>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

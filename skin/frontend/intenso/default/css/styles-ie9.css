@@ -1,0 +1,22 @@
+.csstransforms.no-csstransforms3d .left-off-canvas-menu {
+    -ms-transform: none;
+}
+.csstransforms.no-csstransforms3d .right-off-canvas-menu {
+    -ms-transform: none;
+}
+
+/* fix: hover over empty element without background color doens't work on IE9; */
+.right-off-canvas-menu.main-nav .right .dropdown {
+    background-image: url(../images/clear.png) !important;
+    background-repeat: repeat;
+}
+
+/* Small screens */
+@media only screen and (max-width: 40em) {
+    .csstransforms.no-csstransforms3d .left-off-canvas-menu {
+        -ms-transform: translate(-100%, 0);
+    }
+    .csstransforms.no-csstransforms3d .right-off-canvas-menu {
+        -ms-transform: translate(100%, 0);
+    }
+}

@@ -1,0 +1,36 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php $_slider = $this->getCurrentSlider();?>
+<?php if ($_slider): ?>
+	<section class="row brand-slider<?php if (Mage::getStoreConfig('intenso/catalog/lazy_loading')): ?> lazy-loading<?php endif; ?>" data-options="animation_speed:<?php echo $_slider->getAnimationSpeed(); ?>; min_item_width:<?php echo $_slider->getMinItemWidth(); ?>; swipe:<?php echo $_slider->getSwipe(); ?>; bullets:<?php echo $_slider->getShowBullets(); ?>; navigation_arrows:<?php echo $_slider->getShowArrows(); ?>">
+		<h3><?php echo $_slider->getTitle(); ?></h3>
+		<ol class="logos-container">
+			<?php $logos = $this->getLogos($_slider->getId()); ?>
+			<?php foreach ($logos as $logo): ?>
+    			<li class="brand">
+    			<?php if ($logo->getSearchByKey() == 1): ?>
+    				<a href="catalogsearch/result/?q=<?php echo urlencode($logo->getSearchKey()); ?>">
+    			<?php elseif ($logo->getSearchByKey() == 2): ?>
+    				<a href="<?php echo $logo->getUrlToRedirect(); ?>">
+    			<?php endif; ?>
+    					<?php if (Mage::getStoreConfig('intenso/catalog/lazy_loading')): ?>
+    						<img alt="" title="<?php echo $logo->getTitle(); ?>" src="<?php echo $this->getSkinUrl('images/clear.png'); ?>" data-echo="<?php echo Mage::getBaseUrl('media') . 'logo/image' . $logo->getFilename(); ?>"><span class="a11y"><?php echo $logo->getTitle(); ?></span>
+    					<?php else: ?>
+    						<img src="<?php echo Mage::getBaseUrl('media') . 'logo/image' . $logo->getFilename(); ?>" alt="<?php echo $logo->getTitle(); ?>" title="<?php echo $logo->getTitle(); ?>"><span class="a11y"><?php echo $logo->getTitle(); ?></span>
+    					<?php endif; ?>
+    			<?php if ($logo->getSearchByKey() == 1 || $logo->getSearchByKey() == 2): ?>
+    				</a>
+    			<?php endif; ?>
+    			</li>
+    		<?php endforeach; ?>
+    	</ol>
+	</section>
+<?php endif; ?>

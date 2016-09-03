@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_TextBoxes
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <itactica_textboxes translate="title" module="itactica_textboxes">
+                                        <title>Intenso - Text Boxes</title>
+                                    </itactica_textboxes>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <theme>
+                        <children>
+                            <itactica_textboxes translate="title" module="itactica_textboxes">
+                                <title>Text Boxes</title>
+                                <children>
+                                    <box translate="title" module="itactica_textboxes">
+                                        <title>Text Box</title>
+                                        <sort_order>40</sort_order>
+                                    </box>
+                                </children>
+                            </itactica_textboxes>
+                        </children>
+                    </theme>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <theme>
+            <children>
+                <itactica_textboxes translate="title" module="itactica_textboxes">
+                    <title>Text Boxes</title>
+                    <action>adminhtml/textboxes_box</action>
+                    <sort_order>40</sort_order>
+                </itactica_textboxes>
+            </children>
+        </theme>
+    </menu>
+</config>

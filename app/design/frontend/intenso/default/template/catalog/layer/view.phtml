@@ -1,0 +1,42 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Category layered navigation
+ *
+ * @see Mage_Catalog_Block_Layer_View
+ */
+?>
+<?php if($this->canShowBlock()): ?>
+<nav class="layered-nav-container top-bar left-off-canvas-menu main-nav<?php if(Mage::getStoreConfig('itactica_layerednavigation/catalog/layered_nav_expanded')): ?> open<?php endif; ?>" role="navigation" data-topbar>
+    <?php if ($this->getLayer()->getState()->getFilters()): ?>
+        <a href="<?php echo $this->getClearUrl() ?>" class="filter-reset"><?php echo $this->__('Reset Filters') ?></a>
+    <?php endif; ?>
+    <section class="layered-nav top-bar-section">
+        <?php echo $this->getChildHtml('product_list_sorter'); ?>
+        <div class="block-content">
+            <?php echo $this->getStateHtml() ?>
+            <?php if($this->canShowOptions()): ?>
+                <dl id="narrow-by-list">
+                    <?php $_filters = $this->getFilters() ?>
+                    <?php foreach ($_filters as $_filter): ?>
+                    <?php if($_filter->getItemsCount()): ?>
+                        <dt><?php echo $this->__($_filter->getName()) ?></dt>
+                        <dd><?php echo $_filter->getHtml() ?></dd>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+                </dl>
+                <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+            <?php endif; ?>
+        </div>
+    </section>
+</nav>
+<?php endif; ?>

@@ -1,0 +1,23 @@
+/**
+ * Custom CSS stylesheet. Add here your custom styles.
+ *
+ * Enable this file from the backend:
+ * System -> Configuration -> Theme Setup -> Custom CSS -> Load Custom CSS File
+ * 
+ * Please refer to the User's Guide for more information.
+*/
+
+
+body.es_es #histogram .stars {
+	width: 4rem !important;
+}
+
+body.es_es #select_language_chosen.chosen-container-active .chosen-single span:before,
+body.es_es #select_language_chosen.chosen-container .chosen-single span:before {
+	content: 'Idioma: ';
+}
+body.es_es #select_currency_chosen.chosen-container-active .chosen-single span:before,
+body.es_es #select_currency_chosen.chosen-container .chosen-single span:before {
+	content: 'Moneda: ';
+}
+

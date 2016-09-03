@@ -1,0 +1,26 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_ExtendedReviews
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<?php $_items = $this->getCollection()->getItems();
+$helper = Mage::helper('itactica_extendedreviews');?>
+<?php if (count($_items)):?>
+    <?php foreach ($_items as $item): ?>
+    <div class="comment-bubble arrow-box">
+        <div class="author">
+            <?php echo $helper->__('By')?> <?php echo $this->htmlEscape($item->getNickname()); ?> <?php echo $helper->__('on')?> <time datetime="<?php echo $item->getCreatedAt(); ?>" itemprop="datePublished"><?php echo $this->formatDate($item->getCreatedAt(),Mage_Core_Model_Locale::FORMAT_TYPE_LONG); ?></time>
+        </div>
+        <div class="comment-text">
+            <?php echo $this->htmlEscape($item->getText())?>
+        </div>
+    </div>
+    <?php endforeach;?>
+    <a class="comments" href="#" onclick="return ExtendedReviews.showAddCommentForm('<?php echo $helper->getAddCommentAction($this->getReviewId()); ?>', <?php echo $this->getReviewId(); ?>)">Comment</a><a class="comments-hide" href="#" onclick="ExtendedReviews.hideComments(<?php echo $this->getReviewId(); ?>);return false;"><?php echo $helper->__('Hide comments')?></a>
+<?php endif;?>

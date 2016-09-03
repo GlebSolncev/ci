@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Eshift_Escommon>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>1.0.4</version>
+    </Eshift_Escommon>
+  </modules>
+</config>

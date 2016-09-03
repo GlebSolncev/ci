@@ -1,0 +1,38 @@
+<root>
+	<democontent>
+		<item>
+			<title>Clothing Home</title>
+			<identifier>clothing_home</identifier>
+			<columns>3</columns>
+			<billboard_type>1</billboard_type>
+			<image_options_small>2</image_options_small>
+			<image_options_medium>2</image_options_medium>
+			<images_to_show>
+				<item>1</item>
+				<item>2</item>
+			</images_to_show>
+			<background_color>#ffffff</background_color>
+			<padding_top></padding_top>
+			<padding_bottom></padding_bottom>
+			<image_large_first>/mini-banner-1-large.jpg</image_large_first>
+			<image_large_second>/mini-banner-2-large.jpg</image_large_second>
+			<image_large_third>/mini-banner-3-large.jpg</image_large_third>
+			<image_large_fourth></image_large_fourth>
+			<image_medium_first>/mini-banner-1-medium.jpg</image_medium_first>
+			<image_medium_second>/mini-banner-2-medium.jpg</image_medium_second>
+			<image_medium_third>/mini-banner-3-medium.jpg</image_medium_third>
+			<image_medium_fourth></image_medium_fourth>
+			<alt_first><![CDATA[Up to 50% Off Men's Shirts - Available online only]]></alt_first>
+			<alt_second><![CDATA[Step Lively - Shop from Classic to Cool]]></alt_second>
+			<alt_third><![CDATA[20% Off Select Styles - Available online only]]></alt_third>
+			<alt_fourth></alt_fourth>
+			<link_first>#</link_first>
+			<link_second>#</link_second>
+			<link_third>#</link_third>
+			<link_fourth></link_fourth>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

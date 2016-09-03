@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Billboard
+ * @copyright   Copyright (c) 2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <itactica_billboard translate="title" module="itactica_billboard">
+                                        <title>Intenso - Billboard</title>
+                                    </itactica_billboard>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <theme>
+                        <children>
+                            <itactica_billboard translate="title" module="itactica_billboard">
+                                <title>Billboard</title>
+                                <children>
+                                    <billboard translate="title" module="itactica_billboard">
+                                        <title>Billboard</title>
+                                        <sort_order>50</sort_order>
+                                    </billboard>
+                                </children>
+                            </itactica_billboard>
+                        </children>
+                    </theme>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <theme>
+            <children>
+                <itactica_billboard translate="title" module="itactica_billboard">
+                    <title>Billboard</title>
+                    <action>adminhtml/billboard_unit</action>
+                    <sort_order>40</sort_order>
+                </itactica_billboard>
+            </children>
+        </theme>
+    </menu>
+</config>

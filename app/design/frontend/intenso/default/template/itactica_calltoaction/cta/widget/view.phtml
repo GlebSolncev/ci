@@ -1,0 +1,36 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_CallToAction
+ * @copyright   Copyright (c) 2014-2015 Itactica (https://www.getintenso.com)
+ * @license     https://getintenso.com/license
+ */
+
+?>
+<?php 
+$cta = $this->getCurrentCallToAction();
+$uniqId = uniqid();
+$helper = Mage::helper('itactica_calltoaction');
+?>
+<?php if ($cta): ?>
+<div class="row cta-<?php echo $uniqId; ?> show-for-medium-up cta-ribbon<?php if (!$cta->getFullWidth()) echo ' padded'; ?><?php if ($cta->getCustomClassname()) echo ' ' . $cta->getCustomClassname() ?>" style="background-color: <?php echo $helper->hex($cta->getBackgroundColor()); ?>; <?php if ($cta->getBackgroundImage()): ?>background: url(<?php echo Mage::helper('itactica_calltoaction/image')->getImageBaseUrl() . $cta->getBackgroundImage(); ?>) center center no-repeat; <?php endif; ?>margin-top: <?php echo $cta->getMarginTop(); ?>; margin-bottom: <?php echo $cta->getMarginBottom(); ?>">
+	<div class="medium-<?php echo $this->getMediumFirst(); ?> large-<?php echo $this->getLargeFirst(); ?> columns">
+		<h1 style="color: <?php echo $helper->hex($cta->getTextColor()); ?>; font-size: <?php echo $cta->getFontSize(); ?>px; font-style: <?php echo $cta->getTextStyle(); ?>; font-weight: <?php echo $cta->getFontWeight(); ?>; line-height: <?php echo $cta->getTextLineheight(); ?>px;"><?php echo $cta->getText(); ?></h1>
+	</div>
+	<div class="medium-<?php echo $this->getMediumSecond(); ?> large-<?php echo $this->getLargeSecond(); ?> columns">
+		<?php if ($cta->getButtonType() != 'none'): ?>
+		<a href="<?php echo $cta->getLink(); ?>" class="<?php echo $cta->getButtonType() ?>"<?php if ($cta->getLinkTarget()) echo ' target="' . $cta->getLinkTarget() . '"'; ?> <?php echo $this->getDataAttr(); ?>><?php echo $cta->getButtonText(); ?></a>
+		<?php endif; ?>
+	</div>
+</div>
+<?php if ($cta->getButtonType() != 'none'): ?>
+<script>
+	jQuery('.cta-<?php echo $uniqId; ?> .button').hover(
+		function() { jQuery(this).attr('style', 'color: '+jQuery(this).data('colorover')+' !important; background-color: '+jQuery(this).data('bgover')+' !important; <?php if (strpos($cta->getButtonType(),"ghost") !== false): ?>border-color: '+jQuery(this).data('borderover')+' !important;<?php endif; ?>'); },
+		function() { jQuery(this).attr('style', 'color: '+jQuery(this).data('colorout')+' !important; background-color: '+jQuery(this).data('bgout')+' !important; <?php if (strpos($cta->getButtonType(),"ghost") !== false): ?>border-color: '+jQuery(this).data('borderout')+' !important;<?php endif; ?>'); }
+	);
+</script>
+<?php endif; ?>
+<?php endif; ?>

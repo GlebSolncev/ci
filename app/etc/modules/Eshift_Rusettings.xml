@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Eshift_Rusettings>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>1.0.2</version>
+        <depends>
+            <Mage_Core/>
+            <Mage_Cms/>
+        </depends>
+    </Eshift_Rusettings>
+  </modules>
+</config>

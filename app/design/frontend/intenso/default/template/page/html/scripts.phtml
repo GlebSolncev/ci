@@ -1,0 +1,70 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license/regular
+ */
+/**
+ * Scripts added before the body closing tag
+ */
+?>
+<script src="<?php echo $this->getSkinUrl('js/foundation.min.js'); ?>"></script>
+<script src="<?php echo $this->getSkinUrl('js/lib/chosen.jquery.min.js'); ?>"></script> 
+<script src="<?php echo $this->getSkinUrl('js/intenso.js'); ?>"></script>
+<?php if (Mage::helper('core')->isModuleOutputEnabled('Itactica_ExtendedReviews')): ?>
+<script src="<?php echo $this->getSkinUrl('js/lib/extendedreviews.js'); ?>"></script>
+<?php endif; ?>
+<?php $controllerName = $this->getRequest()->getControllerName(); ?>
+<?php if($controllerName =='product' 
+	|| ($controllerName =='category' && Mage::helper('itactica_quickview')->isEnabled()) 
+	|| ($controllerName =='index' && Mage::helper('itactica_quickview')->isEnabled()) 
+	|| ($controllerName =='page' && Mage::helper('itactica_quickview')->isEnabled()) 
+	|| ($controllerName =='result' && Mage::helper('itactica_quickview')->isEnabled()) 
+	|| ($controllerName =='advanced' && Mage::helper('itactica_quickview')->isEnabled()) 
+	|| Mage::app()->getFrontController()->getAction()->getFullActionName() == 'wishlist_index_configure'): ?>
+	<script src="<?php echo $this->getSkinUrl('js/lib/pinchzoom.js'); ?>"></script>
+	<script src="<?php echo $this->getSkinUrl('js/lib/imagelightbox.js'); ?>"></script>
+<?php endif; ?>
+<?php if(($controllerName =='category' || $controllerName =='index' || $controllerName =='page' || $controllerName =='result' || $controllerName =='advanced') && Mage::helper('itactica_quickview')->isEnabled()): ?>
+	<script src="<?php echo $this->getSkinUrl('js/lib/intenso.quickview.js'); ?>"></script>
+<?php endif; ?>
+<script>
+	// Init Foundation framework
+	$j(document).foundation({
+		topbar: {
+			custom_back_text: true,
+			back_text: '<?php echo $this->__("Back"); ?>' 
+		}
+	});
+	// Init Intenso Theme framework
+	$j(document).intenso({
+		productsGrid: {
+			<?php if ($itemMinWidth = Mage::getStoreConfig('intenso/catalog/catalog_min_product_width', Mage::app()->getStore())): ?>
+			min_item_width: <?php echo $itemMinWidth; ?>
+			<?php else: ?>
+			min_item_width: 220
+			<?php endif; ?>
+		}
+	});
+	<?php if($controllerName=='product' 
+		|| ($controllerName =='category' && Mage::helper('itactica_quickview')->isEnabled()) 
+		|| ($controllerName =='index' && Mage::helper('itactica_quickview')->isEnabled()) 
+		|| ($controllerName =='page' && Mage::helper('itactica_quickview')->isEnabled()) 
+		|| ($controllerName =='result' && Mage::helper('itactica_quickview')->isEnabled()) 
+		|| ($controllerName =='advanced' && Mage::helper('itactica_quickview')->isEnabled()) 
+		|| Mage::app()->getFrontController()->getAction()->getFullActionName() == 'wishlist_index_configure'): ?>
+	var lightboxInstance,
+		lightboxMobileInstance;
+	$j(function () {
+		lightboxInstance = $j('.lightbox').imageLightbox({
+			quit_on_doc_click: false
+		});
+		lightboxMobileInstance = $j('.lightbox-mobile').imageLightbox({
+			quit_on_doc_click: false
+		});
+	});
+	<?php endif; ?>
+</script>

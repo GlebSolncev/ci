@@ -1,0 +1,23 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * "Remember Me" popup template (when click on "What's this?")
+ *
+ */
+/** @var $this Mage_Core_Block_Template */
+?>
+<div id="remember-me-popup" class="reveal-modal remember-me-popup" data-reveal>
+    <h2>What's this?</h2>
+    <p><?php echo $this->__('Checking &quot;Remember Me&quot; will let you access your shopping cart on this device when you are logged out.') ?></p>
+    <a class="close-reveal-modal" title="<?php echo $this->__('Close') ?>"><span><?php echo $this->__('Close') ?></span>&#215;</a>
+    <a class="button" onclick="jQuery('#remember-me-popup').foundation('reveal', 'close');"><?php echo $this->__('Ok, I get it') ?></a>
+</div>

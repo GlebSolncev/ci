@@ -1,0 +1,22 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php if($this->getCurrencyCount() > 1): ?>
+    <select onchange="window.location.href=this.value" name="currency" id="select-currency-mobile" title="Select Your Currency">
+        <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
+        <option value="<?php echo $this->getSwitchCurrencyUrl($_code)?>"
+            <?php if($_code == $this->getCurrentCurrencyCode()): ?>
+                selected="selected"
+            <?php endif; ?>>
+            <?php echo $_name ?>
+        </option>
+        <?php endforeach; ?>
+    </select>
+<?php endif; ?>

@@ -1,0 +1,250 @@
+<root>
+	<democontent>
+		<item>
+			<title>Hero Makeup 1</title>
+			<filename_for_large>/hero-4-large.jpg</filename_for_large>
+			<filename_for_medium>/hero-4-medium.jpg</filename_for_medium>
+			<filename_for_small>/hero-4-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>2</navigation_skin>
+			<text_block_alignment>right</text_block_alignment>
+			<custom_alignment></custom_alignment>
+			<title_for_large><![CDATA[THE WORLD'S MOST ADVANCED MAGENTO THEME]]></title_for_large>
+			<title_for_large_color>#ffffff</title_for_large_color>
+			<title_for_large_size>38</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>normal</title_for_large_weight>
+			<text_for_large><![CDATA[INTENSO IS READY TO DO BIG THINGS FOR YOUR STORE - RIGHT OUT OF THE BOX]]></text_for_large>
+			<text_for_large_color>#ffffff</text_for_large_color>
+			<text_for_large_size>18</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#41242c</text_block_color_for_small>
+			<title_for_small><![CDATA[THE WORLD'S MOST ADVANCED MAGENTO THEME]]></title_for_small>
+			<title_for_small_color>#ffffff</title_for_small_color>
+			<title_for_small_size>20</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>300</title_for_small_weight>
+			<text_for_small><![CDATA[INTENSO IS READY TO DO BIG THINGS FOR YOUR STORE - RIGHT OUT OF THE BOX]]></text_for_small>
+			<text_for_small_color>#ffffff</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[GET IT NOW!]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#e03470</button_one_background>
+			<button_one_background_hover>#c81654</button_one_background_hover>
+			<button_two_text><![CDATA[LEARN MORE]]></button_two_text>
+			<button_two_style>ghost</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#f9d4e3</button_two_text_color>
+			<button_two_text_color_hover>#efb4ca</button_two_text_color_hover>
+			<button_two_background>#f9d4e3</button_two_background>
+			<button_two_background_hover>#efb4ca</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Hero Makeup 2</title>
+			<filename_for_large>/hero-5-large.jpg</filename_for_large>
+			<filename_for_medium>/hero-5-medium.jpg</filename_for_medium>
+			<filename_for_small>/hero-5-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>1</navigation_skin>
+			<text_block_alignment>left</text_block_alignment>
+			<custom_alignment></custom_alignment>
+			<title_for_large><![CDATA[COMPLETELY NEW.<br>COMPLETELY AWESOME.]]></title_for_large>
+			<title_for_large_color>#000000</title_for_large_color>
+			<title_for_large_size>38</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>normal</title_for_large_weight>
+			<text_for_large><![CDATA[INTENSO WILL CHANGE HOW YOU SEE MAGENTO. AND WHAT YOU CAN DO WITH IT.]]></text_for_large>
+			<text_for_large_color>#786859</text_for_large_color>
+			<text_for_large_size>18</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#d0d5cf</text_block_color_for_small>
+			<title_for_small><![CDATA[COMPLETELY NEW. COMPLETELY AWESOME.]]></title_for_small>
+			<title_for_small_color>#333333</title_for_small_color>
+			<title_for_small_size>20</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>normal</title_for_small_weight>
+			<text_for_small><![CDATA[INTENSO WILL CHANGE HOW YOU SEE MAGENTO. AND WHAT YOU CAN DO WITH IT.]]></text_for_small>
+			<text_for_small_color>#777777</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[GET IT NOW!]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#e03470</button_one_background>
+			<button_one_background_hover>#c81654</button_one_background_hover>
+			<button_two_text><![CDATA[LEARN MORE]]></button_two_text>
+			<button_two_style>ghost</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#e03470</button_two_text_color>
+			<button_two_text_color_hover>#c81654</button_two_text_color_hover>
+			<button_two_background>#e03470</button_two_background>
+			<button_two_background_hover>#c81654</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Hero Makeup 3</title>
+			<filename_for_large>/hero-6-large.jpg</filename_for_large>
+			<filename_for_medium>/hero-6-medium.jpg</filename_for_medium>
+			<filename_for_small>/hero-6-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>2</navigation_skin>
+			<text_block_alignment>left</text_block_alignment>
+			<custom_alignment></custom_alignment>
+			<title_for_large><![CDATA[ENHANCED CATALOG]]></title_for_large>
+			<title_for_large_color>#000000</title_for_large_color>
+			<title_for_large_size>38</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>normal</title_for_large_weight>
+			<text_for_large><![CDATA[INTENSO COMES WITH A POWERFUL LAYERED NAVIGATION SIDEBAR WITH AJAX, RICH SNIPETS AND ANIMATED LAYOUT REARRANGEMENTS.]]></text_for_large>
+			<text_for_large_color>#000000</text_for_large_color>
+			<text_for_large_size>18</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#fe8588</text_block_color_for_small>
+			<title_for_small><![CDATA[ENHANCED CATALOG]]></title_for_small>
+			<title_for_small_color>#ffffff</title_for_small_color>
+			<title_for_small_size>20</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>normal</title_for_small_weight>
+			<text_for_small><![CDATA[INTENSO COMES WITH A POWERFUL LAYERED NAVIGATION SIDEBAR WITH AJAX, RICH SNIPETS AND ANIMATED LAYOUT REARRANGEMETS.]]></text_for_small>
+			<text_for_small_color>#ffffff</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[GET IT NOW!]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#27ccc0</button_one_background>
+			<button_one_background_hover>#1ba39c</button_one_background_hover>
+			<button_two_text><![CDATA[LEARN MORE]]></button_two_text>
+			<button_two_style>ghost</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#333333</button_two_text_color>
+			<button_two_text_color_hover>#000000</button_two_text_color_hover>
+			<button_two_background>#333333</button_two_background>
+			<button_two_background_hover>#000000</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Home Banner - Spring</title>
+			<filename_for_large>/banner-spring-large.jpg</filename_for_large>
+			<filename_for_medium>/banner-spring-medium.jpg</filename_for_medium>
+			<filename_for_small>/banner-spring-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>2</navigation_skin>
+			<text_block_alignment>custom</text_block_alignment>
+			<custom_alignment>15</custom_alignment>
+			<title_for_large><![CDATA[OUR SPRING FAVOURITE COLOR IS BACK]]></title_for_large>
+			<title_for_large_color>#d93e5c</title_for_large_color>
+			<title_for_large_size>38</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>normal</title_for_large_weight>
+			<text_for_large><![CDATA[INTENSO OPENS THE GATE TO ITS KINGDOM OF COLOR AS A WELCOME TO SPRING.]]></text_for_large>
+			<text_for_large_color>#777777</text_for_large_color>
+			<text_for_large_size>18</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#f4f4f4</text_block_color_for_small>
+			<title_for_small><![CDATA[OUR SPRING FAVOURITE COLOR IS BACK]]></title_for_small>
+			<title_for_small_color>#d93e5c</title_for_small_color>
+			<title_for_small_size>20</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>normal</title_for_small_weight>
+			<text_for_small><![CDATA[INTENSO OPENS THE GATE TO ITS KINGDOM OF COLOR AS A WELCOME TO SPRING.]]></text_for_small>
+			<text_for_small_color>#777777</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[SHOP NOW]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#d93e5c</button_one_background>
+			<button_one_background_hover>#c52a48</button_one_background_hover>
+			<button_two_text></button_two_text>
+			<button_two_style>normal</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#ffffff</button_two_text_color>
+			<button_two_text_color_hover>#27ccc0</button_two_text_color_hover>
+			<button_two_background>#ffffff</button_two_background>
+			<button_two_background_hover>#1ba39c</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Home Banner - Anti-Gravity</title>
+			<filename_for_large>/banner-anti-gravity-large.jpg</filename_for_large>
+			<filename_for_medium>/banner-anti-gravity-medium.jpg</filename_for_medium>
+			<filename_for_small>/banner-anti-gravity-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>1</navigation_skin>
+			<text_block_alignment>custom</text_block_alignment>
+			<custom_alignment>54</custom_alignment>
+			<title_for_large><![CDATA[THE ANTI-GRAVITY EFFECT FOR FACE AND NECK]]></title_for_large>
+			<title_for_large_color>#889aa4</title_for_large_color>
+			<title_for_large_size>38</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>normal</title_for_large_weight>
+			<text_for_large><![CDATA[NEW. <strong>INTENSO</strong> SCULPTING NIGHT CREAM]]></text_for_large>
+			<text_for_large_color>#777777</text_for_large_color>
+			<text_for_large_size>18</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#ffffff</text_block_color_for_small>
+			<title_for_small><![CDATA[THE ANTI-GRAVITY EFFECT FOR FACE AND NECK]]></title_for_small>
+			<title_for_small_color>#889aa4</title_for_small_color>
+			<title_for_small_size>20</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>normal</title_for_small_weight>
+			<text_for_small><![CDATA[NEW. <strong>INTENSO</strong> SCULPTING NIGHT CREAM]]></text_for_small>
+			<text_for_small_color>#777777</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[SHOP NOW]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#889aa4</button_one_background>
+			<button_one_background_hover>#748994</button_one_background_hover>
+			<button_two_text></button_two_text>
+			<button_two_style>normal</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#ffffff</button_two_text_color>
+			<button_two_text_color_hover>#27ccc0</button_two_text_color_hover>
+			<button_two_background>#ffffff</button_two_background>
+			<button_two_background_hover>#27ccc0</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

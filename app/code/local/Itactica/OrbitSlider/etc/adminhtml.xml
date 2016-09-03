@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_OrbitSlider
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <itactica_orbitslider translate="title" module="itactica_orbitslider">
+                                        <title>Intenso - Image Slider</title>
+                                    </itactica_orbitslider>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <theme>
+                        <children>
+                            <itactica_orbitslider translate="title" module="itactica_orbitslider">
+                                <title>Image Slider</title>
+                                <children>
+                                    <slides translate="title" module="itactica_orbitslider">
+                                        <title>Slides</title>
+                                        <sort_order>0</sort_order>
+                                    </slides>
+                                    <slider translate="title" module="itactica_orbitslider">
+                                        <title>Sliders</title>
+                                        <sort_order>10</sort_order>
+                                    </slider>
+                                </children>
+                            </itactica_orbitslider>
+                        </children>
+                    </theme>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <theme translate="title" module="itactica_orbitslider">
+            <title>Theme</title>
+            <sort_order>75</sort_order>
+            <children>
+                <itactica_orbitslider translate="title" module="itactica_orbitslider">
+                    <title>Image Slider</title>
+                    <sort_order>15</sort_order>
+                    <children>
+                        <slides translate="title" module="itactica_orbitslider">
+                            <title>Slides</title>
+                            <action>adminhtml/orbitslider_slides</action>
+                            <sort_order>0</sort_order>
+                        </slides>
+                        <slider translate="title" module="itactica_orbitslider">
+                            <title>Sliders</title>
+                            <action>adminhtml/orbitslider_slider</action>
+                            <sort_order>10</sort_order>
+                        </slider>
+                    </children>
+                </itactica_orbitslider>
+            </children>
+        </theme>
+    </menu>
+</config>

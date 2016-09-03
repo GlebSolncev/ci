@@ -1,0 +1,50 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<div class="row">
+    <div class="small-12 medium-6 box columns">
+        <div class="box-title">
+            <h3>
+                <?php echo $this->__('Contact Information') ?> 
+                <span class="separator">|</span> 
+                <a class="icon-edit" href="<?php echo $this->getUrl('customer/account/edit') ?>" title="<?php echo $this->__('Edit') ?>"><span class="hide"><?php echo $this->__('Edit') ?></span></a>
+            </h3>
+        </div>
+        <div class="box-content">
+            <p>
+                <?php echo $this->escapeHtml($this->getCustomer()->getName()) ?><br />
+                <?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?><br />
+                <a href="<?php echo $this->getChangePasswordUrl() ?>"><?php echo $this->__('Change Password') ?></a>
+            </p>
+        </div>
+    </div>
+    <?php if( $this->isNewsletterEnabled() ): ?>
+    <div class="small-12 medium-6 box columns">
+        <div class="box-title">
+            <h3>
+                <?php echo $this->__('Newsletters') ?> 
+                <span class="separator">|</span> 
+                <a class="icon-edit" href="<?php echo $this->getUrl('newsletter/manage') ?>" title="<?php echo $this->__('Edit') ?>"><span class="hide"><?php echo $this->__('Edit') ?></span></a>
+            </h3>
+        </div>
+        <div class="box-content">
+            <p>
+                <?php if( $this->getIsSubscribed() ): ?>
+                    <?php echo $this->__("You are currently subscribed to 'General Subscription'.") ?>
+                <?php else: ?>
+                    <?php echo $this->__('You are currently not subscribed to any newsletter.') ?>
+                <?php endif; ?>
+            </p>
+        </div>
+        <?php /* Extensions placeholder */ ?>
+        <?php echo $this->getChildHtml('customer.account.dashboard.info.extra')?>
+    </div>
+    <?php endif; ?>
+</div>

@@ -1,0 +1,84 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_TextBoxes
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<?php 
+$_box = $this->getCurrentBox();
+$uniqId = uniqid();
+$helper = Mage::helper('itactica_textboxes');
+?>
+<?php if ($_box): ?>
+	<div class="row text-box-<?php echo $uniqId; ?> text-box-with-icon<?php if ($_box->getColumns() == 2): ?> two-boxes<?php endif; ?><?php if ($_box->getBoxType() == 2): ?> box-left<?php endif;?><?php if ($_box->getBoxType() == 3): ?> image-up<?php endif;?><?php if ($_box->getCustomClassname()) echo ' ' . $_box->getCustomClassname() ?>" style="background-color: <?php echo $helper->hex($_box->getBackgroundColor()); ?>;<?php if ($_box->getPaddingTop() > 0) echo ' padding-top: '.$_box->getPaddingTop().'px;'; ?><?php if ($_box->getPaddingBottom() > 0) echo ' padding-bottom: '.$_box->getPaddingBottom().'px;'; ?>">
+		<section class="small-12 <?php if ($_box->getColumns() == 2): ?>medium-6<?php elseif ($_box->getColumns() == 3): ?>medium-4<?php endif; ?> columns box-1">
+			<?php if ($_box->getBoxType() == 1 || $_box->getBoxType() == 2): ?>
+			<span aria-hidden="true" class="<?php echo $this->getClassFirst(); ?>" style="<?php echo $this->getStyleFirst(); ?>"></span>
+			<?php elseif ($_box->getBoxType() == 3): ?>
+			<?php if($_box->getLinkFirst()): ?><a href="<?php echo $_box->getLinkFirst(); ?>"><?php endif; ?>
+			<img alt="<?php echo $_box->getTitleFirst(); ?>" src="<?php echo Mage::helper('itactica_textboxes/image')->getImageBaseUrl() . $_box->getImageFilenameFirst() ?>">
+			<?php if($_box->getLinkFirst()): ?></a><?php endif; ?>
+			<?php endif; ?>
+			<?php if ($this->getMarginLeft(1)): ?>
+			<div style="<?php echo $this->getMarginLeft(1); ?>">
+			<?php endif; ?>
+			<?php if ($_box->getTitleFirst()): ?><h4 style="color: <?php echo $helper->hex($_box->getTitleColorFirst()); ?>; font-style: <?php echo $_box->getTitleStyleFirst(); ?>; font-weight: <?php echo $_box->getTitleWeightFirst(); ?><?php if ($_box->getTitleSizeFirst() > 0) echo '; font-size: ' . $_box->getTitleSizeFirst() . 'px;'; ?>"><?php echo $_box->getTitleFirst(); ?></h4><?php endif; ?>
+			<?php if ($_box->getTextFirst()): ?><p class="textbox-text" style="color: <?php echo $helper->hex($_box->getTextColorFirst()); ?>; <?php if ($_box->getTextLineheightFirst() > 0) echo ' line-height: ' . $_box->getTextLineheightFirst() . 'px;'; ?><?php if ($_box->getTextSizeFirst() > 0) echo ' font-size: ' . $_box->getTextSizeFirst() . 'px;'; ?>"><?php echo $_box->getTextFirst(); ?></p><?php endif; ?>
+			<?php echo $this->getLink(1); ?>
+			<?php if ($this->getMarginLeft(1)): ?>
+			</div>
+			<?php endif; ?>
+		</section>
+		<section class="small-12 <?php if ($_box->getColumns() == 2): ?>medium-6<?php elseif ($_box->getColumns() == 3): ?>medium-4<?php endif; ?> columns box-2">
+			<?php if ($_box->getBoxType() == 1 || $_box->getBoxType() == 2): ?>
+			<span aria-hidden="true" class="<?php echo $this->getClassSecond(); ?>" style="<?php echo $this->getStyleSecond(); ?>"></span>
+			<?php elseif ($_box->getBoxType() == 3): ?>
+			<?php if($_box->getLinkSecond()): ?><a href="<?php echo $_box->getLinkSecond(); ?>"><?php endif; ?>
+			<img alt="<?php echo $_box->getTitleSecond(); ?>" src="<?php echo Mage::helper('itactica_textboxes/image')->getImageBaseUrl() . $_box->getImageFilenameSecond() ?>">
+			<?php if($_box->getLinkSecond()): ?></a><?php endif; ?>
+			<?php endif; ?>
+			<?php if ($this->getMarginLeft(2)): ?>
+			<div style="<?php echo $this->getMarginLeft(2); ?>">
+			<?php endif; ?>
+			<?php if ($_box->getTitleSecond()): ?><h4 style="color: <?php echo $helper->hex($_box->getTitleColorSecond()); ?>; font-style: <?php echo $_box->getTitleStyleSecond(); ?>; font-weight: <?php echo $_box->getTitleWeightSecond(); ?><?php if ($_box->getTitleSizeSecond() > 0) echo '; font-size: ' . $_box->getTitleSizeSecond() . 'px;'; ?>"><?php echo $_box->getTitleSecond(); ?></h4><?php endif; ?>
+			<?php if ($_box->getTextSecond()): ?><p class="textbox-text" style="color: <?php echo $helper->hex($_box->getTextColorSecond()); ?>; <?php if ($_box->getTextLineheightSecond() > 0) echo ' line-height: ' . $_box->getTextLineheightSecond() . 'px;'; ?><?php if ($_box->getTextSizeSecond() > 0) echo ' font-size: ' . $_box->getTextSizeSecond() . 'px;'; ?>"><?php echo $_box->getTextSecond(); ?></p><?php endif; ?>
+			<?php echo $this->getLink(2); ?>
+			<?php if ($this->getMarginLeft(2)): ?>
+			</div>
+			<?php endif; ?>
+		</section>
+		<?php if ($_box->getColumns() > 2): ?>
+		<section class="small-12 medium-4 columns box-3">
+			<?php if ($_box->getBoxType() == 1 || $_box->getBoxType() == 2): ?>
+			<span aria-hidden="true" class="<?php echo $this->getClassThird(); ?>" style="<?php echo $this->getStyleThird(); ?>"></span>
+			<?php elseif ($_box->getBoxType() == 3): ?>
+			<?php if($_box->getLinkThird()): ?><a href="<?php echo $_box->getLinkThird(); ?>"><?php endif; ?>
+			<img alt="<?php echo $_box->getTitleThird(); ?>" src="<?php echo Mage::helper('itactica_textboxes/image')->getImageBaseUrl() . $_box->getImageFilenameThird() ?>">
+			<?php if($_box->getLinkThird()): ?></a><?php endif; ?>
+			<?php endif; ?>
+			<?php if ($this->getMarginLeft(3)): ?>
+			<div style="<?php echo $this->getMarginLeft(3); ?>">
+			<?php endif; ?>
+			<?php if ($_box->getTitleThird()): ?><h4 style="color: <?php echo $helper->hex($_box->getTitleColorThird()); ?>; font-style: <?php echo $_box->getTitleStyleThird(); ?>; font-weight: <?php echo $_box->getTitleWeightThird(); ?><?php if ($_box->getTitleSizeThird() > 0) echo '; font-size: ' . $_box->getTitleSizeThird() . 'px;'; ?>"><?php echo $_box->getTitleThird(); ?></h4><?php endif; ?>
+			<?php if ($_box->getTextThird()): ?><p class="textbox-text" style="color: <?php echo $helper->hex($_box->getTextColorThird()); ?>; <?php if ($_box->getTextLineheightThird() > 0) echo ' line-height: ' . $_box->getTextLineheightThird() . 'px;'; ?><?php if ($_box->getTextSizeThird() > 0) echo ' font-size: ' . $_box->getTextSizeThird() . 'px;'; ?>"><?php echo $_box->getTextThird(); ?></p><?php endif; ?>
+			<?php echo $this->getLink(3); ?>
+			<?php if ($this->getMarginLeft(3)): ?>
+			</div>
+			<?php endif; ?>
+		</section>
+		<?php endif; ?>
+		<?php if ($this->linkIsButton()): ?>
+		<script>
+	    	jQuery('.text-box-<?php echo $uniqId; ?> .button').hover(
+	    		function() { jQuery(this).attr('style', 'color: '+jQuery(this).data('colorover')+' !important; background-color: '+jQuery(this).data('bgover')+'; border-color: '+jQuery(this).data('bgover')+' !important;'); },
+	    		function() { jQuery(this).attr('style', 'color: '+jQuery(this).data('colorout')+' !important; background-color: '+jQuery(this).data('bgout')+'; border-color: '+jQuery(this).data('bgout')+' !important;'); }
+	    	);
+	    </script>
+	    <?php endif; ?>
+	</div>
+<?php endif;?>

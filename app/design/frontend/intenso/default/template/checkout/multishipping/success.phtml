@@ -1,0 +1,38 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<div class="row flush multiple-checkout">
+    <div class="small-12 checkout-multishipping columns">
+        <div class="page-title">
+            <h2 class="center" data-role="page-title"><?php echo $this->__('Order Success') ?></h1>
+        </div>
+        <div class="form-box wide">
+            <h3 class="sub-title"><?php echo $this->__('Thank you for your purchase!') ?></h3>
+            <p><?php echo $this->__('We are processing your order and you will soon receive an email with details of the order. Once the order has shipped you will receive another email with a link to track its progress.') ?></p>
+            <?php if($_orderIds = $this->getOrderIds()): ?>
+            <p data-role="order-numbers">
+                <?php $flag = false ?>
+                <?php echo $this->__('Your order number is ') ?>
+                <?php foreach ($_orderIds as $orderId=>$incrementId): ?>
+                    <?php if ($flag): ?>
+                        <?php echo ', ' ?>
+                    <?php endif; ?>
+                    <?php $flag = true ?>
+                    <a href="<?php echo $this->getViewOrderUrl($orderId) ?>"><?php echo $incrementId ?></a>
+                <?php endforeach; ?>
+            </p>
+            <?php endif; ?>
+            <?php echo $this->getChildHtml() ?>
+            <div class="buttons-set">
+                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button" onclick="setLocation('<?php echo $this->getContinueUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
+            </div>
+        </div>
+    </div>
+</div>

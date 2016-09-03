@@ -1,0 +1,61 @@
+<root>
+	<democontent>
+		<item>
+			<title>Home Slider - Makeup</title>
+			<identifier>home_slider_makeup</identifier>
+			<animation_type>2</animation_type>
+			<animation_speed>600</animation_speed>
+			<timer_speed>7000</timer_speed>
+			<pause_on_hover>0</pause_on_hover>
+			<circular>1</circular>
+			<swipe>1</swipe>
+			<full_screen>1</full_screen>
+			<use_advanced>0</use_advanced>
+			<status>1</status>
+			<slides>
+				<item>Hero Makeup 3</item>
+				<item>Hero Makeup 2</item>
+				<item>Hero Makeup 1</item>
+			</slides>
+			<stores><item>0</item></stores>
+			<content></content>
+		</item>
+		<item>
+			<title>Makeup - Banner Home Spring</title>
+			<identifier>makeup_home_spring</identifier>
+			<animation_type>2</animation_type>
+			<animation_speed>600</animation_speed>
+			<timer_speed>7000</timer_speed>
+			<pause_on_hover>0</pause_on_hover>
+			<circular>1</circular>
+			<swipe>1</swipe>
+			<full_screen>0</full_screen>
+			<use_advanced>0</use_advanced>
+			<status>1</status>
+			<slides>
+				<item>Home Banner - Spring</item>
+			</slides>
+			<stores><item>0</item></stores>
+			<content></content>
+		</item>
+		<item>
+			<title>Makeup - Banner Home Anti-Gravity</title>
+			<identifier>makeup_home_anti_gravity</identifier>
+			<animation_type>2</animation_type>
+			<animation_speed>600</animation_speed>
+			<timer_speed>7000</timer_speed>
+			<pause_on_hover>0</pause_on_hover>
+			<circular>1</circular>
+			<swipe>1</swipe>
+			<full_screen>0</full_screen>
+			<use_advanced>0</use_advanced>
+			<status>1</status>
+			<slides>
+				<item>Home Banner - Anti-Gravity</item>
+			</slides>
+			<stores><item>0</item></stores>
+			<content></content>
+		</item>
+	</democontent>
+</root>
+

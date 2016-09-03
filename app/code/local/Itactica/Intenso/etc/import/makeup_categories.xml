@@ -1,0 +1,295 @@
+<root>
+	<makeup>
+		<!-- top level categories -->
+		<item>
+			<parent></parent>
+			<name>Makeup</name>
+			<url>makeup</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>4</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>2</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width>320px</intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[<img src="{{media url='theme/mega-menu-makeup.jpg'}}" alt="Makeup" style="width: 100%; position: absolute; bottom: 0;">]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name>Skincare</name>
+			<url>skincare</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>4</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>4</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width></intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name>Fragrance</name>
+			<url>fragrance</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>3</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>3</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width>270px</intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[<img src="{{media url='theme/mega-menu-fragance.jpg'}}" alt="Fragance" style="width: 100%; position: absolute; bottom: 0;">]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name>Gift &amp; Offers</name>
+			<url>gift-and-offers</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<!-- second level categories -->
+		<item>
+			<parent>makeup</parent>
+			<name>Lips</name>
+			<url>lips</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="makeup/lips.html"}}"><img src="{{media url='theme/mega-menu-makeup-lips.jpg'}}" alt="Lips" style="width: 95%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>makeup</parent>
+			<name>Eyes</name>
+			<url>eyes</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="makeup/eyes.html"}}"><img src="{{media url='theme/mega-menu-makeup-eyes.jpg'}}" alt="Eyes" style="width: 95%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>makeup</parent>
+			<name>Face</name>
+			<url>face</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="makeup/face.html"}}"><img src="{{media url='theme/mega-menu-makeup-face.jpg'}}" alt="Face" style="width: 95%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>makeup</parent>
+			<name>Nails</name>
+			<url>nails</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="makeup/nails.html"}}"><img src="{{media url='theme/mega-menu-makeup-nails.jpg'}}" alt="Nails" style="width: 95%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>skincare</parent>
+			<name>Anti-Ageing</name>
+			<url>anti-ageing</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="skincare/anti-ageing.html"}}"><img src="{{media url='theme/mega-menu-skincare-anti-ageing.jpg'}}" alt="Lips" style="width: 95%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>skincare</parent>
+			<name>Hydration</name>
+			<url>hydration</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="skincare/hydration.html"}}"><img src="{{media url='theme/mega-menu-skincare-hydration.jpg'}}" alt="Lips" style="width: 95%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>skincare</parent>
+			<name>Wrinkle Correction</name>
+			<url>wrinkle-correction</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="skincare/wrinkle-correction.htlm"}}"><img src="{{media url='theme/mega-menu-skincare-wrinkle-correction.jpg'}}" alt="Lips" style="width: 95%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>skincare</parent>
+			<name>Sun Protection</name>
+			<url>sun-protection</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="skincare/sun-protection.html"}}"><img src="{{media url='theme/mega-menu-skincare-sun-protection.jpg'}}" alt="Lips" style="width: 95%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>fragrance</parent>
+			<name>Woman</name>
+			<url>fragrance-woman</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="fragrance/woman.htlm"}}"><img src="{{media url='theme/mega-menu-fragance-woman.jpg'}}" alt="Woman" style="width: 90%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>fragrance</parent>
+			<name>Man</name>
+			<url>fragrance-man</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="fragrance/man.htlm"}}"><img src="{{media url='theme/mega-menu-fragance-man.jpg'}}" alt="Man" style="width: 90%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>fragrance</parent>
+			<name>Exceptional</name>
+			<url>fragrance-exceptional</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="fragrance/exceptional.html"}}"><img src="{{media url='theme/mega-menu-fragance-exceptional.jpg'}}" alt="Exceptional" style="width: 90%;"></a>]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>gift-and-offers</parent>
+			<name>Gift Cards</name>
+			<url>makeup-gift-cards</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>gift-and-offers</parent>
+			<name>Online Exclusives</name>
+			<url>makeup-online-exclusives</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+		</item>
+		<item>
+			<parent>gift-and-offers</parent>
+			<name>Special Offers</name>
+			<url>makeup-special-offers</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+		</item>
+		<!-- third level categories -->
+		<item>
+			<parent>lips</parent>
+			<name>Lips Primers</name>
+			<url>lips-primers</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>lips</parent>
+			<name>Lipsticks</name>
+			<url>lipsticks</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>lips</parent>
+			<name>Lipgloss</name>
+			<url>lipgloss</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>lips</parent>
+			<name>Lipliners</name>
+			<url>lipliners</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>eyes</parent>
+			<name>Eyes Primers</name>
+			<url>eyes-primers</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>eyes</parent>
+			<name>Mascaras</name>
+			<url>mascaras</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>eyes</parent>
+			<name>Eyeshadows</name>
+			<url>eyeshadows</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>eyes</parent>
+			<name>Eyeliners</name>
+			<url>eyeliners</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>face</parent>
+			<name>Primers</name>
+			<url>primers</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>face</parent>
+			<name>Foundation</name>
+			<url>foundation</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>face</parent>
+			<name>Powders</name>
+			<url>powders</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>face</parent>
+			<name>Blush</name>
+			<url>blush</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>face</parent>
+			<name>BB Cremes</name>
+			<url>bb-cremes</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>face</parent>
+			<name>Healthy Glow Makeup</name>
+			<url>healthy-glow-makeup</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>nails</parent>
+			<name>Nail Lacquers</name>
+			<url>nail-lacquers</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>nails</parent>
+			<name>Manicure</name>
+			<url>manicure</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+	</makeup>
+</root>
+

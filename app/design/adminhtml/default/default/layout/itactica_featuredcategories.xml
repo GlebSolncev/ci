@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_FeaturedCategories
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+--> 
+<layout>
+    <adminhtml_featuredcategories_slider_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_featuredcategories/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_featuredcategories/adminhtml_slider" name="slider" />
+
+        </reference>
+    </adminhtml_featuredcategories_slider_index>
+    <adminhtml_featuredcategories_slider_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredcategories/adminhtml_slider_grid" name="slider_grid"/>
+        </block>
+    </adminhtml_featuredcategories_slider_grid>
+    <!-- Slider add/edit action -->
+    <adminhtml_featuredcategories_slider_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_featuredcategories/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_featuredcategories/adminhtml_slider_edit" name="slider_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="itactica_featuredcategories/adminhtml_slider_edit_tabs" name="slider_tabs"></block>
+        </reference>
+    </adminhtml_featuredcategories_slider_edit>
+
+    <adminhtml_featuredcategories_slider_catalog_category_sliders>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredcategories/adminhtml_catalog_category_edit_tab_slider" name="category.edit.tab.slider"/>
+            <block type="adminhtml/widget_grid_serializer" name="slider_grid_serializer">
+                <reference name="slider_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>category.edit.tab.slider</grid_block_name>
+                        <data_callback>getSelectedSliders</data_callback>
+                        <hidden_input_name>sliders</hidden_input_name>
+                        <reload_param_name>category_sliders</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_featuredcategories_slider_catalog_category_sliders>
+    <adminhtml_featuredcategories_slider_catalog_category_slidersgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredcategories/adminhtml_catalog_category_edit_tab_slider" name="category.edit.tab.slider"/>
+        </block>
+    </adminhtml_featuredcategories_slider_catalog_category_slidersgrid>
+    <adminhtml_featuredcategories_slider_categories>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredcategories/adminhtml_slider_edit_tab_category" name="slider.edit.tab.category"/>
+            <block type="adminhtml/widget_grid_serializer" name="category_grid_serializer">
+                <reference name="category_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>slider.edit.tab.category</grid_block_name>
+                            <data_callback>getSelectedCategories</data_callback>
+                            <hidden_input_name>categories</hidden_input_name>
+                            <reload_param_name>slider_categories</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_featuredcategories_slider_categories>
+    <adminhtml_featuredcategories_slider_categoriesgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_featuredcategories/adminhtml_slider_edit_tab_category" name="slider.edit.tab.category"/>
+        </block>
+    </adminhtml_featuredcategories_slider_categoriesgrid>
+</layout>

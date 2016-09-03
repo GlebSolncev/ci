@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_QuickView
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <modules>
+        <Itactica_QuickView>
+            <version>1.0.0</version>
+        </Itactica_QuickView>
+    </modules>
+    <global>
+        <blocks>
+            <itactica_quickview>
+                <class>Itactica_QuickView_Block</class>
+            </itactica_quickview>
+        </blocks>
+        <helpers>
+            <itactica_quickview>
+                <class>Itactica_QuickView_Helper</class>
+            </itactica_quickview>
+        </helpers>
+        <events>
+            <!-- observe the post dispatch for adding to compare list -->
+            <controller_action_postdispatch_catalog_product_compare_add>
+                <observers>
+                    <itactica_quickview_addtocompare_observer>
+                        <type>singleton</type>
+                        <class>Itactica_QuickView_Model_Observer</class>
+                        <method>addToCompareRedirect</method>
+                    </itactica_quickview_addtocompare_observer>
+                </observers>
+            </controller_action_postdispatch_catalog_product_compare_add>
+            <!-- observe the post dispatch for adding to cart -->
+            <controller_action_postdispatch_checkout_cart_add>
+                <observers>
+                    <itactica_quickview_addtocart_observer>
+                        <type>singleton</type>
+                        <class>Itactica_QuickView_Model_Observer</class>
+                        <method>addToCartRedirect</method>
+                    </itactica_quickview_addtocart_observer>
+                </observers>
+            </controller_action_postdispatch_checkout_cart_add>
+        </events>
+    </global>
+    <frontend>
+        <routers>
+            <itactica_quickview>
+                <use>standard</use>
+                <args>
+                    <module>Itactica_QuickView</module>
+                    <frontName>itactica_quickview</frontName>
+                </args>
+            </itactica_quickview>
+        </routers>
+        <layout>
+            <updates>
+                <itactica_quickview>
+                    <file>itactica_quickview.xml</file>
+                </itactica_quickview>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <intenso>
+            <quickview>
+                <enable>1</enable>
+                <disable_for_mobile>0</disable_for_mobile>
+            </quickview>
+        </intenso>
+    </default>
+</config>

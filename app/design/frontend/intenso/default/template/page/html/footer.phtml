@@ -1,0 +1,88 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<footer class="main-footer">
+	<?php if (Mage::helper('itactica_intenso')->showFooterRibbon()): ?>
+		<div class="row newsletter-ribbon hide-for-small-only">
+			<div class="small-6 columns">
+				<?php if (Mage::getStoreConfig('intenso/footer/newsletter', 
+				Mage::app()->getStore())): ?>
+					<?php echo $this->getChildHtml("newsletter"); ?>
+				<?php else: ?>
+					<?php echo $this->getChildHtml('cms_footer_top_left') ?>
+				<?php endif; ?>
+			</div>
+			<div class="small-6 columns social">
+				<?php echo $this->getChildHtml('cms_footer_top_right') ?>
+			</div>
+		</div>
+	<?php endif; ?>
+	<div class="row footer-links hide-for-small-only">
+		<?php $columns = Mage::helper('itactica_intenso')->mainFooterColumnCount(); ?>
+		<?php if (!$columns) $columns = 1; ?>
+		<?php $columnSize = 12 / $columns; ?>
+		<?php if (Mage::getModel('cms/block')->load('footer_main_first_column')->getIsActive()): ?>
+			<div class="medium-<?php echo $columnSize; ?> columns">
+				<?php echo $this->getChildHtml('cms_footer_first_column') ?>
+			</div>
+		<?php endif; ?>
+		<?php if (Mage::getModel('cms/block')->load('footer_main_second_column')->getIsActive()): ?>
+			<div class="medium-<?php echo $columnSize; ?> columns">
+				<?php echo $this->getChildHtml('cms_footer_second_column') ?>
+			</div>
+		<?php endif; ?>
+		<?php if (Mage::getModel('cms/block')->load('footer_main_third_column')->getIsActive()): ?>
+			<div class="medium-<?php echo $columnSize; ?> columns">
+				<?php echo $this->getChildHtml('cms_footer_third_column') ?>
+			</div>
+		<?php endif; ?>
+		<?php if (Mage::getModel('cms/block')->load('footer_main_fourth_column')->getIsActive()): ?>
+			<div class="medium-<?php echo $columnSize; ?> columns">
+				<?php echo $this->getChildHtml('cms_footer_fourth_column') ?>
+			</div>
+		<?php endif; ?>
+		<?php if (Mage::getModel('cms/block')->load('footer_links')->getIsActive()): ?>
+			<div class="medium-12 h-links-list columns">
+				<?php echo $this->getChildHtml('cms_footer_links') ?>
+			</div>
+		<?php endif; ?>
+	</div>
+	<div class="back-to-top-container show-for-small-only">
+		<a href="#" class="back-to-top"><?php echo $this->__('Back to Top'); ?></a>
+	</div>
+	<ul class="mobile-footer-links show-for-small-only">
+		<?php echo $this->getChildHtml('cms_footer_for_mobile') ?>
+	</ul>
+	<?php if (Mage::getStoreConfig('intenso/footer/mobile_language_switch', 
+				Mage::app()->getStore()) || Mage::getStoreConfig('intenso/footer/mobile_currency_selector', 
+				Mage::app()->getStore())): ?>
+	<div class="mobile-footer-switch show-for-small-only">
+		<?php if (Mage::getStoreConfig('intenso/footer/mobile_language_switch', 
+				Mage::app()->getStore())): ?>
+		<?php echo $this->getChildHtml('store_language') ?>
+		<?php endif; ?>
+		<?php if (Mage::getStoreConfig('intenso/footer/mobile_currency_selector', 
+				Mage::app()->getStore())): ?>
+        <?php echo $this->getChildHtml('currency_selector') ?>
+        <?php endif; ?>
+    </div>
+	<?php endif; ?>
+	<div class="row footer-bottom">
+		<div class="medium-5 columns">
+			<p class="sosumi no-margin"><?php echo $this->getCopyright() ?></p>
+		</div>
+		<div class="medium-2 center hide-for-small-only columns">
+			<a href="#" class="back-to-top"><?php echo $this->__('Back to Top'); ?></a>
+		</div>
+		<div class="medium-5 hide-for-small-only columns">
+			<?php echo $this->getChildHtml('cms_footer_bottom_right') ?>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,29 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+/**
+ * Product description template
+ *
+ * @see Mage_Catalog_Block_Product_View_Description
+ */
+?>
+<?php $_description = $this->getProduct()->getDescription(); ?>
+<?php if ($_description): ?>
+	<p data-magellan-destination="product-description"><a id="product-description"></a></p>
+	<?php if (Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('product_view_block_2')->getIsActive()): ?>
+	<div class="product-description-static-block hide-for-small-only columns">
+            <?php echo $this->getChildHtml('product_view_block_2') ?>
+	</div>
+	<?php endif; ?>
+	<div class="product-description">
+		<h3><?php echo $this->__('Product Description') ?></h3>
+		<div itemprop="description"><?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?></div>
+	</div>
+<?php endif; ?>

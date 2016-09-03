@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<ecommerceshift translate="label" module="escommon">
+            <label>eCommerce Shift</label>
+            <sort_order>350</sort_order>
+        </ecommerceshift>
+	  </tabs>
+	  <sections>
+		<escommon  translate="label" module="escommon">
+		<label>Common</label>
+		<tab>ecommerceshift</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>100</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>
+					<groups>
+                        <user translate="label">
+                        <label>PRO Access</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>0</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <comment><![CDATA[<a href="http://ecommerceshift.com/pro-access/" target="_blank">PRO Access</a> gives you access to unique collection of exclusive extensions, themes and tuts.]]></comment>
+                            <fields>
+                                <user_email translate="label">
+                                    <label>PRO User Email</label>
+                                    <frontend_type>text</frontend_type>
+                                    <sort_order>5</sort_order>
+                                    <show_in_default>1</show_in_default>
+                                    <show_in_website>1</show_in_website>
+                                    <show_in_store>1</show_in_store>
+                                    <comment>Needed for PRO Modules and Support. Set email on which you have purchased PRO Access.</comment>
+                                </user_email>
+                            </fields>
+                        </user>
+				      <jquery translate="label"> 
+					  <label>jQuery</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>10</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <enabled19 translate="label">
+                            <label>Enable jQuery (1.9.1)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </enabled19>
+			  
+			            <migrate12 translate="label">
+                            <label>Enable Migrate (1.2.1)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </migrate12>
+			  
+                          <fancybox13 translate="label">
+                            <label>Enable Fancybox (2.1.5)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </fancybox13>
+					   </fields>
+					   </jquery>
+                        <other translate="label">
+                            <label>Other</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <fields>
+                                <fawesome translate="label">
+                                    <label>Enable Font Awesome</label>
+                                    <frontend_type>select</frontend_type>
+                                    <source_model>adminhtml/system_config_source_yesno</source_model>
+                                    <sort_order>100</sort_order>
+                                    <show_in_default>1</show_in_default>
+                                    <show_in_website>1</show_in_website>
+                                    <show_in_store>1</show_in_store>
+                                    <comment>You may use Font Awesome to display vector icons on your store.</comment>
+                                </fawesome>
+                            </fields>
+                        </other>
+                        <newsupdates translate="label">
+                            <label>News and Updates</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<iframe src="http://magebox.ru/news-and-updates-clean/" style="border:0px #FFFFFF none;" name="newsUpdates" frameborder="0" marginheight="0px" marginwidth="0px" height="500px" width="100%"></iframe>]]></comment>
+                        </newsupdates>
+					</groups>
+		</escommon>
+	  </sections>
+</config>

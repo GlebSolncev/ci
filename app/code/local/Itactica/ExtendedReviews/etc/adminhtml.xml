@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_ExtendedReviews
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <itactica_extendedreviews translate="title" module="itactica_extendedreviews">
+                                        <title>Intenso - Extended Reviews</title>
+                                    </itactica_extendedreviews>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <theme>
+                        <children>
+                            <reviews_ratings translate="title" module="review">
+                                <title>Reviews and Ratings</title>
+                                <children>
+                                    <itactica_extendedreviews translate="title" module="itactica_extendedreviews">
+                                        <sort_order>10</sort_order>
+                                        <title>Customer Comments</title>
+                                        <children>
+                                            <all translate="title" module="itactica_extendedreviews">
+                                                <title>All Comments</title>
+                                            </all>
+                                            <pending translate="title" module="itactica_extendedreviews">
+                                                <title>Pending Comments</title>
+                                            </pending>
+                                        </children>
+                                    </itactica_extendedreviews>
+                                 </children>
+                            </reviews_ratings>
+                        </children>
+                    </theme> 
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <catalog>
+            <children>
+                <reviews_ratings>
+                    <children>
+                        <itactica_extendedreviews translate="title" module="itactica_extendedreviews">
+                            <title>Customer Comments</title>
+                            <children>
+                                <pending translate="title" module="itactica_extendedreviews">
+                                    <title>Pending Comments</title>
+                                    <action>adminhtml/catalog_product_review_comment/pending/</action>
+                                </pending>
+                                 <all translate="title" module="itactica_extendedreviews">
+                                    <title>All Comments</title>
+                                    <action>adminhtml/catalog_product_review_comment/index</action>
+                                </all>
+                            </children>
+                        </itactica_extendedreviews>
+                    </children>
+                </reviews_ratings>
+            </children>
+         </catalog>
+    </menu>
+</config>

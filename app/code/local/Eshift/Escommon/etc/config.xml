@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Eshift_Escommon>
+      <version>1.0.4</version>
+    </Eshift_Escommon>
+  </modules>
+  
+  <frontend>
+        <translate>
+            <modules>
+                <Eshift_Escommon>
+                    <files>
+                        <default>Eshift_Escommon.csv</default>
+                    </files>
+                </Eshift_Escommon>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <escommon>
+                    <file>eshift_common.xml</file>
+                </escommon>
+            </updates>
+        </layout>
+    </frontend>
+  
+  <global>
+    <helpers>
+      <escommon>
+        <class>Eshift_Escommon_Helper</class>
+      </escommon>
+    </helpers>
+      <blocks>
+          <escommon>
+              <class>Eshift_Escommon_Block</class>
+          </escommon>
+      </blocks>
+  </global>
+  
+  <adminhtml>
+    <translate>
+            <modules>
+                <Eshift_Escommon>
+                    <files>
+                        <default>Eshift_Escommon.csv</default>
+                    </files>
+                </Eshift_Escommon>
+            </modules>
+        </translate>  
+  </adminhtml>
+  
+  <default>
+    <escommon>
+      <jquery>
+        <enabled19>0</enabled19>
+        <migrate12>0</migrate12>
+        <fancybox13>0</fancybox13>
+      </jquery>
+    </escommon>
+  </default>
+</config> 

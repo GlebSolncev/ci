@@ -1,0 +1,20 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Product list pager
+ *
+ * @see Mage_Catalog_Block_Product_List_Toolbar
+ */
+?>
+<?php if(is_object($this->getCollection()) && $this->getCollection()->getSize()): ?>
+    <?php echo $this->getPagerHtml() ?>
+<?php endif ?>

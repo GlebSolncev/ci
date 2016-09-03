@@ -1,0 +1,48 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Billboard
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<?php 
+$billboard = $this->getCurrentBillboard(); 
+$position = array('First','Second','Third','Fourth');
+$uniqId = uniqid();
+$helper = Mage::helper('itactica_billboard');
+?>
+<?php if ($billboard): ?>
+	<div id="billboard-<?php echo $uniqId; ?>" class="billboard row<?php if ($billboard->getBillboardType() == 1): ?> flushrow<?php endif; ?><?php if ($billboard->getCustomClassname()) echo ' ' . $billboard->getCustomClassname() ?>" style="background: <?php echo $helper->hex($billboard->getBackgroundColor()); ?>;<?php echo $this->getInlineStyle(); ?>">
+		<?php for ($i=0; $i < $billboard->getColumns(); $i++): ?>
+		<?php
+			$clear = 'frontend/intenso/default/images/clear.png';
+			$getImageLarge = 'getImageLarge'.$position[$i];
+			$getImageMedium = 'getImageMedium'.$position[$i];
+			$getAlt = 'getAlt'.$position[$i];
+			$getLink = 'getLink'.$position[$i];
+		?>
+        <div class="small-12 medium-<?php echo $this->getMediumColumnCount(); ?> large-<?php echo (12/$billboard->getColumns()) ?><?php if ($billboard->getColumns() == ($i+1)): ?> end<?php endif; ?><?php if (in_array(($i+1), $this->getHideForMediumOnly())): ?> hide-for-medium-only<?php endif; ?><?php if (in_array(($i+1), $this->getShowForMediumUp())): ?> show-for-medium-up<?php endif; ?><?php if (in_array(($i+1), $this->getShowForLargeUp())): ?> show-for-large-up<?php endif; ?> columns">
+            <img alt="<?php echo $billboard->$getAlt(); ?>" data-interchange="[<?php echo Mage::getBaseUrl('skin') . $clear; ?>, (default)], [<?php echo Mage::helper('itactica_billboard/image')->getImageBaseUrl() . $billboard->$getImageMedium(); ?>, (small)], [<?php echo Mage::helper('itactica_billboard/image')->getImageBaseUrl(); ?><?php echo ($billboard->getImageOptionsMedium() == 1) ? $billboard->$getImageLarge() : $billboard->$getImageMedium(); ?>, (medium)], [<?php echo Mage::helper('itactica_billboard/image')->getImageBaseUrl() . $billboard->$getImageLarge(); ?>, (large)], [<?php echo Mage::helper('itactica_billboard/image')->getImageBaseUrl() . $billboard->$getImageLarge(); ?>, (retina)]" src="<?php echo $this->getSkinUrl('images/clear.png'); ?>">
+            <noscript><img alt="<?php echo $billboard->$getAlt(); ?>" src="<?php echo Mage::helper('itactica_billboard/image')->getImageBaseUrl() . $billboard->$getImageLarge(); ?>"></noscript>
+            <a class="mask" href="<?php echo $billboard->$getLink(); ?>"></a>
+        </div>
+        <?php endfor; ?>
+    </div>
+    <?php if ($billboard->getImageOptionsSmall() == 6): ?>
+    <script>
+    	(function () {
+	    	billboardImages = $('billboard-<?php echo $uniqId; ?>').childElements();
+	    	billboardLength = billboardImages.length;
+	    	randomImage = Math.floor(Math.random() * billboardLength);
+	    	billboardImages.splice(randomImage, 1);
+	    	billboardImages.each(function (el) {
+	    		el.addClassName('hide-for-small-only');
+	    	})
+	    } ());
+    </script>
+    <?php endif; ?>
+<?php endif; ?>

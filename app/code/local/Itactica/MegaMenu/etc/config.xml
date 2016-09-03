@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_MegaMenu
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <modules>
+        <Itactica_MegaMenu>
+            <version>1.0.0</version>
+        </Itactica_MegaMenu>
+    </modules>
+    <global>
+        <resources>
+            <itactica_megamenu_setup>
+                <setup>
+                    <module>Itactica_MegaMenu</module>
+                    <class>Itactica_MegaMenu_Model_Resource_Setup</class>
+                </setup>
+            </itactica_megamenu_setup>
+        </resources>
+        <blocks>
+            <itactica_megamenu>
+                <class>Itactica_MegaMenu_Block</class>
+            </itactica_megamenu>
+        </blocks>
+        <helpers>
+            <itactica_megamenu>
+                <class>Itactica_MegaMenu_Helper</class>
+            </itactica_megamenu>
+        </helpers>
+        <models>
+            <itactica_megamenu>
+                <class>Itactica_MegaMenu_Model</class>
+                <resourceModel>itactica_megamenu_resource</resourceModel>
+            </itactica_megamenu>
+        </models>
+        <events>
+            <adminhtml_catalog_category_edit_prepare_form>
+                <observers>
+                    <category_menu_prepare_form>
+                        <type>singleton</type>
+                        <class>Itactica_MegaMenu_Model_Observer</class>
+                        <method>prepare_form</method>
+                    </category_menu_prepare_form>
+                </observers>
+            </adminhtml_catalog_category_edit_prepare_form>
+        </events>
+    </global>
+    <frontend>
+        <routers>
+            <itactica_megamenu>
+                <use>standard</use>
+                <args>
+                    <module>Itactica_MegaMenu</module>
+                    <frontName>itactica_megamenu</frontName>
+                </args>
+            </itactica_megamenu>
+        </routers>
+        <layout>
+            <updates>
+                <itactica_megamenu>
+                    <file>itactica_megamenu.xml</file>
+                </itactica_megamenu>
+            </updates>
+        </layout>
+        <category>
+            <collection>
+                <intenso_menu_columns_large/>
+                <intenso_menu_columns_medium/>
+                <intenso_menu_right_block_width/>
+                <intenso_menu_right_block/>
+                <intenso_menu_top_block/>
+                <intenso_menu_bottom_block/>
+            </collection>
+        </category>
+    </frontend>
+</config>

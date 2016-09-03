@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_TextBoxes
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+--> 
+<layout>
+    <adminhtml_textboxes_box_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_textboxes/box</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_textboxes/adminhtml_box" name="box" />
+        </reference>
+    </adminhtml_textboxes_box_index>
+    <adminhtml_textboxes_box_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_textboxes/adminhtml_box_grid" name="box_grid"/>
+        </block>
+    </adminhtml_textboxes_box_grid>
+    <!-- Box add/edit action -->
+    <adminhtml_textboxes_box_edit>
+        <reference name="head">
+            <action method="addCss"><name>spectrum.css</name></action>
+            <action method="addCss"><name>icomoon.css</name></action>
+        </reference>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_textboxes/box</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_textboxes/adminhtml_box_edit" name="box_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="itactica_textboxes/adminhtml_box_edit_tabs" name="box_tabs"></block>
+        </reference>
+    </adminhtml_textboxes_box_edit>
+</layout>

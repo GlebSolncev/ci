@@ -1,0 +1,45 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Product list sorter
+ *
+ * @see Mage_Catalog_Block_Product_List_Toolbar
+ */
+?>
+
+<?php if($_availableOrders = $this->getAvailableOrders()): ?>
+<label><?php echo $this->__('Sort By') ?></label>
+<div class="layered-nav-select">
+    <select id="orders" onchange="setLocation(this.value)">
+    <?php foreach($_availableOrders as $_key=>$_order): ?>
+        <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key) && $this->getCurrentDirection() == 'asc'): ?> selected="selected"<?php endif; ?>>
+            <?php echo $this->__($_order) ?> <?php echo $this->__('asc.') ?>
+        </option>
+        <option value="<?php echo $this->getOrderUrl($_key, 'desc') ?>"<?php if($this->isOrderCurrent($_key) && $this->getCurrentDirection() == 'desc'): ?> selected="selected"<?php endif; ?>>
+            <?php echo $this->__($_order) ?> <?php echo $this->__('desc.') ?>
+        </option>
+    <?php endforeach; ?>
+    </select>
+</div>
+<?php endif ?>
+<?php if($_availableLimit = $this->getAvailableLimit()): ?>
+<label><?php echo $this->__('Show') ?></label>
+<div class="layered-nav-select">
+    <select id="limits" onchange="setLocation(this.value)">
+    <?php foreach ($_availableLimit as  $_key=>$_limit): ?>
+        <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+            <?php echo $_limit ?> <?php echo $this->__('items per page') ?>
+        </option>
+    <?php endforeach; ?>
+    </select>
+</div>
+<?php endif ?>

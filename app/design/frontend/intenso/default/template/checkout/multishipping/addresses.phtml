@@ -1,0 +1,91 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Ship to multiple address template
+ *
+ * @see Mage_Checkout_Block_Multishipping_Addresses
+ */
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="row flush">
+    <div class="small-12 checkout-multishipping columns">
+        <div class="page-title">
+            <h2 class="center"><?php echo $this->__('Ship to Multiple Addresses') ?></h2>
+            <p class="center"><?php echo $this->__('Please select shipping address for applicable items') ?></p>
+        </div>
+        <div class="form-box wide">
+            <form id="checkout_multishipping_form" action="<?php echo $this->getPostActionUrl() ?>" method="post">
+                <div class="multiple-checkout">
+                    <div class="title-buttons">
+                        <button data-action="add-new-customer-address" type="button" title="<?php echo $this->__('Enter a New Address') ?>" class="button tiny secondary" onclick="$('add_new_address_flag').value=1; $('checkout_multishipping_form').submit();"><span><span><?php echo $this->__('Enter a New Address') ?></span></span></button>
+                    </div>
+                    <input type="hidden" name="continue" value="0" id="can_continue_flag" />
+                    <input type="hidden" name="new_address" value="0" id="add_new_address_flag" />
+                    <table class="data-table" id="multiship-addresses-table">
+                        <col />
+                        <col width="1" />
+                        <col width="1" />
+                        <thead>
+                            <tr>
+                                <th><?php echo $this->__('Product') ?></th>
+                                <th class="a-center"><?php echo $this->__('Qty') ?></th>
+                                <th><?php echo $this->__('Send To') ?></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="100" class="a-right"><button type="submit" title="<?php echo $this->__('Update Qty &amp; Addresses') ?>" class="button tiny success" onclick="$('can_continue_flag').value=0"><span><span><?php echo $this->__('Update Qty &amp; Addresses') ?></span></span></button></td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                        <?php foreach ($this->getItems() as $_index => $_item): ?>
+                            <?php if ($_item->getQuoteItem()) :?>
+                            <tr>
+                                <td>
+                                    <?php echo $this->getItemHtml($_item->getQuoteItem())?>
+                                    <a href="<?php echo $this->getItemDeleteUrl($_item) ?>" title="<?php echo $this->__('Remove Item') ?>" class="btn-remove2"><?php echo $this->__('Remove Item') ?></a>
+                                </td>
+                                <td id="qty-wrapper-<?php echo $_item->getId() ?>">
+                                    <?php if ($this->getQty() < 10): ?>
+                                        <select name="ship[<?php echo $_index ?>][<?php echo $_item->getQuoteItemId() ?>][qty]" id="ship[<?php echo $_item->getId() ?>][qty]" class="simulate-change">
+                                            <?php for ($i=1; $i < 10; $i++): ?>
+                                                <option value="<?php echo $i ?>"<?php if ($_item->getQty() == $i): ?> selected="selected"<?php endif; ?>><?php echo $i ?></option>
+                                            <?php endfor; ?>
+                                            <option value="10">10+</option>
+                                        </select>
+                                        <script type="text/javascript">
+                                            $("ship[<?php echo $_item->getId() ?>][qty]").observe('change', function(){
+                                                if ($(this).getValue() == 10) {
+                                                    $("qty-wrapper-<?php echo $_item->getId() ?>").update('<input type="number" name="ship[<?php echo $_index ?>][<?php echo $_item->getQuoteItemId() ?>][qty]" value="<?php echo $_item->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />');
+                                                }
+                                            });
+                                        </script>
+                                    <?php else: ?>
+                                        <input type="text" name="ship[<?php echo $_index ?>][<?php echo $_item->getQuoteItemId() ?>][qty]" value="<?php echo $this->escapeHtml($_item->getQty()) ?>" size="2" class="input-text qty" />
+                                    <?php endif; ?>
+                                </td>
+                                <td><?php if ($_item->getProduct()->getIsVirtual()): echo $this->__('Shipping selection is not applicable.'); else: echo $this->getAddressesHtmlSelect($_item, $_index); endif; ?></td>
+                            </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <script type="text/javascript">decorateTable('multiship-addresses-table')</script>
+                    <div class="buttons-set">
+                        <button type="submit" data-action="checkout-continue-shipping" title="<?php echo $this->__('Continue to Shipping Information') ?>" class="button<?php if ($this->isContinueDisabled()):?> disabled<?php endif; ?>" onclick="$('can_continue_flag').value=1"<?php if ($this->isContinueDisabled()):?> disabled="disabled"<?php endif; ?>><span><span><?php echo $this->__('Continue to Shipping Information') ?></span></span></button>
+                        <a class="arrow-left" href="<?php echo $this->getBackUrl() ?>"><?php echo $this->__('Back to Shopping Cart') ?></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

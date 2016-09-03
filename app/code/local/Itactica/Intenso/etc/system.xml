@@ -1,0 +1,2137 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Intenso
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <tabs>
+        <itactica translate="label" module="itactica_intenso">
+            <label>Intenso Theme (1.3.5)</label>
+            <sort_order>205</sort_order>
+        </itactica>
+    </tabs>
+    <sections>
+        <intenso translate="label" module="itactica_intenso">
+            <label>Theme Setup</label>
+            <tab>itactica</tab>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <import translate="label">
+                    <label>Demo Content</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <header_import_products translate="label">
+                            <label>Import Demo Content</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_import_products>
+                        <select_demo translate="label comment">
+                            <label>Select Demo Store</label>
+                            <comment><![CDATA[Choose the demo store you want to import.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_demostore</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </select_demo>
+                        <import_type translate="label comment">
+                            <label>Import Type</label>
+                            <comment><![CDATA[Choose the demo content you want to import.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_importtype</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </import_type>
+                        <demo_import translate="label">
+                            <label>Import</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_button</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </demo_import>
+                    </fields>
+                </import>
+                <catalog translate="label">
+                    <label>Catalog Page</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <lazy_loading translate="label comment">
+                            <label>Enable Lazy Loading of Images</label>
+                            <comment>If yes, images outside the viewport will be loaded as the user scrolls down the page, improving initial page load.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </lazy_loading>
+                        <catalog_min_product_width translate="label comment">
+                            <label>Product's Minimum Width (Grid view)</label>
+                            <comment>The products on the catalog page are automatically resized to fit evenly on each row according to the device width. You can increase or decrease this value if you need larger or smaller product's previews (or to show more or less products on each row).</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-100-1000</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catalog_min_product_width>
+                        <keep_image_aspect_ratio translate="label comment">
+                            <label>Keep Image Aspect Ratio (Use Masonry Layout)</label>
+                            <comment>If yes, height of the images will be calculated automatically based on width. If product images have different heights a masonry layout will be used.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </keep_image_aspect_ratio>
+                        <catalog_product_height translate="label comment">
+                            <label>Image Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-100-1000</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <keep_image_aspect_ratio>0</keep_image_aspect_ratio>
+                            </depends>
+                        </catalog_product_height>
+                        <remove_image_padding translate="label comment">
+                            <label>Remove Image Padding</label>
+                            <comment>If yes, white space around image is removed.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>26</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </remove_image_padding>
+                        <product_box_border_radius translate="label comment">
+                            <label>Product Box Border Radius</label>
+                            <comment>Add rounded corners to product box (e.g. 5) Enter zero (0) for square corners.</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>27</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                        </product_box_border_radius>
+                        <header_catalog_display_options translate="label">
+                            <label>Display of Elements</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_catalog_display_options>
+                        <catalog_show_price_tag translate="label comment">
+                            <label>Show Price Tag</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catalog_show_price_tag>
+                        <catalog_show_products_rating translate="label comment">
+                            <label>Show Products Rating</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catalog_show_products_rating>
+                        <catalog_show_color_options translate="label comment">
+                            <label>Show Color Options</label>
+                            <comment>If Yes, color options of configurable products will be shown.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catalog_show_color_options>
+                        <catalog_show_add_to_cart translate="label comment">
+                            <label>Show Add to Cart Button</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catalog_show_add_to_cart>
+                        <catalog_show_add_to_compare translate="label comment">
+                            <label>Show Add to Compare Button</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catalog_show_add_to_compare>
+                        <catalog_show_add_to_wishlist translate="label comment">
+                            <label>Show Add to Wishlist Button</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catalog_show_add_to_wishlist>
+                        <header_empty_category translate="label">
+                            <label>Empty Category</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_empty_category>
+                        <empty_category_featured translate="label comment">
+                            <label>Featured Products Widget in "Empty Catalog" Page</label>
+                            <comment>Selected Featured Products widget will be displayed in category page when the collection is empty. You can create new Featured Product widgets in Theme->Featured Products</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_noresults</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </empty_category_featured>
+                        <header_search_results translate="label">
+                            <label>Search Results</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_search_results>
+                        <no_results_featured translate="label comment">
+                            <label>Featured Products Widget in "No Results" Search Page</label>
+                            <comment>Selected Featured Products widget will be displayed in search results page when no results are available. You can create new Featured Product widgets in Theme->Featured Products</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_noresults</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </no_results_featured>
+                    </fields>
+                </catalog>
+                <product_page translate="label">
+                    <label>Product Page</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <keep_image_aspect_ratio translate="label comment">
+                            <label>Keep Image Aspect Ratio</label>
+                            <comment>If yes, height of the images will be calculated automatically based on width</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </keep_image_aspect_ratio>
+                        <image_fixed_height translate="label comment">
+                            <label>Set Images Fixed Height</label>
+                            <comment>Enter a fixed height in pixels (e.g. 500)</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <depends>
+                                <keep_image_aspect_ratio>0</keep_image_aspect_ratio>
+                            </depends>
+                        </image_fixed_height>
+                    </fields>
+                </product_page>
+                <fonts translate="label">
+                    <label>Font Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <base_font_size translate="label comment">
+                            <label>Root's Font Size</label>
+                            <comment>The font size of most elements and texts are relative to the root's font size. Depending on the chosen font you may need to increase or decrease this value.</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                        </base_font_size>
+                        <font_family translate="label comment">
+                            <label>Font Family</label>
+                            <comment>Select Google Fonts, a predefined font stack or type in your custom font stack.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_fontfamily</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </font_family>
+                        <font_custom translate="label comment">
+                            <label>Custom Stack</label>
+                            <comment>E.g. Arial, "Helvetica Neue", Helvetica, sans-serif</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <depends>
+                                <font_family>custom</font_family>
+                            </depends>
+                        </font_custom>
+                        <google_fonts translate="label">
+                            <label>Google Fonts</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_font</frontend_model>
+                            <source_model>itactica_intenso/config_fonts</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <font_family>google</font_family>
+                            </depends>
+                        </google_fonts>
+                        <font_subset translate="label comment">
+                            <label>Character Sets</label>
+                            <comment><![CDATA[<strong style="color:red;">Tip: </strong>If you choose only the languages that you need, you'll help prevent slowness on your webpage.]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>itactica_intenso/config_fonts::fontSubset</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <depends>
+                                <font_family>google</font_family>
+                            </depends>
+                        </font_subset>
+                        <font_styles translate="label comment">
+                            <label>Font Styles</label>
+                            <comment><![CDATA[<strong style="color:red;">Tip: </strong>Using many font styles can slow down your webpage, so only select the font styles that you actually need. Recommended styles for the theme are 300, 300 Italic, 400, 400 Italic and 600.]]></comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>itactica_intenso/config_fonts::fontStyles</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <depends>
+                                <font_family>google</font_family>
+                            </depends>
+                        </font_styles>
+                    </fields>
+                </fonts>
+                <header translate="label">
+                    <label>Header</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <additional_info translate="label comment">
+                            <label>Top info</label>
+                            <comment>You can put here your phone or any other important message.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </additional_info>
+                        <heading_main_menu translate="label">
+                            <label>Main Menu</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_main_menu>
+                        <main_menu_style translate="label comment">
+                            <label>Main Menu Style</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_mainmenustyle</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_style>
+                        <show_home_link translate="label comment">
+                            <label>Home Link</label>
+                            <comment>Enable this option to display a "Home" link on main menu.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_home_link>
+                        <show_categories translate="label comment">
+                            <label>Show Categories</label>
+                            <comment>Enable this option to show categories on main menu.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_categories>
+                        <main_menu_links translate="label">
+                            <label>Main Menu Links</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_array_menulinks</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment></comment>
+                        </main_menu_links>
+                        <heading_sec_menu translate="label">
+                            <label>Secondary Menu</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_sec_menu>
+                        <sec_menu translate="label comment">
+                            <label>Enable Secondary Menu</label>
+                            <comment>Enable this menu if your store has multiple languages or currencies, to allow users to switch between them.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sec_menu>
+                        <sec_menu_style translate="label comment">
+                            <label>Secondary Menu Style</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_secmenustyle</source_model>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sec_menu_style>
+                        <sec_menu_links translate="label">
+                            <label>Secondary Menu Links</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_array_secmenulinks</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sec_menu_links>
+                        <heading_mega_menu translate="label">
+                            <label>Mega Menu</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_mega_menu>
+                        <mega-menu-right-block-hide-width translate="label comment">
+                            <label>Hide Right Block on Mega-Menu When Viewport is Smaller Than This Value</label>
+                            <comment>In pixels. When viewport is narrower than this width, the Right Block of the Mega-Menu will be hidden to avoid clutter. Leave blank to never hide.</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mega-menu-right-block-hide-width>
+                    </fields>
+                </header>
+                <footer translate="label">
+                    <label>Footer</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <newsletter translate="label comment">
+                            <label>Newsletter Subscribe Form</label>
+                            <comment>If disabled, newsletter subscribe form can be substituted by a static block with identifier "footer_top_left".</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </newsletter>
+                        <mobile_language_switch translate="label comment">
+                            <label>Show Language Switch on Mobile</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mobile_language_switch>
+                        <mobile_currency_selector translate="label comment">
+                            <label>Show Currency Selector on Mobile</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mobile_currency_selector>
+                    </fields>
+                </footer>
+                <custom_css translate="label">
+                    <label>Custom CSS</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <load_custom_css translate="label comment">
+                            <label>Load Custom CSS File</label>
+                            <comment>If enabled, custom CSS file located at "skin/frontend/intenso/default/css/custom.css" will be loaded on every page. Use that file to put your own CSS styles.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </load_custom_css>
+                    </fields>
+                </custom_css>
+                <exit_intent_popup translate="label">
+                    <label>Exit Intent Pop-Up</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>70</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable_popup translate="label comment">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_popup>
+                        <popup_type translate="label comment">
+                            <label>Display Pop-up On</label>
+                            <comment>Exit pop-ups can't be shown on touch screen devices</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_popuptype</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </popup_type>
+                        <entry_time translate="label comment">
+                            <label>Entry Time</label>
+                            <comment>Show the pop-up after the specified amount of seconds (e.g. 5)</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <popup_type>2</popup_type>
+                            </depends>
+                        </entry_time>
+                        <popup_size translate="label">
+                            <label>Pop-up Size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_popupsize</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </popup_size>
+                        <background_image translate="label comment">
+                            <label>Background Image for Medium and Large Screens</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">popup</upload_dir>
+                            <base_url type="media" scope_info="1">popup</base_url>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </background_image>
+                        <background_color translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </background_color>
+                        <static_block translate="label comment">
+                            <label>Static Block</label>
+                            <comment>Select a static block with the content to be inserted inside the pop-up</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_popupblock</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </static_block>
+                        <static_block_width translate="label comment">
+                            <label>Static Block Width</label>
+                            <comment>Width of the static block in percentage (e.g. 60)</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </static_block_width>
+                        <static_block_alignment translate="label comment">
+                            <label>Static Block Alignment</label>
+                            <comment>Select a static block with the content to be inserted inside the pop-up</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_popupblockalignment</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </static_block_alignment>
+                        <sensitivity translate="label comment">
+                            <label>Sensitivity</label>
+                            <comment>The pop-up fires when the mouse cursor moves close to (or passes) the top of the viewport. You can define how far the mouse has to be before the pop-up fires. The higher the value, the more sensitive, and the more quickly the event will fire. Defaults to 20</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <popup_type>1</popup_type>
+                            </depends>
+                        </sensitivity>
+                        <delay translate="label comment">
+                            <label>Delay</label>
+                            <comment>Time in milliseconds before showing the modal (e.g. 100) If the user's mouse re-enters the body before delay ms have passed, the modal will not appear. This can be used to provide a "grace period" for visitors instead of immediately presenting the modal window</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <popup_type>1</popup_type>
+                            </depends>
+                        </delay>
+                        <cookie_expiration translate="label comment">
+                            <label>Cookie Expiration</label>
+                            <comment>Time period (in days) before the modal will appear again for a user</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cookie_expiration>
+                        <cookie_name translate="label comment">
+                            <label>Cookie Name</label>
+                            <comment>By changing the name, the pop-up will be shown again to all previous users</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-alpha</validate>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cookie_name>
+                    </fields>
+                </exit_intent_popup>
+                <checkout translate="label">
+                    <label>Checkout</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>80</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <company_field translate="label comment">
+                            <label>Use Company Field in Billing Address</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </company_field>
+                    </fields>
+                </checkout>
+            </groups>
+        </intenso>
+        <intenso_design translate="label" module="itactica_intenso">
+            <label>Theme Design</label>
+            <tab>itactica</tab>
+            <sort_order>20</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <page translate="label">
+                    <label>Page</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <header_page_general translate="label">
+                            <label>General</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_page_general>
+                        <page_max_width translate="label comment">
+                            <label>Page Max Width</label>
+                            <comment>Maximum width of the page in pixels. Should be between 300 and 1920. When the device's screen is larger than the width of the page, a boxed version of the page will be displayed.</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-300-1920</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </page_max_width>
+                        <form_fields_style translate="label comment">
+                            <label>Form Fields Style</label>
+                            <comment>In case you experience issues with forms introduced by third-party extensions, select Classic or Classic Rounded.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_formfieldsstyle</source_model>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </form_fields_style>
+                        <header_main_colors translate="label">
+                            <label>Main Colors</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_main_colors>
+                        <default_text_color translate="label comment">
+                            <label>Default Text Color</label>
+                            <comment>Used as default color for text in paragraphs and lists.</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_text_color>
+                        <main_color translate="label comment">
+                            <label>Main Color</label>
+                            <comment>Used in anchors, menus, highlights, buttons and several other elements across the site. Select a color compatible with your logo's color(s).</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_color>
+                        <main_hover_color translate="label comment">
+                            <label>Main Hover Color</label>
+                            <comment>Shown when the mouse is over a link or button.</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_hover_color>
+                        <page_background_color translate="label comment">
+                            <label>Page Background Color</label>
+                            <comment>Background color applied for all content sections of the site.</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </page_background_color>
+                        <viewport_background_color translate="label comment">
+                            <label>Viewport Background Color</label>
+                            <comment>Background color of the web browser's viewport. Only visible when device's width is larger than website's maximum width.</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </viewport_background_color>
+                        <header_buttons_radius translate="label">
+                            <label>Buttons</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_buttons_radius>
+                        <buttons_border_radius translate="label comment">
+                            <label>Buttons Border Radius</label>
+                            <comment>Enter a value between 1 and 20 (px) for rounded borders on all buttons. For buttons with square borders enter zero (0)</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-0-20</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>86</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </buttons_border_radius>
+                        <header_primary_buttons translate="label">
+                            <label>Primary Buttons</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_primary_buttons>
+                        <primary_button_background_color translate="label">
+                            <label>Primary Button Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </primary_button_background_color>
+                        <primary_button_text_color translate="label">
+                            <label>Primary Button Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </primary_button_text_color>
+                        <primary_button_hover_background_color translate="label">
+                            <label>Primary Button Background Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </primary_button_hover_background_color>
+                        <primary_button_hover_text_color translate="label">
+                            <label>Primary Button Text Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </primary_button_hover_text_color>
+                        <header_secondary_buttons translate="label">
+                            <label>Secondary Buttons</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_secondary_buttons>
+                        <secondary_button_background_color translate="label">
+                            <label>Secondary Button Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </secondary_button_background_color>
+                        <secondary_button_text_color translate="label">
+                            <label>Secondary Button Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </secondary_button_text_color>
+                        <secondary_button_hover_background_color translate="label">
+                            <label>Secondary Button Background Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </secondary_button_hover_background_color>
+                        <secondary_button_hover_text_color translate="label">
+                            <label>Secondary Button Text Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </secondary_button_hover_text_color>
+                        <header_ghost_buttons translate="label">
+                            <label>Ghost Buttons (for light backgrounds)</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_ghost_buttons>
+                        <ghost_button_border_color translate="label">
+                            <label>Ghost Button Border Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ghost_button_border_color>
+                        <ghost_button_text_color translate="label">
+                            <label>Ghost Button Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ghost_button_text_color>
+                        <ghost_button_hover_border_color translate="label">
+                            <label>Ghost Button Border Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ghost_button_hover_border_color>
+                        <ghost_button_hover_text_color translate="label">
+                            <label>Ghost Button Text Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>230</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ghost_button_hover_text_color>
+                        <header_ghost_buttons_light translate="label">
+                            <label>Ghost Buttons (for dark backgrounds)</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>240</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_ghost_buttons_light>
+                        <ghost_button_light_border_color translate="label">
+                            <label>Ghost Button Border Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>250</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ghost_button_light_border_color>
+                        <ghost_button_light_text_color translate="label">
+                            <label>Ghost Button Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>260</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ghost_button_light_text_color>
+                        <ghost_button_light_hover_border_color translate="label">
+                            <label>Ghost Button Border Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>270</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ghost_button_light_hover_border_color>
+                        <ghost_button_light_hover_text_color translate="label">
+                            <label>Ghost Button Text Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>280</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ghost_button_light_hover_text_color>
+                    </fields>
+                </page>
+                <header translate="label">
+                    <label>Header</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <main_menu_style translate="label comment">
+                            <label>Header Style</label>
+                            <comment>Transparent style applies only for home page</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_headerstyle</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_style>
+                        <home_header_background translate="label">
+                            <label>Header Background Color for Home Page</label>
+                            <comment>Applies only for home page (except mobile)</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </home_header_background>
+                        <header_opacity translate="label comment">
+                            <label>Opacity</label>
+                            <comment>In percentage. Enter a number between 0 (completely transparent) and 100 (completely opaque) to set the opacity for the home page header</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-0-100</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </header_opacity>
+                        <header_background translate="label">
+                            <label>Header Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_background>
+                        <main_menu_background translate="label">
+                            <label>Main Menu Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_background>
+                        <header_separator_color translate="label comment">
+                            <label>Header Separator Color</label>
+                            <comment>Horizontal line below the header that separates the header and the content on CMS pages, catalog view, product view and other pages.</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_separator_color>
+                        <header_separator_thickness translate="label comment">
+                            <label>Header Separator Thickness</label>
+                            <comment>Thickness in pixels of the horizontal line below the header that separates the header and the content on CMS pages, catalog view, product view and other pages.</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-0-100</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_separator_thickness>
+                        <header_header_margins translate="label">
+                            <label>Logo &amp; Search Box</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_header_margins>
+                        <header_logo_max_width translate="label comment">
+                            <label>Logo - Maximum Width</label>
+                            <comment>Sets a maximum width in pixels for the logo (e.g. 294) Enter zero (0) to display logo in its original size</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-0-500</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>41</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_logo_max_width>
+                        <header_logo_mobile_max_width translate="label comment">
+                            <label>Logo for Mobile - Maximum Width</label>
+                            <comment>Sets a maximum width in pixels for the logo (e.g. 294) Enter zero (0) to display logo in its original size</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-0-500</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>42</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_logo_mobile_max_width>
+                        <header_logo_top_margin translate="label comment">
+                            <label>Logo - Top Margin</label>
+                            <comment>Sets the distance in pixels between the top of the page and the logo. Use it to position your logo and control the height of the header.</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-0-100</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>43</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_logo_top_margin>
+                        <header_logo_bottom_margin translate="label comment">
+                            <label>Logo - Bottom Margin</label>
+                            <comment>Sets the distance in pixels between the logo and the main menu. Use it to position your logo and control the height of the header.</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-0-100</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>44</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_logo_bottom_margin>
+                        <header_search_top_margin translate="label comment">
+                            <label>Search Box - Top Margin</label>
+                            <comment>Sets the distance in pixels between the top of the page and the search box. Use it to position the search box and control the height of the header.</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-0-100</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_search_top_margin>
+                        <header_search_bottom_margin translate="label comment">
+                            <label>Search Box - Bottom Margin</label>
+                            <comment>Sets the distance in pixels between the search box and the main menu. Use it to position the search box and control the height of the header.</comment>
+                            <validate>required-entry validate-digits validate-digits-range digits-range-0-100</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>46</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_search_bottom_margin>
+                        <header_header_main_menu translate="label">
+                            <label>Main Menu</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>47</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_header_main_menu>
+                        <main_menu_text_color translate="label">
+                            <label>Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>48</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_text_color>
+                        <main_menu_text_hover_color translate="label">
+                            <label>Text Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_text_hover_color>
+                        <main_menu_font_size translate="label comment">
+                            <label>Font Size</label>
+                            <comment>In REM units.</comment>
+                            <validate>required-entry validate-number validate-not-negative-number validate-greater-than-zero</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>51</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_font_size>
+                        <main_menu_font_weight translate="label">
+                            <label>Font Weight</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_fontweight</source_model>
+                            <sort_order>52</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_font_weight>
+                        <main_menu_text_transform translate="label">
+                            <label>Text Transform</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>itactica_intenso/config_texttransform</source_model>
+                            <sort_order>53</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_text_transform>
+                        <main_menu_dropdown_arrow_color translate="label">
+                            <label>Dropdown Arrow Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_dropdown_arrow_color>
+                        <main_menu_secondary_text_color translate="label">
+                            <label>Secondary Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_secondary_text_color>
+                        <main_menu_icon_color translate="label">
+                            <label>Icons Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_menu_icon_color>
+                        <header_header_main_menu_home translate="label">
+                            <label>Main Menu (Only for Home Page when Transparent header is active)</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>81</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </header_header_main_menu_home>
+                        <home_main_menu_text_color translate="label">
+                            <label>Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>82</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </home_main_menu_text_color>
+                        <home_main_menu_text_hover_color translate="label">
+                            <label>Text Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>83</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </home_main_menu_text_hover_color>
+                        <home_main_menu_dropdown_arrow_color translate="label">
+                            <label>Dropdown Arrow Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>84</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </home_main_menu_dropdown_arrow_color>
+                        <home_main_menu_secondary_text_color translate="label">
+                            <label>Secondary Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </home_main_menu_secondary_text_color>
+                        <home_main_menu_icons_color translate="label">
+                            <label>Icons Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>86</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </home_main_menu_icons_color>
+                        <header_header_search_form translate="label">
+                            <label>Search Box</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_header_search_form>
+                        <search_box_text_color translate="label">
+                            <label>Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_box_text_color>
+                        <search_box_text_color_focus translate="label">
+                            <label>Text Color on Focus</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_box_text_color_focus>
+                        <search_box_border_color translate="label">
+                            <label>Border Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_box_border_color>
+                        <search_box_border_color_hover translate="label">
+                            <label>Border Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_box_border_color_hover>
+                        <search_box_icon_color translate="label">
+                            <label>Color of Icons</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_box_icon_color>
+                        <search_box_icon_divider_color translate="label">
+                            <label>Icon's Divider Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_box_icon_divider_color>
+                        <header_header_sec_menu translate="label">
+                            <label>Secondary Menu</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_header_sec_menu>
+                        <sec_menu_font_size translate="label comment">
+                            <label>Font Size</label>
+                            <comment>In REM units. Only applicable when Secondary Menu Style is set to "Top ribbon" in Theme Setup > Header</comment>
+                            <validate>required-entry validate-number validate-not-negative-number validate-greater-than-zero</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sec_menu_font_size>
+                        <sec_menu_text_color translate="label">
+                            <label>Text Color</label>
+                            <comment>Only applicable when Secondary Menu Style is set to "Top ribbon" in Theme Setup > Header</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sec_menu_text_color>
+                        <sec_menu_text_color_hover translate="label">
+                            <label>Text Color on Hover</label>
+                            <comment>Only applicable when Secondary Menu Style is set to "Top ribbon" in Theme Setup > Header</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sec_menu_text_color_hover>
+                        <sec_menu_background_color translate="label">
+                            <label>Background Color</label>
+                            <comment>Only applicable when Secondary Menu Style is set to "Top ribbon" in Theme Setup > Header</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sec_menu_background_color>
+                        <header_header_sec_menu_home translate="label">
+                            <label>Secondary Menu (Only for Home Page when Transparent header is active)</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </header_header_sec_menu_home>
+                        <home_sec_menu_text_color translate="label">
+                            <label>Text Color</label>
+                            <comment>Only applicable when Secondary Menu Style is set to "Top ribbon" in Theme Setup > Header</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </home_sec_menu_text_color>
+                        <home_sec_menu_text_hover_color translate="label">
+                            <label>Text Color on Hover</label>
+                            <comment>Only applicable when Secondary Menu Style is set to "Top ribbon" in Theme Setup > Header</comment>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>230</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <main_menu_style>transparent</main_menu_style>
+                            </depends>
+                        </home_sec_menu_text_hover_color>
+                    </fields>
+                </header>
+                <footer translate="label">
+                    <label>Footer</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>15</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>   
+                        <header_footer_top translate="label">
+                            <label>Top Section</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_footer_top>
+                        <footer_top_background translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_top_background>
+                        <footer_top_color translate="label">
+                            <label>Text and Icons Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_top_color>
+                        <footer_top_hover_color translate="label">
+                            <label>Text and Icons Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_top_hover_color>
+                        <footer_newsletterbox_text_color translate="label">
+                            <label>Newsletter Input Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_newsletterbox_text_color>
+                        <footer_newsletterbox_text_color_focus translate="label">
+                            <label>Newsletter Input Text Color on Focus</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_newsletterbox_text_color_focus>
+                        <footer_newsletterbox_border_color translate="label">
+                            <label>Newsletter Input Border Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_newsletterbox_border_color>
+                        <footer_newsletterbox_border_color_hover translate="label">
+                            <label>Newsletter Input Border Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_newsletterbox_border_color_hover>
+                        <footer_newsletterbox_border_color_focus translate="label">
+                            <label>Newsletter Input Border Color on Focus</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_newsletterbox_border_color_focus>
+                        <footer_newsletterbox_submit_background translate="label">
+                            <label>Newsletter Submit Button Background</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_newsletterbox_submit_background>
+                        <footer_newsletterbox_submit_color translate="label">
+                            <label>Newsletter Submit Button Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_newsletterbox_submit_color>
+                        <footer_newsletterbox_submit_hover_background translate="label">
+                            <label>Newsletter Submit Button Background on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_newsletterbox_submit_hover_background>
+                        <footer_newsletterbox_submit_hover_color translate="label">
+                            <label>Newsletter Submit Button Text Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_newsletterbox_submit_hover_color>
+                        <header_footer_middle translate="label">
+                            <label>Middle Section</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_footer_middle>
+                        <footer_middle_background translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_middle_background>
+                        <footer_label_color translate="label">
+                            <label>Label Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_label_color>
+                        <footer_vertical_links_color translate="label">
+                            <label>Vertical Links Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_vertical_links_color>
+                        <footer_vertical_links_hover_color translate="label">
+                            <label>Vertical Links Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_vertical_links_hover_color>
+                        <footer_horizontal_links_color translate="label">
+                            <label>Horizontal Links Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_horizontal_links_color>
+                        <footer_horizontal_links_hover_color translate="label">
+                            <label>Horizontal Links Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_horizontal_links_hover_color>
+                        <footer_horizontal_links_separator_color translate="label">
+                            <label>Horizontal Links Separator Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_horizontal_links_separator_color>
+                        <footer_text_color translate="label">
+                            <label>Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_text_color>
+                        <header_footer_bottom translate="label">
+                            <label>Bottom Section</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_footer_bottom>
+                        <footer_bottom_background translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>230</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_bottom_background>
+                        <footer_bottom_text_color translate="label">
+                            <label>Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>240</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_bottom_text_color>
+                        <footer_bottom_backtotop_color translate="label">
+                            <label>"Back to Top" Link Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>250</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_bottom_backtotop_color>
+                        <footer_bottom_backtotop_hover_color translate="label">
+                            <label>"Back to Top" Link Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>260</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_bottom_backtotop_hover_color>
+                        <header_footer_mobile translate="label">
+                            <label>Mobile Footer</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>270</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_footer_mobile>
+                        <footer_mobile_background translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>280</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_mobile_background>
+                        <footer_mobile_background_hover translate="label">
+                            <label>Background Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>290</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_mobile_background_hover>
+                        <footer_mobile_text_color translate="label">
+                            <label>Text Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_mobile_text_color>
+                    </fields>
+                </footer>
+                <catalog translate="label">
+                    <label>Catalog View</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <catalog_view_background translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catalog_view_background>
+                        <category_title_color translate="label">
+                            <label>Category Title Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </category_title_color>
+                        <category_price_color translate="label">
+                            <label>Price Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </category_price_color>
+                    </fields>
+                </catalog>
+                <product translate="label">
+                    <label>Product View</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <product_view_background translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_view_background>
+                        <breadcrumbs_background translate="label">
+                            <label>Breadcrumbs Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </breadcrumbs_background>
+                        <add_to_cart_box_background translate="label">
+                            <label>Add to Cart Box - Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </add_to_cart_box_background>
+                        <product_name_color translate="label">
+                            <label>Product Name Text Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_name_color>
+                        <header_sticky_nav translate="label">
+                            <label>Sticky Navigation Menu Bar</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_sticky_nav>
+                        <sticky_nav_background translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sticky_nav_background>
+                        <sticky_nav_links_color translate="label">
+                            <label>Links Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sticky_nav_links_color>
+                        <sticky_nav_links_color_hover translate="label">
+                            <label>Links Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sticky_nav_links_color_hover>
+                        <header_sticky_nav_fixed translate="label">
+                            <label>Sticky Navigation Menu Bar (when fixed on the top)</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>81</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_sticky_nav_fixed>
+                        <sticky_nav_background_fixed translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>82</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sticky_nav_background_fixed>
+                        <sticky_nav_link_color_fixed translate="label">
+                            <label>Links Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>83</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sticky_nav_link_color_fixed>
+                        <sticky_nav_link_color_fixed_hover translate="label">
+                            <label>Links Color on Hover</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>84</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sticky_nav_link_color_fixed_hover>
+                        <sticky_nav_links_bg_active translate="label">
+                            <label>Links Background Color When Active</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sticky_nav_links_bg_active>
+                        <header_product_info translate="label">
+                            <label>Product Info Sections</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_product_info>
+                        <product_info_label_color translate="label">
+                            <label>Color of the Titles</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_info_label_color>
+                        <additional_info_background_color translate="label">
+                            <label>Additional Info Table - Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </additional_info_background_color>
+                        <product_info_separator_color translate="label">
+                            <label>Color of the Line that Separates each Section</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_info_separator_color>
+                        <header_upsell translate="label">
+                            <label>UpSell Products</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_upsell>
+                        <upsell_background_color translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </upsell_background_color>
+                        <upsell_label_color translate="label">
+                            <label>Label Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </upsell_label_color>
+                        <header_related translate="label">
+                            <label>Related Products</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_related>
+                        <related_background_color translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </related_background_color>
+                        <related_label_color translate="label">
+                            <label>Label Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </related_label_color>
+                    </fields>
+                </product>
+                <featured_products translate="label">
+                    <label>Featured Products Widget</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <featured_products_background translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </featured_products_background>
+                        <featured_products_label_color translate="label">
+                            <label>Label Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </featured_products_label_color>
+                    </fields>
+                </featured_products>
+                <featured_categories translate="label">
+                    <label>Featured Categories Widget</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <featured_categories_background translate="label">
+                            <label>Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </featured_categories_background>
+                        <featured_categories_label_color translate="label">
+                            <label>Label Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </featured_categories_label_color>
+                    </fields>
+                </featured_categories>
+                <logo_slider translate="label">
+                    <label>Logo Slider Widget</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <logo_slider_label_color translate="label">
+                            <label>Label Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </logo_slider_label_color>
+                    </fields>
+                </logo_slider>
+                <star_rating translate="label">
+                    <label>Star Rating</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>70</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <stars_color translate="label comment">
+                            <label>Star Rating Color</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_rating</frontend_model>
+                            <source_model>itactica_intenso/config_rating</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </stars_color>
+                    </fields>
+                </star_rating>
+                <customer_account translate="label">
+                    <label>Customer Account</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>80</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <customer_outside_background_color translate="label">
+                            <label>Login, Forgot Password, Register, Reset Password and Logout Success Pages - Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </customer_outside_background_color>
+                        <customer_inside_background_color translate="label">
+                            <label>Customer Account - Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </customer_inside_background_color>
+                    </fields>
+                </customer_account>
+                <checkout translate="label">
+                    <label>Checkout</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>90</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <checkout_background_color translate="label">
+                            <label>One Page Checkout and Multishipping Checkout Pages - Background Color</label>
+                            <frontend_model>itactica_intenso/adminhtml_system_config_form_field_colorpicker</frontend_model>
+                            <backend_model>itactica_intenso/system_config_backend_design_color_validate</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </checkout_background_color>
+                    </fields>
+                </checkout>
+            </groups>
+        </intenso_design>
+    </sections>
+</config>

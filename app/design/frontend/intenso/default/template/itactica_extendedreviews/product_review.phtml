@@ -1,0 +1,51 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_ExtendedReviews
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<?php 
+$helper = Mage::helper('itactica_extendedreviews');
+$viewMore = array();   
+?>
+<p data-magellan-destination="ratings-reviews"><a id="ratings-reviews"></a></p>
+<div class="ratings-detail clearfix">
+    <h3><?php echo $helper->__('Ratings & Reviews')?></h3>
+    <?php echo $this->getSummaryHead('head', false);?>
+</div>
+<div class="reviews">
+    <?php if ($this->getReviewsCount()>1): ?>
+    <a href="<?php echo $this->getReviewsUrl() ?>" class="small"><?php echo Mage::helper('itactica_extendedreviews')->__('View all %d reviews', $this->getReviewsCount()) ?></a>
+    <?php endif; ?>
+    <?php if ($this->getReviewsCount()>0): ?>
+    <h5><?php echo $this->__('Most Helpful Customer Reviews'); ?></h5>
+    <ul class="review-list most-helpful" aria-hidden="false" aria-expanded="true">
+        <?php $reviewCollection = $this->getCollectionByHelpful(); ?>
+        <?php
+            foreach ($reviewCollection as $item) {
+                if ((int)$helper->getMaxCharactersForPreview() > 0) {
+                    $viewMore[] = $item->getId();
+                }
+                echo $this->getReviewContentHtml($item);
+            }
+        ?>
+    </ul>
+    <?php endif; ?>
+    <?php if ($this->getReviewsCount()>1): ?>
+        <a href="<?php echo $this->getReviewsUrl() ?>" class="small"><?php echo Mage::helper('itactica_extendedreviews')->__('View all %d reviews', $this->getReviewsCount()) ?></a>
+        <div class="write-review"><a href="<?php echo $this->getReviewsUrl() ?>#post-review" class="button small secondary"><?php echo $this->__('Write a Customer Review') ?></a></div>
+    <?php endif; ?>
+    <?php if((int)$helper->getMaxCharactersForPreview() > 0 && $this->getReviewsCount()>0):?>
+        <script type="text/javascript">
+        //<![CDATA[
+            viewMore = [<?php echo  implode(",", $viewMore); ?>];
+            viewMoreLimit = <?php echo (int)$helper->getMaxCharactersForPreview()?>;
+        //]]>
+        </script>
+    <?php endif; ?>
+</div>

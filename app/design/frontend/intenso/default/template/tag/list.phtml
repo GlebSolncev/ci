@@ -1,0 +1,50 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<div class="product-collateral tags clearfix row">
+    <p data-magellan-destination="tags"><a id="tags"></a></p>
+    <h3><?php echo $this->__('Product Tags') ?></h3>
+    <div class="small-12 columns">
+        <?php echo $this->getChildHtml('list_before')?>
+        <?php if( $this->getCount() ): ?>
+        <p class="small"><?php echo $this->__('Other people marked this product with these tags:') ?></p>
+        <ul id="<?php echo $this->getUniqueHtmlId('product-tags_'); ?>" class="product-tags">
+            <?php echo $this->renderTags('<li><a href="%1$s">%2$s <span>(%3$s)</span></a></li>') ?>
+        </ul>
+        <script type="text/javascript">
+            decorateGeneric($("<?php echo $this->getUniqueHtmlId('product-tags_'); ?>").select('li'), ['first', 'last']);
+        </script>
+        <?php endif; ?>
+        <span id="add-tag"><?php echo $this->__('Add your tags') ?></span>
+        <form id="addTagForm" action="<?php echo $this->getFormAction(); ?>" method="get">
+            <div class="form-add">
+                <div class="input-box">
+                    <input type="text" class="input-text required-entry" name="productTagName" id="productTagName" />
+                </div>
+                <button type="button" title="<?php echo $this->__('Add Tags') ?>" class="button" onclick="submitTagForm()">
+                    <span>
+                        <span><?php echo $this->__('Add Tags') ?></span>
+                    </span>
+                </button>
+            </div>
+            <p class="small"><?php echo $this->__("Use spaces to separate tags. Use single quotes (') for phrases.") ?></p>
+        </form>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+        var addTagFormJs = new VarienForm('addTagForm');
+        function submitTagForm(){
+            if(addTagFormJs.validator.validate()) {
+                addTagFormJs.form.submit();
+            }
+        }
+    //]]>
+    </script>
+</div>

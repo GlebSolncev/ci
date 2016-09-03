@@ -1,0 +1,39 @@
+<root>
+	<democontent>
+		<item>
+			<title>Furniture Home</title>
+			<identifier>furniture_home</identifier>
+			<columns>3</columns>
+			<billboard_type>1</billboard_type>
+			<image_options_small>1</image_options_small>
+			<image_options_medium>2</image_options_medium>
+			<images_to_show>
+				<item>1</item>
+				<item>2</item>
+				<item>3</item>
+			</images_to_show>
+			<background_color>#ffffff</background_color>
+			<padding_top></padding_top>
+			<padding_bottom></padding_bottom>
+			<image_large_first>/mini-banner-4-large.jpg</image_large_first>
+			<image_large_second>/mini-banner-5-large.jpg</image_large_second>
+			<image_large_third>/mini-banner-6-large.jpg</image_large_third>
+			<image_large_fourth></image_large_fourth>
+			<image_medium_first>/mini-banner-4-medium.jpg</image_medium_first>
+			<image_medium_second>/mini-banner-5-medium.jpg</image_medium_second>
+			<image_medium_third>/mini-banner-6-medium.jpg</image_medium_third>
+			<image_medium_fourth></image_medium_fourth>
+			<alt_first><![CDATA[Scandinavian Style - Simple style solutions for your home]]></alt_first>
+			<alt_second><![CDATA[Discover Great Ideas - Turn your morning into a great day]]></alt_second>
+			<alt_third><![CDATA[Up to 40% Off - Save big on select garden furniture]]></alt_third>
+			<alt_fourth></alt_fourth>
+			<link_first>#</link_first>
+			<link_second>#</link_second>
+			<link_third>#</link_third>
+			<link_fourth></link_fourth>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

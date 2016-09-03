@@ -1,0 +1,20 @@
+<root>
+	<democontent>
+		<item>
+			<title>Shop by Brand</title>
+			<identifier>shop_by_brand</identifier>
+			<add_to_category_url>
+				<item>men</item>
+				<item>women</item>
+			</add_to_category_url>
+			<min_item_width>120</min_item_width>
+			<animation_speed>300</animation_speed>
+			<show_bullets>1</show_bullets>
+			<show_arrows>1</show_arrows>
+			<swipe>1</swipe>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

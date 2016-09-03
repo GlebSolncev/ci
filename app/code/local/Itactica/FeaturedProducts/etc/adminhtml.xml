@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_FeaturedProducts
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <itactica_featuredproducts translate="title" module="itactica_featuredproducts">
+                                        <title>Intenso - Featured Products</title>
+                                    </itactica_featuredproducts>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <theme>
+                        <children>
+                            <itactica_featuredproducts translate="title" module="itactica_featuredproducts">
+                                <title>Featured Products</title>
+                                <children>
+                                    <slider translate="title" module="itactica_featuredproducts">
+                                        <title>Slider</title>
+                                        <sort_order>10</sort_order>
+                                    </slider>
+                                </children>
+                            </itactica_featuredproducts>
+                        </children>
+                    </theme>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <theme>
+            <children>
+                <itactica_featuredproducts translate="title" module="itactica_featuredproducts">
+                    <title>Featured Products</title>
+                    <action>adminhtml/featuredproducts_slider</action>
+                    <sort_order>7</sort_order>
+                </itactica_featuredproducts>
+            </children>
+        </theme>
+    </menu>
+</config>

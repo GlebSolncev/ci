@@ -1,0 +1,260 @@
+<root>
+	<democontent>
+		<item>
+			<title>Demo Slide 1</title>
+			<filename_for_large>/hero-1-large.jpg</filename_for_large>
+			<filename_for_medium>/hero-1-medium.jpg</filename_for_medium>
+			<filename_for_small>/hero-1-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>2</navigation_skin>
+			<text_block_alignment>left</text_block_alignment>
+			<custom_alignment></custom_alignment>
+			<vertical_alignment>1</vertical_alignment>
+			<text_block_top>10%</text_block_top>
+			<title_for_large><![CDATA[New Season.<br>New Arrivals.]]></title_for_large>
+			<title_for_large_color>#0284a9</title_for_large_color>
+			<title_for_large_size>54</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>300</title_for_large_weight>
+			<text_for_large><![CDATA[Tons of summer-ready styles in every awesome fit just drop online.]]></text_for_large>
+			<text_for_large_color>#ffffff</text_for_large_color>
+			<text_for_large_size>20</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#ddecf3</text_block_color_for_small>
+			<title_for_small><![CDATA[New Season. New Arrivals.]]></title_for_small>
+			<title_for_small_color>#0284a9</title_for_small_color>
+			<title_for_small_size>24</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>300</title_for_small_weight>
+			<text_for_small><![CDATA[Tons of summer-ready styles in every awesome fit just drop online.]]></text_for_small>
+			<text_for_small_color>#777777</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[Learn more]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#fd5e77</button_one_background>
+			<button_one_background_hover>#fd3051</button_one_background_hover>
+			<button_two_text><![CDATA[Get Intenso Now!]]></button_two_text>
+			<button_two_style>ghost</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#fd5e77</button_two_text_color>
+			<button_two_text_color_hover>#fd3051</button_two_text_color_hover>
+			<button_two_background>#fd5e77</button_two_background>
+			<button_two_background_hover>#fd3051</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Demo Slide 2</title>
+			<filename_for_large>/hero-2-large.jpg</filename_for_large>
+			<filename_for_medium>/hero-2-medium.jpg</filename_for_medium>
+			<filename_for_small>/hero-2-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>1</navigation_skin>
+			<text_block_alignment>left</text_block_alignment>
+			<custom_alignment></custom_alignment>
+			<vertical_alignment>1</vertical_alignment>
+			<text_block_top>16%</text_block_top>
+			<title_for_large><![CDATA[The Power of Responsiveness]]></title_for_large>
+			<title_for_large_color>#34271a</title_for_large_color>
+			<title_for_large_size>54</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>300</title_for_large_weight>
+			<text_for_large><![CDATA[Combine the power of Magento with a multi-purpose theme that has been meticulously considered and pixel-precision designed to be beautiful and responsive.]]></text_for_large>
+			<text_for_large_color>#222222</text_for_large_color>
+			<text_for_large_size>20</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#d5d5c9</text_block_color_for_small>
+			<title_for_small><![CDATA[The Power of Responsiveness]]></title_for_small>
+			<title_for_small_color>#34271a</title_for_small_color>
+			<title_for_small_size>24</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>300</title_for_small_weight>
+			<text_for_small><![CDATA[Meticulously considered and pixel-precision designed.]]></text_for_small>
+			<text_for_small_color>#6c5f57</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[Learn more]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#27ccc0</button_one_background>
+			<button_one_background_hover>#1ba39c</button_one_background_hover>
+			<button_two_text><![CDATA[Get Intenso Now!]]></button_two_text>
+			<button_two_style>ghost</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#27ccc0</button_two_text_color>
+			<button_two_text_color_hover>#1ba39c</button_two_text_color_hover>
+			<button_two_background>#27ccc0</button_two_background>
+			<button_two_background_hover>#1ba39c</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Demo Slide 3</title>
+			<filename_for_large>/hero-3-large.jpg</filename_for_large>
+			<filename_for_medium>/hero-3-medium.jpg</filename_for_medium>
+			<filename_for_small>/hero-3-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>2</navigation_skin>
+			<text_block_alignment>right</text_block_alignment>
+			<custom_alignment></custom_alignment>
+			<vertical_alignment>1</vertical_alignment>
+			<text_block_top>10%</text_block_top>
+			<title_for_large><![CDATA[Magento<br>Re-Imagined]]></title_for_large>
+			<title_for_large_color>#ffffff</title_for_large_color>
+			<title_for_large_size>54</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>300</title_for_large_weight>
+			<text_for_large><![CDATA[Easily create an engaging, mobile-ready, e-commerce website. Radically simple and easy to customize.]]></text_for_large>
+			<text_for_large_color>#ffffff</text_for_large_color>
+			<text_for_large_size>20</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#c7b694</text_block_color_for_small>
+			<title_for_small><![CDATA[Magento Re-Imagined]]></title_for_small>
+			<title_for_small_color>#ffffff</title_for_small_color>
+			<title_for_small_size>24</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>300</title_for_small_weight>
+			<text_for_small><![CDATA[Easily create an engaging, mobile-ready, e-commerce website.]]></text_for_small>
+			<text_for_small_color>#f4f4f4</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[Learn more]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#27ccc0</button_one_background>
+			<button_one_background_hover>#1ba39c</button_one_background_hover>
+			<button_two_text><![CDATA[Get Intenso Now!]]></button_two_text>
+			<button_two_style>ghost</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#ffffff</button_two_text_color>
+			<button_two_text_color_hover>#27ccc0</button_two_text_color_hover>
+			<button_two_background>#ffffff</button_two_background>
+			<button_two_background_hover>#27ccc0</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Demo Slide 4</title>
+			<filename_for_large>/banner-category-men-large.jpg</filename_for_large>
+			<filename_for_medium>/banner-category-men-medium.jpg</filename_for_medium>
+			<filename_for_small>/banner-category-men-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>1</navigation_skin>
+			<text_block_alignment>custom</text_block_alignment>
+			<custom_alignment>48</custom_alignment>
+			<vertical_alignment>0</vertical_alignment>
+			<text_block_top></text_block_top>
+			<title_for_large><![CDATA[Take your Outfit<br>to the Next Level]]></title_for_large>
+			<title_for_large_color>#333333</title_for_large_color>
+			<title_for_large_size>34</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>300</title_for_large_weight>
+			<text_for_large><![CDATA[See What's New.]]></text_for_large>
+			<text_for_large_color>#777777</text_for_large_color>
+			<text_for_large_size>20</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#dbdbdb</text_block_color_for_small>
+			<title_for_small><![CDATA[Take your Outfit to the Next Level]]></title_for_small>
+			<title_for_small_color>#333333</title_for_small_color>
+			<title_for_small_size>24</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>300</title_for_small_weight>
+			<text_for_small><![CDATA[See What's New.]]></text_for_small>
+			<text_for_small_color>#777777</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[Shop new arrivals]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#27ccc0</button_one_background>
+			<button_one_background_hover>#1ba39c</button_one_background_hover>
+			<button_two_text></button_two_text>
+			<button_two_style>normal</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#ffffff</button_two_text_color>
+			<button_two_text_color_hover>#27ccc0</button_two_text_color_hover>
+			<button_two_background>#ffffff</button_two_background>
+			<button_two_background_hover>#27ccc0</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Demo Slide 5</title>
+			<filename_for_large>/banner-category-women-large.jpg</filename_for_large>
+			<filename_for_medium>/banner-category-women-medium.jpg</filename_for_medium>
+			<filename_for_small>/banner-category-women-small.jpg</filename_for_small>
+			<image_link></image_link>
+			<navigation_skin>1</navigation_skin>
+			<text_block_alignment>custom</text_block_alignment>
+			<custom_alignment>48</custom_alignment>
+			<vertical_alignment>0</vertical_alignment>
+			<text_block_top></text_block_top>
+			<title_for_large><![CDATA[Meet Your New<br>Favorite Jeans]]></title_for_large>
+			<title_for_large_color>#333333</title_for_large_color>
+			<title_for_large_size>34</title_for_large_size>
+			<title_for_large_style>normal</title_for_large_style>
+			<title_for_large_weight>300</title_for_large_weight>
+			<text_for_large><![CDATA[The Hottest Fits. Authentic Washes.]]></text_for_large>
+			<text_for_large_color>#777777</text_for_large_color>
+			<text_for_large_size>20</text_for_large_size>
+			<text_for_large_style>normal</text_for_large_style>
+			<text_for_large_weight>normal</text_for_large_weight>
+			<text_block_color_for_small>#dbdbdb</text_block_color_for_small>
+			<title_for_small><![CDATA[Meet Your New Favorite Jeans]]></title_for_small>
+			<title_for_small_color>#333333</title_for_small_color>
+			<title_for_small_size>24</title_for_small_size>
+			<title_for_small_style>normal</title_for_small_style>
+			<title_for_small_weight>300</title_for_small_weight>
+			<text_for_small><![CDATA[The Hottest Fits. Authentic Washes.]]></text_for_small>
+			<text_for_small_color>#777777</text_for_small_color>
+			<text_for_small_size>14</text_for_small_size>
+			<text_for_small_style>normal</text_for_small_style>
+			<text_for_small_weight>normal</text_for_small_weight>
+			<button_one_text><![CDATA[Shop now]]></button_one_text>
+			<button_one_style>normal</button_one_style>
+			<button_one_size>normal</button_one_size>
+			<button_one_link>#</button_one_link>
+			<button_one_text_color>#ffffff</button_one_text_color>
+			<button_one_text_color_hover>#ffffff</button_one_text_color_hover>
+			<button_one_background>#27ccc0</button_one_background>
+			<button_one_background_hover>#1ba39c</button_one_background_hover>
+			<button_two_text></button_two_text>
+			<button_two_style>normal</button_two_style>
+			<button_two_size>normal</button_two_size>
+			<button_two_link>#</button_two_link>
+			<button_two_text_color>#ffffff</button_two_text_color>
+			<button_two_text_color_hover>#27ccc0</button_two_text_color_hover>
+			<button_two_background>#ffffff</button_two_background>
+			<button_two_background_hover>#27ccc0</button_two_background_hover>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

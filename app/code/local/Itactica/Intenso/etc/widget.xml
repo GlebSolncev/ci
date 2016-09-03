@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Intenso
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<widgets>
+    <intenso_cartcount type="itactica_intenso/widget_view" translate="name description" module="itactica_intenso">
+        <name>Cart Total Items</name>
+        <description>Insert cart total items</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <cart_count type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Cart Total Items</label>
+                <type>label</type>
+                <sort_order>120</sort_order>
+            </cart_count>
+        </parameters>
+    </intenso_cartcount>
+</widgets>

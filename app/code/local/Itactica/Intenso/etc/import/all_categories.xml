@@ -1,0 +1,23 @@
+<root>
+	<demo>
+		<item>
+			<urls>makeup,skincare,fragrance,gift-and-offers,living-room,bedroom,dining-and-kitchen,outdoor,decor,laptops,cameras,cellphones-and-tablets,tvs</urls>
+		</item>
+	</demo>
+	<makeup>
+		<item>
+			<urls>men,women,electronics,digital,living-room,bedroom,dining-and-kitchen,outdoor,decor,laptops,cameras,cellphones-and-tablets,tvs</urls>
+		</item>
+	</makeup>
+	<furniture>
+		<item>
+			<urls>men,women,electronics,digital,makeup,skincare,fragrance,gift-and-offers,laptops,cameras,cellphones-and-tablets,tvs</urls>
+		</item>
+	</furniture>
+	<electronics>
+		<item>
+			<urls>men,women,electronics,digital,makeup,skincare,fragrance,gift-and-offers,living-room,bedroom,dining-and-kitchen,outdoor,decor</urls>
+		</item>
+	</electronics>
+</root>
+

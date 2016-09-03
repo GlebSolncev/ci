@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_TextBoxes
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<widgets>
+    <textboxes_box_view type="itactica_textboxes/box_widget_view" translate="name description" module="itactica_textboxes">
+        <name>Intenso - Text Boxes</name>
+        <description>Advanced Text Box Widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <box_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Text Box</label>
+                <type>label</type>
+                <helper_block>
+                    <type>itactica_textboxes/adminhtml_box_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Text Box</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </box_id>
+        </parameters>
+    </textboxes_box_view>
+</widgets>

@@ -1,0 +1,61 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+/* @var $this Mage_Wishlist_Block_Customer_Wishlist_Item_Column_Cart */
+/* @var Mage_Wishlist_Model_Item $item */
+$item = $this->getItem();
+$product = $item->getProduct();
+$options = $this->getChild('customer.wishlist.item.options')
+    ->setItem($item)
+    ->getConfiguredOptions();
+?>
+<div class="cart-cell">
+<?php echo $this->getPriceHtml($product, empty($options));?>
+<div class="add-to-cart-alt">
+<?php if ($item->canHaveQty() && $item->getProduct()->isVisibleInSiteVisibility()): ?>
+    <div id="qty-wrapper-<?php echo $item->getId() ?>" class="qty-wrapper">
+        <?php if (($this->getAddToCartQty($item) * 1) < 10): ?>
+            <select class="simulate-change" name="qty[<?php echo $item->getId() ?>]" id="qty[<?php echo $item->getId() ?>]">
+                <?php for ($i=1; $i < 10; $i++): ?>
+                    <option value="<?php echo $i ?>"<?php if (($this->getAddToCartQty($item) * 1) == $i): ?> selected="selected"<?php endif; ?>><?php echo $i ?></option>
+                <?php endfor; ?>
+                <option value="10">10+</option>
+            </select>
+            <script type="text/javascript">
+                $("qty[<?php echo $item->getId() ?>]").observe('change', function(){
+                    if ($(this).getValue() == 10) {
+                        $("qty-wrapper-<?php echo $item->getId() ?>").update('<input type="number" class="input-text qty validate-not-negative-number" name="qty[<?php echo $item->getId() ?>]" size="4" maxlength="10" value="<?php echo $this->getAddToCartQty($item) * 1 ?>" />');
+                    }
+                });
+            </script>
+        <?php else: ?>
+            <input name="qty[<?php echo $item->getId() ?>]" id="qty[<?php echo $item->getId() ?>]" value="<?php echo $this->getAddToCartQty($item) * 1 ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+<?php if ($product->isSaleable()): ?>
+    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" onclick="addWItemToCart(<?php echo $item->getId()?>);" class="button btn-cart"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+<?php else: ?>
+    <?php if ($product->getIsSalable()): ?>
+        <p class="availability in-stock"><span><?php echo $this->__('In stock') ?></span></p>
+    <?php else: ?>
+        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+    <?php endif; ?>
+<?php endif; ?>
+</div>
+<?php foreach($this->getSortedChildren() as $childName):?>
+    <?php echo $this->getChildHtml($childName, false);?>
+<?php endforeach;?>
+<?php if ($product->isVisibleInSiteVisibility()): ?>
+    <p><a class="link-edit" href="<?php echo $this->getItemConfigureUrl($item) ?>"><?php echo $this->__('Edit') ?></a></p>
+<?php endif ?>
+<a href="<?php echo $this->getItemRemoveUrl($this->getItem()); ?>" onclick="return confirmRemoveWishlistItem();" title="<?php echo $this->__('Remove Item') ?>"
+    class="btn-remove btn-remove2"><?php echo $this->__('Remove item');?></a>
+</div>

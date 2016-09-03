@@ -1,0 +1,67 @@
+<root>
+	<democontent>
+		<item>
+			<title>Makeup - Home</title>
+			<identifier>makeup_home</identifier>
+			<columns>3</columns>
+			<box_type>1</box_type>
+			<background_color>#f9f5f2</background_color>
+			<padding_top>30</padding_top>
+			<padding_bottom>70</padding_bottom>
+			<icon_class_first>icon-truck</icon_class_first>
+			<icon_class_second>icon-gift</icon_class_second>
+			<icon_class_third>icon-tags</icon_class_third>
+			<icon_color_first>#e24179</icon_color_first>
+			<icon_color_second>#e24179</icon_color_second>
+			<icon_color_third>#e24179</icon_color_third>
+			<icon_style_first>icon-solidcircle</icon_style_first>
+			<icon_style_second>icon-solidcircle</icon_style_second>
+			<icon_style_third>icon-solidcircle</icon_style_third>
+			<icon_size_first>25</icon_size_first>
+			<icon_size_second>25</icon_size_second>
+			<icon_size_third>25</icon_size_third>
+			<icon_line_height_first>44</icon_line_height_first>
+			<icon_line_height_second>42</icon_line_height_second>
+			<icon_line_height_third>46</icon_line_height_third>
+			<title_first><![CDATA[FREE Shipping on Orders Over $15]]></title_first>
+			<title_second><![CDATA[Register for FREE Deluxe Gifts and Express Dispatch]]></title_second>
+			<title_third><![CDATA[Over 200 Exclusively Selected Beauty Brands]]></title_third>
+			<title_color_first>#666666</title_color_first>
+			<title_color_second>#666666</title_color_second>
+			<title_color_third>#666666</title_color_third>
+			<title_size_first>16</title_size_first>
+			<title_size_second>16</title_size_second>
+			<title_size_third>16</title_size_third>
+			<title_style_first>normal</title_style_first>
+			<title_style_second>normal</title_style_second>
+			<title_style_third>normal</title_style_third>
+			<title_weight_first>500</title_weight_first>
+			<title_weight_second>500</title_weight_second>
+			<title_weight_third>500</title_weight_third>
+			<text_first><![CDATA[]]></text_first>
+			<text_second><![CDATA[]]></text_second>
+			<text_third><![CDATA[]]></text_third>
+			<text_color_first></text_color_first>
+			<text_color_second></text_color_second>
+			<text_color_third></text_color_third>
+			<text_size_first></text_size_first>
+			<text_size_second></text_size_second>
+			<text_size_third></text_size_third>
+			<text_lineheight_first></text_lineheight_first>
+			<text_lineheight_second></text_lineheight_second>
+			<text_lineheight_third></text_lineheight_third>
+			<link_first></link_first>
+			<link_second></link_second>
+			<link_third></link_third>
+			<link_text_first></link_text_first>
+			<link_text_second></link_text_second>
+			<link_text_third></link_text_third>
+			<link_type_first></link_type_first>
+			<link_type_second></link_type_second>
+			<link_type_third></link_type_third>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

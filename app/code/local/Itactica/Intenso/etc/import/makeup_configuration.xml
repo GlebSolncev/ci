@@ -1,0 +1,180 @@
+<root>
+	<democontent>
+		<item>
+			<design_header_logoSrc>images/logo-makeup.svg</design_header_logoSrc>
+			<design_header_logoSrcSmall>images/logo-makeup.svg</design_header_logoSrcSmall>
+			<intenso_header_additionalInfo><![CDATA[FREE DELIVERY IN UK, EUROPE & N. AMERICA]]></intenso_header_additionalInfo>
+			<intenso_catalog_catalogMinProductWidth>220</intenso_catalog_catalogMinProductWidth>
+			<intenso_fonts_fontFamily>google</intenso_fonts_fontFamily>
+			<intenso_fonts_googleFonts><![CDATA[Raleway]]></intenso_fonts_googleFonts>
+			<intenso_fonts_fontStyles>300,300italic,400,500,700</intenso_fonts_fontStyles>
+			<intenso_header_showHomeLink>0</intenso_header_showHomeLink>
+			<intenso_header_secMenu>1</intenso_header_secMenu>
+			<intenso_header_secMenuStyle>0</intenso_header_secMenuStyle>
+			<intenso_header_megaMenuRightBlockHideWidth>880</intenso_header_megaMenuRightBlockHideWidth>
+			<intenso_catalog_keepImageAspectRatio>0</intenso_catalog_keepImageAspectRatio>
+			<intenso_catalog_removeImagePadding>0</intenso_catalog_removeImagePadding>
+			<intenso_catalog_productBoxBorderRadius>2</intenso_catalog_productBoxBorderRadius>
+			<intenso_catalog_emptyCategoryFeatured>popular_items_makeup</intenso_catalog_emptyCategoryFeatured>
+			<intenso_catalog_noResultsFeatured>popular_items_makeup</intenso_catalog_noResultsFeatured>
+			<intenso_productPage_keepImageAspectRatio>0</intenso_productPage_keepImageAspectRatio>
+			<intenso_productPage_imageFixedHeight>404</intenso_productPage_imageFixedHeight>
+			<!-- Theme Setup - Exit Intent Pop-Up -->
+			<intenso_exitIntentPopup_enablePopup>1</intenso_exitIntentPopup_enablePopup>
+			<intenso_exitIntentPopup_popupType>1</intenso_exitIntentPopup_popupType>
+			<intenso_exitIntentPopup_backgroundImage>default/popup-makeup.jpg</intenso_exitIntentPopup_backgroundImage>
+			<intenso_exitIntentPopup_backgroundColor>#ffffff</intenso_exitIntentPopup_backgroundColor>
+			<intenso_exitIntentPopup_staticBlock>exit_intent_popup</intenso_exitIntentPopup_staticBlock>
+			<intenso_exitIntentPopup_staticBlockWidth>60</intenso_exitIntentPopup_staticBlockWidth>
+			<intenso_exitIntentPopup_staticBlockAlignment>0</intenso_exitIntentPopup_staticBlockAlignment>
+			<intenso_exitIntentPopup_sensitivity>20</intenso_exitIntentPopup_sensitivity>
+			<intenso_exitIntentPopup_delay>100</intenso_exitIntentPopup_delay>
+			<intenso_exitIntentPopup_cookieExpiration>30</intenso_exitIntentPopup_cookieExpiration>
+			<intenso_exitIntentPopup_cookieName>ExitIntentPopupMakeup</intenso_exitIntentPopup_cookieName>
+			<!-- Theme Design - Page - Main Colors -->
+			<intensoDesign_page_formFieldsStyle>mdformfields</intensoDesign_page_formFieldsStyle>
+			<intensoDesign_page_defaultTextColor>#5b6064</intensoDesign_page_defaultTextColor>
+			<intensoDesign_page_mainColor>#e03470</intensoDesign_page_mainColor>
+			<intensoDesign_page_mainHoverColor>#c81654</intensoDesign_page_mainHoverColor>
+			<intensoDesign_page_pageBackgroundColor>#ffffff</intensoDesign_page_pageBackgroundColor>
+			<intensoDesign_page_viewportBackgroundColor>#f0f0f0</intensoDesign_page_viewportBackgroundColor>
+			<!-- Theme Design - Page - Primary Buttons -->
+			<intensoDesign_page_buttonsBorderRadius>4</intensoDesign_page_buttonsBorderRadius>
+			<intensoDesign_page_primaryButtonBackgroundColor>#e03470</intensoDesign_page_primaryButtonBackgroundColor>
+			<intensoDesign_page_primaryButtonTextColor>#ffffff</intensoDesign_page_primaryButtonTextColor>
+			<intensoDesign_page_primaryButtonHoverBackgroundColor>#c81654</intensoDesign_page_primaryButtonHoverBackgroundColor>
+			<intensoDesign_page_primaryButtonHoverTextColor>#ffffff</intensoDesign_page_primaryButtonHoverTextColor>
+			<!-- Theme Design - Page - Secondary Buttons -->
+			<intensoDesign_page_secondaryButtonBackgroundColor>#dee2e2</intensoDesign_page_secondaryButtonBackgroundColor>
+			<intensoDesign_page_secondaryButtonTextColor>#222222</intensoDesign_page_secondaryButtonTextColor>
+			<intensoDesign_page_secondaryButtonHoverBackgroundColor>#b9b9b9</intensoDesign_page_secondaryButtonHoverBackgroundColor>
+			<intensoDesign_page_secondaryButtonHoverTextColor>#222222</intensoDesign_page_secondaryButtonHoverTextColor>
+			<!-- Theme Design - Page - Ghost Buttons (for light backgrounds) -->
+			<intensoDesign_page_ghostButtonBorderColor>#e03470</intensoDesign_page_ghostButtonBorderColor>
+			<intensoDesign_page_ghostButtonTextColor>#e03470</intensoDesign_page_ghostButtonTextColor>
+			<intensoDesign_page_ghostButtonHoverBorderColor>#c81654</intensoDesign_page_ghostButtonHoverBorderColor>
+			<intensoDesign_page_ghostButtonHoverTextColor>#c81654</intensoDesign_page_ghostButtonHoverTextColor>
+			<!-- Theme Design - Page - Ghost Buttons (for dark backgrounds) -->
+			<intensoDesign_page_ghostButtonLightBorderColor>#f4f4f4</intensoDesign_page_ghostButtonLightBorderColor>
+			<intensoDesign_page_ghostButtonLightTextColor>#f4f4f4</intensoDesign_page_ghostButtonLightTextColor>
+			<intensoDesign_page_ghostButtonLightHoverBorderColor>#ffffff</intensoDesign_page_ghostButtonLightHoverBorderColor>
+			<intensoDesign_page_ghostButtonLightHoverTextColor>#ffffff</intensoDesign_page_ghostButtonLightHoverTextColor>
+			<!-- Theme Design - Header -->
+			<intensoDesign_header_mainMenuStyle>transparent</intensoDesign_header_mainMenuStyle>
+			<intensoDesign_header_headerOpacity>60</intensoDesign_header_headerOpacity>
+			<intensoDesign_header_headerBackground>#000000</intensoDesign_header_headerBackground>
+			<intensoDesign_header_mainMenuBackground>#000000</intensoDesign_header_mainMenuBackground>
+			<intensoDesign_header_headerSeparatorColor>#000000</intensoDesign_header_headerSeparatorColor>
+			<intensoDesign_header_headerSeparatorThickness>0</intensoDesign_header_headerSeparatorThickness>
+			<!-- Theme Design - Header - Home Transparent Style -->
+			<intensoDesign_header_homeMainMenuTextColor>#f4f4f4</intensoDesign_header_homeMainMenuTextColor>
+            <intensoDesign_header_homeMainMenuTextHoverColor>#ffffff</intensoDesign_header_homeMainMenuTextHoverColor>
+            <intensoDesign_header_homeMainMenuDropdownArrowColor>#999999</intensoDesign_header_homeMainMenuDropdownArrowColor>
+            <intensoDesign_header_homeMainMenuSecondaryTextColor>#bbbbbb</intensoDesign_header_homeMainMenuSecondaryTextColor>
+            <intensoDesign_header_homeMainMenuIconsColor>#e03470</intensoDesign_header_homeMainMenuIconsColor>
+			<!-- Theme Design - Header - Logo & Search Box Margins -->
+			<intensoDesign_header_headerLogoTopMargin>7</intensoDesign_header_headerLogoTopMargin>
+			<intensoDesign_header_headerLogoBottomMargin>7</intensoDesign_header_headerLogoBottomMargin>
+			<intensoDesign_header_headerSearchTopMargin>12</intensoDesign_header_headerSearchTopMargin>
+			<intensoDesign_header_headerSearchBottomMargin>16</intensoDesign_header_headerSearchBottomMargin>
+			<!-- Theme Design - Header - Main Menu -->
+			<intensoDesign_header_mainMenuTextColor>#cecece</intensoDesign_header_mainMenuTextColor>
+			<intensoDesign_header_mainMenuTextHoverColor>#ffffff</intensoDesign_header_mainMenuTextHoverColor>
+			<intensoDesign_header_mainMenuFontSize>0.875</intensoDesign_header_mainMenuFontSize>
+			<intensoDesign_header_mainMenuFontWeight>normal</intensoDesign_header_mainMenuFontWeight>
+			<intensoDesign_header_mainMenuTextTransform>uppercase</intensoDesign_header_mainMenuTextTransform>
+			<intensoDesign_header_mainMenuDropdownArrowColor>#999999</intensoDesign_header_mainMenuDropdownArrowColor>
+			<intensoDesign_header_mainMenuSecondaryTextColor>#bbbbbb</intensoDesign_header_mainMenuSecondaryTextColor>
+			<intensoDesign_header_mainMenuIconColor>#e03470</intensoDesign_header_mainMenuIconColor>
+			<!-- Theme Design - Header - Search Box -->
+			<intensoDesign_header_searchBoxTextColor>#cecece</intensoDesign_header_searchBoxTextColor>
+			<intensoDesign_header_searchBoxTextColorFocus>#ffffff</intensoDesign_header_searchBoxTextColorFocus>
+			<intensoDesign_header_searchBoxBorderColor>#d3d3d3</intensoDesign_header_searchBoxBorderColor>
+			<intensoDesign_header_searchBoxBorderColorHover>#ffffff</intensoDesign_header_searchBoxBorderColorHover>
+			<intensoDesign_header_searchBoxIconColor>#cecece</intensoDesign_header_searchBoxIconColor>
+			<intensoDesign_header_searchBoxIconDividerColor>#cecece</intensoDesign_header_searchBoxIconDividerColor>
+			<!-- Theme Design - Header - Secondary Menu -->
+			<intensoDesign_header_secMenuFontSize>0.8125</intensoDesign_header_secMenuFontSize>
+			<intensoDesign_header_secMenuTextColor>#999999</intensoDesign_header_secMenuTextColor>
+			<intensoDesign_header_secMenuTextColorHover>#666666</intensoDesign_header_secMenuTextColorHover>
+			<intensoDesign_header_secMenuBackgroundColor>#ffffff</intensoDesign_header_secMenuBackgroundColor>
+			<!-- Theme Design - Header - Secondary Menu (Only for Home Page when Transparent header is active) -->
+			<intensoDesign_header_homeSecMenuTextColor>#ffffff</intensoDesign_header_homeSecMenuTextColor>
+			<intensoDesign_header_homeSecMenuTextHoverColor>#e03470</intensoDesign_header_homeSecMenuTextHoverColor>
+			<!-- Theme Design - Footer - Top Section -->
+			<intensoDesign_footer_footerTopBackground>#f9f5f2</intensoDesign_footer_footerTopBackground>
+			<intensoDesign_footer_footerTopColor>#2a2b2e</intensoDesign_footer_footerTopColor>
+			<intensoDesign_footer_footerTopHoverColor>#e03470</intensoDesign_footer_footerTopHoverColor>
+			<intensoDesign_footer_footerNewsletterboxTextColor>#777777</intensoDesign_footer_footerNewsletterboxTextColor>
+			<intensoDesign_footer_footerNewsletterboxTextColorFocus>#333333</intensoDesign_footer_footerNewsletterboxTextColorFocus>
+			<intensoDesign_footer_footerNewsletterboxBorderColor>#d3d3d3</intensoDesign_footer_footerNewsletterboxBorderColor>
+			<intensoDesign_footer_footerNewsletterboxBorderColorHover>#afafaf</intensoDesign_footer_footerNewsletterboxBorderColorHover>
+			<intensoDesign_footer_footerNewsletterboxBorderColorFocus>#e03470</intensoDesign_footer_footerNewsletterboxBorderColorFocus>
+			<intensoDesign_footer_footerNewsletterboxSubmitBackground>#e03470</intensoDesign_footer_footerNewsletterboxSubmitBackground>
+			<intensoDesign_footer_footerNewsletterboxSubmitColor>#ffffff</intensoDesign_footer_footerNewsletterboxSubmitColor>
+			<intensoDesign_footer_footerNewsletterboxSubmitHoverBackground>#c81654</intensoDesign_footer_footerNewsletterboxSubmitHoverBackground>
+			<intensoDesign_footer_footerNewsletterboxSubmitHoverColor>#ffffff</intensoDesign_footer_footerNewsletterboxSubmitHoverColor>
+			<!-- Theme Design - Footer - Middle Section -->
+			<intensoDesign_footer_footerMiddleBackground>#f9f5f2</intensoDesign_footer_footerMiddleBackground>
+			<intensoDesign_footer_footerLabelColor>#333333</intensoDesign_footer_footerLabelColor>
+			<intensoDesign_footer_footerVerticalLinksColor>#777777</intensoDesign_footer_footerVerticalLinksColor>
+			<intensoDesign_footer_footerVerticalLinksHoverColor>#e03470</intensoDesign_footer_footerVerticalLinksHoverColor>
+			<intensoDesign_footer_footerHorizontalLinksColor>#777777</intensoDesign_footer_footerHorizontalLinksColor>
+			<intensoDesign_footer_footerHorizontalLinksHoverColor>#444444</intensoDesign_footer_footerHorizontalLinksHoverColor>
+			<intensoDesign_footer_footerHorizontalLinksSeparatorColor>#e3bcc9</intensoDesign_footer_footerHorizontalLinksSeparatorColor>
+			<intensoDesign_footer_footerTextColor>#4b3b49</intensoDesign_footer_footerTextColor>
+			<!-- Theme Design - Footer - Bottom Section -->
+			<intensoDesign_footer_footerBottomBackground>#000000</intensoDesign_footer_footerBottomBackground>
+			<intensoDesign_footer_footerBottomTextColor>#ffffff</intensoDesign_footer_footerBottomTextColor>
+			<intensoDesign_footer_footerBottomBacktotopColor>#ffffff</intensoDesign_footer_footerBottomBacktotopColor>
+			<intensoDesign_footer_footerBottomBacktotopHoverColor>#ececec</intensoDesign_footer_footerBottomBacktotopHoverColor>
+			<!-- Theme Design - Footer - Mobile Footer -->
+			<intensoDesign_footer_footerMobileBackground>#e5e5e5</intensoDesign_footer_footerMobileBackground>
+			<intensoDesign_footer_footerMobileBackgroundHover>#c6c6c6</intensoDesign_footer_footerMobileBackgroundHover>
+			<intensoDesign_footer_footerMobileTextColor>#000000</intensoDesign_footer_footerMobileTextColor>
+			<!-- Theme Design - Catalog View -->
+			<intensoDesign_catalog_catalogViewBackground>#f9f5f2</intensoDesign_catalog_catalogViewBackground>
+			<intensoDesign_catalog_categoryTitleColor>#222222</intensoDesign_catalog_categoryTitleColor>
+			<intensoDesign_catalog_categoryPriceColor>#777777</intensoDesign_catalog_categoryPriceColor>
+			<!-- Theme Design - Product View -->
+			<intensoDesign_product_productViewBackground>#ffffff</intensoDesign_product_productViewBackground>
+			<intensoDesign_product_breadcrumbsBackground>#ffffff</intensoDesign_product_breadcrumbsBackground>
+			<intensoDesign_product_addToCartBoxBackground>#f9f5f2</intensoDesign_product_addToCartBoxBackground>
+			<intensoDesign_product_productNameColor>#000000</intensoDesign_product_productNameColor>
+			<!-- Theme Design - Product View - Sticky Navigation Menu Bar -->
+			<intensoDesign_product_stickyNavBackground>#ffffff</intensoDesign_product_stickyNavBackground>
+			<intensoDesign_product_stickyNavLinksColor>#333333</intensoDesign_product_stickyNavLinksColor>
+			<intensoDesign_product_stickyNavLinksColorHover>#e03470</intensoDesign_product_stickyNavLinksColorHover>
+			<intensoDesign_product_stickyNavBackgroundFixed>#000000</intensoDesign_product_stickyNavBackgroundFixed>
+			<intensoDesign_product_stickyNavLinkColorFixed>#ffffff</intensoDesign_product_stickyNavLinkColorFixed>
+			<intensoDesign_product_stickyNavLinkColorFixedHover>#e03470</intensoDesign_product_stickyNavLinkColorFixedHover>
+			<intensoDesign_product_stickyNavLinksBgActive>#e03470</intensoDesign_product_stickyNavLinksBgActive>
+			<!-- Theme Design - Product View - Product Info Sections -->
+			<intensoDesign_product_productInfoLabelColor>#222222</intensoDesign_product_productInfoLabelColor>
+			<intensoDesign_product_additionalInfoBackgroundColor>#f9f5f2</intensoDesign_product_additionalInfoBackgroundColor>
+			<intensoDesign_product_productInfoSeparatorColor>#f9f5f2</intensoDesign_product_productInfoSeparatorColor>
+			<!-- Theme Design - Product View - UpSell Products -->
+			<intensoDesign_product_upsellBackgroundColor>#f9f5f2</intensoDesign_product_upsellBackgroundColor>
+			<intensoDesign_product_upsellLabelColor>#222222</intensoDesign_product_upsellLabelColor>
+			<!-- Theme Design - Product View - Related Products -->
+			<intensoDesign_product_relatedBackgroundColor>#f9f5f2</intensoDesign_product_relatedBackgroundColor>
+			<intensoDesign_product_relatedLabelColor>#222222</intensoDesign_product_relatedLabelColor>
+			<!-- Theme Design - Featured Product Widget -->
+			<intensoDesign_featuredProducts_featuredProductsBackground>#f9f5f2</intensoDesign_featuredProducts_featuredProductsBackground>
+			<intensoDesign_featuredProducts_featuredProductsLabelColor>#222222</intensoDesign_featuredProducts_featuredProductsLabelColor>
+			<!-- Theme Design - Featured Categories Widget -->
+			<intensoDesign_featuredCategories_featuredCategoriesBackground>#f9f5f2</intensoDesign_featuredCategories_featuredCategoriesBackground>
+			<intensoDesign_featuredCategories_featuredCategoriesLabelColor>#222222</intensoDesign_featuredCategories_featuredCategoriesLabelColor>
+			<!-- Theme Design - Logo Slider Widget -->
+			<intensoDesign_logoSlider_logoSliderLabelColor>#222222</intensoDesign_logoSlider_logoSliderLabelColor>
+			<!-- Theme Design - Star Rating -->
+			<intensoDesign_starRating_starsColor>pink</intensoDesign_starRating_starsColor>
+			<!-- Theme Design - Customer Account -->
+			<intensoDesign_customerAccount_customerOutsideBackgroundColor>#d2cad2</intensoDesign_customerAccount_customerOutsideBackgroundColor>
+			<intensoDesign_customerAccount_customerInsideBackgroundColor>#f9f5f2</intensoDesign_customerAccount_customerInsideBackgroundColor>
+			<!-- Theme Design - Checkout -->
+			<intensoDesign_checkout_checkoutBackgroundColor>#d2cad2</intensoDesign_checkout_checkoutBackgroundColor>
+		</item>
+	</democontent>
+</root>
+

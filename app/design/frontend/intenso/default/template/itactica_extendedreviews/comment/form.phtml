@@ -1,0 +1,43 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_ExtendedReviews
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<div class="form-add arrow-box">
+    <h6><?php echo $this->__('Post a comment') ?></h6>
+    <?php if ($this->getAllowWriteReviewFlag()): ?>
+    <form action="<?php echo $this->getAction() ?>" method="post" id="review_comment_form" class="review-comment-form">
+        <ul class="form-list">
+            <li class="narrow">
+                <label for="nickname_field" class="required"><em>*</em><?php echo $this->__('Nickname') ?></label>
+                <div class="input-box">
+                    <input type="text" name="nickname" id="nickname_field" class="input-text required-entry" value="<?php echo $this->htmlEscape($data->getNickname()) ?>" />
+                </div>
+            </li>
+            <li>
+                <label for="comment_field" class="textarea required"><em>*</em><?php echo $this->__('Comment') ?></label>
+                <div class="input-box textarea">
+                    <textarea name="text" id="comment_field" cols="5" rows="3" class="required-entry"><?php echo $this->htmlEscape($data->getDetail()) ?></textarea>
+                </div>
+            </li>
+        </ul>
+        <div class="buttons-set">
+            <button type="submit" title="<?php echo $this->__('Submit Comment') ?>" class="button"><span><span><?php echo $this->__('Submit Comment') ?></span></span></button>
+            <a class="cancel" href="#" onclick="ExtendedReviews.hideComments(<?php echo $this->getReviewId(); ?>);return false;"><?php echo $this->__('Cancel') ?></a>
+        </div>
+    </form>
+    <script type="text/javascript">
+        var commentDataForm = new VarienForm('review_comment_form');
+    </script>
+    <?php else: ?>
+    <p class="review-nologged" id="review_comment_form">
+        <?php echo $this->__('Only registered users can post comments. Please, <a href="%s">log in</a> or <a href="%s">register</a>', $this->getLoginLink(), Mage::helper('customer')->getRegisterUrl()) ?>
+    </p>
+    <?php endif ?>
+</div>

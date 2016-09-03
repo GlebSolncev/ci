@@ -1,0 +1,19 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_ExtendedReviews
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<?php if ($this->getReviewRating()):?>
+<div class="rating-box" itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope="itemscope">
+    <div class="rating" style="width:<?php echo $this->getReviewRating() ?>%">
+		<meta content="<?php echo $this->getReviewRating() ?>" itemprop="ratingValue">
+        <meta content="100" itemprop="bestRating">
+    </div>
+</div>
+<?php endif;?>

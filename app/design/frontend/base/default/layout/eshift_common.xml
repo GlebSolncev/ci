@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * This source file is subject to the Ecommerce Shift Software License, which is available at http://ecommerceshift.com/common/license-free-ru.txt.
+ * Do not edit or add to this file if you wish to upgrade the to newer versions in the future.
+ *
+ * NOTICE OF LICENSE
+ *
+ * You may not sell, sub-license, rent or lease
+ * any portion of the Software or Documentation to anyone.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Eshift
+ * @copyright  Copyright (c) 2013 Ecommerce Shift (http://ecommerceshift.com/)
+ * @contacts   support@ecommerceshift.com
+ * @author     Alexander Dashkov (dashkov1@gmail.com)
+ * @license    http://ecommerceshift.com/common/license-free-ru.txt
+ */
+-->
+
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss" ifconfig="escommon/jquery/fancybox13">
+                <stylesheet>eshift/jquery/fancybox/jquery.fancybox.css</stylesheet>
+            </action>
+            <block type="escommon/template" name="eshift.jquery" as="jsheader" template="eshift/common/jsheader.phtml">
+                 <block type="core/text_list" name="es_head_add" as="es_head_add" />
+            </block>
+        </reference>
+
+        <reference name="before_body_end">
+            <block type="page/html_head" name="jsfooter" as="jsfooter" template="eshift/common/jsfooter.phtml">
+
+                <!-- Prevent Warning for getCssJsHtml() if no items selected -->
+                <action method="addItem"><type>empty</type><name>empty</name></action>
+
+                <action method="addJs" ifconfig="escommon/jquery/migrate12">
+                    <script>eshift/jquery/jquery-migrate-1.2.1.min.js</script>
+                </action>
+                <action method="addJs" ifconfig="escommon/jquery/fancybox13">
+                    <script>eshift/jquery/jquery.fancybox.pack.js</script>
+                </action>
+
+                <block type="core/text_list" name="es_footer_add" as="es_footer_add" />
+            </block>
+        </reference>
+    </default>
+</layout>

@@ -1,0 +1,28 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php $helper = Mage::helper('catalog/category') ?>
+<?php $categories = $helper->getStoreCategories() ?>
+<div class="form-box">
+	<?php echo $this->getChildHtml('no_route_search'); ?>
+	<?php if (count($categories) > 0): ?>
+		<h3 class="center"><?php echo $this->__('Top Destinations'); ?></h3>
+	    <ul class="top-destinations">
+	        <?php foreach($categories as $category): ?>
+	            <li>
+	                <a href="<?php echo $helper->getCategoryUrl($category) ?>">
+	                    <?php echo $category->getName() ?>
+	                </a>
+	            </li>
+	        <?php endforeach; ?>
+	    </ul>
+	    <a class="button home" href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a>
+	<?php endif; ?>
+</div>

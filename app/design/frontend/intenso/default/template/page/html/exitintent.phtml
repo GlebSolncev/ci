@@ -1,0 +1,46 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php if($this->isActive()): ?>
+
+<script src="<?php echo $this->getSkinUrl('js/lib/ouibounce.js'); ?>"></script>
+<div id="exitintent-popup" class="exitintent-popup reveal-modal <?php echo $this->popupSize(); ?>" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" <?php echo $this->background(); ?>>
+    <div class="block-content" style="width: <?php echo $this->staticBlockWidth(); ?>%;<?php echo $this->staticBlockAlignment(); ?>">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($this->staticBlock())->toHtml() ?>
+    </div>
+    <a class="close-reveal-modal" title="<?php echo $this->__('Close') ?>"><span><?php echo $this->__('Close') ?></span>&#215;</a>
+</div>
+<script>
+    $j(function() {
+        $j(document).foundation();
+        <?php if ($this->popupType() == 1): ?>
+        ouibounce(false, {
+            sensitivity: <?php echo $this->sensitivity(); ?>,
+            timer: 4000,
+            delay: <?php echo $this->delay(); ?>,
+            cookieExpire: <?php echo $this->cookieExpiration(); ?>,
+            cookieName: '<?php echo $this->cookieName(); ?>',
+            sitewide: true,
+            callback: function() {
+                $j('#exitintent-popup').foundation('reveal', 'open');
+            }
+        });
+        <?php endif; ?>
+        <?php if ($this->popupType() == 2): ?>
+        if (Intenso.libs.ui.readCookie('<?php echo $this->cookieName(); ?>') != 'true') {
+            setTimeout(function() {
+                $j('#exitintent-popup').foundation('reveal', 'open');
+            },<?php echo $this->entryTime() * 1000; ?>);
+            Intenso.libs.ui.createCookie('<?php echo $this->cookieName(); ?>',true,<?php echo $this->cookieExpiration(); ?>)
+        }
+        <?php endif; ?>
+    });
+</script>
+<?php endif; ?>

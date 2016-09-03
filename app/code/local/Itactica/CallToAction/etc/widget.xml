@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_CallToAction
+ * @copyright   Copyright (c) 2014-2015 Itactica (https://www.getintenso.com)
+ * @license     https://getintenso.com/license
+ */
+-->
+<widgets>
+    <calltoaction_cta_view type="itactica_calltoaction/cta_widget_view" translate="name description" module="itactica_calltoaction">
+        <name>Intenso - CallToAction</name>
+        <description>CallToAction Widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <cta_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>CallToAction</label>
+                <type>label</type>
+                <helper_block>
+                    <type>itactica_calltoaction/adminhtml_cta_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select CallToAction</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </cta_id>
+        </parameters>
+    </calltoaction_cta_view>
+</widgets>

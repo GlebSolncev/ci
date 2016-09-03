@@ -1,0 +1,65 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php if($this->getResultCount()): ?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title">
+    <?php if ($this->helper('rss/catalog')->getTagFeedUrl()): ?>
+        <a href="<?php echo $this->helper('rss/catalog')->getTagFeedUrl() ?>" class="nobr link-rss"><?php echo $this->__('Subscribe to Feed') ?></a>
+    <?php endif; ?>
+    <h1><?php echo ($this->getHeaderText() || $this->getHeaderText() === false) ? $this->getHeaderText() : $this->__("Search results for '%s'", $this->helper('catalogsearch')->getEscapedQueryText()) ?></h1>
+</div>
+    <?php if ($messages = $this->getNoteMessages()):?>
+    <p class="note-msg">
+        <?php foreach ($messages as $message):?>
+            <?php echo $message?><br />
+        <?php endforeach;?>
+    </p>
+    <?php endif; ?>
+    <?php echo $this->getProductListHtml() ?>
+<?php else: ?>
+    <?php $helper = Mage::helper('catalog/category') ?>
+    <?php $categories = $helper->getStoreCategories() ?>
+    <div class="page-title">
+        <h1><?php echo ($this->getHeaderText() || $this->getHeaderText() === false) ? $this->getHeaderText() : $this->__("Search results for '%s'", $this->helper('catalogsearch')->getEscapedQueryText()) ?></h1>
+    </div>
+    <div class="row">
+        <div class="small-12 note-msg columns">
+        <?php if ($messages = $this->getNoteMessages()):?>
+            <?php foreach ($messages as $message):?>
+            <br /><?php echo $message?>
+            <?php endforeach;?>
+        <?php endif; ?>
+        </div>
+        <div class="small-12 no-results columns">
+            <h1 class="center"><?php echo ($this->getNoResultText()) ? $this->getNoResultText() : $this->__('Your search returns no results.') ?></h1>
+            <p class="center"><?php echo $this->__('Please check your spelling, try more general words or use synonyms.') ?></p>
+            <?php echo $this->getChildHtml('no_route_search'); ?>
+            <?php if (count($categories) > 0): ?>
+            <h3 class="center"><?php echo $this->__('Top Destinations'); ?></h3>
+            <ul class="top-destinations">
+                <?php foreach($categories as $category): ?>
+                    <li>
+                        <a href="<?php echo $helper->getCategoryUrl($category) ?>">
+                            <?php echo $category->getName() ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <a class="button home" href="<?php echo Mage::getBaseUrl(); ?>"><?php echo $this->__('Home'); ?></a>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php if (Mage::helper('core')->isModuleOutputEnabled('Itactica_FeaturedProducts')): ?>
+        <?php if (Mage::getStoreConfig('intenso/catalog/no_results_featured')): ?>
+            <?php echo $this->getLayout()->createBlock('itactica_featuredproducts/view')->setIdentifier(Mage::getStoreConfig('intenso/catalog/no_results_featured'))->setTemplate('itactica_featuredproducts/view.phtml')->toHtml() ?>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endif; ?>

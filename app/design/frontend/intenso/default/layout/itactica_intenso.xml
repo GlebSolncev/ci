@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Intenso
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<layout>
+	<intenso_css_index_index>
+		<reference name="root">
+			<action method="setTemplate"><template>itactica_intenso/css/configCss.phtml</template></action>
+		</reference>
+	</intenso_css_index_index>
+</layout>

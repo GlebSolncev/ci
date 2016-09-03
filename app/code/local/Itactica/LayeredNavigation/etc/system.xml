@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_LayeredNavigation
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <sections>
+        <itactica_layerednavigation translate="label" module="itactica_layerednavigation">
+            <label>Layered Navigation</label>
+            <tab>itactica</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>30</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <catalog translate="label">
+                    <label>Catalog Layered Navigation</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>itactica_layerednavigation/system_config_backend_seo_catalog</backend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <ajax_enabled translate="label">
+                            <label>Enable AJAX</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>itactica_layerednavigation/system_config_backend_seo_catalog</backend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </ajax_enabled>
+                        <price_slider translate="label">
+                            <label>Enable Price Slider</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>itactica_layerednavigation/system_config_backend_seo_catalog</backend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </price_slider>
+                        <price_slider_submit_type translate="label">
+                            <label>Price Slider Submit Type</label>
+                            <frontend_type>select</frontend_type>
+                            <comment>In seconds.</comment>
+                            <source_model>itactica_layerednavigation/system_config_source_slider_submit_type</source_model>
+                            <backend_model>itactica_layerednavigation/system_config_backend_seo_catalog</backend_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                                <price_slider>1</price_slider>
+                            </depends>
+                        </price_slider_submit_type>
+                        <price_slider_delay translate="label">
+                            <label>Price Slider Delay</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>In seconds.</comment>
+                            <backend_model>itactica_layerednavigation/system_config_backend_seo_catalog</backend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                                <price_slider>1</price_slider>
+                                <price_slider_submit_type>1</price_slider_submit_type>
+                            </depends>
+                        </price_slider_delay>
+                        <multiple_choice_filters translate="label">
+                            <label>Enable Multiple Choice Filter</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>itactica_layerednavigation/system_config_backend_seo_catalog</backend_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </multiple_choice_filters>
+                        <list_items_qty translate="label">
+                            <label>Number of Visible Filter Options</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Integer. If the attribute filter has more values than the number specified here, a "Show more" link will be shown to allow expanding the rest of the options.</comment>
+                            <backend_model>itactica_layerednavigation/system_config_backend_seo_catalog</backend_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </list_items_qty>
+                        <layered_nav_expanded translate="label">
+                            <label>Filter's Panel is Open by Default</label>
+                            <frontend_type>select</frontend_type>
+                            <comment>If yes, layered navigation panel will be open by default</comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>itactica_layerednavigation/system_config_backend_seo_catalog</backend_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layered_nav_expanded>
+                        <routing_suffix translate="label">
+                            <label>Routing Souffix</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Used in url generation (it should be alphanumeric) - Do not use slash ( / )</comment>
+                            <backend_model>itactica_layerednavigation/system_config_backend_seo_catalog</backend_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </routing_suffix>
+                    </fields>
+                </catalog>
+            </groups>
+        </itactica_layerednavigation>
+    </sections>
+</config>

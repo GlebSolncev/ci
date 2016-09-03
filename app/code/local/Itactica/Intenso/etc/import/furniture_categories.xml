@@ -1,0 +1,494 @@
+<root>
+	<furniture>
+		<!-- top level categories -->
+		<item>
+			<parent></parent>
+			<name>Living Room</name>
+			<url>living-room</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>4</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>4</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width>370px</intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[<div style="width: 50%; float: left; margin-top: 12px; border-left: 1px solid #e5e5e5;">
+<h6 style="margin: 4px 0 6px 16px">Shop by Collection</h6>
+<ul class="links-list" style="width: 100% !important; ">
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Hotel Inspired</a>
+      </li>
+       <li>
+            <a href="{{store direct_url="living-room.html"}}">Palmetto</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Hungtington</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Abbott</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Redding</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Riviera</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Chatham</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Hampstead Teak</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Hampstead Painted</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Torrey</a>
+      </li>
+</ul>
+</div>
+<div style="width: 50%; float: left; margin-top: 12px; border-left: 1px solid #e5e5e5;">
+<h6 style="margin: 4px 0 6px 16px">Features</h6>
+<ul class="links-list">
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">What's New</a>
+      </li>
+       <li>
+            <a href="{{store direct_url="living-room.html"}}">The Eco Shop</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">The Leather Shop</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}">Furniture Brochures</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="living-room.html"}}" style="color: #d12b2b !important">Sale</a>
+      </li>
+</ul>
+</div>]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<div class="medium-4 columns">
+   <i class="icon-calendar" style="color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">30-Days Returns</span>
+</div>
+<div class="medium-4 columns">
+   <i class="icon-truck" style="display:inline-block; color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">Fast Delivery</span>
+</div>
+<div class="medium-4 columns">
+   <i class="icon-bubble" style="display:inline-block; color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">7 Day Customer Support</span>
+</div>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name>Bedroom</name>
+			<url>bedroom</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>4</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>4</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width>370px</intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[<div style="width: 50%; float: left; margin-top: 12px; border-left: 1px solid #e5e5e5;">
+<h6 style="margin: 4px 0 6px 16px">Shop by Collection</h6>
+<ul class="links-list" style="width: 100% !important; ">
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Hotel Inspired</a>
+      </li>
+       <li>
+            <a href="{{store direct_url="bedroom.html"}}">Palmetto</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Hungtington</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Abbott</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Redding</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Riviera</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Chatham</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Hampstead Teak</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Hampstead Painted</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Torrey</a>
+      </li>
+</ul>
+</div>
+<div style="width: 50%; float: left; margin-top: 12px; border-left: 1px solid #e5e5e5;">
+<h6 style="margin: 4px 0 6px 16px">Features</h6>
+<ul class="links-list">
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">What's New</a>
+      </li>
+       <li>
+            <a href="{{store direct_url="bedroom.html"}}">The Eco Shop</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">The Leather Shop</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}">Furniture Brochures</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="bedroom.html"}}" style="color: #d12b2b !important">Sale</a>
+      </li>
+</ul>
+</div>]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<div class="medium-4 columns">
+   <i class="icon-calendar" style="color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">30-Days Returns</span>
+</div>
+<div class="medium-4 columns">
+   <i class="icon-truck" style="display:inline-block; color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">Fast Delivery</span>
+</div>
+<div class="medium-4 columns">
+   <i class="icon-bubble" style="display:inline-block; color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">7 Day Customer Support</span>
+</div>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name>Dining &amp; Kitchen</name>
+			<url>dining-and-kitchen</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>5</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>5</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width>220px</intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[<div style="width: 100%; float: left; margin-top: 12px; border-left: 1px solid #e5e5e5;">
+<h6 style="margin: 4px 0 6px 16px">Features</h6>
+<ul class="links-list">
+      <li>
+            <a href="{{store direct_url="dining-and-kitchen.html"}}">What's New</a>
+      </li>
+       <li>
+            <a href="{{store direct_url="dining-and-kitchen.html"}}">The Eco Shop</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="dining-and-kitchen.html"}}">The Leather Shop</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="dining-and-kitchen.html"}}">Furniture Brochures</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="dining-and-kitchen.html"}}" style="color: #d12b2b !important">Sale</a>
+      </li>
+</ul>
+</div>]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<div class="medium-4 columns">
+   <i class="icon-calendar" style="color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">30-Days Returns</span>
+</div>
+<div class="medium-4 columns">
+   <i class="icon-truck" style="display:inline-block; color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">Fast Delivery</span>
+</div>
+<div class="medium-4 columns">
+   <i class="icon-bubble" style="display:inline-block; color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">7 Day Customer Support</span>
+</div>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name>Outdoor</name>
+			<url>outdoor</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>3</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>3</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width>260px</intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[<div style="width: 100%; float: left; margin-top: 12px; border-left: 1px solid #e5e5e5;">
+<h6 style="margin: 4px 0 6px 16px">Shop by Collection</h6>
+<ul class="links-list" style="width: 100% !important; ">
+      <li>
+            <a href="{{store direct_url="outdoor.html"}}">Hotel Inspired</a>
+      </li>
+       <li>
+            <a href="{{store direct_url="outdoor.html"}}">Palmetto</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="outdoor.html"}}">Hungtington</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="outdoor.html"}}">Abbott</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="outdoor.html"}}">Redding</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="outdoor.html"}}">Riviera</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="outdoor.html"}}">Chatham</a>
+      </li>
+      <li>
+            <a href="{{store direct_url="outdoor.html"}}">Torrey</a>
+      </li>
+</ul>
+</div>]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<div class="medium-4 columns">
+   <i class="icon-calendar" style="color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">30-Days Returns</span>
+</div>
+<div class="medium-4 columns">
+   <i class="icon-truck" style="display:inline-block; color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">Fast Delivery</span>
+</div>
+<div class="medium-4 columns">
+   <i class="icon-bubble" style="display:inline-block; color: #b5b5b5; font-size: 18px; padding-right: 8px; line-height: 30px; vertical-align: middle;"></i><span style="color: #b5b5b5; font-size: 14px; vertical-align: middle;">7 Day Customer Support</span>
+</div>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name>Decor</name>
+			<url>decor</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>1</intenso_menu_style>
+			<intenso_menu_columns_large></intenso_menu_columns_large>
+			<intenso_menu_columns_medium></intenso_menu_columns_medium>
+			<intenso_menu_right_block_width></intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<!-- second level categories -->
+		<item>
+			<parent>living-room</parent>
+			<name>Sofas &amp; Armchairs</name>
+			<url>sofas-and-armchairs</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="living-room/sofas-and-armchairs.html"}}"><img src="{{media url='theme/mega-menu-furniture-sofas.jpg'}}" alt="Sofas & Armchairs" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Design you dream living room with the help of our latest interior collections.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>living-room</parent>
+			<name>Coffee &amp; Side Tables</name>
+			<url>coffee-and-side-tables</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="living-room/coffee-and-side-tables.html"}}"><img src="{{media url='theme/mega-menu-furniture-tables.jpg'}}" alt="Coffee & Side Tables " style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>A big selection of coffee and side tables at discounted prices that fit any budget.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>living-room</parent>
+			<name>TV &amp; Media Furniture</name>
+			<url>tv-and-media-furniture</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="living-room/tv-and-media-furniture.html"}}"><img src="{{media url='theme/mega-menu-furniture-tv.jpg'}}" alt="TV & Media Furniture " style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Great options to create the perfect family living room or a space to entertain.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>living-room</parent>
+			<name>Living Room Storage</name>
+			<url>living-room-storage</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="living-room/living-room-storage.html"}}"><img src="{{media url='theme/mega-menu-furniture-livingroom-storage.jpg'}}" alt="Living Room Storage" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Adding small touches can make a big difference to your home.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>bedroom</parent>
+			<name>Beds &amp; Headboards</name>
+			<url>beds-and-headboards</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="bedroom/beds-and-headboards.html"}}"><img src="{{media url='theme/mega-menu-furniture-beds.jpg'}}" alt="Beds & Headboards" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Take your bed to the next comfort level.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>bedroom</parent>
+			<name>Mattresses</name>
+			<url>mattresses</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="bedroom/mattresses.html"}}"><img src="{{media url='theme/mega-menu-furniture-mattresses.jpg'}}" alt="Mattresses" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Switch beds & regain maximum energy for your day ahead.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>bedroom</parent>
+			<name>Nightstands &amp; Bedside Tables</name>
+			<url>nightstands-and-bedside-tables</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="bedroom/nightstands-and-bedside-tables.html"}}"><img src="{{media url='theme/mega-menu-furniture-nightstands.jpg'}}" alt="Nightstands & Bedside Tables" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Choose from a wide selection of colours & styles to suit any interior look.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>bedroom</parent>
+			<name>Wardrobes &amp; Bedroom Storage</name>
+			<url>wardrobes-and-bedroom-storage</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="bedroom/wardrobes-and-bedroom-storage.html"}}"><img src="{{media url='theme/mega-menu-furniture-bedroom-storage.jpg'}}" alt="Wardrobes & Bedroom Storage" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Great range of storage solutions to suit your home and lifestyle</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>dining-and-kitchen</parent>
+			<name>Tables</name>
+			<url>tables</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="dining-and-kitchen/tables.html"}}"><img src="{{media url='theme/mega-menu-furniture-dining-tables.jpg'}}" alt="Tables" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>A large selection of dining sets. We've got something to suit everyone.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>dining-and-kitchen</parent>
+			<name>Chairs</name>
+			<url>chairs</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="dining-and-kitchen/chairs.html"}}"><img src="{{media url='theme/mega-menu-furniture-chairs.jpg'}}" alt="Chairs" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>A wide choice of different styles and sizes, including matching sets of chairs and tables</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>dining-and-kitchen</parent>
+			<name>Bar Stools</name>
+			<url>bar-stools</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="dining-and-kitchen/bar-stools.html"}}"><img src="{{media url='theme/mega-menu-furniture-stools.jpg'}}" alt="Bar Stools" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>A large selection of bar stools. We've got something to suit every style.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>dining-and-kitchen</parent>
+			<name>Buffets &amp; Sideboards</name>
+			<url>buffets-and-sideboards</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="dining-and-kitchen/buffets-and-sideboards.html"}}"><img src="{{media url='theme/mega-menu-furniture-sideboards.jpg'}}" alt="Buffet & Sideboards" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>A large selection of buffets and sideboards at discounted prices that fit any budget.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>dining-and-kitchen</parent>
+			<name>Kitchen Islands &amp; Carts</name>
+			<url>kitchen-islands-and-carts</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="dining-and-kitchen/kitchen-islands-and-carts.html"}}"><img src="{{media url='theme/mega-menu-furniture-kitchen-islands.jpg'}}" alt="Kitchen Islands & Carts" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Create the heart of your home with our stylish kitchen accesories designs</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>outdoor</parent>
+			<name>Dining Tables</name>
+			<url>dining-tables</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="outdoor/dining-tables.html"}}"><img src="{{media url='theme/mega-menu-furniture-outdoor-dining.jpg'}}" alt="Dining Tables" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Be inspired by our garden and outdoor living looks.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>outdoor</parent>
+			<name>Outdoor Lounge Furniture</name>
+			<url>outdoor-lounge-furniture</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="outdoor/outdoor-lounge-furniture.html"}}"><img src="{{media url='theme/mega-menu-furniture-outdoor-lounge.jpg'}}" alt="Outdoor Lounge Furniture" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Explores all the fantastic accessories to help you enjoy your time in the garden.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>outdoor</parent>
+			<name>Outdoor Sectional Sofa</name>
+			<url>outdoor-sectional-sofa</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="outdoor/outdoor-sectional-sofa.html"}}"><img src="{{media url='theme/mega-menu-furniture-sectional-sofa.jpg'}}" alt="Outdoor Sectional Sofa" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<p>Weatherproof and maintenance-free furniture you can leave outdoors year-round.</p>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>decor</parent>
+			<name>Textils</name>
+			<url>textils</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail>rugs.jpg</thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>decor</parent>
+			<name>Pillows</name>
+			<url>pillows</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail>pillows.jpg</thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>decor</parent>
+			<name>Lighting</name>
+			<url>lighting</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail>lightning.jpg</thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>decor</parent>
+			<name>Bath</name>
+			<url>bath</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail>bath.jpg</thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>decor</parent>
+			<name>Decor Accesories</name>
+			<url>decor-accesories</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail>decor-accesories.jpg</thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>decor</parent>
+			<name>Mirrors</name>
+			<url>mirrors</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail>mirrors.jpg</thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>decor</parent>
+			<name>Tabletop Decor</name>
+			<url>tabletop-decor</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail>tabletop-decor.jpg</thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+	</furniture>
+</root>
+

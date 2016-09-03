@@ -1,0 +1,100 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Intenso
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see Mage_Page_Block_Html_Topmenu
+ */
+?>
+<?php 
+$_menu = $this->getHtml('level-top');
+$_linksArray = @unserialize(Mage::getStoreConfig('intenso/header/main_menu_links', Mage::app()->getStore()));
+?>
+
+
+<nav class="top-bar right-off-canvas-menu expanded main-nav <?php echo Mage::getStoreConfig('intenso/header/main_menu_style', Mage::app()->getStore()); ?>" role="navigation" data-topbar>
+    <ul class="title-area">
+        <li class="name show-for-small-only">
+            <?php echo $this->getChildHtml('offcanvasSearch') ?>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><?php echo $this->__('Menu'); ?></a></li>
+    </ul>
+
+    <section class="top-bar-section clearfix"> 
+        <!-- Right Nav Section -->
+        <ul class="right show-for-large-up">
+            <li class="has-dropdown hide-for-small-only">
+            	<a href="<?php echo $this->getUrl('customer/account'); ?>"><span class="sup truncate"><?php if (Mage::getSingleton('customer/session')->isLoggedIn()): ?><?php echo $this->__('Hello, %s', Mage::getSingleton('customer/session')->getCustomer()->getFirstname()); ?><?php else: ?><?php echo $this->__('Hello. Sign in'); ?><?php endif; ?></span><?php echo $this->__('Your Account'); ?></a>
+                <ul class="dropdown account-dropdown">
+                    <li class="arrow-box">
+                      	<div class="bg-box">
+                      		<?php if (Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+                      		<a href="<?php echo $this->getUrl('customer/account/logout'); ?>" class="button sign-in1"><?php echo $this->__('Log Out'); ?></a>
+                          	<?php else: ?>
+                          	<a href="<?php echo $this->getUrl('customer/account'); ?>" class="button sign-in"><?php echo $this->__('Sign in'); ?></a>
+                          	<p class="small"><?php echo $this->__('New customer?'); ?> <a href="<?php echo $this->getUrl('customer/account/create'); ?>" ><?php echo $this->__('Start here'); ?></a>.</p>
+                          	<?php endif; ?>
+                        </div>
+                        <?php echo $this->getChildHtml('topLinks') ?>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-dropdown hide-for-small-only"> 
+                <a href="<?php echo $this->getUrl('checkout/cart'); ?>"><span aria-hidden="true" class="icon-cart"></span><span class="sup"><?php echo trim($this->getChildHtml('cart_summary')); ?> <?php echo $this->__('items'); ?></span><?php echo $this->__('Cart'); ?></a>
+                <ul class="dropdown cart-dropdown">
+                    <li class="arrow-box">
+                        <?php echo $this->getChildHtml('minicart_head'); ?>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+		<!-- Left Nav Section -->
+		<ul class="left">
+			<?php if (Mage::getStoreConfig('intenso/header/show_home_link', Mage::app()->getStore())): ?>
+				<li class="last<?php if (Mage::getStoreConfig('intenso/header/main_menu_style', Mage::app()->getStore()) == 'vertical'): ?> show-for-small-only<?php endif; ?>">
+					<a href="<?php echo $this->getUrl('') ?>"><span class="show-for-small-only icon-home"></span><?php echo $this->__('Home'); ?></a>
+				</li>
+			<?php endif; ?>
+      <?php if (Mage::getStoreConfig('intenso/header/main_menu_style', Mage::app()->getStore()) == 'vertical'): ?>
+        <li class="last has-dropdown hide-for-small-only vertical-menu-link">
+          <a href="<?php echo $this->getUrl('') ?>">
+            <span class="show-for-large-only sup"><?php echo $this->__('Shop by'); ?></span>
+            <span class="vmenu-title"><?php echo $this->__('Category'); ?></span>
+          </a>
+        </li>
+      <?php endif; ?>
+			<?php if (Mage::getStoreConfig('intenso/header/show_categories', Mage::app()->getStore())): ?>
+				<li class="show-for-small-only group-title"><?php echo $this->__('Shop'); ?></li>
+				<?php if ($_menu): ?>
+					<?php echo $_menu ?>
+				<?php endif ?>
+			<?php endif ?>
+			<?php if ($_linksArray): ?>
+				<?php foreach ($_linksArray as $menuItem): ?>
+					<li class="custom-menu<?php if ($menuItem['static_block']): ?> has-dropdown-for-large<?php endif; ?>">
+						<a href="<?php echo rtrim($this->getUrl($menuItem['url']), '/'); ?>"><?php echo $menuItem['menu_item']; ?></a>
+						<?php if ($menuItem['static_block']): ?>
+							<div class="dropdown arrow-box">
+								<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($menuItem['static_block'])->toHtml(); ?>
+							</div>
+						<?php endif; ?>
+					</li>
+				<?php endforeach; ?>
+			<?php endif; ?>
+			<li class="show-for-small-only group-title"><?php echo $this->__('Pages'); ?></li>
+			<li class="show-for-small-only"><a href="<?php echo $this->getUrl('checkout/cart'); ?>"><?php echo $this->__('Cart'); ?></a></li>
+			<li class="show-for-small-only"><a href="<?php echo $this->getUrl('customer/account'); ?>"><?php echo $this->__('Your Account'); ?></a></li>
+			<li class="show-for-small-only"><a href="<?php echo $this->getUrl('wishlist'); ?>"><?php echo $this->__('Your Wish List'); ?></a></li>
+		</ul>
+	</section>
+</nav>
+

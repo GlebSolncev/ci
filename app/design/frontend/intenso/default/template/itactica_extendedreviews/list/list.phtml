@@ -1,0 +1,60 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_ExtendedReviews
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<?php 
+$items = $this->getReviewsCollection()->getItems();
+$block = $this->getReviewHelperBlock();
+$helper = Mage::helper('itactica_extendedreviews');
+?>
+<div class="reviews">
+    <?php if (count($items)):?>
+        <?php echo $this->getChildHtml('toolbar') ?>
+        <?php if ($helper->starFilterCount() > 0): ?>
+            <p class="star-filter-header">
+                <?php echo $this->__('Showing %d-star reviews', $helper->starFilterCount()) ?>
+                <span> > </span>
+                <a href=".">
+                    <?php echo $this->__('See all reviews'); ?>
+                </a>
+            </p>
+        <?php endif; ?>
+        <ul class="review-list" aria-expanded="true" aria-hidden="false">
+        <?php foreach ($items as $item):?>
+            <li itemprop="review" itemtype="http://schema.org/Review" itemscope="itemscope">
+                <p class="useful-count"><?php echo $helper->__('%d of %d people found the following review helpful', $item->getHelpful(), $item->getHelpful() + $item->getNothelpful());?></p>
+                <?php echo $block->getSummaryRatingHtmlForReview($item);?>
+                <h6><?php echo $this->htmlEscape($item->getTitle())?></h6>
+                <p class="review-text review-<?php echo $item->getId()?>" itemprop="description">
+                    <?php echo nl2br($this->htmlEscape($item->getDetail())); ?>
+                </p>
+                <p class="author"><?php echo $helper->__('By')?> <span itemprop="author"><?php echo $this->htmlEscape($item->getNickname()); ?></span> <?php echo $helper->__('on')?> <time datetime="<?php echo $item->getCreatedAt(); ?>" itemprop="datePublished"><?php echo $this->formatDate($item->getCreatedAt()); ?></time></p>
+                <?php if($item->getComments()):?>
+                    <a class="comments" href="#" onclick="return ExtendedReviews.showComments('<?php echo $helper->getCommentsAction($item->getId())?>', <?php echo $item->getId()?>)"><?php echo $helper->__('Comments (%d)', $item->getComments());?></a>
+                <?php else: ?>
+                    <a class="comments" href="#" onclick="return ExtendedReviews.showAddCommentForm('<?php echo $helper->getAddCommentAction($item->getId())?>', <?php echo $item->getId()?>)"><?php echo $helper->__('Comment');?></a>
+                <?php endif;?>
+                <?php if($item->getCanVote()):?>
+                <div class="vote helpful-buttons-<?php echo $item->getId()?>">
+                    <span class="helpful-<?php echo $item->getId()?>"><?php echo $helper->__('Was this review helpful to you?')?></span>
+                    <button class="tiny secondary helpful-button-<?php echo $item->getId()?>" type="submit" onclick="ExtendedReviews.vote('<?php echo Mage::getUrl('itactica_extendedreviews/vote')?>',<?php echo $item->getId()?>,1);"><?php echo $helper->__('Yes')?></button>
+                    <button class="tiny secondary helpful-button-<?php echo $item->getId()?>" type="submit" onclick="ExtendedReviews.vote('<?php echo Mage::getUrl('itactica_extendedreviews/vote')?>',<?php echo $item->getId()?>,0);"><?php echo $helper->__('No')?></button>
+                </div>
+                <?php else: ?>
+                <span class="helpful-<?php echo $item->getId()?>"></span>
+                <?php endif; ?>
+                <div class="comments-wrapper-<?php echo $item->getId()?>"></div>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+        <?php echo $this->getChildHtml('toolbar') ?>
+    <?php endif;?>
+    <?php echo $this->getChildHtml('review_form') ?>
+</div>

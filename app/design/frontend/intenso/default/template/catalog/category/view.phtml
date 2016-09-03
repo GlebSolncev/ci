@@ -1,0 +1,67 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+    $_helper    = $this->helper('catalog/output');
+    $_category  = $this->getCurrentCategory();
+    $_imgHtml   = '';
+    if ($_imgUrl = $_category->getImageUrl()) {
+        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
+        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+    }
+    if ($_orbitSliderId = $_category->getData('category_orbitslider')) {
+        $orbitSliderBlock = Mage::app()->getLayout()
+            ->createBlock('itactica_orbitslider/slider_widget_view')
+            ->setData('slider_id',$_orbitSliderId)
+            ->setTemplate('itactica_orbitslider/slider/widget/view.phtml')
+            ->toHtml();
+    } else {
+        $orbitSliderBlock = '';
+    }
+    if ($_logoSliderId = $_category->getData('category_logoslider')) {
+        $logoSliderBlock = Mage::app()->getLayout()
+            ->createBlock('itactica_logoslider/slider_widget_view')
+            ->setData('slider_id',$_logoSliderId)
+            ->setTemplate('itactica_logoslider/slider/widget/view.phtml')
+            ->toHtml();
+    } else {
+        $logoSliderBlock = '';
+    }
+?>
+
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+<?php echo $orbitSliderBlock; ?> 
+
+<?php if($_imgUrl): ?>
+    <?php echo $_imgHtml ?>
+<?php endif; ?>
+
+<?php echo $this->getChildHtml('featuredcategories_view'); ?>
+
+<?php if($this->isContentMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+
+<?php elseif($this->isMixedMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+    <?php echo $this->getProductListHtml() ?>
+
+<?php else: ?>
+    <?php echo $this->getProductListHtml() ?>
+<?php endif; ?>
+
+<?php echo $logoSliderBlock; ?>

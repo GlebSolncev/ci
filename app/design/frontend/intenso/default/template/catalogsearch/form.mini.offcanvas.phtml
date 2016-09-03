@@ -1,0 +1,34 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+/* @var $this Mage_Core_Block_Template */
+/* @var $catalogSearchHelper Mage_Catalogsearch_Helper_Data */
+?>
+<?php $catalogSearchHelper =  $this->helper('catalogsearch'); ?>
+<form method="get" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" id="search_nav_form">
+    <div class="form-search">
+        <div class="action">
+            <button class="button" title="Search" type="submit"><span aria-hidden="true" class="icon-search"></span></button>
+        </div>
+        <div class="search-box">
+            <input type="text" class="input-text placeholder" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" id="search2" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" />
+            <label for="search2"><?php echo $this->__('Search') ?></label>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="bottom"></div>
+            <div class="search-autocomplete" id="search_autocomplete2"></div>
+            <script type="text/javascript">
+            //<![CDATA[
+                var searchForm = new Varien.searchForm('search_nav_form', 'search2', '');
+                searchForm.initAutocomplete('<?php echo $catalogSearchHelper->getSuggestUrl() ?>', 'search_autocomplete2');
+            //]]>
+            </script>
+        </div>
+    </div>
+</form>

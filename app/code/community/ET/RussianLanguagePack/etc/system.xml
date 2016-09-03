@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * You may not sell, sub-license, rent or lease
+ * any portion of the Software or Documentation to anyone.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   ET
+ * @package    ET_RussianLanguagePack
+ * @copyright  Copyright (c) 2012 ET Web Solutions (http://etwebsolutions.com)
+ * @contacts   support@etwebsolutions.com
+ * @license    http://shop.etwebsolutions.com/etws-license-free-v1/   ETWS Free License (EFL1)
+ */
+ -->
+<config>
+    <tabs>
+        <etall translate="label">
+            <label>ET Extensions</label>
+            <sort_order>400</sort_order>
+        </etall>
+    </tabs>
+
+    <sections>
+        <etrussianlanguagepack translate="label" module="etrussianlanguagepack">
+            <label>Russian Language Pack</label>
+            <tab>etall</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>300</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+                <groups>
+                    <info translate="label">
+                        <label>Russian Language Pack information</label>
+                        <sort_order>1</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <fields>
+                            <support_information>
+                                <frontend_model>etrussianlanguagepack/adminhtml_support</frontend_model>
+                                <sort_order>100</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                            </support_information>
+                        </fields>
+                    </info>
+                    <general translate="label">
+                        <label>Russian Language Pack options</label>
+                        <sort_order>10</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <fields>
+                            <translate_editor translate="label comment">
+                                <label>Translate WYSIWYG editor</label>
+                                <comment><![CDATA[]]></comment>
+                                <frontend_type>select</frontend_type>
+                                <source_model>adminhtml/system_config_source_yesno</source_model>
+                                <sort_order>100</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                            </translate_editor>
+                        </fields>
+                    </general>
+
+                </groups>
+        </etrussianlanguagepack>
+    </sections>
+</config>

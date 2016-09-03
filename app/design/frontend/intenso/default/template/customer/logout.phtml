@@ -1,0 +1,22 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<div class="row account-logout">
+	<div class="small-12 columns">
+    	<h1 class="center"><?php echo Mage::helper('customer')->__('You are now logged out') ?></h1>
+    	<p class="center"><?php echo Mage::helper('customer')->__('Redirecting to homepage...') ?></p>
+    	<p class="center spinner"></p>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    setTimeout(function(){ location.href = '<?php echo $this->getUrl() ?>'},4000);
+//]]>
+</script>

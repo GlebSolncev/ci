@@ -1,0 +1,144 @@
+<root>
+	<democontent>
+		<item>
+			<title>Furniture - Services</title>
+			<identifier>furniture_services</identifier>
+			<columns>3</columns>
+			<box_type>1</box_type>
+			<background_color>#ffffff</background_color>
+			<padding_top>50</padding_top>
+			<padding_bottom>90</padding_bottom>
+			<icon_class_first>icon-padlock</icon_class_first>
+			<icon_class_second>icon-mobile</icon_class_second>
+			<icon_class_third>icon-loop3</icon_class_third>
+			<icon_color_first>#698483</icon_color_first>
+			<icon_color_second>#698483</icon_color_second>
+			<icon_color_third>#698483</icon_color_third>
+			<icon_style_first>icon-solidsquare</icon_style_first>
+			<icon_style_second>icon-solidsquare</icon_style_second>
+			<icon_style_third>icon-solidsquare</icon_style_third>
+			<icon_size_first>30</icon_size_first>
+			<icon_size_second>30</icon_size_second>
+			<icon_size_third>30</icon_size_third>
+			<icon_line_height_first>48</icon_line_height_first>
+			<icon_line_height_second>50</icon_line_height_second>
+			<icon_line_height_third>52</icon_line_height_third>
+			<title_first><![CDATA[Secure Shopping]]></title_first>
+			<title_second><![CDATA[Need Assistance?]]></title_second>
+			<title_third><![CDATA[30 Day Returns]]></title_third>
+			<title_color_first>#333333</title_color_first>
+			<title_color_second>#333333</title_color_second>
+			<title_color_third>#333333</title_color_third>
+			<title_size_first>23</title_size_first>
+			<title_size_second>23</title_size_second>
+			<title_size_third>23</title_size_third>
+			<title_style_first>normal</title_style_first>
+			<title_style_second>normal</title_style_second>
+			<title_style_third>normal</title_style_third>
+			<title_weight_first>300</title_weight_first>
+			<title_weight_second>300</title_weight_second>
+			<title_weight_third>300</title_weight_third>
+			<text_first><![CDATA[Your personal information is secured with an industry standard 256-bit SSL encryption.]]></text_first>
+			<text_second><![CDATA[We don't hide behind technical walls. We're open 7-Days to help you whenever you need. <a href="contacts" style="font-size:16px;">Contact us</a>]]></text_second>
+			<text_third><![CDATA[Our 30-day money back guarantee gives you time to make sure your purchase is perfect.]]></text_third>
+			<text_color_first>#5b6064</text_color_first>
+			<text_color_second>#5b6064</text_color_second>
+			<text_color_third>#5b6064</text_color_third>
+			<text_size_first>16</text_size_first>
+			<text_size_second>16</text_size_second>
+			<text_size_third>16</text_size_third>
+			<text_lineheight_first>24</text_lineheight_first>
+			<text_lineheight_second>24</text_lineheight_second>
+			<text_lineheight_third>24</text_lineheight_third>
+			<link_first></link_first>
+			<link_second></link_second>
+			<link_third></link_third>
+			<link_text_first></link_text_first>
+			<link_text_second></link_text_second>
+			<link_text_third></link_text_third>
+			<link_type_first>arrow-right</link_type_first>
+			<link_type_second>arrow-right</link_type_second>
+			<link_type_third>arrow-right</link_type_third>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Furniture - Image Boxes</title>
+			<identifier>furniture_image_boxes</identifier>
+			<columns>3</columns>
+			<box_type>3</box_type>
+			<background_color>#ffffff</background_color>
+			<padding_top>50</padding_top>
+			<padding_bottom>90</padding_bottom>
+			<image_filename_first>/text-box-image-1.jpg</image_filename_first>
+			<image_filename_second>/text-box-image-2.jpg</image_filename_second>
+			<image_filename_third>/text-box-image-3.jpg</image_filename_third>
+			<icon_class_first></icon_class_first>
+			<icon_class_second></icon_class_second>
+			<icon_class_third></icon_class_third>
+			<icon_color_first></icon_color_first>
+			<icon_color_second></icon_color_second>
+			<icon_color_third></icon_color_third>
+			<icon_style_first></icon_style_first>
+			<icon_style_second></icon_style_second>
+			<icon_style_third></icon_style_third>
+			<icon_size_first></icon_size_first>
+			<icon_size_second></icon_size_second>
+			<icon_size_third></icon_size_third>
+			<icon_line_height_first></icon_line_height_first>
+			<icon_line_height_second></icon_line_height_second>
+			<icon_line_height_third></icon_line_height_third>
+			<title_first><![CDATA[Vitale Bathroom Suites]]></title_first>
+			<title_second><![CDATA[Decorating Ideas]]></title_second>
+			<title_third><![CDATA[Create a lawn you'll love]]></title_third>
+			<title_color_first>#58564b</title_color_first>
+			<title_color_second>#58564b</title_color_second>
+			<title_color_third>#58564b</title_color_third>
+			<title_size_first>23</title_size_first>
+			<title_size_second>23</title_size_second>
+			<title_size_third>23</title_size_third>
+			<title_style_first>normal</title_style_first>
+			<title_style_second>normal</title_style_second>
+			<title_style_third>normal</title_style_third>
+			<title_weight_first>300</title_weight_first>
+			<title_weight_second>300</title_weight_second>
+			<title_weight_third>300</title_weight_third>
+			<text_first><![CDATA[Our stunning range of contemporary, traditional and classic ranges, delivered within 7 days.]]></text_first>
+			<text_second><![CDATA[Discover the latest painting trends, corresponding colours & brilliant decorating ideas.]]></text_second>
+			<text_third><![CDATA[Handy tips & advice to create a new lawn or to maintain/repair your existing lawn.]]></text_third>
+			<text_color_first>#5b6064</text_color_first>
+			<text_color_second>#5b6064</text_color_second>
+			<text_color_third>#5b6064</text_color_third>
+			<text_size_first>16</text_size_first>
+			<text_size_second>16</text_size_second>
+			<text_size_third>16</text_size_third>
+			<text_lineheight_first>24</text_lineheight_first>
+			<text_lineheight_second>24</text_lineheight_second>
+			<text_lineheight_third>24</text_lineheight_third>
+			<link_first>decor/bath.html</link_first>
+			<link_second>bedroom.html</link_second>
+			<link_third>outdoor.html</link_third>
+			<link_text_first>Learn more</link_text_first>
+			<link_text_second>Start now</link_text_second>
+			<link_text_third>Read more</link_text_third>
+			<link_type_first>button ghost small</link_type_first>
+			<link_type_second>button ghost small</link_type_second>
+			<link_type_third>button ghost small</link_type_third>
+			<button_text_color_first>#698483</button_text_color_first>
+			<button_text_color_second>#698483</button_text_color_second>
+			<button_text_color_third>#698483</button_text_color_third>
+			<button_textcolor_hover_first>#475b5a</button_textcolor_hover_first>
+			<button_textcolor_hover_second>#475b5a</button_textcolor_hover_second>
+			<button_textcolor_hover_third>#475b5a</button_textcolor_hover_third>
+			<button_bg_color_first>#698483</button_bg_color_first>
+			<button_bg_color_second>#698483</button_bg_color_second>
+			<button_bg_color_third>#698483</button_bg_color_third>
+			<button_bgcolor_hover_first>#475b5a</button_bgcolor_hover_first>
+			<button_bgcolor_hover_second>#475b5a</button_bgcolor_hover_second>
+			<button_bgcolor_hover_third>#475b5a</button_bgcolor_hover_third>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

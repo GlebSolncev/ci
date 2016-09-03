@@ -1,0 +1,28 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Template for filter items block
+ *
+ * @see Mage_Catalog_Block_Layer_Filter
+ */
+?>
+
+<ol>
+<?php foreach ($this->getItems() as $_item): ?>
+    <li<?php if ($_item->isCatSelected($_item->getLabel())): ?> class="checked"<?php endif; ?>>
+        <?php if ($_item->getCount() > 0): ?>
+        <a href="<?php echo ($_item->isCatSelected($_item->getLabel())) ? $_item->getRemoveUrl() : $this->urlEscape($_item->getUrl()) ?>"><?php echo $_item->getLabel() ?><?php if ($this->shouldDisplayProductCount()): ?><span> (<?php echo $_item->getCount() ?>)</span><?php endif; ?></a>
+        <?php else: echo $_item->getLabel() ?><?php if ($this->shouldDisplayProductCount()): ?><span> (<?php echo $_item->getCount() ?>)</span><?php endif; ?>
+        <?php endif; ?>
+    </li>
+<?php endforeach ?>
+</ol>

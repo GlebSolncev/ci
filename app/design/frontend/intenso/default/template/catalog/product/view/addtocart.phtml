@@ -1,0 +1,62 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__('Add to Cart'); ?>
+<?php $productData = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product); ?>
+<?php
+	$attributeOptions = array();
+	if ($_product->isConfigurable()) {
+		$productAttributeOptions = $_product->getTypeInstance(true)->getConfigurableAttributesAsArray($_product);
+		foreach ($productAttributeOptions as $productAttribute) {
+		    $attributeOptions[] = $productAttribute['label'];
+		}
+	}
+?>
+<?php if($_product->isSaleable()): ?>
+<div class="buybox bg-box center">
+	<?php if ($attributeOptions): ?>
+		<p><?php echo $this->__('To buy, select <strong>%s</strong>',implode($this->__(' and '), $attributeOptions)) ?></p>
+    	<p class="small"><?php echo $this->__('Choose from options to the left') ?></p>
+    <?php endif; ?>
+    <?php if($_product->isGrouped()): ?>
+    	<p><?php echo $this->__('To buy, select quantities to the left') ?></strong></p>
+    <?php endif; ?>
+    <div class="add-to-cart">
+        <?php if(!$_product->isGrouped()): ?>
+        <div class="qty-wrapper">
+        <label for="qty"><?php echo $this->__('Qty:') ?></label>
+        	<span id="qty-wrapper">
+	        <?php if (($this->getProductDefaultQty() * 1) < 10): ?>
+		        <select name="qty" id="qty" class="simulate-change">
+		        <?php for ($i=1; $i < 10; $i++): ?>
+		        	<option value="<?php echo $i; ?>"<?php if (($this->getProductDefaultQty() * 1) == $i): ?> selected="selected"<?php endif; ?>><?php echo $i; ?></option>
+		        <?php endfor; ?>
+		        <option value="10">10+</option>
+		        </select>
+		        <script>
+                $("qty").observe('change', function(){
+                    if ($(this).getValue() == 10) {
+                        $("qty-wrapper").update('<input type="number" name="qty" id="qty" value="<?php echo $this->getProductDefaultQty() * 1 ?>" size="4" title="<?php echo $this->__('Qty') ?>" maxlength="10" class="qty-input-text" />');
+                    }
+                });
+                </script>
+		    <?php else: ?>
+		        <input type="text" name="qty" id="qty" value="<?php echo $this->getProductDefaultQty() * 1 ?>" class="qty-input-text" />
+		    <?php endif; ?>
+			</span>
+		</div>
+        <?php endif; ?>
+        <button type="button" title="<?php echo $buttonTitle ?>" id="product-addtocart-button" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+
+        <?php echo $this->getChildHtml('', true, true) ?>
+    </div>
+</div>
+<?php endif; ?>

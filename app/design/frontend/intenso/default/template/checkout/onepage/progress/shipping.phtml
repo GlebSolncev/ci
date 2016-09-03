@@ -1,0 +1,27 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php if ($this->getCheckout()->getStepData('shipping', 'complete')): ?>
+<?php $completeClass = $this->getCheckout()->getStepData('shipping', 'complete') ? 'complete' : ''; ?>
+<dt class="<?php echo $completeClass ?>">
+    <?php echo $this->__('Shipping Address') ?><span class="changelink"><a
+        href="#payment" class="icon-edit" onclick="checkout.changeSection('opc-shipping'); <?php if(Mage::helper('itactica_intenso')->formFieldsType() == 'mdformfields'): ?>jQuery('body').trigger('new:ajaxform'); updateShippingRegion();<?php endif; ?> return false;" title="<?php echo $this->__('Change') ?>"><span class="hide"><?php echo $this->__('Change') ?></span></a></span>
+</dt>
+<dd class="<?php echo $completeClass ?>">
+    <?php if ($this->getCheckout()->getStepData('shipping', 'complete')): ?>
+    <address><?php echo $this->getShipping()->format('html') ?></address>
+    <?php endif; ?>
+</dd>
+<?php else: ?>
+<dt>
+    <?php echo $this->__('Shipping Address') ?>
+</dt>
+<?php endif; ?>
+

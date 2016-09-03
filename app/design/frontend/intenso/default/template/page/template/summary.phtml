@@ -1,0 +1,24 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+/**
+ * Shoping cart sidebar
+ *
+ * @see Mage_Checkout_Block_Cart_Sidebar
+ */
+
+?>
+
+<?php
+    $_cartQty = $this->helper('checkout/cart')->getSummaryCount();
+    if(empty($_cartQty)) {
+        $_cartQty = 0;
+    }
+    echo $_cartQty;
+?>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_LogoSlider
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <modules>
+        <Itactica_LogoSlider>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+            	<Mage_Core />
+            </depends>
+        </Itactica_LogoSlider>
+    </modules>
+</config>

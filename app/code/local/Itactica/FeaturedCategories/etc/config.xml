@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_FeaturedCategories
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+-->
+<config>
+    <modules>
+        <Itactica_FeaturedCategories>
+            <version>1.1.0</version>
+        </Itactica_FeaturedCategories>
+    </modules>
+    <global>
+        <resources>
+            <itactica_featuredcategories_setup>
+                <setup>
+                    <module>Itactica_FeaturedCategories</module>
+                    <class>Itactica_FeaturedCategories_Model_Resource_Setup</class>
+                </setup>
+            </itactica_featuredcategories_setup>
+        </resources>
+        <blocks>
+            <itactica_featuredcategories>
+                <class>Itactica_FeaturedCategories_Block</class>
+            </itactica_featuredcategories>
+        </blocks>
+        <helpers>
+            <itactica_featuredcategories>
+                <class>Itactica_FeaturedCategories_Helper</class>
+            </itactica_featuredcategories>
+        </helpers>
+        <models>
+            <itactica_featuredcategories>
+                <class>Itactica_FeaturedCategories_Model</class>
+                <resourceModel>itactica_featuredcategories_resource</resourceModel>
+            </itactica_featuredcategories>
+            <itactica_featuredcategories_resource>
+                <class>Itactica_FeaturedCategories_Model_Resource</class>
+                <entities>
+                    <slider>
+                        <table>itactica_featuredcategories_slider</table>
+                    </slider>
+                    <slider_store>
+                        <table>itactica_featuredcategories_slider_store</table>
+                    </slider_store>
+                    <slider_category>
+                        <table>itactica_featuredcategories_slider_category</table>
+                    </slider_category>
+                </entities>
+            </itactica_featuredcategories_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <itactica_featuredcategories>
+                    <file>itactica_featuredcategories.xml</file>
+                </itactica_featuredcategories>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Itactica_FeaturedCategories>
+                    <files>
+                        <default>Itactica_FeaturedCategories.csv</default>
+                    </files>
+                </Itactica_FeaturedCategories>
+            </modules>
+        </translate>
+        <global_search>
+            <slider>
+                <class>itactica_featuredcategories/adminhtml_search_slider</class>
+                <acl>itactica_featuredcategories</acl>
+            </slider>
+        </global_search>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Itactica_FeaturedCategories before="Mage_Adminhtml">Itactica_FeaturedCategories_Adminhtml</Itactica_FeaturedCategories>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <itactica_featuredcategories>
+                <use>standard</use>
+                <args>
+                    <module>Itactica_FeaturedCategories</module>
+                    <frontName>itactica_featuredcategories</frontName>
+                </args>
+            </itactica_featuredcategories>
+        </routers>
+        <layout>
+            <updates>
+                <itactica_featuredcategories>
+                    <file>itactica_featuredcategories.xml</file>
+                </itactica_featuredcategories>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Itactica_FeaturedCategories>
+                    <files>
+                        <default>Itactica_FeaturedCategories.csv</default>
+                    </files>
+                </Itactica_FeaturedCategories>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <itactica_featuredcategories>
+            <cache>
+                <cache_enabled>1</cache_enabled>
+            </cache>
+        </itactica_featuredcategories>
+    </default>
+</config>

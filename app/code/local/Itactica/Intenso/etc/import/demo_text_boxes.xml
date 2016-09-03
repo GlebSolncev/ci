@@ -1,0 +1,68 @@
+<root>
+	<democontent>
+		<item>
+			<title>Home page Text Box</title>
+			<identifier>home_page_text_box</identifier>
+			<columns>3</columns>
+			<box_type>1</box_type>
+			<background_color>#ffffff</background_color>
+			<padding_top>50</padding_top>
+			<padding_bottom>90</padding_bottom>
+			<icon_class_first>icon-puzzle</icon_class_first>
+			<icon_class_second>icon-gear</icon_class_second>
+			<icon_class_third>icon-wrench</icon_class_third>
+			<icon_color_first>#27ccc0</icon_color_first>
+			<icon_color_second>#26c281</icon_color_second>
+			<icon_color_third>#f64747</icon_color_third>
+			<icon_style_first>icon-circle</icon_style_first>
+			<icon_style_second>icon-circle</icon_style_second>
+			<icon_style_third>icon-circle</icon_style_third>
+			<icon_size_first>25</icon_size_first>
+			<icon_size_second>25</icon_size_second>
+			<icon_size_third>25</icon_size_third>
+			<icon_line_height_first>37</icon_line_height_first>
+			<icon_line_height_second>39</icon_line_height_second>
+			<icon_line_height_third>39</icon_line_height_third>
+			<title_first><![CDATA[Less has never been more.]]></title_first>
+			<title_second><![CDATA[So many different options.]]></title_second>
+			<title_third><![CDATA[Free support & updates.]]></title_third>
+			<title_color_first>#000000</title_color_first>
+			<title_color_second>#000000</title_color_second>
+			<title_color_third>#000000</title_color_third>
+			<title_size_first>23</title_size_first>
+			<title_size_second>23</title_size_second>
+			<title_size_third>23</title_size_third>
+			<title_style_first>normal</title_style_first>
+			<title_style_second>normal</title_style_second>
+			<title_style_third>normal</title_style_third>
+			<title_weight_first>300</title_weight_first>
+			<title_weight_second>300</title_weight_second>
+			<title_weight_third>300</title_weight_third>
+			<text_first><![CDATA[Every detail of the Intenso Theme has been carefully <span class="has-tip tip-top" title="by Magento experts with years of experience" data-tooltip>designed and programmed</span>
+to make the most of your ecommerce site.]]></text_first>
+			<text_second><![CDATA[The most common requests from Magento merchants incorporated into one platform that extends Magento with many "Essential Extra Features"]]></text_second>
+			<text_third><![CDATA[Rest assured that we will incorporate tons of new features and will keep our platform updated with the latest versions of Magento.]]></text_third>
+			<text_color_first>#5b6064</text_color_first>
+			<text_color_second>#5b6064</text_color_second>
+			<text_color_third>#5b6064</text_color_third>
+			<text_size_first>17</text_size_first>
+			<text_size_second>17</text_size_second>
+			<text_size_third>17</text_size_third>
+			<text_lineheight_first>26</text_lineheight_first>
+			<text_lineheight_second>26</text_lineheight_second>
+			<text_lineheight_third>26</text_lineheight_third>
+			<link_first>#</link_first>
+			<link_second>#</link_second>
+			<link_third>#</link_third>
+			<link_text_first>Learn more</link_text_first>
+			<link_text_second>Learn more</link_text_second>
+			<link_text_third>Learn more</link_text_third>
+			<link_type_first>arrow-right</link_type_first>
+			<link_type_second>arrow-right</link_type_second>
+			<link_type_third>arrow-right</link_type_third>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

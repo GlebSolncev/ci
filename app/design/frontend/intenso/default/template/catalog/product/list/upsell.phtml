@@ -1,0 +1,51 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php $itemCount = count($this->getItemCollection()->getItems()); ?>
+<?php if($itemCount): ?>
+<section class="featured-slider up-sell row">
+    <h3><?php echo $this->__('Customers Who Viewed This Item Also Viewed') ?></h3>
+    <ol class="clearfix">
+    <?php $this->resetItemsIterator() ?>
+    <?php for($_j=0;$_j<$itemCount;$_j++): ?>
+        <?php if($_link=$this->getIterableItem()): ?>
+        <li class="item">
+            <div class="item-content">
+                <div class="item-images">
+                    <a href="<?php echo $_link->getProductUrl() ?>"><img class="item-image spinner" src="<?php echo $this->helper('catalog/image')->init($_link, 'small_image')->resize(430,404) ?>" alt="<?php echo $this->escapeHtml($_link->getName()) ?>"></a>
+                </div>
+                <div class="item-info">
+                    <h6 class="item-title"><a href="<?php echo $_link->getProductUrl() ?>" class="truncate" title="<?php echo $this->escapeHtml($_link->getName()) ?>"><?php echo $this->escapeHtml($_link->getName()) ?></a></h6>
+                    <?php if($_link->getRatingSummary()): ?>
+                        <?php echo $this->getReviewsSummaryHtml($_link, 'short', false) ?>
+                    <?php endif; ?>
+                    <?php echo $this->getPriceHtml($_link, true, '-upsell') ?>
+                </div>
+                <div class="actions clearfix">
+                    <?php if($_link->isSaleable()): ?>
+                        <button class="btn-cart" title="<?php echo $this->__('Add to Cart') ?>" type="button" onclick="setLocation('<?php echo $this->helper('checkout/cart')->getAddUrl($_link) ?>')"><?php echo $this->__('Add to Cart') ?></button>
+                    <?php endif; ?>
+                    <ul class="add-to-links">
+                        <?php if($this->helper('wishlist')->isAllow()): ?>
+                            <li><a class="link-wishlist" href="<?php echo $this->helper('wishlist')->getAddUrl($_link) ?>" title="<?php echo $this->__('Add to Wishlist') ?>"><?php echo $this->__('Add to Wishlist') ?></a></li>
+                        <?php endif; ?>
+                        <?php $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_link); ?>
+                        <?php if($_compareUrl): ?>
+                            <li><a class="link-compare" href="<?php echo $_compareUrl ?>" title="<?php echo $this->__('Add to Compare') ?>"><?php echo $this->__('Add to Compare') ?></a></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <?php endif; ?>
+    <?php endfor; ?>
+    </ol>
+</section>
+<?php endif ?>

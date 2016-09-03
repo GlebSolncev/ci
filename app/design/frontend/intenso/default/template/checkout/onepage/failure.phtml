@@ -1,0 +1,26 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<div class="row flush">
+	<div class="small-12 create-account columns">
+		<div class="page-title">
+		    <h1><?php echo $this->__('An error occurred in the process of payment') ?></h1>
+		</div>
+		<div class="form-box wide">
+			<?php if ($this->getRealOrderId()) : ?>
+				<p><?php echo $this->__('Order #') . $this->getRealOrderId() ?></p>
+			<?php endif ?>
+			<?php if ($error = $this->getErrorMessage()) : ?>
+				<p><?php echo $error ?></p>
+			<?php endif ?>
+			<p><?php echo $this->__('Click <a href="%s">here</a> to continue shopping.', $this->getContinueShoppingUrl()) ?></p>
+		</div>
+	</div>
+</div>

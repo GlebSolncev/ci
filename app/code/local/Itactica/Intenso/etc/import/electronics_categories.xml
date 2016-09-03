@@ -1,0 +1,418 @@
+<root>
+	<electronics>
+		<!-- top level categories -->
+		<item>
+			<parent></parent>
+			<name>Laptops</name>
+			<url>laptops</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>3</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>3</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width>26%</intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[<div style="display: block; height: 100%; background: #f4f4f4; text-align: center; padding: 30px 0 0">
+      <a href="{{store direct_url="laptops"}}" style="background: #f4f4f4 !important">
+            <img src="{{media url='theme/mega-menu-laptops-rightblock-1.jpg'}}" width="400" height="160" alt="Simplicity for every day" style="width: 70%">
+            <p style="margin: 3px 0 0"><strong>Simplicity for every day</strong></p>
+            <p style="margin: 0 0 25px; line-height: 1; font-size: 90%">Beautiful new laptops.</p>
+      </a>
+      <a href="{{store direct_url="laptops/chromebooks.html"}}" style="background: #f4f4f4 !important">
+            <img src="{{media url='theme/mega-menu-laptops-rightblock-2.jpg'}}" width="400" height="160" alt="Meet Chromebooks" style="width: 70%">
+            <p style="margin: 3px 0 0"><strong>Meet Chromebooks</strong></p>
+            <p style="margin: 0; line-height: 1; font-size: 90%">For everything you love to do.</p>
+      </a>
+ </div>]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name>Cameras</name>
+			<url>cameras</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>10</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>2</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width></intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[<!-- You can make a custom drop-down like this one, using only HTML and inline styles -->
+<!-- To hide category and sub-category default menus do the following: -->
+<!-- Set Number of Columns (above) to "Hide Subcategories"  -->
+<div style="padding: 30px; overflow: hidden;">
+      <a class="link" style="width: 14.25%; float: left; padding: 0 !important; text-align: center; font-size: 1rem; line-height: 1.25rem !important" href="{{store direct_url="cameras/digital-cameras/digital-srl-cameras.html"}}">
+            <img src="{{media url='theme/mega-menu-cameras.jpg'}}" width="400" height="180" alt="Digital SLR Cameras">
+            Digital SLR Cameras
+      </a>
+      <a class="link" style="width: 14.25%; float: left; padding: 0 !important; text-align: center; font-size: 1rem; line-height: 1.25rem !important" href="{{store direct_url="cameras/digital-cameras/mirrorless-cameras.html"}}">
+            <img src="{{media url='theme/mega-menu-cameras.jpg'}}" width="400" height="180" alt="Mirrorless Cameras">
+            Mirrorless Cameras
+      </a>
+      <a class="link" style="width: 14.25%; float: left; padding: 0 !important; text-align: center; font-size: 1rem; line-height: 1.25rem !important" href="{{store direct_url="cameras/digital-cameras/point-and-shoot-cameras.html"}}">
+            <img src="{{media url='theme/mega-menu-cameras.jpg'}}" width="400" height="180" alt="Point & Shoot Cameras">
+            Point & Shoot Cameras
+      </a>
+      <a class="link" style="width: 14.25%; float: left; padding: 0 !important; text-align: center; font-size: 1rem; line-height: 1.25rem !important" href="{{store direct_url="cameras/digital-cameras/accesories.html"}}">
+            <img src="{{media url='theme/mega-menu-cameras.jpg'}}" width="400" height="180" alt="Camera Accesories">
+            Camera Accesories
+      </a>
+      <a class="link" style="width: 14.25%; float: left; padding: 0 !important; text-align: center; font-size: 1rem; line-height: 1.25rem !important" href="{{store direct_url="cameras/camcorders/action-camcorders.html"}}">
+            <img src="{{media url='theme/mega-menu-cameras.jpg'}}" width="400" height="180" alt="Action Camcorders">
+            Action Camcorders
+      </a>
+      <a class="link" style="width: 14.25%; float: left; padding: 0 !important; text-align: center; font-size: 1rem; line-height: 1.25rem !important" href="{{store direct_url="cameras/camcorders/traditional-camcorders.html"}}">
+            <img src="{{media url='theme/mega-menu-cameras.jpg'}}" width="400" height="180" alt="Traditional Camcorders">
+            Traditional Camcorders
+      </a>
+      <a class="link" style="width: 14.25%; float: left; padding: 0 !important; text-align: center; font-size: 1rem; line-height: 1.25rem !important" href="{{store direct_url="cameras/camcorders/accesories.html"}}">
+            <img src="{{media url='theme/mega-menu-cameras.jpg'}}" width="400" height="180" alt="Camcorder Accesories">
+            Camcorder Accesories
+      </a>
+</div>]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name><![CDATA[Phones & Tablets]]></name>
+			<url>cellphones-and-tablets</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>2</intenso_menu_style>
+			<intenso_menu_columns_large>3</intenso_menu_columns_large>
+			<intenso_menu_columns_medium>3</intenso_menu_columns_medium>
+			<intenso_menu_right_block_width>26%</intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[<div style="display: block; height: 100%; background: #f4f4f4; text-align: center; padding: 30px 0 0">
+      <a href="{{store direct_url="cellphones-and-tablets/tablets.html"}}" style="background: #f4f4f4 !important">
+            <img src="{{media url='theme/mega-menu-laptops-rightblock-3.jpg'}}" width="400" height="210" alt="Entertainment tailored for you" style="width: 70%">
+            <p style="margin: 3px 0 0"><strong>Entertainment tailored for you</strong></p>
+            <p style="margin: 0 0 10px; line-height: 1; font-size: 90%; line-height: 130%">New tablets with more apps, more games and perfectly sized to tuck away and take with you wherever you go.</p>
+      </a>
+      <a href="{{store direct_url="cellphones-and-tablets/cellphones.html"}}" style="background: #f4f4f4 !important">
+            <img src="{{media url='theme/mega-menu-laptops-rightblock-4.jpg'}}" width="400" height="210" alt="More than a summer" style="width: 70%">
+            <p style="margin: 3px 0 0"><strong>More than a summer</strong></p>
+            <p style="margin: 0 0 25px; line-height: 1; font-size: 90%; line-height: 130%">Kick the season off right - use our interactive guide to shop cool products and hot offers.</p>
+      </a>
+ </div>]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[<a href="{{store direct_url="cellphones-and-tablets/smartwatch.html"}}"><img src="{{media url='theme/mega-menu-wearables-banner.jpg'}}" alt="Live Healthier and Be More Productive" style="width: 100%;"></a>]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent></parent>
+			<name>TVs</name>
+			<url>tvs</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_style>1</intenso_menu_style>
+			<intenso_menu_columns_large></intenso_menu_columns_large>
+			<intenso_menu_columns_medium></intenso_menu_columns_medium>
+			<intenso_menu_right_block_width></intenso_menu_right_block_width>
+			<intenso_menu_right_block><![CDATA[]]></intenso_menu_right_block>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<!-- second level categories -->
+		<item>
+			<parent>laptops</parent>
+			<name>PC Laptops</name>
+			<url>pc-laptops</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="laptops/pc-laptops.html"}}"><img src="{{media url='theme/mega-menu-laptops.jpg'}}" alt="PC Laptops" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>laptops</parent>
+			<name>MacBooks</name>
+			<url>macbooks</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="laptops/macbooks.html"}}"><img src="{{media url='theme/mega-menu-laptops.jpg'}}" alt="MacBooks" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>laptops</parent>
+			<name>Chromebooks</name>
+			<url>chromebooks</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="laptops/chromebooks.html"}}"><img src="{{media url='theme/mega-menu-laptops.jpg'}}" alt="Chromebooks" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>laptops</parent>
+			<name>2-in-1s</name>
+			<url>2-in-1s</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="laptops/2-in-1s.html"}}"><img src="{{media url='theme/mega-menu-laptops.jpg'}}" alt="2in1s" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>laptops</parent>
+			<name>Gaming Laptops</name>
+			<url>gaming-laptops</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="laptops/gaming-laptops.html"}}"><img src="{{media url='theme/mega-menu-laptops.jpg'}}" alt="Gaming Laptops" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>laptops</parent>
+			<name>Business Laptops</name>
+			<url>business-laptops</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="laptops/business-laptops.html"}}"><img src="{{media url='theme/mega-menu-laptops.jpg'}}" alt="Business Laptops" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>cameras</parent>
+			<name>Digital Cameras</name>
+			<url>digital-cameras</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>cameras</parent>
+			<name>Camcorders</name>
+			<url>camcorders</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>cellphones-and-tablets</parent>
+			<name>Cellphones</name>
+			<url>cellphones</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="cellphones-and-tablets/cellphones.html"}}"><img src="{{media url='theme/mega-menu-cellphones.jpg'}}" alt="Cellphones" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>cellphones-and-tablets</parent>
+			<name>Tablets</name>
+			<url>tablets</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="cellphones-and-tablets/tablets.html"}}"><img src="{{media url='theme/mega-menu-tablets.jpg'}}" alt="Tablets" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>cellphones-and-tablets</parent>
+			<name>Smartwatch</name>
+			<url>smartwatch</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[<a href="{{store direct_url="cellphones-and-tablets/smartwatch.html"}}"><img src="{{media url='theme/mega-menu-smartwatches.jpg'}}" alt="Smartwatches" style="width: 100%;"></a>]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>tvs</parent>
+			<name>4K Ultra HD TVs</name>
+			<url>4k-ultra-hd-tvs</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>tvs</parent>
+			<name>LED TVs</name>
+			<url>led-tvs</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>tvs</parent>
+			<name>Plasma TVs</name>
+			<url>plasma-tvs</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>tvs</parent>
+			<name>OLED TVs</name>
+			<url>oled-tvs</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<item>
+			<parent>tvs</parent>
+			<name>Curved TVs</name>
+			<url>curved-tvs</url>
+			<is_anchor>1</is_anchor>
+			<thumbnail></thumbnail>
+			<include_in_menu>1</include_in_menu>
+			<intenso_menu_top_block><![CDATA[]]></intenso_menu_top_block>
+			<intenso_menu_bottom_block><![CDATA[]]></intenso_menu_bottom_block>
+		</item>
+		<!-- third level categories -->
+		<item>
+			<parent>digital-cameras</parent>
+			<name>Digital SRL Cameras</name>
+			<url>digital-srl-cameras</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>digital-cameras</parent>
+			<name>Mirrorless Cameras</name>
+			<url>mirrorless-cameras</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>digital-cameras</parent>
+			<name><![CDATA[Point & Shoot Cameras]]></name>
+			<url>point-and-shoot-cameras</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>digital-cameras</parent>
+			<name>Accesories</name>
+			<url>digital-cameras-accesories</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>camcorders</parent>
+			<name>Action Camcorders</name>
+			<url>action-camcorders</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>camcorders</parent>
+			<name>Traditional Camcorders</name>
+			<url>traditional-camcorders</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>camcorders</parent>
+			<name>Accesories</name>
+			<url>camcorders-accesories</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>cellphones</parent>
+			<name>Cell Phones with Plans</name>
+			<url>cell-phones-with-plans</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>cellphones</parent>
+			<name>No-Contract Phones</name>
+			<url>no-contract-phones</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>cellphones</parent>
+			<name>Unlocked Phones</name>
+			<url>unlocked-phones</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>cellphones</parent>
+			<name><![CDATA[Refurbished & Pre-Owned Phones]]></name>
+			<url>refurbished-and-pre-owned-phones</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>cellphones</parent>
+			<name>Accesories</name>
+			<url>cellphones-accesories</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>tablets</parent>
+			<name>2-in-1s</name>
+			<url>tablets-2-in-1s</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>tablets</parent>
+			<name><![CDATA[Ipad & Tablets]]></name>
+			<url>ipad-and-tablets</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>tablets</parent>
+			<name>Kids Tablets</name>
+			<url>kids-tablets</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>tablets</parent>
+			<name>E-Readers</name>
+			<url>e-readers</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>tablets</parent>
+			<name>Accesories</name>
+			<url>tablets-accesories</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>smartwatch</parent>
+			<name>Watch</name>
+			<url>watch</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>smartwatch</parent>
+			<name>Watch Sport</name>
+			<url>watch-sport</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+		<item>
+			<parent>smartwatch</parent>
+			<name>Watch Edition</name>
+			<url>watch-edition</url>
+			<is_anchor>1</is_anchor>
+			<include_in_menu>1</include_in_menu>
+		</item>
+	</electronics>
+</root>
+

@@ -1,0 +1,179 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php /** @var $this Mage_Checkout_Block_Cart_Shipping */ ?>
+<div class="shipping">
+    <h2><?php echo $this->__('Estimate Shipping and Tax') ?></h2>
+    <div class="shipping-form">
+       <form action="<?php echo $this->getUrl('checkout/cart/estimatePost') ?>" method="post" id="shipping-zip-form">
+            <p><?php echo $this->__('Enter your destination to get a shipping estimate.') ?></p>
+            <ul class="form-list">
+                <li>
+                    <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
+                    <div class="input-box">
+                        <?php echo Mage::getBlockSingleton('directory/data')->getCountryHtmlSelect($this->getEstimateCountryId()) ?>
+                    </div>
+                </li>
+            <?php //if($this->getStateActive()): ?>
+                <li class="state-province-field">
+                    <label for="region_id"<?php if ($this->isStateProvinceRequired()) echo ' class="required"' ?>><?php if ($this->isStateProvinceRequired()) echo '<em>*</em>' ?><?php echo $this->__('State/Province') ?></label>
+                    <div class="input-box">
+                        <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" style="display:none;"<?php echo ($this->isStateProvinceRequired() ? ' class="validate-select"' : '') ?>>
+                            <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                        </select>
+                       <script>
+                           $('region_id').setAttribute('defaultValue',  "<?php echo $this->getEstimateRegionId() ?>");
+                       </script>
+                       <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($this->getEstimateRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text" style="display:none;" />
+                   </div>
+                </li>
+            <?php //endif; ?>
+            <?php if($this->getCityActive()): ?>
+                <li>
+                    <label for="city"<?php if ($this->isCityRequired()) echo ' class="required"' ?>><?php if ($this->isCityRequired()) echo '<em>*</em>' ?><?php echo $this->__('City') ?></label>
+                    <div class="input-box">
+                        <input class="input-text<?php if ($this->isCityRequired()):?> required-entry<?php endif;?>" id="city" type="text" name="estimate_city" value="<?php echo $this->escapeHtml($this->getEstimateCity()) ?>" />
+                    </div>
+                </li>
+            <?php endif; ?>
+                <li>
+                    <label for="postcode"<?php if ($this->isZipCodeRequired()) echo ' class="required"' ?>><?php if ($this->isZipCodeRequired()) echo '<em>*</em>' ?><?php echo $this->__('Zip/Postal Code') ?></label>
+                    <div class="input-box">
+                        <input class="input-text validate-postcode<?php if ($this->isZipCodeRequired()):?> required-entry<?php endif;?>" type="text" id="postcode" name="estimate_postcode" value="<?php echo $this->escapeHtml($this->getEstimatePostcode()) ?>" />
+                    </div>
+                </li>
+            </ul>
+            <div class="buttons-set">
+                <button type="button" title="<?php echo $this->__('Get a Quote') ?>" onclick="coShippingMethodForm.submit()" class="button tiny secondary"><span><span><?php echo $this->__('Get a Quote') ?></span></span></button>
+            </div>
+        </form>
+        <script>
+            var shippingRegionUpdater = new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>);
+            <?php if(Mage::helper('itactica_intenso')->formFieldsType() == 'mdformfields'): ?>
+            jQuery(function() {
+                jQuery('#country').on('change keyup', function(event) {
+                    shippingRegionUpdater.update();
+                });
+                if (canUseChosen()) {
+                    // fix RegionUpdater for chosen.js
+                    jQuery('#region_id').on('change keyup', function(event) {
+                        jQuery('#region').val(jQuery(this).children("option").filter(":selected").text());
+                    });
+                    shippingRegionUpdater.update = shippingRegionUpdater.update.wrap(function(parentMethod){
+                        // parent "update" method call
+                        parentMethod();
+                         
+                        // after "update" method fires
+                        shippingRegionUpdater.regionSelectEl.hide();
+                        regionChosen = jQuery('#region_id_chosen');
+                        if(shippingRegionUpdater.regionTextEl.visible()) {
+                            regionChosen.hide();
+                            regionChosen.parent('.input-box-select').removeClass('input-box-select');
+                            regionChosen.parent().parent('.select-list').removeClass('select-list');
+                        } else {
+                            regionChosen.show();
+                            regionChosen.parent().addClass('input-box-select');
+                            regionChosen.parent().parent().addClass('select-list');
+                            jQuery('#region_id').trigger("chosen:updated");
+                        }
+                    });
+                    shippingRegionUpdater.update();
+                } else {
+                    shippingRegionUpdater.update = shippingRegionUpdater.update.wrap(function(parentMethod){
+                        // parent "update" method call
+                        parentMethod();
+                         
+                        // after "update" method fires
+                        if(shippingRegionUpdater.regionTextEl.visible()) {
+                            jQuery('.state-province-field').removeClass('select-list');
+                            jQuery('.state-province-field > .input-box').removeClass('input-box-select');
+                        } else {
+                            jQuery('.state-province-field').addClass('select-list');
+                            jQuery('.state-province-field > .input-box').addClass('input-box-select');
+                        }
+                    });
+                    shippingRegionUpdater.update();
+                }
+
+                function canUseChosen() {
+                    if (window.navigator.appName === "Microsoft Internet Explorer") {
+                        return document.documentMode >= 8;
+                    }
+                    if (/iP(od|hone)/i.test(window.navigator.userAgent)) {
+                        return false;
+                    }
+                    if (/Android/i.test(window.navigator.userAgent)) {
+                        if (/Mobile/i.test(window.navigator.userAgent)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            });
+            <?php endif; ?>
+        </script>
+
+        <?php if (($_shippingRateGroups = $this->getEstimateRates())): ?>
+        <form id="co-shipping-method-form" action="<?php echo $this->getUrl('checkout/cart/estimateUpdatePost') ?>">
+            <dl class="sp-methods">
+                <?php foreach ($_shippingRateGroups as $code => $_rates): ?>
+                    <dt><?php echo $this->escapeHtml($this->getCarrierName($code)) ?></dt>
+                    <dd>
+                        <ul>
+                        <?php foreach ($_rates as $_rate): ?>
+                            <li<?php if ($_rate->getErrorMessage()) echo ' class="error-msg"';?>>
+                               <?php if ($_rate->getErrorMessage()): ?>
+                                    <?php echo $this->escapeHtml($_rate->getErrorMessage()) ?>
+                               <?php else: ?>
+                                    <input name="estimate_method" type="radio" value="<?php echo $this->escapeHtml($_rate->getCode()) ?>" id="s_method_<?php echo $_rate->getCode() ?>"<?php if($_rate->getCode()===$this->getAddressShippingMethod()) echo ' checked="checked"' ?> class="radio" />
+                                    <label for="s_method_<?php echo $_rate->getCode() ?>"><?php echo $this->escapeHtml($_rate->getMethodTitle()) ?>
+                                    <?php $_excl = $this->getShippingPrice($_rate->getPrice(), $this->helper('tax')->displayShippingPriceIncludingTax()); ?>
+                                    <?php $_incl = $this->getShippingPrice($_rate->getPrice(), true); ?>
+                                    <?php echo $_excl; ?>
+                                    <?php if ($this->helper('tax')->displayShippingBothPrices() && $_incl != $_excl): ?>
+                                        (<?php echo $this->__('Incl. Tax'); ?> <?php echo $_incl; ?>)
+                                    <?php endif; ?>
+                                    </label>
+                               <?php endif ?>
+                            </li>
+                        <?php endforeach; ?>
+                        </ul>
+                    </dd>
+                <?php endforeach; ?>
+            </dl>
+            <div class="buttons-set">
+                <button type="submit" title="<?php echo $this->__('Update Total') ?>" class="button tiny" name="do" value="<?php echo $this->__('Update Total') ?>"><span><span><?php echo $this->__('Update Total') ?></span></span></button>
+            </div>
+        </form>
+        <?php endif; ?>
+        <script>
+            var coShippingMethodForm = new VarienForm('shipping-zip-form');
+            var countriesWithOptionalZip = <?php echo $this->helper('directory')->getCountriesWithOptionalZip(true) ?>;
+
+            coShippingMethodForm.submit = function () {
+                var country = $F('country');
+                var optionalZip = false;
+
+                for (i=0; i < countriesWithOptionalZip.length; i++) {
+                    if (countriesWithOptionalZip[i] == country) {
+                        optionalZip = true;
+                    }
+                }
+                if (optionalZip) {
+                    $('postcode').removeClassName('required-entry');
+                }
+                else {
+                    $('postcode').addClassName('required-entry');
+                }
+                return VarienForm.prototype.submit.bind(coShippingMethodForm)();
+            }
+        </script>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+/** @var Mage_Page_Block_Html_Topmenu_Renderer $this */
+/** @var Varien_Data_Tree_Node $menuTree */
+/** @var string $childrenWrapClass */
+
+$html = '';
+$children = $menuTree->getChildren();
+$parentLevel = $menuTree->getLevel();
+$childLevel = is_null($parentLevel) ? 0 : $parentLevel + 1;
+$arrowBoxClass = ($childLevel == 0) ? ' arrow-box' : '';
+$counter = 1;
+$childrenCount = $children->count();
+
+$parentPositionClass = $menuTree->getPositionClass();
+$itemPositionClassPrefix = $parentPositionClass ? $parentPositionClass . '-' : 'nav-';
+
+foreach ($children as $child) {
+    $child->setLevel($childLevel);
+    $child->setIsFirst($counter == 1);
+    $child->setIsLast($counter == $childrenCount);
+    $child->setPositionClass($itemPositionClassPrefix . $counter);
+
+    $outermostClassCode = 'level'. $childLevel;
+    $_hasChildren = ($child->hasChildren()) ? 'has-children' : '';
+
+    $class =$this->_getRenderedMenuItemAttributes($child);
+    $class = str_replace('last', '', $class);
+
+    if ($childLevel == 0) {
+        if (Mage::registry('parent_id')) {
+            Mage::unregister('parent_id');
+        }
+        Mage::register('parent_id',$child->getId());
+    }
+    
+    if ($this->getMenuStyle($child->getId()) == 'no-dropdown' 
+        || ($childLevel > 1 && $this->getMenuStyle(Mage::registry('parent_id')) == 'mega-menu')) {
+        $class = str_replace('parent', '', $class);
+    } else {
+        $class = str_replace('parent', 'has-dropdown ' . $this->getMenuStyle($child->getId()), $class);
+    }
+
+    $html .= '<li '. $class .'>';
+
+    if ($childLevel > 0 && $this->getMenuStyle(Mage::registry('parent_id')) == 'mega-menu' && $this->getTopBlock($child->getId())) {
+        $html .= '<div class="subcategory-top-block hide-for-small-only">' . $this->getTopBlock($child->getId()) . '</div>';
+    }
+
+    $html .= '<a href="'. $child->getUrl() .'" class="'. $outermostClassCode .' '. $_hasChildren .'">'. $this->escapeHtml($this->__($child->getName())) . '</a>';
+
+    if (!empty($childrenWrapClass)) {
+        $html .= '<div class="'. $childrenWrapClass .'">';
+    }
+
+    $nextChildLevel = $childLevel + 1;
+
+    if (!empty($_hasChildren) && $this->getMenuStyle(Mage::registry('parent_id')) != 'no-dropdown' 
+        && !($childLevel > 1 && $this->getMenuStyle(Mage::registry('parent_id')) == 'mega-menu')) {
+        $html .= '<ul class="level'. $childLevel .' dropdown'. $arrowBoxClass . $this->getColumnsClassForLarge($child->getId()) . $this->getColumnsClassForMedium($child->getId()) . '"' . $this->getRightBlockWidth(Mage::registry('parent_id'), 'padding') . '>';
+        $html .=     '<li class="level'. $nextChildLevel . '">';
+        $html .=         '<a class="level'. $nextChildLevel .'" href="'. $child->getUrl() .'">';
+        $html .=             $this->__('View All') . ' ' . $this->escapeHtml($this->__($child->getName()));
+        $html .=         '</a>';
+        $html .=     '</li>';
+        if ($childLevel == 0 
+            && $this->getMenuStyle(Mage::registry('parent_id')) == 'mega-menu'
+            && $this->getTopBlock(Mage::registry('parent_id'))) {
+            $html .= '<li class="mega-menu-top-block hide-for-small-only">'.$this->getTopBlock(Mage::registry('parent_id')).'</li>';
+        }
+        $html .=     $this->render($child, $childrenWrapClass);
+        $html .= '</ul>';
+    }
+
+    if (!empty($childrenWrapClass)) {
+        $html .= '</div>';
+    }
+
+    if ($childLevel > 0 && $this->getMenuStyle(Mage::registry('parent_id')) == 'mega-menu' && $this->getBottomBlock($child->getId())) {
+        $html .= '<div class="subcategory-bottom-block hide-for-small-only">' . $this->getBottomBlock($child->getId()) . '</div>';
+    }
+
+    $html .= '</li>';
+
+    if ($counter == $childrenCount && $childLevel == 1 
+        && $this->getMenuStyle(Mage::registry('parent_id')) == 'mega-menu'
+        && $this->getBottomBlock(Mage::registry('parent_id'))) {
+        $html .= '<li class="mega-menu-bottom-block hide-for-small-only">'.$this->getBottomBlock(Mage::registry('parent_id')).'</li>';
+    }
+
+    if ($counter == $childrenCount && $childLevel == 1 
+        && $this->getMenuStyle(Mage::registry('parent_id')) == 'mega-menu'
+        && $this->getRightBlock(Mage::registry('parent_id'))) {
+        $html .= '<li class="mega-menu-right-block hide-for-small-only" ' . $this->getRightBlockWidth(Mage::registry('parent_id'), 'width') . '>'.$this->getRightBlock(Mage::registry('parent_id')).'</li>';
+    }
+
+    $counter++;
+}
+
+return $html;

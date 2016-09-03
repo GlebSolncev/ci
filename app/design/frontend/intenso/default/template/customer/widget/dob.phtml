@@ -1,0 +1,130 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+/**
+USAGE:
+
+Simple:
+
+<?php echo $this->getLayout()->createBlock('customer/widget_dob')
+   ->setDate($this->getCustomer()->getDob())
+   ->toHtml() ?>
+
+For checkout/onepage/billing.phtml:
+
+<?php echo $this->getLayout()->createBlock('customer/widget_dob')
+   ->setDate($this->getCustomer()->getDob())
+   ->setFieldIdFormat('billing:%s')
+   ->setFieldNameFormat('billing[%s]')
+   ->toHtml() ?>
+
+NOTE: Regarding styles - if we leave it this way, we'll move it to boxes.css
+      Alternatively we could calculate widths automatically using block input parameters.
+*/
+
+/**
+ * @see Mage_Customer_Block_Widget_Dob
+ */
+$day_options = '<option value="">' . $this->__('Day') . '</option>';
+for ($i=1; $i <= 31; $i++) {
+    if ($i < 10) $i = '0'.$i;
+    if ($i == $this->getDay()) {
+        $day_options .= '<option value="' . $i. '" selected="selected">' . $i . '</option>';
+    } else {
+        $day_options .= '<option value="' . $i. '">' . $i . '</option>';
+    }
+}
+
+$months_array = array(
+    $this->__('January'), $this->__('February'), $this->__('March'), $this->__('April'), $this->__('May'), $this->__('June'), $this->__('July'), $this->__('August'), $this->__('September'), $this->__('October'), $this->__('November'), $this->__('December')       
+);
+$month_options = '<option value="">' . $this->__('Month') . '</option>';
+for ($i=1; $i <= 12; $i++) {
+    if ($i < 10) $i = '0'.$i;
+    if ($i == $this->getMonth()) {
+      $month_options .= '<option value="' . $i. '" selected="selected">' . $months_array[$i-1] . '</option>';
+    } else {
+      $month_options .= '<option value="' . $i. '">' . $months_array[$i-1] . '</option>';
+    }
+}
+
+$year_options = '<option value="">' . $this->__('Year') . '</option>';
+for ($i=1930; $i <= date("Y"); $i++) { 
+    if ($i == $this->getYear()) {
+        $year_options .= '<option value="' . $i. '" selected="selected">' . $i . '</option>';
+    } else {
+        $year_options .= '<option value="' . $i. '">' . $i . '</option>';
+    }
+}
+?>
+<label for="<?php echo $this->getFieldId('month')?>"<?php if ($this->isRequired()) echo ' class="required"' ?>><?php if ($this->isRequired()) echo '<em>*</em>' ?><?php echo $this->__('Date of Birth') ?></label>
+<div class="input-box customer-dob">
+<?php
+    $this->setDateInput('d',
+        '<div class="dob-day">
+            <select id="' . $this->getFieldId('day') . '" name="' . $this->getFieldName('day') . '" class="" ' . $this->getFieldParams() . '>' . 
+                $day_options .
+            '</select>
+        </div>'
+    );
+
+    $this->setDateInput('m',
+        '<div class="dob-month">
+            <select id="' . $this->getFieldId('month') . '" name="' . $this->getFieldName('month') . '" class="" ' . $this->getFieldParams()  . '>' .
+                $month_options .
+            '</select>
+         </div>'
+    );
+
+    $this->setDateInput('y',
+        '<div class="dob-year">
+            <select id="' . $this->getFieldId('year') . '" name="' . $this->getFieldName('year') . '" class="" ' . $this->getFieldParams()  . '>' .
+                $year_options .
+            '</select>
+        </div>'
+    );
+?>
+    <?php echo $this->getSortedDateInputs() ?>
+    <div class="dob-full" style="display:none;">
+        <input type="hidden" id="<?php echo $this->getFieldId('dob')?>" name="<?php echo $this->getFieldName('dob')?>" />
+    </div>
+
+    <div class="validation-advice" style="display:none;"></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var DOBSelects = Class.create(Varien.DOB, {
+       initialize: function(selector, required, format) {
+            var el = $$(selector)[0];
+            var container       = {};
+            container.day       = Element.select(el, '.dob-day select')[0];
+            container.month     = Element.select(el, '.dob-month select')[0];
+            container.year      = Element.select(el, '.dob-year select')[0];
+            container.full      = Element.select(el, '.dob-full input')[0];
+            container.advice    = Element.select(el, '.validation-advice')[0];
+            new Varien.DateElement('container', container, required, format);
+        }      
+    });
+    Object.extend(Validation, {
+        isVisible : function(elm) {
+            while(elm.tagName != 'BODY') {
+                // validate DOB hidden select boxes
+                if (elm.id == 'month' || elm.id == 'day' || elm.id == 'year' || elm.id == 'billing:month' || elm.id == 'billing:day' || elm.id == 'billing:year') {
+                    return true;
+                }
+                if(!$(elm).visible()) return false;
+                elm = elm.parentNode;
+            }
+            return true;
+        }    
+    });
+    var customer_dob = new DOBSelects('.customer-dob', <?php echo $this->isRequired() ? 'true' : 'false' ?>, '<?php echo $this->getDateFormat() ?>');
+//]]>
+</script>

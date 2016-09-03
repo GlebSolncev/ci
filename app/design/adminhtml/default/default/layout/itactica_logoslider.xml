@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_LogoSlider
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+--> 
+<layout>
+    <adminhtml_logoslider_logo_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_logoslider/logo</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_logoslider/adminhtml_logo" name="logo" />
+        </reference>
+    </adminhtml_logoslider_logo_index>
+
+    <adminhtml_logoslider_logo_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_logoslider/adminhtml_logo_grid" name="logo_grid"/>
+        </block>
+    </adminhtml_logoslider_logo_grid>
+
+    <adminhtml_logoslider_slider_logos>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_logoslider/adminhtml_slider_edit_tab_logos" name="slider.edit.tab.logos"/>
+            <block type="adminhtml/widget_grid_serializer" name="logos_grid_serializer">
+                <reference name="logos_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>slider.edit.tab.logos</grid_block_name>
+                        <data_callback>getSelectedLogos</data_callback>
+                        <hidden_input_name>logos</hidden_input_name>
+                        <reload_param_name>slider_logos</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_logoslider_slider_logos>
+
+    <adminhtml_logoslider_slider_logosgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_logoslider/adminhtml_slider_edit_tab_logos" name="slider.edit.tab.logos"/>
+        </block>
+    </adminhtml_logoslider_slider_logosgrid>
+
+    <!-- Logo add/edit action -->
+    <adminhtml_logoslider_logo_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_logoslider/logo</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_logoslider/adminhtml_logo_edit" name="logo_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="itactica_logoslider/adminhtml_logo_edit_tabs" name="logo_tabs"></block>
+        </reference>
+    </adminhtml_logoslider_logo_edit>
+
+    <adminhtml_logoslider_slider_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_logoslider/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_logoslider/adminhtml_slider" name="slider" />
+
+        </reference>
+    </adminhtml_logoslider_slider_index>
+
+    <adminhtml_logoslider_slider_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_logoslider/adminhtml_slider_grid" name="slider_grid"/>
+        </block>
+    </adminhtml_logoslider_slider_grid>
+
+    <!-- Slider add/edit action -->
+    <adminhtml_logoslider_slider_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_logoslider/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_logoslider/adminhtml_slider_edit" name="slider_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="itactica_logoslider/adminhtml_slider_edit_tabs" name="slider_tabs"></block>
+        </reference>
+    </adminhtml_logoslider_slider_edit>
+
+</layout>

@@ -1,0 +1,37 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<div class="row">
+    <div class="small-12 box columns">
+        <div class="box-title">
+            <h3>
+                <?php echo $this->__('Address Book') ?> 
+                <span class="separator">|</span> 
+                <a class="icon-edit" href="<?php echo $this->getAddressBookUrl() ?>" title="<?php echo $this->__('Manage Addresses') ?>"><span class="hide"><?php echo $this->__('Manage Addresses') ?></span></a>
+            </h3>
+        </div>
+        <div class="box-content">
+            <div class="small-12 medium-6 columns">
+                <h4><?php echo $this->__('Default Billing Address') ?>:</h4>
+                <address>
+                    <?php echo $this->getPrimaryBillingAddressHtml() ?><br />
+                    <a href="<?php echo $this->getPrimaryBillingAddressEditUrl() ?>"><?php echo $this->__('Edit Address') ?></a>
+                </address>
+            </div>
+            <div class="small-12 medium-6 columns">
+                <h4><?php echo $this->__('Default Shipping Address') ?>:</h4>
+                <address>
+                    <?php echo $this->getPrimaryShippingAddressHtml() ?><br />
+                    <a href="<?php echo $this->getPrimaryShippingAddressEditUrl() ?>"><?php echo $this->__('Edit Address') ?></a>
+                </address>
+            </div>
+        </div>
+    </div>
+</div>

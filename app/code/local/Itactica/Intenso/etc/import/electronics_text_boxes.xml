@@ -1,0 +1,144 @@
+<root>
+	<democontent>
+		<item>
+			<title>Electronics - Services</title>
+			<identifier>electronics_services</identifier>
+			<columns>3</columns>
+			<box_type>1</box_type>
+			<background_color>#f7f7f7</background_color>
+			<padding_top></padding_top>
+			<padding_bottom></padding_bottom>
+			<icon_class_first>icon-padlock</icon_class_first>
+			<icon_class_second>icon-bubbles2</icon_class_second>
+			<icon_class_third>icon-loop3</icon_class_third>
+			<icon_color_first>#999999</icon_color_first>
+			<icon_color_second>#999999</icon_color_second>
+			<icon_color_third>#999999</icon_color_third>
+			<icon_style_first>icon-square</icon_style_first>
+			<icon_style_second>icon-square</icon_style_second>
+			<icon_style_third>icon-square</icon_style_third>
+			<icon_size_first>25</icon_size_first>
+			<icon_size_second>25</icon_size_second>
+			<icon_size_third>25</icon_size_third>
+			<icon_line_height_first>39</icon_line_height_first>
+			<icon_line_height_second>39</icon_line_height_second>
+			<icon_line_height_third>40</icon_line_height_third>
+			<title_first><![CDATA[SECURE SHOPPING]]></title_first>
+			<title_second><![CDATA[NEED ASSISTANCE?]]></title_second>
+			<title_third><![CDATA[30 DAY RETURNS]]></title_third>
+			<title_color_first>#000000</title_color_first>
+			<title_color_second>#000000</title_color_second>
+			<title_color_third>#000000</title_color_third>
+			<title_size_first>20</title_size_first>
+			<title_size_second>20</title_size_second>
+			<title_size_third>20</title_size_third>
+			<title_style_first>normal</title_style_first>
+			<title_style_second>normal</title_style_second>
+			<title_style_third>normal</title_style_third>
+			<title_weight_first>500</title_weight_first>
+			<title_weight_second>500</title_weight_second>
+			<title_weight_third>500</title_weight_third>
+			<text_first><![CDATA[Your personal information is secured with an industry standard 256-bit SSL encryption.]]></text_first>
+			<text_second><![CDATA[We don't hide behind technical walls. We're open 7-Days to help you whenever you need. <a href="contacts" style="font-size:16px;">Contact us</a>]]></text_second>
+			<text_third><![CDATA[Our 30-day money back guarantee gives you time to make sure your purchase is perfect.]]></text_third>
+			<text_color_first>#777777</text_color_first>
+			<text_color_second>#777777</text_color_second>
+			<text_color_third>#777777</text_color_third>
+			<text_size_first>16</text_size_first>
+			<text_size_second>16</text_size_second>
+			<text_size_third>16</text_size_third>
+			<text_lineheight_first>24</text_lineheight_first>
+			<text_lineheight_second>24</text_lineheight_second>
+			<text_lineheight_third>24</text_lineheight_third>
+			<link_first></link_first>
+			<link_second></link_second>
+			<link_third></link_third>
+			<link_text_first></link_text_first>
+			<link_text_second></link_text_second>
+			<link_text_third></link_text_third>
+			<link_type_first>arrow-right</link_type_first>
+			<link_type_second>arrow-right</link_type_second>
+			<link_type_third>arrow-right</link_type_third>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+		<item>
+			<title>Electronics - Featured</title>
+			<identifier>electronics_featured</identifier>
+			<columns>2</columns>
+			<box_type>3</box_type>
+			<background_color>#ffffff</background_color>
+			<padding_top></padding_top>
+			<padding_bottom>0</padding_bottom>
+			<image_filename_first>/text-box-image-4.jpg</image_filename_first>
+			<image_filename_second>/text-box-image-5.jpg</image_filename_second>
+			<image_filename_third></image_filename_third>
+			<icon_class_first></icon_class_first>
+			<icon_class_second></icon_class_second>
+			<icon_class_third></icon_class_third>
+			<icon_color_first></icon_color_first>
+			<icon_color_second></icon_color_second>
+			<icon_color_third></icon_color_third>
+			<icon_style_first></icon_style_first>
+			<icon_style_second></icon_style_second>
+			<icon_style_third></icon_style_third>
+			<icon_size_first></icon_size_first>
+			<icon_size_second></icon_size_second>
+			<icon_size_third></icon_size_third>
+			<icon_line_height_first></icon_line_height_first>
+			<icon_line_height_second></icon_line_height_second>
+			<icon_line_height_third></icon_line_height_third>
+			<title_first><![CDATA[JOIN THE 4K REVOLUTION]]></title_first>
+			<title_second><![CDATA[CAPTURE GORGEOUS DETAIL- EVEN AT NIGHT]]></title_second>
+			<title_third><![CDATA[]]></title_third>
+			<title_color_first>#000000</title_color_first>
+			<title_color_second>#000000</title_color_second>
+			<title_color_third></title_color_third>
+			<title_size_first>20</title_size_first>
+			<title_size_second>20</title_size_second>
+			<title_size_third></title_size_third>
+			<title_style_first>normal</title_style_first>
+			<title_style_second>normal</title_style_second>
+			<title_style_third></title_style_third>
+			<title_weight_first>500</title_weight_first>
+			<title_weight_second>500</title_weight_second>
+			<title_weight_third></title_weight_third>
+			<text_first><![CDATA[Whatever you’re watching, watch it in 4K. All of your existing HD sports, TV shows and movies are upscaled to super clear 4K quality. Hundreds of movies and TV shows are available from the top 4K service providers like Netflix, Amazon and others.]]></text_first>
+			<text_second><![CDATA[The α7S is the world’s smallest full frame interchangeable lens camera. Images and video come alive with a breakthrough 15.3 stops of dynamic range. ISO sensitivity up to 409,600 reveals astonishing detail and color even in the dead of night.]]></text_second>
+			<text_third><![CDATA[]]></text_third>
+			<text_color_first>#777777</text_color_first>
+			<text_color_second>#777777</text_color_second>
+			<text_color_third></text_color_third>
+			<text_size_first>18</text_size_first>
+			<text_size_second>18</text_size_second>
+			<text_size_third></text_size_third>
+			<text_lineheight_first>26</text_lineheight_first>
+			<text_lineheight_second>26</text_lineheight_second>
+			<text_lineheight_third></text_lineheight_third>
+			<link_first>tvs.html</link_first>
+			<link_second>cameras/digital-cameras.html</link_second>
+			<link_third></link_third>
+			<link_text_first>Learn more</link_text_first>
+			<link_text_second>Learn more</link_text_second>
+			<link_text_third></link_text_third>
+			<link_type_first>button ghost small</link_type_first>
+			<link_type_second>button ghost small</link_type_second>
+			<link_type_third></link_type_third>
+			<button_text_color_first>#5787f5</button_text_color_first>
+			<button_text_color_second>#5787f5</button_text_color_second>
+			<button_text_color_third></button_text_color_third>
+			<button_textcolor_hover_first>#3570b7</button_textcolor_hover_first>
+			<button_textcolor_hover_second>#3570b7</button_textcolor_hover_second>
+			<button_textcolor_hover_third></button_textcolor_hover_third>
+			<button_bg_color_first>#5787f5</button_bg_color_first>
+			<button_bg_color_second>#5787f5</button_bg_color_second>
+			<button_bg_color_third></button_bg_color_third>
+			<button_bgcolor_hover_first>#3570b7</button_bgcolor_hover_first>
+			<button_bgcolor_hover_second>#3570b7</button_bgcolor_hover_second>
+			<button_bgcolor_hover_third></button_bgcolor_hover_third>
+			<status>1</status>
+			<stores><item>0</item></stores>
+		</item>
+	</democontent>
+</root>
+

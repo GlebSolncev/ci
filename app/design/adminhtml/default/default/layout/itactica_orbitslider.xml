@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_OrbitSlider
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+--> 
+<layout>
+    <adminhtml_orbitslider_slides_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_orbitslider/slides</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_orbitslider/adminhtml_slides" name="slides" />
+        </reference>
+    </adminhtml_orbitslider_slides_index>
+
+    <adminhtml_orbitslider_slides_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_orbitslider/adminhtml_slides_grid" name="slides_grid"/>
+        </block>
+    </adminhtml_orbitslider_slides_grid>
+
+    <adminhtml_orbitslider_slider_slides>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_orbitslider/adminhtml_slider_edit_tab_slides" name="slider.edit.tab.slides"/>
+            <block type="adminhtml/widget_grid_serializer" name="slides_grid_serializer">
+                <reference name="slides_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>slider.edit.tab.slides</grid_block_name>
+                        <data_callback>getSelectedSlides</data_callback>
+                        <hidden_input_name>slides</hidden_input_name>
+                        <reload_param_name>slider_slides</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_orbitslider_slider_slides>
+
+    <adminhtml_orbitslider_slider_slidesgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_orbitslider/adminhtml_slider_edit_tab_slides" name="slider.edit.tab.slides"/>
+        </block>
+    </adminhtml_orbitslider_slider_slidesgrid>
+
+    <!-- Slide add/edit action -->
+    <adminhtml_orbitslider_slides_edit>
+        <reference name="head">
+            <action method="addCss"><name>spectrum.css</name></action>
+        </reference>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_orbitslider/slides</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_orbitslider/adminhtml_slides_edit" name="slide_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="itactica_orbitslider/adminhtml_slides_edit_tabs" name="slide_tabs"></block>
+        </reference>
+    </adminhtml_orbitslider_slides_edit>
+
+    <adminhtml_orbitslider_slider_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_orbitslider/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_orbitslider/adminhtml_slider" name="slider" />
+        </reference>
+    </adminhtml_orbitslider_slider_index>
+    <adminhtml_orbitslider_slider_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="itactica_orbitslider/adminhtml_slider_grid" name="slider_grid"/>
+        </block>
+    </adminhtml_orbitslider_slider_grid>
+    <!-- Slider add/edit action -->
+    <adminhtml_orbitslider_slider_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>theme/itactica_orbitslider/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="itactica_orbitslider/adminhtml_slider_edit" name="slider_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="itactica_orbitslider/adminhtml_slider_edit_tabs" name="slider_tabs"></block>
+        </reference>
+    </adminhtml_orbitslider_slider_edit>
+</layout>

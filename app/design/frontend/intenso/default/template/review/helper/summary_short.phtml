@@ -1,0 +1,24 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014-2015 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php if ($this->getReviewsCount()): ?>
+    <div class="ratings">
+        <?php if ($this->getRatingSummary()):?>
+            <div class="rating-box" itemprop="aggregateRating" itemscope="itemscope" itemtype="http://schema.org/AggregateRating">
+                <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%">
+                	<meta itemprop="ratingValue" content="<?php echo $this->getRatingSummary()/20 ?>"/>
+                    <meta itemprop="reviewCount" content="<?php echo $this->getReviewsCount(); ?>" />
+                </div>
+            </div>
+        <?php endif;?>
+    </div>
+<?php elseif ($this->getDisplayIfEmpty()): ?>
+    <p class="no-rating"><a href="<?php echo $this->getReviewsUrl() ?>#post-review"><?php echo $this->__('Be the first to review this product') ?></a></p>
+<?php endif; ?>

@@ -1,0 +1,1115 @@
+/**
+ * Intenso Premium Theme
+ *
+ * @category    Itactica
+ * @package     Itactica_Intenso
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ *
+ * WARNING
+ *
+ * Do not edit or add to this file since it was generated programmatically
+ * according to configuration settings from the theme. Any change to this file
+ * will be overwritten and lost.
+ *
+ * If you wish to add your own CSS styles please use the following file:
+ * skin/frontend/intenso/default/css/custom.css
+ *
+ * To activate your custom CSS file, log in to your Admin panel and navigate to: 
+ * System > Configuration > Theme Setup > Custom CSS
+ */
+/**
+ * Created: <?php echo Mage::helper('itactica_intenso/data')->getDatetime(); ?> 
+ */
+<?php
+	$helper = Mage::helper('itactica_intenso');
+	$storeId = $this->getRequest()->getParam('store-id');
+	$s = $helper->getStoreSetupConfig($storeId);
+	$d = $helper->getStoreDesignConfig($storeId);
+?>
+
+
+<?php if ($s['fonts']['base_font_size']) : ?>
+html { 
+	font-size: <?php echo $s['fonts']['base_font_size']; ?>px;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['viewport_background_color']) : ?>
+body {
+	background: <?php echo $helper->hex($d['page']['viewport_background_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['page_background_color']) : ?>
+.off-canvas-wrap {
+	background: <?php echo $helper->hex($d['page']['page_background_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['default_text_color']) : ?>
+/* default text color */
+p,
+table tr th, table tr td,
+.product-collateral li,
+.review-list .review-text,
+.cms-wrapper .column,
+.cms-wrapper .columns,
+.cms-wrapper p,
+.cms-wrapper ul li { 
+	color: <?php echo $helper->hex($d['page']['default_text_color']); ?>;
+}
+<?php endif; ?>
+
+/* font family */
+body,
+h1,h2,h3,h4,h5,h6,p,
+.top-bar-section,
+.top-bar-section ul li > a,
+.side-nav,
+.side-nav li.active > a:first-child:not(.button),
+button,
+.button,
+.label,
+.sub-nav dt,
+.sub-nav dd,
+.sub-nav li,
+.chosen-container,
+.rating-links.icon-user > span,
+.newsletter-ribbon .icon-email,
+.footer-links li[class^='icon-'],
+.footer-links li[class*=' icon-'],
+.layered-nav-container ol li,
+a.previous,
+a.next {
+<?php if ($s['fonts']['font_family'] == 'google') : ?>
+	font-family: '<?php echo $s['fonts']['google_fonts']; ?>', sans-serif;
+<?php elseif ($s['fonts']['font_family'] == 'custom') : ?>
+	font-family: <?php echo $s['fonts']['font_custom']; ?>;
+<?php else: ?>
+	font-family: <?php echo $s['fonts']['font_family']; ?>;
+<?php endif; ?>
+}
+
+.links-list {
+<?php if ($s['fonts']['font_family'] == 'google') : ?>
+	font-family: '<?php echo $s['fonts']['google_fonts']; ?>', sans-serif !important;
+<?php elseif ($s['fonts']['font_family'] == 'custom') : ?>
+	font-family: <?php echo $s['fonts']['font_custom']; ?> !important;
+<?php else: ?>
+	font-family: <?php echo $s['fonts']['font_family']; ?> !important;
+<?php endif; ?>
+}
+
+<?php if ($d['page']['page_max_width']) : ?>
+/* max width of the page */
+.row,
+.off-canvas-wrap { 
+	max-width: <?php echo $d['page']['page_max_width']; ?>px;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['main_color']) : ?>
+/* main color */
+a,
+span.view-more,
+.form-box .buttons-set a:hover,
+.icon-highlighted,
+.text-box-with-icon section.box-1 .icon-highlighted,
+.top-bar-section li.active:not(.has-form) a:not(.button),
+.has-tip:hover, .has-tip:focus,
+.sub-nav dt a:hover, .sub-nav dd a:hover, .sub-nav li a:hover,
+.form-search .button:hover span,
+.form-search .sec-menu:hover,
+.main-header .icon-main-menu,
+.main-header .icon-main-menu:hover,
+.main-header .icon-cart:hover,
+.main-header .icon-user:hover,
+.main-header .top-bar li:hover .icon-cart,
+.cart-dropdown .mini-products-list .view-more-attr,
+section.featured-slider .item-title a:hover,
+section.featured-slider .category-title a:hover,
+.category-products .item-title a:hover,
+.ratings.no-rating a:hover,
+.rating-links a:hover,
+.footer-links ul li a:hover,
+.products-grid .link-rss:hover,
+.filter-reset,
+.layered-nav-container ol li.checked a:before,
+.layered-nav .currently li .value,
+.product-options dt label,
+#add-tag,
+.cms-no-route h1,
+.no-results h1,
+.block-compare .product-name a:hover,
+.block-compare .actions a:hover,
+.catalog-product-compare-index .link-wishlist:hover,
+.cart #shopping-cart-totals-table tfoot tr td:nth-child(2),
+.cart .data-table.cart-table .price,
+.checkout-progress li.active span,
+.my-account .checkout-multishipping .buttons-set a,
+.review-popover #histogram .stars a:hover,
+#search_mini_form .form-search .button:hover span,
+#search_mini_form .form-search .sec-menu:hover,
+.catalog-list-empty h1,
+.side-nav li a:not(.button),
+.select-list > label { 
+	color: <?php echo $helper->hex($d['page']['main_color']); ?>;
+}
+
+.main-color,
+.links-list li:active > a,
+.account-dropdown .bg-box p.small a,
+.cart-dropdown .dropdown-title .icon-edit:hover,
+.cart-dropdown .mini-products-list .item-details .item-name a:hover,
+.special-price .price,
+.link-compare.compared:before,
+.link-compare.compared:hover:before,
+.product-shop-side .add-to-links .link-wishlist:hover, 
+.product-shop-side .add-to-links .link-compare:hover,
+.email-friend a:hover,
+.review-toolbar a.next:before, 
+.review-toolbar a.next:after, 
+.review-toolbar a.previous:before, 
+.review-toolbar a.previous:after,
+.review-toolbar a.previous, 
+.review-toolbar a.next,
+.my-account a.next:before,
+.my-account a.next:after,
+.my-account a.previous:before,
+.my-account a.previous:after,
+.my-account a.previous,
+.my-account a.next,
+.top-bar-section .left .mega-menu > ul > li.mega-menu-top-block a:hover, 
+.top-bar-section .left ul li.mega-menu-bottom-block a:hover,
+.top-bar-section .left ul li a.link:hover,
+.link:hover { 
+	color: <?php echo $helper->hex($d['page']['main_color']); ?> !important;
+}
+
+.links-list li:hover > a:before,
+a.previous, a.next,
+.product-collateral li:after,
+.loading-bar,
+.block-compare .block-title,
+.opc-block-progress .block-content dt.complete:before,
+.checkout-progress li.active span:before {
+	background: <?php echo $helper->hex($d['page']['main_color']); ?>;
+}
+
+.chosen-container-active .chosen-single:before,
+.chosen-container-active .chosen-single:after {
+	background: <?php echo $helper->hex($d['page']['main_color']); ?> !important;
+}
+
+.icon-highlighted,
+.text-box-with-icon section.box-1 .icon-highlighted,
+.chosen-container .chosen-results li.highlighted,
+.product-collateral li:before,
+.cart-collaterals .shipping h2:hover:before,
+.cart-collaterals .discount h2:hover:before,
+.cart-collaterals .shipping h2:hover:after,
+.cart-collaterals .discount h2:hover:after,
+.cart .qty-wrapper .input-text:focus,
+.chosen-container-active .chosen-choices,
+.buybox .qty-input-text:focus,
+.category-products .configurable-swatch-list li.selected .swatch-link {
+	border-color: <?php echo $helper->hex($d['page']['main_color']); ?>;
+}
+.input-box.focus,
+.input-box textarea:focus,
+.product-img-box .more-views li.selected,
+.color-swatches input[type="radio"]:checked + label,
+.chosen-container-active .chosen-single,
+.product-options .configurable-swatch-list li.selected {
+	border-color: <?php echo $helper->hex($d['page']['main_color']); ?> !important;
+}
+
+button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus,
+.chosen-container .chosen-results li.highlighted {
+	background-color: <?php echo $helper->hex($d['page']['main_color']); ?>;
+}
+
+.mdformfields .form-search .input-text:focus ~ div {
+	background-color: <?php echo $helper->hex($d['page']['main_color']); ?> !important;
+}
+
+.chosen-container-active .chosen-single {
+	border-bottom-color: <?php echo $helper->hex($d['page']['main_color']); ?> !important;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['main_hover_color']) : ?>
+/* main hover color */
+a:hover,
+a:focus,
+.side-nav li a:hover:not(.button), 
+.side-nav li a:focus:not(.button) {
+	color: <?php echo $helper->hex($d['page']['main_hover_color']); ?>;
+}
+
+a.previous:hover, a.previous:focus, a.next:hover, a.next:focus {
+	background: <?php echo $helper->hex($d['page']['main_hover_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['buttons_border_radius'] >= 0) : ?>
+/* all buttons border radius */
+button, .button {
+	border-radius: <?php echo $d['page']['buttons_border_radius']; ?>px;
+}
+/* featured products category nav border radius */
+.category-nav li:first-child {
+	border-bottom-left-radius: <?php echo $d['page']['buttons_border_radius']; ?>px;
+	border-top-left-radius: <?php echo $d['page']['buttons_border_radius']; ?>px;
+}
+.category-nav li:last-child {
+	border-bottom-right-radius: <?php echo $d['page']['buttons_border_radius']; ?>px;
+	border-top-right-radius: <?php echo $d['page']['buttons_border_radius']; ?>px;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['primary_button_background_color'] && $d['page']['primary_button_text_color']) : ?>
+/* primary buttons */
+button, .button,
+button.disabled, button[disabled], .button.disabled, .button[disabled],
+.account-dropdown li a.button.sign-in,
+.cart-dropdown li a.button.sign-in,
+.category-nav li.active,
+.products-grid .toolbar .button.active,
+.products-grid .toolbar .button.active:hover {
+	background: <?php echo $helper->hex($d['page']['primary_button_background_color']); ?>;
+	color: <?php echo $helper->hex($d['page']['primary_button_text_color']); ?>;
+}
+.category-nav li.active:after {
+	border-top-color: <?php echo $helper->hex($d['page']['primary_button_background_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['primary_button_hover_background_color'] && $d['page']['primary_button_hover_text_color']) : ?>
+/* primary buttons hover */
+button:hover, button:focus, .button:hover, .button:focus {
+	background: <?php echo $helper->hex($d['page']['primary_button_hover_background_color']); ?>;
+	color: <?php echo $helper->hex($d['page']['primary_button_hover_text_color']); ?>;
+}
+.main-nav .button:hover {
+	background: <?php echo $helper->hex($d['page']['primary_button_hover_background_color']); ?> !important;
+	color: <?php echo $helper->hex($d['page']['primary_button_hover_text_color']); ?> !important;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['secondary_button_background_color'] && $d['page']['secondary_button_text_color']) : ?>
+/* secondary buttons */
+button.secondary, .button.secondary,
+.wishlist-index-index .buttons-set2 .btn-share,
+.wishlist-index-index .buttons-set2 .btn-add {
+	background: <?php echo $helper->hex($d['page']['secondary_button_background_color']); ?>;
+	color: <?php echo $helper->hex($d['page']['secondary_button_text_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['secondary_button_hover_background_color'] && $d['page']['secondary_button_hover_text_color']) : ?>
+/* secondary buttons hover */
+button.secondary:hover, button.secondary:focus, 
+.button.secondary:hover, .button.secondary:focus,
+.wishlist-index-index .buttons-set2 .btn-share:hover,
+.wishlist-index-index .buttons-set2 .btn-share:focus,
+.wishlist-index-index .buttons-set2 .btn-add:hover,
+.wishlist-index-index .buttons-set2 .btn-add:focus {
+	background: <?php echo $helper->hex($d['page']['secondary_button_hover_background_color']); ?>;
+	color: <?php echo $helper->hex($d['page']['secondary_button_hover_text_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['ghost_button_border_color'] && $d['page']['ghost_button_text_color']) : ?>
+/* ghost button */
+button.ghost, .button.ghost {
+	border-color: <?php echo $helper->hex($d['page']['ghost_button_border_color']); ?> !important;
+	color: <?php echo $helper->hex($d['page']['ghost_button_text_color']); ?> !important;
+}
+<?php endif; ?>
+<?php if ($d['page']['ghost_button_hover_border_color'] && $d['page']['ghost_button_hover_text_color']) : ?>
+button.ghost:hover, .button.ghost:hover, button.ghost:focus, .button.ghost:focus {
+	border-color: <?php echo $helper->hex($d['page']['ghost_button_hover_border_color']); ?> !important;
+	color: <?php echo $helper->hex($d['page']['ghost_button_hover_text_color']); ?> !important;
+}
+<?php endif; ?>
+
+<?php if ($d['page']['ghost_button_light_border_color'] && $d['page']['ghost_button_light_text_color']) : ?>
+/* ghost button (for dark backgrounds) */
+button.ghost.light, .button.ghost.light {
+	border-color: <?php echo $helper->hex($d['page']['ghost_button_light_border_color']); ?> !important;
+	color: <?php echo $helper->hex($d['page']['ghost_button_light_text_color']); ?> !important;
+}
+<?php endif; ?>
+<?php if ($d['page']['ghost_button_light_hover_border_color'] && $d['page']['ghost_button_light_hover_text_color']) : ?>
+button.ghost.light:hover, .button.ghost.light:hover, button.ghost.light:focus, .button.ghost.light:focus {
+	border-color: <?php echo $helper->hex($d['page']['ghost_button_light_hover_border_color']); ?> !important;
+	color: <?php echo $helper->hex($d['page']['ghost_button_light_hover_text_color']); ?> !important;
+}
+<?php endif; ?>
+
+<?php if ($d['header']['header_background']) : ?>
+/* header background */
+.main-header,
+.main-header .top-header {
+	background: <?php echo $helper->hex($d['header']['header_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['header']['main_menu_background']) : ?>
+/* main menu background */
+.right-off-canvas-menu.main-nav {
+	background: <?php echo $helper->hex($d['header']['main_menu_background']); ?> !important;
+}
+.main-nav .top-bar-section li:not(.has-form) a:not(.button), .main-nav .top-bar-section ul {
+	background: <?php echo $helper->hex($d['header']['main_menu_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['header']['header_separator_color']) : ?>
+/* color of line separator below header */
+.main-header {
+	border-bottom-color: <?php echo $helper->hex($d['header']['header_separator_color']); ?> !important;
+	<?php if ($d['header']['header_separator_thickness'] >= 0) : ?>
+	border-bottom-width: <?php echo $d['header']['header_separator_thickness']; ?>px !important;
+	<?php endif; ?>
+}
+<?php endif; ?>
+<?php if ($d['header']['main_menu_text_color']) : ?>
+/* main menu text color */
+.main-nav .top-bar-section ul li a:not(.button) {
+	color: <?php echo $helper->hex($d['header']['main_menu_text_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['header']['main_menu_font_size'] > 0 || $d['header']['main_menu_font_size'] 
+	|| $d['header']['main_menu_text_transform']) : ?>
+.top-bar-section > ul > li > a {
+	<?php if ($d['header']['main_menu_font_size'] > 0): ?>
+	font-size: <?php echo $d['header']['main_menu_font_size']; ?>rem !important;
+	<?php endif; ?>
+	<?php if ($d['header']['main_menu_font_weight']): ?>
+	font-weight: <?php echo $d['header']['main_menu_font_weight']; ?> !important;
+	<?php endif; ?>
+}
+<?php endif; ?>
+<?php if ($d['header']['main_menu_dropdown_arrow_color']) : ?>
+/* main menu dropdown arrow color */
+.top-bar-section .has-dropdown > a:after, .top-bar-section .has-dropdown-for-large > a:after {
+	border-color: transparent transparent <?php echo $helper->hex($d['header']['main_menu_dropdown_arrow_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['header']['main_menu_secondary_text_color']) : ?>
+/* main menu secondary text color */
+.top-bar .sup,
+.welcome-message {
+	color: <?php echo $helper->hex($d['header']['main_menu_secondary_text_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['header']['search_box_text_color']) : ?>
+/* search box text color */
+#search_mini_form .form-search label {
+	color: <?php echo $helper->hex($d['header']['search_box_text_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['header']['search_box_text_color_focus']) : ?>
+/* search box text color on focus */
+#search_mini_form .form-search .input-text {
+	color: <?php echo $helper->hex($d['header']['search_box_text_color_focus']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['header']['search_box_border_color']
+	&& Mage::helper('itactica_intenso')->formFieldsType() == 'mdformfields') : ?>
+/* search box border color */
+#search_mini_form .form-search .left, #search_mini_form .form-search .right,
+#search_mini_form .form-search .bottom {
+	background-color: <?php echo $helper->hex($d['header']['search_box_border_color']); ?>;
+}
+<?php else: ?>
+#search_mini_form .form-search .input-text {
+	border-color: <?php echo $helper->hex($d['header']['search_box_border_color']); ?>;
+}
+<?php endif; ?>
+/* search box border color on hover */
+<?php if ($d['header']['search_box_border_color_hover']
+	&& Mage::helper('itactica_intenso')->formFieldsType() == 'mdformfields') : ?>
+#search_mini_form .form-search .input-text:hover ~ div {
+	background-color: <?php echo $helper->hex($d['header']['search_box_border_color_hover']); ?>;
+}
+<?php else: ?>
+#search_mini_form .form-search .input-text:hover {
+	border-color: <?php echo $helper->hex($d['header']['search_box_border_color_hover']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['header']['search_box_icon_color']) : ?>
+/* search box icon's color */
+#search_mini_form .form-search .button span,
+#search_mini_form .form-search .sec-menu {
+	color: <?php echo $helper->hex($d['header']['search_box_icon_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['header']['search_box_icon_divider_color']) : ?>
+/* search box icon's divider color */
+#search_mini_form .form-search .sec-menu {
+	border-color: <?php echo $helper->hex($d['header']['search_box_icon_divider_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($helper->secMenuTop($storeId)) : ?>
+/* header secondary menu */
+.header-ribbon .welcome-message,
+.header-ribbon .links-list,
+.header-ribbon .chosen-container {
+	font-size: <?php echo $d['header']['sec_menu_font_size']; ?>rem !important;
+}
+.header-ribbon .welcome-message,
+.header-ribbon .welcome-message span,
+.header-ribbon .links-list li a,
+.header-ribbon .chosen-container-single .chosen-single {
+	color: <?php echo $helper->hex($d['header']['sec_menu_text_color']); ?> !important;
+}
+.header-ribbon .welcome-message a:hover,
+.header-ribbon .links-list li:hover a,
+.header-ribbon .chosen-container:hover .chosen-single span,
+.header-ribbon .chosen-container-active.chosen-with-drop .chosen-single span {
+	color: <?php echo $helper->hex($d['header']['sec_menu_text_color_hover']); ?> !important;
+}
+.header-ribbon {
+	background-color: <?php echo $helper->hex($d['header']['sec_menu_background_color']); ?>;
+}
+<?php if ($d['header']['main_menu_style'] == 'transparent'): ?>
+.cms-index-index .header-ribbon .welcome-message,
+.cms-index-index .header-ribbon .welcome-message span,
+.cms-index-index .header-ribbon .links-list li a,
+.cms-index-index .header-ribbon .chosen-container-single .chosen-single,
+.cms-home .header-ribbon .welcome-message,
+.cms-home .header-ribbon .welcome-message span,
+.cms-home .header-ribbon .links-list li a,
+.cms-home .header-ribbon .chosen-container-single .chosen-single {
+	color: <?php echo $helper->hex($d['header']['home_sec_menu_text_color']); ?> !important;
+}
+.cms-index-index .header-ribbon .welcome-message a:hover,
+.cms-index-index .header-ribbon .links-list li:hover a,
+.cms-index-index .header-ribbon .chosen-container:hover .chosen-single span,
+.cms-index-index .header-ribbon .chosen-container-active.chosen-with-drop .chosen-single span,
+.cms-home .header-ribbon .welcome-message a:hover,
+.cms-home .header-ribbon .links-list li:hover a,
+.cms-home .header-ribbon .chosen-container:hover .chosen-single span,
+.cms-home .header-ribbon .chosen-container-active.chosen-with-drop .chosen-single span {
+	color: <?php echo $helper->hex($d['header']['home_sec_menu_text_hover_color']); ?> !important;
+}
+<?php endif; ?>
+<?php endif; ?>
+
+<?php if ($d['footer']['footer_top_background']) : ?>
+/* footer's top background */
+.newsletter-ribbon {
+	background: <?php echo $helper->hex($d['footer']['footer_top_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_top_color']) : ?>
+/* footer's top text and icons color */
+.newsletter-ribbon .icon-email,
+.newsletter-ribbon .social a {
+	color: <?php echo $helper->hex($d['footer']['footer_top_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_top_hover_color']) : ?>
+/* footer's top text and icons hover color */
+.newsletter-ribbon a:hover,
+.exitintent-popup a:hover,
+.newsletter-ribbon .social a:hover,
+.exitintent-popup .social a:hover,
+.newsletter-ribbon .icon-email:hover:before {
+	color: <?php echo $helper->hex($d['footer']['footer_top_hover_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_newsletterbox_text_color']) : ?>
+/* footer newsletter box placeholder's text color */
+.newsletter-subscribe-form .field label {
+	color: <?php echo $helper->hex($d['footer']['footer_newsletterbox_text_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_newsletterbox_text_color_focus']) : ?>
+/* footer newsletter box input text color */
+.newsletter-subscribe-form .input-text {
+	color: <?php echo $helper->hex($d['footer']['footer_newsletterbox_text_color_focus']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_newsletterbox_border_color']) : ?>
+/* footer newsletter box input border color */
+.newsletter-subscribe-form .input-box {
+	border-color: <?php echo $helper->hex($d['footer']['footer_newsletterbox_border_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_newsletterbox_border_color_hover']) : ?>
+/* footer newsletter box input border color on hover */
+.newsletter-subscribe-form .input-box:hover {
+	border-color: <?php echo $helper->hex($d['footer']['footer_newsletterbox_border_color_hover']); ?> !important;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_newsletterbox_border_color_focus']) : ?>
+/* footer newsletter box input border color on focus */
+.newsletter-subscribe-form .input-box.focus {
+	border-color: <?php echo $helper->hex($d['footer']['footer_newsletterbox_border_color_focus']); ?> !important;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_newsletterbox_submit_background'] && $d['footer']['footer_newsletterbox_submit_color']) : ?>
+/* footer newsletter submit button colors */
+.newsletter-ribbon button {
+	color: <?php echo $helper->hex($d['footer']['footer_newsletterbox_submit_color']); ?>;
+	background-color: <?php echo $helper->hex($d['footer']['footer_newsletterbox_submit_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_newsletterbox_submit_hover_background'] && $d['footer']['footer_newsletterbox_submit_hover_color']) : ?>
+/* footer newsletter submit button background color on hover */
+.newsletter-ribbon button:hover,
+.newsletter-ribbon button:focus {
+	color: <?php echo $helper->hex($d['footer']['footer_newsletterbox_submit_hover_color']); ?>;
+	background-color: <?php echo $helper->hex($d['footer']['footer_newsletterbox_submit_hover_background']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['footer']['footer_middle_background']) : ?>
+/* footer's middle background */
+.footer-links {
+	background: <?php echo $helper->hex($d['footer']['footer_middle_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_label_color']) : ?>
+/* footer label color */
+.footer-links ul li.title {
+	color: <?php echo $helper->hex($d['footer']['footer_label_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_vertical_links_color']) : ?>
+/* footer vertical links color */
+.footer-links ul li a {
+	color: <?php echo $helper->hex($d['footer']['footer_vertical_links_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_vertical_links_hover_color']) : ?>
+/* footer vertical links hover color */
+.footer-links ul li a:hover {
+	color: <?php echo $helper->hex($d['footer']['footer_vertical_links_hover_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_horizontal_links_color']) : ?>
+/* footer horizontal links color */
+.h-links-list li a {
+	color: <?php echo $helper->hex($d['footer']['footer_horizontal_links_color']); ?> !important;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_horizontal_links_hover_color']) : ?>
+/* footer horizontal links hover color */
+.h-links-list li a:hover {
+	color: <?php echo $helper->hex($d['footer']['footer_horizontal_links_hover_color']); ?> !important;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_horizontal_links_separator_color']) : ?>
+/* footer horizontal links separator color */
+.h-links-list li {
+	border-color: <?php echo $helper->hex($d['footer']['footer_horizontal_links_separator_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_text_color']) : ?>
+/* footer plain text color */
+.footer-links ul li {
+	color: <?php echo $helper->hex($d['footer']['footer_text_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_bottom_background']) : ?>
+/* footer bottom background color */
+.footer-bottom {
+	background-color: <?php echo $helper->hex($d['footer']['footer_bottom_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_bottom_text_color']) : ?>
+/* footer bottom text color */
+.sosumi {
+	color: <?php echo $helper->hex($d['footer']['footer_bottom_text_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_bottom_backtotop_color']) : ?>
+/* footer "Back to Top" text color */
+.back-to-top {
+	color: <?php echo $helper->hex($d['footer']['footer_bottom_backtotop_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_bottom_backtotop_hover_color']) : ?>
+/* footer "Back to Top" text hover color */
+.back-to-top:hover {
+	color: <?php echo $helper->hex($d['footer']['footer_bottom_backtotop_hover_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['footer']['footer_mobile_background']) : ?>
+/* mobile footer background color */
+.mobile-footer-links {
+	background-color:  <?php echo $helper->hex($d['footer']['footer_mobile_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_mobile_background_hover']) : ?>
+/* mobile footer background color on hover */
+.mobile-footer-links li:hover {
+	background-color:  <?php echo $helper->hex($d['footer']['footer_mobile_background_hover']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['footer']['footer_mobile_text_color']) : ?>
+/* mobile footer text color */
+.mobile-footer-links li a {
+	color: <?php echo $helper->hex($d['footer']['footer_mobile_text_color']); ?> !important;
+}
+<?php endif; ?>
+
+<?php $minItemInfoHeight = 5.625 ?>
+<?php if (!$s['catalog']['catalog_show_price_tag']) $minItemInfoHeight -= 1; ?>
+<?php if (!$s['catalog']['catalog_show_products_rating']) $minItemInfoHeight -= 1; ?>
+<?php if (!$s['catalog']['catalog_show_products_rating']) $minItemInfoHeight -= 1; ?>
+/* catalog item-info min height */
+.category-products .item-info {
+	min-height: <?php echo $minItemInfoHeight; ?>rem;
+}
+
+<?php if ($d['catalog']['catalog_view_background']) : ?>
+/* catalog view background color */
+.products-grid,
+.advanced-search-amount {
+	background-color: <?php echo $helper->hex($d['catalog']['catalog_view_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['catalog']['category_title_color']) : ?>
+/* catalog view: category title color */
+#category-name {
+	color: <?php echo $helper->hex($d['catalog']['category_title_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['catalog']['category_price_color']) : ?>
+/* price color */
+.minimal-price .price, .price-box .price {
+	color: <?php echo $helper->hex($d['catalog']['category_price_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['product']['product_view_background']) : ?>
+/* product view - background color */	
+.product-view {
+	background-color: <?php echo $helper->hex($d['product']['product_view_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['breadcrumbs_background']) : ?>
+/* product view - background color */	
+.breadcrumbs-wrapper {
+	background-color: <?php echo $helper->hex($d['product']['breadcrumbs_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['add_to_cart_box_background']) : ?>
+/* product view - add to cart box - background color */	
+.bg-box {
+	background-color: <?php echo $helper->hex($d['product']['add_to_cart_box_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['product_name_color']) : ?>
+/* product name text color */	
+.product-shop h1 {
+	color: <?php echo $helper->hex($d['product']['product_name_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['sticky_nav_background']) : ?>
+/* product's sticky nav background color */	
+.catalog-product-view .magellan-nav {
+	background-color: <?php echo $helper->hex($d['product']['sticky_nav_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['sticky_nav_links_color']) : ?>
+/* product's sticky nav links color */	
+.catalog-product-view .magellan-nav .sub-nav dd a {
+	color: <?php echo $helper->hex($d['product']['sticky_nav_links_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['sticky_nav_links_color_hover']) : ?>
+/* product's sticky nav links color on hover */	
+.catalog-product-view .magellan-nav .sub-nav dd:hover a {
+	color: <?php echo $helper->hex($d['product']['sticky_nav_links_color_hover']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['sticky_nav_links_bg_active']) : ?>
+/* product's sticky nav links background on active */	
+.catalog-product-view .magellan-nav .sub-nav dd.active a {
+	background-color: <?php echo $helper->hex($d['product']['sticky_nav_links_bg_active']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['sticky_nav_background_fixed']) : ?>
+/* product's sticky nav background color when fixed */	
+.catalog-product-view .magellan-nav.magellan-fixed {
+	background-color: <?php echo $helper->hex($d['product']['sticky_nav_background_fixed']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['sticky_nav_link_color_fixed']) : ?>
+/* product's sticky nav links color when fixed */	
+.catalog-product-view .magellan-nav.magellan-fixed .sub-nav dd a {
+	color: <?php echo $helper->hex($d['product']['sticky_nav_link_color_fixed']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['sticky_nav_link_color_fixed_hover']) : ?>
+/* product's sticky nav links color on hover when fixed */	
+.catalog-product-view .magellan-nav.magellan-fixed .sub-nav dd:hover a {
+	color: <?php echo $helper->hex($d['product']['sticky_nav_link_color_fixed_hover']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['product_info_label_color']) : ?>
+/* product info - color of the subtitles */	
+.product-collateral-wrapper .product-description h3,
+.product-collateral-wrapper .additional h3,
+.product-collateral-wrapper .custom-info h3,
+.product-collateral-wrapper .ratings-reviews h3,
+.product-collateral-wrapper .tags h3 {
+	color: <?php echo $helper->hex($d['product']['product_info_label_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['additional_info_background_color']) : ?>
+/* additional info table - background color */	
+.product-collateral-wrapper .product-collateral.additional {
+	background-color: <?php echo $helper->hex($d['product']['additional_info_background_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['product_info_separator_color']) : ?>
+/* product info sections - separator line color */	
+.product-collateral-wrapper .product-collateral {
+	border-color: <?php echo $helper->hex($d['product']['product_info_separator_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['upsell_background_color']) : ?>
+/* upsell products - background color */	
+.featured-slider.up-sell {
+	background-color: <?php echo $helper->hex($d['product']['upsell_background_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['upsell_label_color']) : ?>
+/* upsell products - label color */	
+.featured-slider.up-sell h3 {
+	color: <?php echo $helper->hex($d['product']['upsell_label_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['related_background_color']) : ?>
+/* related products - background color */	
+.featured-slider.related {
+	background-color: <?php echo $helper->hex($d['product']['related_background_color']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['product']['related_label_color']) : ?>
+/* related products - label color */	
+.featured-slider.related h3 {
+	color: <?php echo $helper->hex($d['product']['related_label_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['featured_products']['featured_products_background']) : ?>
+/* featured products background color */	
+.featured-slider.featured-slider-section {
+	background-color: <?php echo $helper->hex($d['featured_products']['featured_products_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['featured_products']['featured_products_label_color']) : ?>
+/* featured products label color */	
+.featured-slider.featured-slider-section h3 {
+	color: <?php echo $helper->hex($d['featured_products']['featured_products_label_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['featured_categories']['featured_categories_background']) : ?>
+/* featured categories background color */	
+.featured-slider.featured-categories-section {
+	background-color: <?php echo $helper->hex($d['featured_categories']['featured_categories_background']); ?>;
+}
+<?php endif; ?>
+<?php if ($d['featured_categories']['featured_categories_label_color']) : ?>
+/* featured categories label color */	
+.featured-slider.featured-categories-section h3 {
+	color: <?php echo $helper->hex($d['featured_categories']['featured_categories_label_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['logo_slider']['logo_slider_label_color']) : ?>
+/* logo slider label color */	
+.brand-slider h3 {
+	color: <?php echo $helper->hex($d['logo_slider']['logo_slider_label_color']); ?>;
+}
+<?php endif; ?>
+
+<?php if ($d['star_rating']['stars_color']) : ?>
+<?php
+$ratingBackgroundImage = $helper->getRatingBackgroundImage($d['star_rating']['stars_color']);
+?>
+/* star rating color */	
+.rating, .product-collateral .review-list .rating, .product-collateral .rating, 
+.review-product-list .ratings-detail .rating,
+#pretty-product-review-list .pretty-rating-code .options li .option.hover, 
+#pretty-product-review-list .pretty-rating-code .options li .option.selected {
+	background-image: url(<?php echo $ratingBackgroundImage; ?>);
+}
+<?php endif; ?>
+<?php if ($d['customer_account']['customer_outside_background_color'] != 'transparent') : ?>
+/* login, forgot password, register, reset password, logout success - background color */
+.customer-account-login .off-canvas-wrap,
+.customer-account-forgotpassword .off-canvas-wrap,
+.customer-account-create .off-canvas-wrap,
+.customer-account-logoutsuccess .off-canvas-wrap,
+.customer-account-resetpassword .off-canvas-wrap,
+.paypal-express-review .off-canvas-wrap {
+	background: <?php echo $d['customer_account']['customer_outside_background_color'] ?>;
+}
+<?php endif; ?>
+<?php if ($d['customer_account']['customer_inside_background_color']) : ?>
+/* customer account - background color */
+.account-wrapper {
+	background-color: <?php echo $d['customer_account']['customer_inside_background_color'] ?>;
+}
+<?php endif; ?>
+<?php if ($d['checkout']['checkout_background_color'] != 'transparent') : ?>
+/* one page checkout and multishipping checkout - background color */
+.checkout-onepage-index .off-canvas-wrap,
+.checkout-multishipping-login .off-canvas-wrap,
+.checkout-multishipping-register .off-canvas-wrap,
+.checkout-multishipping-addresses .off-canvas-wrap,
+.checkout-multishipping-address-newshipping .off-canvas-wrap,
+.checkout-multishipping-shipping .off-canvas-wrap,
+.checkout-multishipping-address-editshipping .off-canvas-wrap,
+.checkout-multishipping-billing .off-canvas-wrap,
+.checkout-multishipping-overview .off-canvas-wrap,
+.checkout-onepage-failure .off-canvas-wrap,
+.checkout-multishipping-success .off-canvas-wrap,
+.checkout-onepage-success .off-canvas-wrap {
+	background: <?php echo $d['checkout']['checkout_background_color'] ?>;
+}
+<?php endif; ?>
+
+<?php if ($s['catalog']['product_box_border_radius']) : ?>
+/* catalog product box - border radius */
+.category-products .item-image,
+.featured-slider-section .item-images.flush .item-image,
+.featured-categories-section .item-image {
+	border-top-left-radius: <?php echo $s['catalog']['product_box_border_radius'] ?>px;
+	border-top-right-radius: <?php echo $s['catalog']['product_box_border_radius'] ?>px;
+}
+.category-products.list .item-image {
+	border-top-right-radius: 0;
+	border-bottom-left-radius: <?php echo $s['catalog']['product_box_border_radius'] ?>px;
+}
+section.featured-slider ol li.item, 
+.category-products .item {
+	border-radius: <?php echo $s['catalog']['product_box_border_radius'] ?>px;
+}
+<?php endif; ?>
+
+/* Small screens */
+@media only screen and (max-width: 40em) {
+	.right-off-canvas-menu.main-nav {
+		background: #333333 !important;
+	}
+	.top-bar-section ul li:hover > a,
+	.top-bar-section ul li ul li:hover a {
+    	background: #272727 !important;
+   	}
+   	.main-nav .top-bar-section ul li a {
+   		color: #ffffff !important;
+	}
+	.main-nav .top-bar-section ul li:hover a,
+	.main-nav .top-bar-section ul.left li ul li:hover > a:not(.button) {
+		color: #ffffff !important;
+	}
+	<?php if ($d['page']['main_color']) : ?>
+	.layered-nav-container ol li.checked:hover a:before,
+	.layered-nav-container ol li.checked:hover a {
+		color: <?php echo $helper->hex($d['page']['main_color']); ?>;
+	}
+	<?php endif; ?>
+	<?php if ($d['header']['header_logo_mobile_max_width'] > 0) : ?>
+	.main-logo-small {
+		max-width: <?php echo $d['header']['header_logo_mobile_max_width']; ?>px; 
+	}
+	<?php endif; ?>
+}
+/* Medium and Big screens */
+@media only screen and (min-width: 40.063em) {
+	<?php if ($d['header']['main_menu_icon_color']) : ?>
+	/* main menu icon's color */
+	.main-header .top-bar .icon-cart,
+	.welcome-message span,
+	.main-header .icon-user,
+	.main-header .icon-cart {
+		color: <?php echo $helper->hex($d['header']['main_menu_icon_color']); ?>;
+	}
+	<?php endif; ?>
+	.top-bar-section .has-dropdown:hover > a:after,
+	.top-bar-section .has-dropdown-for-large:hover > a:after {
+		border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) <?php echo $helper->hex($d['page']['main_color']); ?> !important;	
+	}
+	.main-nav .top-bar-section > ul > li:hover > a:not(.button) {
+		color: <?php echo $helper->hex($d['header']['main_menu_text_hover_color']); ?> !important;
+	}
+	<?php if ($d['header']['main_menu_text_transform']): ?>
+	.top-bar-section > ul > li > a {
+		text-transform: <?php echo $d['header']['main_menu_text_transform']; ?> !important;
+	}
+	<?php endif; ?>
+	<?php if ($d['header']['header_logo_max_width'] > 0) : ?>
+	.main-logo {
+		max-width: <?php echo $d['header']['header_logo_max_width']; ?>px; 
+	}
+	<?php endif; ?>
+	<?php if ($d['header']['header_logo_top_margin'] >= 0) : ?>
+	.main-logo,
+	.main-logo-small {
+		margin-top: <?php echo $d['header']['header_logo_top_margin']; ?>px; 
+	}
+	<?php endif; ?>
+	<?php if ($d['header']['header_logo_bottom_margin'] >= 0) : ?>
+	#search_mini_form {
+		margin-bottom: <?php echo $d['header']['header_logo_bottom_margin']; ?>px; 
+	}
+	<?php endif; ?>
+	<?php if ($d['header']['header_search_top_margin'] >= 0 || $d['header']['header_search_bottom_margin'] >= 0) : ?>
+	.form-search {
+		<?php if ($d['header']['header_search_top_margin'] >= 0) : ?>
+		margin-top: <?php echo $d['header']['header_search_top_margin']; ?>px; 
+		<?php endif; ?>
+		<?php if ($d['header']['header_search_bottom_margin'] >= 0) : ?>
+		margin-bottom: <?php echo $d['header']['header_search_bottom_margin']; ?>px; 
+		<?php endif; ?>
+	}
+	<?php endif; ?>
+	<?php if ($d['header']['main_menu_style'] == 'transparent'): ?>
+	<?php
+		$hex = $helper->hex($d['header']['home_header_background']);
+		$opacity = $d['header']['header_opacity'] / 100;
+		list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+		$rgba = 'rgba('.$r.','.$g.','.$b.','.$opacity.')';
+	?>
+	/* home header - transparent style */
+	.cms-index-index .main-header,
+	.cms-home .main-header {
+		position: absolute;
+		background: <?php echo $rgba; ?>;
+		left: 0;
+		right: 0;
+		border-bottom: none !important;
+	}
+	.cms-index-index .right-off-canvas-menu.main-nav,
+	.cms-home .right-off-canvas-menu.main-nav {
+		background: transparent !important;
+	}
+	.cms-index-index .main-nav .top-bar-section li:not(.has-form) a:not(.button), 
+	.cms-index-index .main-nav .top-bar-section .left,
+	.cms-index-index .main-nav .top-bar-section .right,
+	.cms-home .main-nav .top-bar-section li:not(.has-form) a:not(.button), 
+	.cms-home .main-nav .top-bar-section .left,
+	.cms-home .main-nav .top-bar-section .right {
+		background: transparent;
+	}
+	.cms-index-index .main-nav .top-bar-section ul li a:not(.button),
+	.cms-home .main-nav .top-bar-section ul li a:not(.button) {
+		color: <?php echo $helper->hex($d['header']['home_main_menu_text_color']); ?>;
+	}
+	.cms-index-index .main-nav .top-bar-section > ul > li:hover > a:not(.button),
+	.cms-home .main-nav .top-bar-section > ul > li:hover > a:not(.button) {
+		color: <?php echo $helper->hex($d['header']['home_main_menu_text_hover_color']); ?> !important;
+	}
+	.cms-index-index .top-bar-section .has-dropdown > a:after, .top-bar-section .has-dropdown-for-large > a:after,
+	.cms-home .top-bar-section .has-dropdown > a:after, .top-bar-section .has-dropdown-for-large > a:after {
+		border-color: transparent transparent <?php echo $helper->hex($d['header']['home_main_menu_dropdown_arrow_color']); ?>;
+	}
+	/* main menu secondary text color */
+	.cms-index-index .top-bar .sup,
+	.cms-index-index .welcome-message,
+	.cms-home .top-bar .sup,
+	.cms-home .welcome-message {
+		color: <?php echo $helper->hex($d['header']['home_main_menu_secondary_text_color']); ?>;
+	}
+	/* main menu icon's color */
+	.cms-index-index .main-header .top-bar .icon-cart,
+	.cms-index-index .welcome-message span,
+	.cms-index-index .main-header .icon-user,
+	.cms-index-index .main-header .icon-cart,
+	.cms-home .main-header .top-bar .icon-cart,
+	.cms-home .welcome-message span,
+	.cms-home .main-header .icon-user,
+	.cms-home .main-header .icon-cart {
+		color: <?php echo $helper->hex($d['header']['home_main_menu_icons_color']); ?>;
+	}
+	<?php endif; ?>
+	/* dropdown menu hover color */
+	.main-nav .top-bar-section ul.left li ul li:hover:not(.mega-menu-top-block):not(.mega-menu-bottom-block) > a:not(.button),
+	.main-nav .top-bar-section ul.right .links-list li:hover > a {
+		color: #000000 !important;
+	}
+	.top-bar-section .left ul,
+	.top-bar-section .left .arrow-box {
+	<?php if ($s['fonts']['font_family'] == 'google') : ?>
+		font-family: '<?php echo $s['fonts']['google_fonts']; ?>', sans-serif !important;
+	<?php elseif ($s['fonts']['font_family'] == 'custom') : ?>
+		font-family: <?php echo $s['fonts']['font_custom']; ?> !important;
+	<?php else: ?>
+		font-family: <?php echo $s['fonts']['font_family']; ?> !important;
+	<?php endif; ?>
+	}
+
+	<?php if ($d['page']['main_color']) : ?>
+	.top-bar-section .left ul li:active > a {
+		color: <?php echo $helper->hex($d['page']['main_color']); ?> !important;
+	}
+	.top-bar-section .left ul li:hover > a:before,
+	.category-products.list .actions .btn-cart {
+		background: <?php echo $helper->hex($d['page']['main_color']); ?>;
+	}
+	.top-bar-section .has-dropdown .dropdown li.has-dropdown:hover > a:after {
+		border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) <?php echo $helper->hex($d['page']['main_color']); ?> !important;
+	}
+	<?php endif; ?>
+
+	<?php if ($d['page']['main_hover_color']) : ?>
+	.category-products.list .actions .btn-cart:hover {
+		background: <?php echo $helper->hex($d['page']['main_hover_color']); ?>;
+	}
+	<?php endif; ?>
+
+	<?php if ($d['page']['main_color']) : ?>
+	.main-nav .top-bar-section ul.left li.mega-menu > ul > li:not(.mega-menu-top-block):not(.mega-menu-bottom-block):hover > a:not(.button) { 
+		color: <?php echo $helper->hex($d['page']['main_color']); ?> !important;
+	}
+	<?php endif; ?>
+}
+
+<?php 
+// hide Mega-menu's right block on smaller screens
+$hideThreshold = $s['header']['mega-menu-right-block-hide-width'];
+$baseFontSize = $s['fonts']['base_font_size'];
+if ($hideThreshold > 0) : 
+?>
+	<?php 
+	if ($baseFontSize > 0) {
+		$breakPoint = $hideThreshold / $baseFontSize;
+	} else {
+		$breakPoint = $hideThreshold / 16;
+	}
+	?>
+	@media only screen and (max-width: <?php echo $breakPoint; ?>em) {
+		.mega-menu > ul > li.mega-menu-right-block {
+			display: none !important;
+		}
+		.top-bar-section .has-dropdown.mega-menu > .dropdown {
+			padding-right: 0 !important;
+		}
+	}
+<?php endif; ?>
+<?php if (Mage::helper('itactica_quickview')->isDisabledForMobile()): ?>
+@media only screen and (max-width: 40em) {
+	/* disable Quick View for mobile */
+	section.featured-slider .item-images a.quickview-button, 
+	section.featured-slider .category-images a.quickview-button, 
+	.category-products .item-images a.quickview-button {
+		display: none !important;
+	}
+}
+<?php endif; ?>

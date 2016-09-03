@@ -1,0 +1,22 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php /* @var $this Mage_Catalog_Block_Product_View_Abstract */?>
+<?php $_product = $this->getProduct() ?>
+
+<?php echo $this->getPriceHtml($_product) ?>
+<?php if ($this->displayProductStockStatus()): ?>
+    <?php if ($_product->isAvailable()): ?>
+        <p class="availability in-stock" itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span class="hide" aria-hidden="true" itemprop="price"><?php echo Mage::helper('core')->currency($_product->getFinalPrice()); ?></span><?php echo $this->__('Availability:') ?> <span><link href="http://schema.org/InStock" itemprop="availability"><?php echo $this->__('In stock') ?></span></p>
+    <?php else: ?>
+        <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
+    <?php endif; ?>
+<?php endif; ?>
+<?php echo $this->getChildHtml('product_type_data_extra') ?>

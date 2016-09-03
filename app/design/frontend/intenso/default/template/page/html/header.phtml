@@ -1,0 +1,66 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php $themeHelper = Mage::helper('itactica_intenso'); ?>
+<?php $smallLogo = ($this->getLogoSrcSmall()) ? $this->getLogoSrcSmall() : $this->getLogoSrc(); ?>
+<header class="main-header">
+    <?php if ($themeHelper->secMenuTop() && $themeHelper->showSecondaryMenu()): ?>
+    <div class="row header-ribbon show-for-medium-up">
+        <div class="small-12 columns">
+            <?php echo $this->getChildHtml('currency_selector') ?>
+            <?php echo $this->getChildHtml('store_language') ?>
+            <span class="welcome-message"><?php echo $themeHelper->getAdditionalInfo(); ?></span>
+            <?php echo $this->getChildHtml('sec_menu_links') ?>
+        </div>
+    </div>
+    <?php endif; ?>
+    <div class="row top-header">
+        <div class="small-6 medium-3 large-3 columns">
+            <a href="<?php echo $this->getUrl('') ?>">
+                <img class="main-logo" src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" title="<?php echo $this->getLogoAlt() ?>" />
+                <img class="main-logo-small" src="<?php echo $smallLogo ?>" alt="<?php echo $this->getLogoAlt() ?>" title="<?php echo $this->getLogoAlt() ?>" />
+            </a>
+        </div>
+
+            <div class="small-6 medium-3 medium-push-6 large-3 large-push-6 icons-for-small columns text-right">
+                <?php if (!$themeHelper->secMenuTop()): ?>
+                <div class="welcome-message show-for-medium-up"><?php echo $themeHelper->getAdditionalInfo(); ?></div>
+                <?php endif; ?>
+                <a href="#" class="right-off-canvas-toggle show-for-small-only icon-main-menu"></a> <a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="hide-for-large-up icon-cart"></a> <a href="<?php echo $this->getUrl('customer/account'); ?>" class="show-for-medium-only icon-user"></a>
+            </div>
+        <div class="medium-6 large-6 medium-pull-3 large-pull-3 columns">
+            <?php $catalogSearchHelper =  $this->helper('catalogsearch'); ?>
+            <form method="get" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" id="search_mini_form">
+                <div class="form-search">
+                    <div class="action">
+                        <button class="button" title="Search" type="submit"><span aria-hidden="true" class="icon-search"></span></button>
+                        <?php if (!$themeHelper->secMenuTop() && $themeHelper->showSecondaryMenu()): ?>
+                            <div class="hide-for-small-only sec-menu icon-sec-menu"> 
+                                <!-- Secondary menu dropdown -->
+                                <div class="sec-menu-dropdown">
+                                    <div class="arrow-box">
+                                        <?php echo $this->getChildHtml('store_language') ?>
+                                        <?php echo $this->getChildHtml('currency_selector') ?>
+                                        <?php echo $this->getChildHtml('sec_menu_links') ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <?php echo $this->getChildHtml('topSearch') ?>
+                </div>
+            </form>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml('topMenu') ?>
+</header>

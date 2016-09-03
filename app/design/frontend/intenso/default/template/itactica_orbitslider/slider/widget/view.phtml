@@ -1,0 +1,62 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_OrbitSlider
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+?>
+<?php $_slider = $this->getCurrentSlider();?>
+<?php $helper = Mage::helper('itactica_orbitslider');?>
+<?php if ($_slider) :?>
+	<?php 
+		$animationOptions = Mage::getModel('itactica_orbitslider/slider_attribute_source_animationtype')
+			->getAllOptions();
+		$animationType = strtolower($animationOptions[$_slider->getAnimationType()]['label']);
+	?>
+	<div class="orbit-wrapper spinner clearfix<?php if ($_slider->getCustomClassname()) echo ' ' . $_slider->getCustomClassname() ?>">
+		<ul class="hero orbit-container<?php if ($_slider->getFullScreen()): ?> full-screen<?php endif; ?>" data-orbit data-options="animation:<?php echo $animationType; ?>; animation_speed:<?php echo $_slider->getAnimationSpeed(); ?>; timer_speed:<?php echo $_slider->getTimerSpeed(); ?>; pause_on_hover:<?php echo $_slider->getPauseOnHover(); ?>; circular:<?php echo $_slider->getCircular(); ?>; swipe:<?php echo $_slider->getSwipe(); ?>; slide_number:0; variable_height:1;">
+			<?php if ($_slider->getUseAdvanced()): ?>
+			<?php echo $_slider->getContent();?>
+			<?php else: ?>
+				<?php $slides = $this->getSlides($_slider->getId()); ?>
+				<?php $i=1; foreach ($slides as $slide): ?>
+					<li class="item<?php if ($slide->getNavigationSkin() == 2): ?> dark<?php endif; ?>">	
+					    <img alt="" data-interchange="[<?php echo Mage::helper('itactica_orbitslider/image')->getImageBaseUrl() . $slide->getFilenameForMedium(); ?>, (default)], [<?php echo Mage::helper('itactica_orbitslider/image')->getImageBaseUrl() . $slide->getFilenameForSmall(); ?>, (small)], [<?php echo Mage::helper('itactica_orbitslider/image')->getImageBaseUrl() . $slide->getFilenameForMedium(); ?>, (medium)], [<?php echo Mage::helper('itactica_orbitslider/image')->getImageBaseUrl() . $slide->getFilenameForLarge(); ?>, (large)]" width="1920" height="800" <?php if ($slide->getImageLink()): ?>onclick="location.href='<?php echo $slide->getImageLink(); ?>'" class="pointer"<?php endif; ?> src="<?php echo $this->getSkinUrl('images/clear.png'); ?>">
+					    <noscript><img alt="Remarkably Crisp and Clear" src="<?php echo Mage::helper('itactica_orbitslider/image')->getImageBaseUrl() . $slide->getFilenameForLarge(); ?>" width="1920" height="800"></noscript>
+						<?php list($r, $g, $b) = sscanf($helper->hex($slide->getTextBlockColorForSmall()), "#%02x%02x%02x"); ?>
+					    <div style="background: none repeat scroll 0% 0% rgb(<?php echo $r; ?>, <?php echo $g; ?>, <?php echo $b; ?>);<?php if ($slide->getTextBlockAlignment() == 'custom') echo ' margin-left: ' . $slide->getCustomAlignment() . '%;'; ?><?php if ($slide->getVerticalAlignment()) echo ' -ms-transform: none; -moz-transform: none; -o-transform: none; -webkit-transform: none; transform: none; top: ' . $slide->getTextBlockTop() . ';'; ?>" class="hero-text<?php if (!$slide->getTitleForSmall() && !$slide->getTextForSmall()): ?> hide-for-small-only<?php endif; ?> <?php if ($slide->getTextBlockAlignment() != 'custom') echo $slide->getTextBlockAlignment(); ?>">
+					    	<?php if ($slide->getTitleForLarge()): ?>
+					        <h1 style="color: <?php if ($slide->getTitleForLargeColor()) { echo $helper->hex($slide->getTitleForLargeColor()); } else { echo 'transparent'; } ?>; font-size: <?php echo $slide->getTitleForLargeSize(); ?>px; font-style: <?php echo $slide->getTitleForLargeStyle(); ?>; font-weight: <?php echo $slide->getTitleForLargeWeight(); ?>" class="show-for-medium-up" data-size="<?php echo $slide->getTitleForLargeSize(); ?>"><?php echo $slide->getTitleForLarge() ?></h1>
+					    	<?php endif; ?>
+					    	<?php if ($slide->getTitleForSmall()): ?>
+					        <h1 style="color: <?php if ($slide->getTitleForSmallColor()) { echo $helper->hex($slide->getTitleForSmallColor()); } else { echo 'transparent'; } ?>; font-size: <?php echo $slide->getTitleForSmallSize(); ?>px; font-style: <?php echo $slide->getTitleForSmallStyle(); ?>; font-weight: <?php echo $slide->getTitleForSmallWeight(); ?>" class="show-for-small-only"><?php echo $slide->getTitleForSmall() ?></h1>
+					        <?php endif; ?>
+					        <?php if ($slide->getTextForLarge()): ?>
+					        <h5 style="color: <?php if ($slide->getTextForLargeColor()) { echo $helper->hex($slide->getTextForLargeColor()); } else { echo 'transparent'; }; ?>; font-size: <?php echo $slide->getTextForLargeSize(); ?>px; font-style: <?php echo $slide->getTextForLargeStyle(); ?>; font-weight: <?php echo $slide->getTextForLargeWeight(); ?>" class="show-for-medium-up" data-size="<?php echo $slide->getTextForLargeSize(); ?>"><?php echo $slide->getTextForLarge() ?></h5>
+					    	<?php endif; ?>
+					    	<?php if ($slide->getTextForSmall()): ?>
+					        <h5 style="color: <?php if ($slide->getTextForSmallColor()) { echo $helper->hex($slide->getTextForSmallColor()); } else { echo 'transparent'; } ?>; font-size: <?php echo $slide->getTextForSmallSize(); ?>px; font-style: <?php echo $slide->getTextForSmallStyle(); ?>; font-weight: <?php echo $slide->getTextForSmallWeight(); ?>" class="show-for-small-only"><?php echo $slide->getTextForSmall() ?></h5>
+					        <?php endif; ?>
+					        <?php if ($slide->getButtonOneText()): ?>
+					        <a class="button <?php if ($slide->getButtonOneStyle() != 'normal') echo $slide->getButtonOneStyle(); ?> <?php if ($slide->getButtonOneSize() != 'normal') echo $slide->getButtonOneSize(); ?>" href="<?php echo $slide->getButtonOneLink(); ?>" style="color: <?php echo $helper->hex($slide->getButtonOneTextColor()); ?> !important; <?php if ($slide->getButtonOneStyle() == 'ghost'): ?>border-color: <?php else: ?>background-color: <?php endif; ?><?php echo $helper->hex($slide->getButtonOneBackground()); ?> !important" data-colorover="<?php echo $helper->hex($slide->getButtonOneTextColorHover()); ?>" data-colorout="<?php echo $helper->hex($slide->getButtonOneTextColor()); ?>" data-bgover="<?php echo $helper->hex($slide->getButtonOneBackgroundHover()); ?>" data-bgout="<?php echo $helper->hex($slide->getButtonOneBackground()); ?>"><?php echo $slide->getButtonOneText(); ?></a>
+					    	<?php endif; ?>
+					    	<?php if ($slide->getButtonTwoText()): ?>
+					        <a class="button <?php if ($slide->getButtonTwoStyle() != 'normal') echo $slide->getButtonTwoStyle(); ?> <?php if ($slide->getButtonTwoSize() != 'normal') echo $slide->getButtonTwoSize(); ?>" href="<?php echo $slide->getButtonTwoLink(); ?>" style="color: <?php echo $helper->hex($slide->getButtonTwoTextColor()); ?> !important; <?php if ($slide->getButtonTwoStyle() == 'ghost'): ?>border-color: <?php else: ?>background-color: <?php endif; ?><?php echo $helper->hex($slide->getButtonTwoBackground()); ?> !important" data-colorover="<?php echo $helper->hex($slide->getButtonTwoTextColorHover()); ?>" data-colorout="<?php echo $helper->hex($slide->getButtonTwoTextColor()); ?>" data-bgover="<?php echo $helper->hex($slide->getButtonTwoBackgroundHover()); ?>" data-bgout="<?php echo $helper->hex($slide->getButtonTwoBackground()); ?>"><?php echo $slide->getButtonTwoText(); ?></a>
+					    	<?php endif; ?>
+					    </div>
+					</li>
+				<?php $i++; endforeach; ?>
+			<?php endif; ?>
+		</ul>
+		<script>
+	    	jQuery('.hero .button').hover(
+	    		function() { jQuery(this).attr('style', 'color: '+jQuery(this).data('colorover')+' !important; background-color: '+jQuery(this).data('bgover')+'; border-color: '+jQuery(this).data('bgover')+' !important;'); },
+	    		function() { jQuery(this).attr('style', 'color: '+jQuery(this).data('colorout')+' !important; background-color: '+jQuery(this).data('bgout')+'; border-color: '+jQuery(this).data('bgout')+' !important;'); }
+	    	);
+	    </script>
+	</div>
+<?php endif;?>

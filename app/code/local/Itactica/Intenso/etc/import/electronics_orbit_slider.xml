@@ -1,0 +1,127 @@
+<root>
+	<democontent>
+		<item>
+			<title>Home Slider - Electronics</title>
+			<identifier>home_slider_electronics</identifier>
+			<full_screen>0</full_screen>
+			<animation_type>2</animation_type>
+			<animation_speed>600</animation_speed>
+			<timer_speed>7000</timer_speed>
+			<pause_on_hover>0</pause_on_hover>
+			<circular>1</circular>
+			<swipe>1</swipe>
+			<use_advanced>0</use_advanced>
+			<status>1</status>
+			<slides>
+				<item>Electronics - Action Cameras</item>
+				<item>Electronics - Cellphones</item>
+				<item>Electronics - TVs</item>
+			</slides>
+			<stores><item>0</item></stores>
+			<content></content>
+		</item>
+		<item>
+			<title>Smart Watch - Electronics</title>
+			<identifier>smartwatch_electronics</identifier>
+			<full_screen>0</full_screen>
+			<animation_type>2</animation_type>
+			<animation_speed>600</animation_speed>
+			<timer_speed>7000</timer_speed>
+			<pause_on_hover>0</pause_on_hover>
+			<circular>1</circular>
+			<swipe>1</swipe>
+			<use_advanced>0</use_advanced>
+			<status>1</status>
+			<slides>
+				<item>Electronics - Smartwatch</item>
+			</slides>
+			<stores><item>0</item></stores>
+			<content></content>
+		</item>
+		<item>
+			<title>Electronics Category Laptops</title>
+			<identifier>electronics_category_laptops</identifier>
+			<add_to_category_url>
+				<item>laptops</item>
+			</add_to_category_url>
+			<full_screen>0</full_screen>
+			<animation_type>2</animation_type>
+			<animation_speed>600</animation_speed>
+			<timer_speed>7000</timer_speed>
+			<pause_on_hover>0</pause_on_hover>
+			<circular>1</circular>
+			<swipe>1</swipe>
+			<use_advanced>0</use_advanced>
+			<status>1</status>
+			<slides>
+				<item>Electronics Category Laptops</item>
+			</slides>
+			<stores><item>0</item></stores>
+			<content></content>
+		</item>
+		<item>
+			<title>Electronics Category Cameras</title>
+			<identifier>electronics_category_cameras</identifier>
+			<add_to_category_url>
+				<item>cameras</item>
+			</add_to_category_url>
+			<full_screen>0</full_screen>
+			<animation_type>2</animation_type>
+			<animation_speed>600</animation_speed>
+			<timer_speed>7000</timer_speed>
+			<pause_on_hover>0</pause_on_hover>
+			<circular>1</circular>
+			<swipe>1</swipe>
+			<use_advanced>0</use_advanced>
+			<status>1</status>
+			<slides>
+				<item>Electronics Category Cameras</item>
+			</slides>
+			<stores><item>0</item></stores>
+			<content></content>
+		</item>
+		<item>
+			<title>Electronics Category Cellphones</title>
+			<identifier>electronics_category_cellphones</identifier>
+			<add_to_category_url>
+				<item>cellphones-and-tablets</item>
+			</add_to_category_url>
+			<full_screen>0</full_screen>
+			<animation_type>2</animation_type>
+			<animation_speed>600</animation_speed>
+			<timer_speed>7000</timer_speed>
+			<pause_on_hover>0</pause_on_hover>
+			<circular>1</circular>
+			<swipe>1</swipe>
+			<use_advanced>0</use_advanced>
+			<status>1</status>
+			<slides>
+				<item>Electronics Category Cellphones</item>
+			</slides>
+			<stores><item>0</item></stores>
+			<content></content>
+		</item>
+		<item>
+			<title>Electronics Category TV</title>
+			<identifier>electronics_category_tv</identifier>
+			<add_to_category_url>
+				<item>tvs</item>
+			</add_to_category_url>
+			<full_screen>0</full_screen>
+			<animation_type>2</animation_type>
+			<animation_speed>600</animation_speed>
+			<timer_speed>7000</timer_speed>
+			<pause_on_hover>0</pause_on_hover>
+			<circular>1</circular>
+			<swipe>1</swipe>
+			<use_advanced>0</use_advanced>
+			<status>1</status>
+			<slides>
+				<item>Electronics Category TV</item>
+			</slides>
+			<stores><item>0</item></stores>
+			<content></content>
+		</item>
+	</democontent>
+</root>
+
